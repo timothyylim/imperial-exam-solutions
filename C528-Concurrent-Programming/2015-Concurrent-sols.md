@@ -35,7 +35,7 @@ Asynchronous (multi-Threaded):
  ```
  http://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-does-it-really-mean
  
- b)
+ bi)
  
  ```
 const N = 4
@@ -47,7 +47,7 @@ CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
 
  ```
  
- c)
+ bii)
  
  *To be improved*
  ```
@@ -56,4 +56,13 @@ CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
 
  ```
  
+ biii)
+ 
+ *to add*
+ 
+ 
+ c)
+ 
+ ![alt text](2015-1d "Logo Title Text 1")
+ ![alt text](2015-1di "Logo Title Text 1")
  
