@@ -1,7 +1,7 @@
 # Section A
 ### 1
 
-a
+a)
 
 When you execute something synchronously, you wait for it to finish before moving on to another task. When you execute something asynchronously, you can move on to another task before it finishes.
 
@@ -36,5 +36,24 @@ Asynchronous (multi-Threaded):
  http://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-does-it-really-mean
  
  b)
+ 
+ ```
+const N = 4
+range T = 0..N
+
+CYCLE = CYCLE[0],
+CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
+			 |when(v==N)in[v] -> CYCLE[0]).
+
+ ```
+ 
+ c)
+ 
+ *To be improved*
+ ```
+ BUFF = (in[i:0..3]-> (when (i ==2) win -> STOP
+                     |when(i!=2) ran[i] -> STOP)).
+
+ ```
  
  
