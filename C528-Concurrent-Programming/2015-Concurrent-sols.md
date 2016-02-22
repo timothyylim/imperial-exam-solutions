@@ -63,6 +63,8 @@ CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
  
  c)
  
- ![alt text](2015-1d.png "Logo Title Text 1")
+ ![alt text](2015-1dii.png "Logo Title Text 1")
  ![alt text](2015-1di.png "Logo Title Text 1")
+ 
+ 
  
