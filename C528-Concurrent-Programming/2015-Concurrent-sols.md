@@ -106,7 +106,16 @@ a:P prefixes each action label in the alphabet of P with a
 
 cii)
 
+```
+const MAX = 2
+VAR = VAR[0],
+VAR[i:0..MAX] = (read[i] -> VAR[i] 
+				|write[j:0..MAX] -> VAR[j]).
 
+THREAD(N=1) = (write[N]->read[i:0..MAX]->STOP)+{write[i:0..MAX]}.
+
+||PARALLEL = (VAR||THREAD)
+```
 
 
 
