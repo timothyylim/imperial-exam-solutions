@@ -92,3 +92,21 @@ POINTS[i:0 .. MAX] =
  
  
  ![alt text](images/2015-2bii-2.png "Logo Title Text 1")
+
+ci)
+
+Process sharing ({a1,a2,...,an}::P):
+
+{a1,a2,...,an}::P could be modelled as a:P and b:P but that would mean that they would be two distinct 
+actions where in fact they are the same, so we have to use the notation: {a1,a2,...,an}::P
+
+Process labellign (a:P)
+
+a:P prefixes each action label in the alphabet of P with a
+
+cii)
+
+
+
+
+
