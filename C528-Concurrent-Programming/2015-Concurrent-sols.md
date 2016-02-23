@@ -67,4 +67,28 @@ CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
  ![alt text](2015-1di.png "Logo Title Text 1")
  
  
+### 2
+
+a)
+
+bi)
+
+bii)
+
+Let's start with just const MAX = 2 to make things a bit more manageable:
+```
+const MAX = 2
+POINTS = POINTS[0],
+POINTS[i:0 .. MAX] = 
+	( when (i< MAX) buy[j:1..MAX-i] -> POINTS[j+i]
+	| when (i>1) use[j:1..i] -> POINTS[i-j]
+	| point[i] -> POINTS[i]).
+
+```
+
+ ![alt text](images/2015-2bii.png "Logo Title Text 1")
  
+ Now for the granddaddy LTS:
+ 
+ 
+ ![alt text](images/2015-2bii-2.png "Logo Title Text 1")
