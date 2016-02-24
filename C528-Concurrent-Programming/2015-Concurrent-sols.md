@@ -3,6 +3,10 @@
 
 a)
 
+By asynchronous we mean that processes proceed at arbitrary relative speeds and consequently their actions can be arbitrarily interleaved.
+
+-- Extended answer:
+
 When you execute something synchronously, you wait for it to finish before moving on to another task. When you execute something asynchronously, you can move on to another task before it finishes.
 
 Synchronous (one thread):
