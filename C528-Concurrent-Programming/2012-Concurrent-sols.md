@@ -13,7 +13,7 @@ RANCID = COUNT[0],
 COUNT[i:0..4] = (when (i<4) nextDay -> COUNT[i+1]
 				|when (i<4) {glass, half_glass,shop} -> COUNT[0]
 				|when (i==4) shop -> COUNT[0]
-				|{lass, half_glass} -> ERROR)
+				|{glass, half_glass} -> ERROR)
 				
 				
 ```
