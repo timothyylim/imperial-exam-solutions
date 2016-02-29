@@ -31,3 +31,11 @@ OPEN[0] = (close -> END).
 
 ||CONCAT = (a: SEQ_READ(2) || b:SEQ_READ(3))/{open/a.open,close/b.close,continue/{a.close,b.open}}.
 ```
+```
+SPACE_HOG = (new -> outOfMemory -> SPACE_HOG 
+			|new -> reference -> SPACE_HOG).
+
+SPACED_OUT = STOP + {outOfMemory}.
+
+||TOGETHER = (SPACE_HOG||SPACED_OUT).
+```
