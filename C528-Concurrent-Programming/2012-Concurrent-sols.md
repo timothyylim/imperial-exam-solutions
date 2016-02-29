@@ -23,3 +23,11 @@ SHOPPING = (shop -> cloudy -> {beer,milk} -> SHOPPING
 			|shop -> rainy -> milk-> SHOPPING
 			|shop -> sunny -> beer-> SHOPPING).
 ```
+```
+const MAX = 4
+SEQ_READ(N=2) = (open -> OPEN[N]),
+OPEN[i:1..MAX] = (read -> OPEN[i-1]),
+OPEN[0] = (close -> END).
+
+||CONCAT = (a: SEQ_READ(2) || b:SEQ_READ(3))/{open/a.open,close/b.close,continue/{a.close,b.open}}.
+```
