@@ -17,3 +17,9 @@ COUNT[i:0..4] = (when (i<4) nextDay -> COUNT[i+1]
 				
 				
 ```
+
+```
+SHOPPING = (shop -> cloudy -> {beer,milk} -> SHOPPING
+			|shop -> rainy -> milk-> SHOPPING
+			|shop -> sunny -> beer-> SHOPPING).
+```
