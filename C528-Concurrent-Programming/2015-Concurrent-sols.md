@@ -120,7 +120,6 @@ a:P prefixes each action label in the alphabet of P with a
 
 cii)
 
-*still needs work*
 ```
 const MAX = 2
 VAR = VAR[0],
