@@ -76,7 +76,16 @@ PACKS[i:0..3] = (when i > 1 double_packs -> PACKS[i-2]
 
 a)
 
+The wait method has two purposes:
+
+1. It will tell the currently executing thread go to sleep (not use any cpu).
+2. It will release the lock so other threads can wake up and take the lock.
+
+Whenever a method does something inside a synchronized block, whatever is in the block must wait for the locked object to be released.
+
 bi)
+
+
 
 bii)
 
