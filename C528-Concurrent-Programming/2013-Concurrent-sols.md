@@ -58,5 +58,19 @@ SURF = (surf -> SURF
 ```
 
 ### 1c
+♦  Serially reusable resources:
+the processes involved share resources which they use under mutual
+exclusion.
+
+♦  Incremental acquisition:
+processes hold on to resources already allocated to them while waiting
+to acquire additional resources.
+
+♦  No pre-emption:
+once acquired by a process, resources cannot be pre-empted (forcibly
+withdrawn) but are only released voluntarily.
+
+♦  Wait-for cycle:
+a circular chain (or cycle) of processes exists such that each process holds a resource which its successor in the cycle is waiting to acquire.
 
 
