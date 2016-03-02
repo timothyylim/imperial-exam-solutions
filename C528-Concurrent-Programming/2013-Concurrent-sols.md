@@ -74,3 +74,14 @@ withdrawn) but are only released voluntarily.
 a circular chain (or cycle) of processes exists such that each process holds a resource which its successor in the cycle is waiting to acquire.
 
 
+### 2ai)
+
+```
+property SAFE = (lock -> LOCKED[0]),
+
+LOCKED[i:0..1] = (when (i<1) correct_code -> unlock -> SAFE
+				| when (i<1) incorrect_code -> LOCKED[i+1]
+				| when (i==1) alert -> STOP).
+```
+
+
