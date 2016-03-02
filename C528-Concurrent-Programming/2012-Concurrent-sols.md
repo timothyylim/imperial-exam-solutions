@@ -1,3 +1,8 @@
+# Section A
+### 1a)
+
+
+
 ```
 MILK=COUNT[4],
 COUNT[i:0..4] = (when(i>1) glass -> COUNT[i-2]
