@@ -58,7 +58,13 @@ COUNT[i:1..5] = (when i==2 win -> STOP).
  ```
  
  biii)
- 
+ ```
+TEA = PACKS[3],
+PACKS[i:0..3] = (when i > 1 double_packs -> PACKS[i-2]
+				|when i > 0 pack -> PACKS[i-1]
+				|when i == 0 buy -> PACKS[3]
+				|packs[i] -> PACKS[i]).
+ ```
  
  c)
  
