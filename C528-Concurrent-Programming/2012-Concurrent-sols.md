@@ -1,7 +1,9 @@
 # Section A
 ### 1a)
 
+Alphabet extension is used to extend the implicit alphabet of a process to include actions that are not used by it. It is used to prevent unwanted free actions from occurring when composing it with other processes. Since, after alphabet extension, two processes might share an action that does not occur in one of them, that action will not occur in the composite process either.
 
+### bi)
 
 ```
 MILK=COUNT[4],
@@ -12,6 +14,7 @@ COUNT[i:0..4] = (when(i>1) glass -> COUNT[i-2]
 				
 ```
 
+### bii)
 
 ```
 RANCID = COUNT[0],
@@ -22,6 +25,8 @@ COUNT[i:0..4] = (when (i<4) nextDay -> COUNT[i+1]
 				
 				
 ```
+
+### biii)
 
 ```
 SHOPPING = (shop -> cloudy -> {beer,milk} -> SHOPPING
@@ -44,3 +49,49 @@ SPACED_OUT = STOP + {outOfMemory}.
 
 ||TOGETHER = (SPACE_HOG||SPACED_OUT).
 ```
+### 2ai)
+
+### ii)
+
+### iii)
+
+### 2b)
+
+Simply put, it depends on why your threads are waiting to be notified. Do you want to tell one of the waiting threads that something happened, or do you want to tell all of them at the same time?
+
+In some cases, all waiting threads can take useful action once the wait finishes. An example would be a set of threads waiting for a certain task to finish; once the task has finished, all waiting threads can continue with their business. In such a case you would use notifyAll() to wake up all waiting threads at the same time.
+
+Another case, for example mutually exclusive locking, only one of the waiting threads can do something useful after being notified (in this case acquire the lock). In such a case, you would rather use notify(). Properly implemented, you could use notifyAll() in this situation as well, but you would unnecessarily wake threads that can't do anything anyway.
+
+http://stackoverflow.com/questions/37026/java-notify-vs-notifyall-all-over-again
+
+```
+Consider the following piece of code that's executed from multiple parallel threads:
+
+synchronized(this) {
+    while(busy) // a loop is necessary here
+        wait();
+    busy = true;
+}
+...
+synchronized(this) {
+    busy = false;
+    notifyAll();
+}
+
+```
+
+It can be made more efficient by using notify():
+```
+synchronized(this) {
+    if(busy)   // replaced the loop with a condition which is evaluated only once
+        wait();
+    busy = true;
+}
+...
+synchronized(this) {
+    busy = false;
+    notify();
+}
+```
+
