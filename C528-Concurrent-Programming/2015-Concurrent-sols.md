@@ -1,7 +1,5 @@
 # Section A
-### 1
-
-a)
+### 1a)
 
 By asynchronous we mean that processes proceed at arbitrary relative speeds and consequently their actions can be arbitrarily interleaved.
 
@@ -51,13 +49,13 @@ CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
 
  ```
  
- bii)
+### bii)
  ```
 CARD = (count[i:1..5] -> COUNT[i]),
 COUNT[i:1..5] = (when i==2 win -> STOP).
  ```
  
- biii)
+###  biii)
  ```
 TEA = PACKS[3],
 PACKS[i:0..3] = (when i > 1 double_packs -> PACKS[i-2]
@@ -66,15 +64,13 @@ PACKS[i:0..3] = (when i > 1 double_packs -> PACKS[i-2]
 				|packs[i] -> PACKS[i]).
  ```
  
- c)
+ ### c)
  
  ![alt text](images/2015-1dii.png "Logo Title Text 1")
  ![alt text](images/2015-1di.png "Logo Title Text 1")
  
  
-### 2
-
-a)
+### 2a)
 
 The wait method has two purposes:
 
@@ -83,11 +79,11 @@ The wait method has two purposes:
 
 Whenever a method does something inside a synchronized block, whatever is in the block must wait for the locked object to be released.
 
-bi)
+### bi)
 
 ![alt text](images/2015-2bi.png "Something")
 
-bii)
+### bii)
 
 Let's start with just const MAX = 2 to make things a bit more manageable:
 ```
@@ -107,7 +103,7 @@ POINTS[i:0 .. MAX] =
  
  ![alt text](images/2015-2bii-2.png "Logo Title Text 1")
 
-ci)
+### ci)
 
 Process sharing ({a1,a2,...,an}::P):
 
@@ -118,7 +114,7 @@ Process labelling (a:P)
 
 a:P prefixes each action label in the alphabet of P with a
 
-cii)
+### cii)
 
 ```
 const MAX = 2
