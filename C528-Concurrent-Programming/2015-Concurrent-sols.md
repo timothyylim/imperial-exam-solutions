@@ -85,7 +85,7 @@ Whenever a method does something inside a synchronized block, whatever is in the
 
 bi)
 
-
+![alt text](images/2015-2bi.png "Something")
 
 bii)
 
