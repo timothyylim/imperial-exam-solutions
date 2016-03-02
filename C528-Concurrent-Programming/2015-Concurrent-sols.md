@@ -5,7 +5,7 @@ a)
 
 By asynchronous we mean that processes proceed at arbitrary relative speeds and consequently their actions can be arbitrarily interleaved.
 
--- Extended answer:
+-- Extended answer (just for general knowledge):
 
 When you execute something synchronously, you wait for it to finish before moving on to another task. When you execute something asynchronously, you can move on to another task before it finishes.
 
@@ -52,23 +52,18 @@ CYCLE[v:T] = (when(v<N)in[v] ->CYCLE[v+1]
  ```
  
  bii)
- 
- *To be improved*
  ```
- BUFF = (in[i:0..3]-> (when (i ==2) win -> STOP
-                     |when(i!=2) ran[i] -> STOP)).
-
+CARD = (count[i:1..5] -> COUNT[i]),
+COUNT[i:1..5] = (when i==2 win -> STOP).
  ```
  
  biii)
  
- *to add*
- 
  
  c)
  
- ![alt text](2015-1dii.png "Logo Title Text 1")
- ![alt text](2015-1di.png "Logo Title Text 1")
+ ![alt text](images/2015-1dii.png "Logo Title Text 1")
+ ![alt text](images/2015-1di.png "Logo Title Text 1")
  
  
 ### 2
