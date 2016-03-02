@@ -114,7 +114,7 @@ Process sharing ({a1,a2,...,an}::P):
 {a1,a2,...,an}::P could be modelled as a:P and b:P but that would mean that they would be two distinct 
 actions where in fact they are the same, so we have to use the notation: {a1,a2,...,an}::P
 
-Process labellign (a:P)
+Process labelling (a:P)
 
 a:P prefixes each action label in the alphabet of P with a
 
@@ -129,7 +129,7 @@ VAR[i:0..MAX] = (read[i] -> VAR[i]
 
 THREAD(N=1) = (write[N]->read[i:0..MAX]->STOP)+{write[i:0..MAX]}.
 
-||PARALLEL = (VAR||THREAD)
+||PARALLEL = ( a:THREAD(0) || b:THREAD(1) || c:THREAD(2) || {a, b, c}::VAR)/{read/{a.read, b.read, c.read}}.
 ```
 
 
