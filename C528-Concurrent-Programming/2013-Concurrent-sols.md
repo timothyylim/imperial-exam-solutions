@@ -121,3 +121,14 @@ SCORE[n:0..MAX] = (when (n<MAX) shoot -> score -> SCORE[n+1]
 
 ||SHOOTOUT = (team1:TEAM || team2:TEAM || PENALTIES)@{team1.shoot,team2.shoot}.
 ```
+
+### 2b)
+
+```
+READING = (read -> READING).
+WORKING = (program -> WORKING
+		|think -> WORKING).
+
+||HOLIDAY = (READING||WORKING).
+```
+
