@@ -90,3 +90,6 @@ Whenever the condition changes, notify() is called to wake up the current thread
 
 
 ### ii)
+
+Yes - when the first thread calls wait, it releases the monitor lock, so the second thread is able to acquire it, enter the function, print the message and get blocked on wait().
+
