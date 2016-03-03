@@ -93,3 +93,18 @@ METER = (enter_new_reading -> PAYMENT),
 PAYMENT = (pay -> finish -> ELECTRICITY_BILL).
 ```
 
+### iii)
+```
+const MAX = 3
+
+PATIENT = (request -> ({receive, contact}-> PATIENT)).
+
+PHARMACIST(N=0) = P[N],
+P[n:0..3] = (request ->
+			(when (n<MAX) refill[n+1] -> send -> P[n+1]
+			|when(n>=MAX) assess -> contact -> STOP
+			|when (n>=MAX) assess -> send -> PHARMACIST)).
+
+||PRESCRIBE = (PATIENT || PHARMACIST(0))/{send/receive}.
+```
+
