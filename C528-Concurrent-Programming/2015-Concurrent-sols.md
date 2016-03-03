@@ -127,5 +127,67 @@ THREAD(N=1) = (write[N]->read[i:0..MAX]->STOP)+{write[i:0..MAX]}.
 ||PARALLEL = ( a:THREAD(0) || b:THREAD(1) || c:THREAD(2) || {a, b, c}::VAR)/{read/{a.read, b.read, c.read}}.
 ```
 
+### 3a
+
+```
+Trace to terminal set of states:
+	phil.0.sitdown
+	phil.0.right.get
+	phil.1.sitdown
+	phil.1.right.get
+	phil.2.sitdown
+	phil.2.right.get
+	phil.3.sitdown
+	phil.3.right.get
+	phil.4.sitdown
+	phil.4.right.get
+```
+
+### bi
+```
+
+WAITER(S=4) = Seated[0],
+  Seated[0] = ( sitdown -> Seated[1]),
+  Seated[i:1..S-1] = ( sitdown -> Seated[i+1]
+                          | arise -> Seated[i-1]),
+  Seated[S] = (arise -> Seated[S-1]).
+
+||SITTING(N=5) = ({phil[i:0..N-1]}::WAITER(N-1)).
+
+PHIL = (sitdown->right.get->left.get
+          ->eat->left.put->right.put
+          ->arise->PHIL).
+
+FORK = (get -> put -> FORK).
+
+||DINERS(N=5)= 
+   forall [i:0..N-1] 
+   (phil[i]:PHIL 
+   ||{phil[i].left,phil[((i-1)+N)%N].right}::FORK
+   || SITTING(N)).
+
+```
+
+### ii)
+
+
+
+### iii)
+
+```
+PHIL(L=0, R=1) = (sitdown->right.get->
+		  (left.get
+          ->eat->left.put->right.put
+          ->arise->PHIL
+		  |yield -> right.put -> arise -> PHIL)).
+
+FORK = (get -> put -> FORK).
+
+||DINERS(N=5)= 
+   forall [i:0..N-1] 
+   (phil[i]:PHIL 
+   ||{phil[i].left,phil[((i-1)+N)%N].right}::FORK).
+
+```
 
 
