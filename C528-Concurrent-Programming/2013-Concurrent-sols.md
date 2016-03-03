@@ -84,4 +84,12 @@ LOCKED[i:0..1] = (when (i<1) correct_code -> unlock -> SAFE
 				| when (i==1) alert -> STOP).
 ```
 
+### ii)
+```
+ELECTRICITY_BILL = (enter_account_details -> OPTIONS),
+OPTIONS = (enter_meter_reading -> METER
+		  |make_payment -> PAYMENT),
+METER = (enter_new_reading -> PAYMENT),
+PAYMENT = (pay -> finish -> ELECTRICITY_BILL).
+```
 
