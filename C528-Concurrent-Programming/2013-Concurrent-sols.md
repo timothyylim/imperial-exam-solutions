@@ -133,3 +133,5 @@ WORKING = (program -> WORKING
 ```
 
 ### 2c)
+
+Only the monitor lock of the object on which wait() is called is released, any other monitor locks held by the current thread are unaffected.
