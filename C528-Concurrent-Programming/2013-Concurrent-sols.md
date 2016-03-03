@@ -132,3 +132,4 @@ WORKING = (program -> WORKING
 ||HOLIDAY = (READING||WORKING).
 ```
 
+### 2c)
