@@ -108,3 +108,16 @@ P[n:0..3] = (request ->
 ||PRESCRIBE = (PATIENT || PHARMACIST(0))/{send/receive}.
 ```
 
+### iv)
+```
+const MAX = 3
+PENALTIES = TRIES[0],
+TRIES[i:0..MAX] = (when(i<MAX) team1.shoot -> team2.shoot -> TRIES[i+1]).
+
+TEAM(S=0) = SCORE[S],
+SCORE[n:0..MAX] = (when (n<MAX) shoot -> score -> SCORE[n+1]
+				  |when(n<MAX) shoot -> miss -> SCORE[n]
+				  |end -> TEAM).
+
+||SHOOTOUT = (team1:TEAM || team2:TEAM || PENALTIES)@{team1.shoot,team2.shoot}.
+```
