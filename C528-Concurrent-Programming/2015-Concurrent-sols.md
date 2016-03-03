@@ -168,11 +168,11 @@ FORK = (get -> put -> FORK).
 
 ```
 
-### ii)
+### bii)
 
 
 
-### iii)
+### biii)
 
 ```
 PHIL(L=0, R=1) = (sitdown->right.get->
@@ -190,4 +190,11 @@ FORK = (get -> put -> FORK).
 
 ```
 
+### ci)
+
+No progress violations were caused.
+
+### cii)
+
+No progress violations. Maybe I'm missing something here?
 
