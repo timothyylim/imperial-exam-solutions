@@ -93,3 +93,12 @@ Whenever the condition changes, notify() is called to wake up the current thread
 
 Yes - when the first thread calls wait, it releases the monitor lock, so the second thread is able to acquire it, enter the function, print the message and get blocked on wait().
 
+### 2ai)
+
+const MAX = 2
+
+```
+LIBRARY_ACC = COUNT[0],
+COUNT[i:0..MAX] = (when i<MAX borrow -> COUNT[i+1]
+				|when i>0 return -> COUNT[i-1]).
+```
