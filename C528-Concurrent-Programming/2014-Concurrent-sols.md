@@ -95,10 +95,16 @@ Yes - when the first thread calls wait, it releases the monitor lock, so the sec
 
 ### 2ai)
 
+```
 const MAX = 2
 
-```
+
 LIBRARY_ACC = COUNT[0],
 COUNT[i:0..MAX] = (when i<MAX borrow -> COUNT[i+1]
-				|when i>0 return -> COUNT[i-1]).
+				  |when i>0 return[j:1..i] -> COUNT[i-j]
+				  |when i<MAX freeze -> FREEZE[i]),
+
+FREEZE[i:0..MAX] = (when i>0 return[j:1..i] -> COUNT[i-j]
+				   |when i>0 unfreeze -> COUNT[i]).
 ```
+
