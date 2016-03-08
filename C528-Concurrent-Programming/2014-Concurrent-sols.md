@@ -108,3 +108,21 @@ FREEZE[i:0..MAX] = (when i>0 return[j:1..i] -> COUNT[i-j]
 				   |when i>0 unfreeze -> COUNT[i]).
 ```
 
+### 3a
+
+“A safety property asserts that nothing bad happens during execution. A liveness property asserts that something good eventually happens. Another way of putting this is that safety is concerned with a program not reaching a bad state and that liveness is concerned with a program eventually reaching a good state.”
+
+### b
+
+```
+const M = 5
+const MAX = 7 
+
+set Arsenal = {arsenal[1..MAX]}
+set Chelsea = {chelsea[1..MAX]}
+
+SUPPORTER = (enter -> dine -> exit -> SUPPORTER).
+DININGROOM = 
+
+||PUB = (Chelsea:SUPPORTER || ARSENAL:SUPPORTER|| DININGROOM).
+```
