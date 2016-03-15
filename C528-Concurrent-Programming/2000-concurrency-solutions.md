@@ -61,3 +61,43 @@ INSOMNIA = STOP + {sleep}.
 ||SEATTLE = (PERSON || INSOMNIA).
 ```
 
+### 2
+
+b.
+
+```
+BUFF = COUNT[0],
+COUNT[i:0..8] = (when i<8 put[i] -> COUNT[i+1]
+		|when i == 8 get[i] -> COUNT[0]).
+```
+
+c.
+
+```
+class Buffer {
+
+	public static int N = 8;
+	private char[] arr;
+	
+	public void put(char ch) throws InterruptedException{
+		while (arr.length() == N) wait();
+		arr.append(ch);
+		notifyAll();
+	}
+	
+	public char[] get() throws Interrupted Exception{
+		while (arr.length < N) wait();
+		return arr;
+		notifyAll();
+	}
+	
+```
+
+d.
+
+```
+BUFF = COUNT[0],
+COUNT[i:0..8] = (when i<8 put[i] -> COUNT[i+1]
+		|when i == 8 get[i] -> COUNT[0]
+		|when i>0 getone[1] -> COUNT[i-1]).
+```
