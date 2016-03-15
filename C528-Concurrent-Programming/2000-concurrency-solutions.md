@@ -79,13 +79,13 @@ class Buffer {
 	public static int N = 8;
 	private char[] arr;
 	
-	public void put(char ch) throws InterruptedException{
+	public synchronized void put(char ch) throws InterruptedException{
 		while (arr.length() == N) wait();
 		arr.append(ch);
 		notifyAll();
 	}
 	
-	public char[] get() throws Interrupted Exception{
+	public synchronized char[] get() throws Interrupted Exception{
 		while (arr.length < N) wait();
 		return arr;
 		notifyAll();
