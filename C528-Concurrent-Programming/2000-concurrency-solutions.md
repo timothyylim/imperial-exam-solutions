@@ -87,7 +87,9 @@ class Buffer {
 	
 	public synchronized char[] get() throws Interrupted Exception{
 		while (arr.length < N) wait();
-		return arr;
+		char[] arr_out = arr;
+		Arrays.fill(arr, null);
+		return arr_out;
 		notifyAll();
 	}
 	
