@@ -95,3 +95,35 @@ synchronized(this) {
 }
 ```
 
+### 4
+
+a.
+
+```
+public synchronized void aquireWrite() throws InterruptedException{
+	while (readers > 0 || writing) wait();
+	writer = true;
+}
+
+public synchronized void aquireRead() throws InterruptedException{
+	while (writer) wait();
+	readers++;
+}
+
+// how to share lock?
+```
+
+b.
+
+```
+public synchronized void releaseRead(){
+	readers--;
+	if(readers ==0) notify();
+}
+
+public synchronized void releaseWrite(){
+	write = false;
+	notifyAll();
+}
+```
+
