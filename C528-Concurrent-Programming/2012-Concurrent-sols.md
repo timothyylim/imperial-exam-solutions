@@ -95,6 +95,55 @@ synchronized(this) {
 }
 ```
 
+### 3
+
+a.
+
+```
+BUFF = COUNT[0],
+COUNT[i:0..8] = (when i>0 get -> BUFF[i-1],
+		|when i<8 put -> BUFF[i+1],
+		|when 
+```
+
+b.
+
+```
+public class MyBuffer implements Buffer {
+	private char[] chars;
+	private int curr = 0;
+	private int used = 0;
+
+	public synchronized void put(char ch) throws InterruptedException {
+		while (used == N) wait();
+		used++;
+		chars[curr] = ch;
+		curr = (curr + 1) % N;
+		notifyAll();
+	}
+
+	public synchronized char swap(char[] ch, int s) {
+		while (used + s >= N || s >= used) wait();
+		char[] ans;
+		for (int i = 0; i < s; i++) ans[i] = get();
+		for (int i = 0; i < s; i++) put(ch[i]);
+		return ans;
+	}
+
+	public synchronized char get() throws InterruptedError {
+		while (used == 0) wait();
+		used--;
+		char ans = chars[curr];
+		curr (curr + N - 1) % N;
+		return ans;
+	}
+}
+```
+
+c.
+
+
+
 ### 4
 
 a.
@@ -126,4 +175,6 @@ public synchronized void releaseWrite(){
 	notifyAll();
 }
 ```
+
+
 
