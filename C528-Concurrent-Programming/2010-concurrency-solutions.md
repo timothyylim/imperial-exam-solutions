@@ -104,17 +104,63 @@ COUNT[i:TIME] = (when i < MAX-1 t[i] -> COUNT[i+1]
 c.i.
 
 ```
+const MAX = 59
+range TIME = 0..MAX-1
+TIMER = COUNT[0],
+COUNT[i:TIME] = (when i < MAX-1 t[i] -> COUNT[i+1] 
+                |when i == MAX-1 t[i] -> COUNT[0]).
 
+PROCESS(I=2) = (at[I] -> run -> STOP) + {at[TIME]}.
+
+||SYS = ({a,b}::TIMER || a:PROCESS(2) || b:PROCESS(7))
+        /{tick/{a,b}.tick}
+        <<{{a,b}.at[t:TIME]}
+```
+
+```
+	a.t.0
+	a.t.1
+	a.t.2
+	a.t.3
+	a.t.4
+	a.t.5
+	a.t.6
+	a.t.7
+	a.t.8
+	a.t.9
+	a.t.10
 ```
 
 c.ii.
 
 ```
-
+To include the range??
 ```
 
 c.iii.
 
-```
+
+d. 
 
 ```
+class Timer{
+
+	final int Max = 60
+	int current = 0;
+	
+	public void synchronized tick()
+		throws InterruptException{
+			while (current == Max) wait();
+			current ++;
+		}
+		
+	public void synchronized reset()
+		throws InterruptException{
+		
+		while (current < Max) wait();
+		current = 0;
+	}
+}
+```
+
+
