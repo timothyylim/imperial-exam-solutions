@@ -251,3 +251,25 @@ property SECOND = (disable[u] -> login[u]).
 
 c.i.
 
+“Once a thread has acquired the lock on an object by executing a synchronized method, that method may itself call another synchronized method from the same object (directly or indirectly) without having to wait to acquire the lock again. The lock counts how many times it has been acquired by the same thread and does not allow another thread to access the object until there has been an equivalent number of releases.”
+
+Excerpt From: byJeff MageeandJeff Kramer. “Concurrency&#8212;State Models &amp; Java Programs, 2nd Edition.” iBooks. 
+
+c.ii.
+
+```
+const N = 3
+range P = 1..2
+range C = 0..N
+
+set VarAlpha = {value.{acquire[P],release[P]}
+
+VAR = VAR[0],
+VAR[p:P] = (acquire[p:P]->VAR[p] | release[p:P]->VAR[p]).
+
+LOCK = (acquire->release->LOCK).
+
+||LOCKVAR = (LOCK || VAR).
+
+```
+
