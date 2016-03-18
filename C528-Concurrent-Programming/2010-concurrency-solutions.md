@@ -85,3 +85,36 @@ PROCESS(N=1) = (write[N]->read[i:0..MAX] -> STOP) + {write[i:0..MAX]}.
              ||{a,b}::VAR)/{read/{a.read,b.read}}.
 ```
 
+### 2
+
+a.
+
+The alphabet of a process is the set of actions in which it can engage.
+
+b.
+
+```
+const MAX = 59
+range TIME = 0..MAX-1
+TIMER = COUNT[0],
+COUNT[i:TIME] = (when i < MAX-1 t[i] -> COUNT[i+1] 
+                |when i == MAX-1 t[i] -> COUNT[0]).
+```
+
+c.i.
+
+```
+
+```
+
+c.ii.
+
+```
+
+```
+
+c.iii.
+
+```
+
+```
