@@ -34,3 +34,12 @@ MILES[i:0 .. MAX] =
     | mileage[i] -> MILES[i]).
 ```
 
+b.iv.
+
+```
+CABIN = (buyEconomy -> (requestUpgrade -> flyEconomy-> CABIN 
+                       |requestUpgrade -> flyBusiness -> CABIN)).
+```
+
+c.i.
+
