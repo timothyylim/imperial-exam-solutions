@@ -163,4 +163,91 @@ class Timer{
 }
 ```
 
+### 3
+
+a. 
+
+class MyThread extends Thread { … }
+Thread a = new MyThread();
+
+Manages a single thread; threads can be created and deleted dynamically.
+
+Class MyRun implements Runnable { … }
+Thread b = new Thread(new MyRun());
+
+Java does not allow multiple inheritance, so sometimes it’s better to implement interface Runnable instead.
+
+b.i.
+
+```
+|| BATCH = ({a,b,c}::JOB(3)||{d,e}::JOB(1)||{a,b,c,d,e,}::ALLOC)
+```
+
+b.ii.
+
+```
+progress JOB(1) = {JOB(1).get}
+progress JOB(3) = {JOB(3).get} 
+```
+
+b.iii.
+
+```
+
+```
+
+b.iv.
+
+```
+
+```
+
+c.
+
+```
+// Still need to add Job
+
+class Allocator{
+
+	private int available;
+	
+	public void build(int NB){
+		available = NB;
+	}
+	
+	synchronized public void get(int n)
+		throws InterruptedException{
+		
+		while (n > avaliable) wait();
+		avaliable -= n;
+	}
+	
+	synchronized public void put(int n)
+		throws InterruptedException{
+		available += n;
+		notifyAll();
+	}
+}
+```
+
+### 4 
+
+a.
+
+Liveness and Progress properties are concerned with the program eventually reaching a good state.
+
+A progress property is a subset of the Liveness properties and it asserts that whatever state a system is in, it is always the case that a specified action will eventually be executed.
+
+b.
+```
+
+property FIRST = FIRST[0],
+FIRST[i:0 .. 4] = 
+    ( when (i< 4) login[j:1..4-i] -> FIRST[j+i]
+    | when (i>1) logout[j:1..i] -> FIRST[i-j]).
+    
+property SECOND = (disable[u] -> login[u]).
+```
+
+c.i.
 
