@@ -104,73 +104,77 @@ The alphabet of a process is the set of actions in which it can engage.
 b.
 
 ```
-const MAX = 10
-range TIME = 0..MAX-1
-
-TIMER = TIMER[0],
-TIMER[i:TIME] = (when i < MAX-1 tick[i] -> TIMER[i+1] 
-                |when i == MAX-1 tick[i] -> TIMER[0]
-				|when i < MAX -1 at[i] -> TIMER[i]).
-```
-
-c.i.
-
-```
 const MAX = 59
 range TIME = 0..MAX-1
 TIMER = COUNT[0],
-COUNT[i:TIME] = (when i < MAX-1 t[i] -> COUNT[i+1] 
-                |when i == MAX-1 t[i] -> COUNT[0]).
+COUNT[i:TIME] = (when i < MAX-1 tick[i] -> COUNT[i+1] 
+                |when i == MAX-1 tick[i] -> COUNT[0]
+				|at[i] -> COUNT[i]).
 
 PROCESS(I=2) = (at[I] -> run -> STOP) + {at[TIME]}.
 
 ||SYS = ({a,b}::TIMER || a:PROCESS(2) || b:PROCESS(7))
         /{tick/{a,b}.tick}
-        <<{{a,b}.at[t:TIME]}
+        <<{{a,b}.at[t:TIME]}.
+```
+
+c.i.
+
 ```
 
 ```
-	a.t.0
-	a.t.1
-	a.t.2
-	a.t.3
-	a.t.4
-	a.t.5
-	a.t.6
-	a.t.7
-	a.t.8
-	a.t.9
-	a.t.10
+
+```
+ tick.0
+ tick.1
+ a.at.2
+ tick.2
+ tick.3
+ tick.4
+ tick.5
+ tick.6
+ b.at.7
+ tick.7
+ tick.8
+ tick.9
+ tick.10
+
 ```
 
 c.ii.
 
-```
-To include the range??
-```
+The alphabet extension is required in the definition of process to synchronize the actions of PROCESS and TIMER and to prevent the independent execution of 'at' by TIMER.
 
 c.iii.
 
+It will only be able to do {a,b}at[0] since {a,b} is always higher priority and always be avaliable. 
+
+```
+ a.at.0
+ a.at.0
+ b.at.0
+ b.at.0
+```
 
 d. 
 
 ```
 class Timer{
 
-	final int Max = 60
-	int current = 0;
+	private final int Max = 59;
+	private int seconds = 0;
 	
-	public void synchronized tick()
-		throws InterruptException{
-			while (current == Max) wait();
-			current ++;
-		}
+	public synchronized void tick(){
+		seconds = seconds +1 % Max;
+		notifyAll();
+	}
+	
+	public synchronized void at(int t)
+		throws InterruptedException {
 		
-	public void synchronized reset()
-		throws InterruptException{
+		while (seconds != t) wait();
 		
-		while (current < Max) wait();
-		current = 0;
+		//Do some shit
 	}
 }
 ```
