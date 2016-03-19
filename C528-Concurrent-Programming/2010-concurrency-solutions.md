@@ -15,7 +15,7 @@ To guarantee n times m states, you would need to have specific identifiers for t
 b.i.
 
 ```
-FLIGHT = (seatBeltSignOff -> OTHER
+property FLIGHT = (seatBeltSignOff -> OTHER
 		  |sit -> FLIGHT),
 OTHER = ({sit,walk}-> OTHER
 		|seatbeltSignOn -> FLIGHT).
