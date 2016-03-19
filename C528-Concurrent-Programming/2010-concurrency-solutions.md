@@ -290,6 +290,10 @@ Liveness and Progress properties are concerned with the program eventually reach
 
 A progress property is a subset of the Liveness properties and it asserts that whatever state a system is in, it is always the case that a specified action will eventually be executed.
 
+ex.
+
+Every terminal set contains every action in the alphabet of the process.
+
 b.
 ```
 
