@@ -294,20 +294,21 @@ ex.
 
 Every terminal set contains every action in the alphabet of the process.
 
-b.
-```
+“progress P = {a1,a2..an} defines a progress property P which asserts that in an infinite execution of a target system, at least one of the actions a1,a2..an will be executed infinitely often.
+”
 
-property FIRST = FIRST[0],
-FIRST[i:0 .. 4] = 
-    ( when (i< 4) login[j:1..4-i] -> FIRST[j+i]
-    | when (i>1) logout[j:1..i] -> FIRST[i-j]).
-    
-property SECOND = (disable[u] -> login[u]).
-```
+Excerpt From: byJeff MageeandJeff Kramer. “Concurrency&#8212;State Models &amp; Java Programs, 2nd Edition.” iBooks. 
+
+
+b.
+
+probably a ch8 thing.
 
 c.i.
 
-“Once a thread has acquired the lock on an object by executing a synchronized method, that method may itself call another synchronized method from the same object (directly or indirectly) without having to wait to acquire the lock again. The lock counts how many times it has been acquired by the same thread and does not allow another thread to access the object until there has been an equivalent number of releases.”
+“Once a thread has acquired the lock on an object by executing a synchronized method, that method may itself call another synchronized method from the same object (directly or indirectly) without having to wait to acquire the lock again. 
+
+The lock counts how many times it has been acquired by the same thread and does not allow another thread to access the object until there has been an equivalent number of releases.”
 
 Excerpt From: byJeff MageeandJeff Kramer. “Concurrency&#8212;State Models &amp; Java Programs, 2nd Edition.” iBooks. 
 
@@ -315,17 +316,12 @@ c.ii.
 
 ```
 const N = 3
-range P = 1..2
-range C = 0..N
+range P = 1..2 //thread identities
+range C = 0..N //counter range for lock
 
-set VarAlpha = {value.{acquire[P],release[P]}
-
-VAR = VAR[0],
-VAR[p:P] = (acquire[p:P]->VAR[p] | release[p:P]->VAR[p]).
-
-LOCK = (acquire->release->LOCK).
-
-||LOCKVAR = (LOCK || VAR).
-
+RECURSIVE_LOCK = (acquire[p:P]->LOCKED[p][0]),
+LOCKED[p:P][c:C] = (when c<N acquire[p] -> LOCKED[p][c+1]
+		   |when c>0 release[p] -> LOCKED[p][c-1]
+		   |when c==0 release[p] -> RECURSIVE_LOCK).
 ```
 
