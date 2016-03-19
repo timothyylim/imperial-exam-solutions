@@ -104,11 +104,13 @@ The alphabet of a process is the set of actions in which it can engage.
 b.
 
 ```
-const MAX = 59
+const MAX = 10
 range TIME = 0..MAX-1
-TIMER = COUNT[0],
-COUNT[i:TIME] = (when i < MAX-1 t[i] -> COUNT[i+1] 
-                |when i == MAX-1 t[i] -> COUNT[0]).
+
+TIMER = TIMER[0],
+TIMER[i:TIME] = (when i < MAX-1 tick[i] -> TIMER[i+1] 
+                |when i == MAX-1 tick[i] -> TIMER[0]
+				|when i < MAX -1 at[i] -> TIMER[i]).
 ```
 
 c.i.
