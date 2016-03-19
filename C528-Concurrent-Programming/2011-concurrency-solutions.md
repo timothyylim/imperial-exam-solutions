@@ -198,5 +198,30 @@ Java does not allow multiple inheritance, so sometimes it’s better to implemen
 b. 
 
 
+```
+class MyClass {
+	private ResourceA a = new Resource();
+	private ResourceB b = new Resource();
+	
+	private Object lockA = new Object();
+	private Object lockB = new Object();
+	
+	public void updateA (int x){
+		synchronized(lockA){
+			a.update(x);
+		}
+	
+	}
+	
+	public void updateB (int y){
+		synchronized(lockB){
+			b.update(y);
+		}
+	
+	}
+}
+
+```
+
 
 
