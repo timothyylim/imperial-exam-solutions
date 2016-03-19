@@ -115,87 +115,7 @@ If you should use notifyAll() but end up using notify() instead, you may not wak
 
 ### 3
 
-a.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TEA_ROBOT = (sugar_please[i:1..3] -> SUGAR[i]),
-SUGAR[i:1..3] = (when i > 1 sugar -> SUGAR[i-1]
-				|when i == 1 sugar -> TEA_ROBOT).
-
-
-### 3
-
 a. 
-
-b.
 
 ```
 ALLOC = OPEN[0],
@@ -261,5 +181,22 @@ wally.saucer.close
 
 // Xavi is waiting to get the saucer but can't because the saucer is closed. Wally is waiting for all the cups to be returned to service the machine but Xavi won't give up his cup without getting a saucer. A modern tragedy.
 ```
+
+
+### 4 
+
+a.
+
+class MyThread extends Thread { … } Thread a = new MyThread();
+
+Manages a single thread; threads can be created and deleted dynamically.
+
+class MyRun implements Runnable { … } Thread b = new Thread(new MyRun());
+
+Java does not allow multiple inheritance, so sometimes it’s better to implement interface Runnable instead.
+
+b. 
+
+
 
 
