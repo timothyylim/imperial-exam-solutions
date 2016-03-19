@@ -194,35 +194,42 @@ Thread b = new Thread(new MyRun());
 Java does not allow multiple inheritance, so sometimes it’s better to implement interface Runnable instead.
 
 b.i.
+```
+const NB = 4 // Max number of allocatable blocks
+set ALL = {{get,put}[1..NB]}
+
+JOB(B=1) = (get[B]->run->put[B]->JOB)+ALL.
+
+ALLOC = ALLOC[NB],
+ALLOC[i:0..NB] = (when (i>0) get[j:1..i] -> ALLOC[i-j] 
+				|put[j:1..NB] -> ALLOC[i+j]).
 
 ```
-|| BATCH = ({a,b,c}::JOB(3)||{d,e}::JOB(1)||{a,b,c,d,e,}::ALLOC)
+
+```
+||BATCH = (small[1..2]:JOB(1)||big[1..3]:JOB(3)||{small[1..2],big[1..3]}::ALLOC).
 ```
 
 b.ii.
 
 ```
-progress JOB(1) = {JOB(1).get}
-progress JOB(3) = {JOB(3).get} 
-```
+progress SMALL = {small[1..3].get[1]}
+progress BIG = {big[1..2].get[3]} 
 
+```
 b.iii.
 
 ```
-
+||BATCH = (small[1..3]:JOB(1)||big[1..2]:JOB(3)||{small[1..3],big[1..2]}::ALLOC)<<(small[1..3].get[1],big[1..2].get[3]).
 ```
 
 b.iv.
 
-```
-
-```
+Property 'BIG' may be violated because only small[1..3].get[1] will be called due to it having a higher priority as specified in iii.
 
 c.
 
 ```
-// Still need to add Job
-
 class Allocator{
 
 	private int available;
@@ -233,15 +240,34 @@ class Allocator{
 	
 	synchronized public void get(int n)
 		throws InterruptedException{
-		
 		while (n > avaliable) wait();
 		avaliable -= n;
 	}
 	
 	synchronized public void put(int n)
-		throws InterruptedException{
 		available += n;
 		notifyAll();
+	}
+}
+
+class Job implments Runnable {
+	
+	Allocator alloc;
+	int size;
+	
+	public Job(int jobsize, Allocator a){
+		alloc = a;
+		size = jobsize;
+	}
+	
+	public void run(){
+		try{
+			alloc.get(size);
+			// Do some shit
+			alloc.put(size);
+		}
+		
+		catch(InterruptedException e){}
 	}
 }
 ```
