@@ -234,8 +234,8 @@ class Allocator{
 
 	private int available;
 	
-	public void build(int NB){
-		available = NB;
+	public Allocator(int a){
+		available = a;
 	}
 	
 	synchronized public void get(int n)
@@ -269,6 +269,16 @@ class Job implments Runnable {
 		
 		catch(InterruptedException e){}
 	}
+}
+
+void build(int NB){
+	Thread S1 = new Thread(new Job(1));
+	Thread S2 = new Thread(new Job(1));
+	Thread S3 = new Thread(new Job(1));
+	Thread S4 = new Thread(new Job(3));
+	Thread S5 = new Thread(new Job(3));
+	
+	Allocator alloc = new Allocator(NB);
 }
 ```
 
