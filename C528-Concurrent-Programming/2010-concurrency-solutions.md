@@ -319,7 +319,7 @@ const N = 3
 range P = 1..2 //thread identities
 range C = 0..N //counter range for lock
 
-RECURSIVE_LOCK = (acquire[p:P]->LOCKED[p][0]),
+RECURSIVE_LOCK = (acquire[p:P]->LOCKED[p][1]),
 LOCKED[p:P][c:C] = (when c<N acquire[p] -> LOCKED[p][c+1]
 		   |when c>0 release[p] -> LOCKED[p][c-1]
 		   |when c==0 release[p] -> RECURSIVE_LOCK).
