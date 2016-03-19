@@ -223,5 +223,12 @@ class MyClass {
 
 ```
 
+d.
+
+“We discuss deadlock in more detail in the next chapter. However, in essence, it means that a system can make no further progress since there are no further actions it can take. The deadlock in the model can be seen in the demonstration version of the program by starting the consumer and letting it block, waiting to get a character from the empty buffer. When the producer is started, it cannot put a character into the buffer. Why? The reason is to do with the use of two levels of synchronization lock: the first gives mutually exclusive access to the buffer monitor and the second gives mutually exclusive access to the semaphores.”
+
+“When the consumer calls get, it acquires the Buffer monitor lock and then acquires the monitor lock for the full semaphore by calling full.down() to check if there is something in the buffer. Since initially the buffer is empty, the call to full.down() blocks the consumer thread (using wait()) and releases the monitor lock for the full semaphore. However, it does not release the monitor lock for Buffer. Consequently, the producer cannot enter the monitor to put a character into the buffer and so no progress can be made by either producer or consumer – hence the deadlock. The situation described above is known as the nested monitor problem.”
+
+Excerpt From: byJeff MageeandJeff Kramer. “Concurrency&#8212;State Models &amp; Java Programs, 2nd Edition.” iBooks. 
 
 
