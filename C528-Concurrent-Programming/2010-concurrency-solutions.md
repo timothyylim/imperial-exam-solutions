@@ -2,6 +2,16 @@
 
 a.
 
+```
+P = (eat-> poop -> vomit -> P).
+Q = (drink-> poop ->  vomit -> Q).
+
+|| CONCURRENT = (m:P||n:Q).
+```
+
+To guarantee n times m states, you would need to have specific identifiers for the process. For example the answer above without the identifiers would only return four states.
+
+
 b.i.
 
 ```
