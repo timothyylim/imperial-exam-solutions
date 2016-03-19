@@ -101,7 +101,22 @@ The difference is that part ii. is defined as a property and therefore will spec
 
 c.i.
 
-notify() and notifyAll() 
+notify() wakes up a single thread that is waiting in this object's waitset.
+
+notifyAll() wakes up all threads that are waiting on this object's waitset.
+
+c.ii.
+
+Use notify() if all your waiting threads are interchangeable (the order they wake up doesn't matter), or if you only ever have one waiting thread. A common example is a thread pool used to execute jobs from a queue--when a job is added, one of threads is notified to wake up, execute the next job and go back to sleep.
+
+Use notifyAll() for other cases where the waiting threads may have different purposes and should be able to run concurrently. An example is a maintenance operation on a shared resource, where multiple threads are waiting for the operation to complete before accessing the resource.
+
+If you should use notifyAll() but end up using notify() instead, you may not wake up the thread that needs to be woken up and thus you would have the possibility of causing deadlock.
+
+### 3
+
+a.
+
 
 
 
