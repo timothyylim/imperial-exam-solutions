@@ -75,8 +75,8 @@ a circular chain (or cycle) of processes exists such that each process holds a r
 property SAFE = (lock -> LOCKED[0]),
 
 LOCKED[i:0..1] = (when (i<1) correct_code -> unlock -> SAFE
-				| when (i<1) incorrect_code -> LOCKED[i+1]
-				| when (i==1) alert -> STOP).
+		| when (i<1) incorrect_code -> LOCKED[i+1]
+		| when (i==1) alert -> STOP).
 ```
 
 ### ii)
