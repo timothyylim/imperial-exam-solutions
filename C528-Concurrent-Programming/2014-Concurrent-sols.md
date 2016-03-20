@@ -17,14 +17,20 @@ COMPILE = (compile -> COMPILED
 COMPILED = (ok -> run-> STOP),
 
 ERR = (error[1] -> fix[1] -> (compile->STOP|error[2]->fix[2]->compile->COMPILED)).
+
+or 
+
+PROGRAM = (write->COMPILE[1]),
+COMPILE[i:1..3] = (compile -> OK
+		|when(i<3) compile -> error[i] -> fix[i] -> COMPILE[i+1]
+		|when(i==3) compile -> ERROR),
+OK = (ok->run->STOP).
 ```
 
 ### iii)
 
 ```
-property SAFE = (wakeup -> eat ->EATEN),
-
-HAPPY = (wakeup -> eat -> EATEN),
+property HAPPY = (wakeup -> eat ->EATEN),
 EATEN = (sleep -> HAPPY
 		|rest-> EATEN
 		|surf->SURF
