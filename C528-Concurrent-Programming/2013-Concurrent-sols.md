@@ -12,11 +12,11 @@ Java does not allow multiple inheritance, so sometimes it’s better to implemen
 ### bi)
 
 ```
-CARD = (pay[i:1..4] -> COUNT[i]),
-COUNT[i:1..4] = (print_ticket[i]->CARD
-				|when i<4 pay[1] -> COUNT[i+1]
-				|when i<3 pay[2] -> COUNT[i+2]
-				|when i<2 pay[3] -> COUNT[i+3]).
+PARKING_METRE = (pay[i:1..4] -> PARKING_METRE[i]),
+PARKING_METRE[i:1..4] = (when i < 4 pay[1] -> PARKING_METRE[i+1]
+						|when i < 3 pay[2] -> PARKING_METRE[i+2]
+						|when i < 2 pay[3] -> PARKING_METRE[i+3]
+						|print_ticket[i] -> PARKING_METRE).
 ```
 
 ### bii)
