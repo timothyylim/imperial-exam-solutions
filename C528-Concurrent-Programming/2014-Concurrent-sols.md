@@ -112,6 +112,16 @@ COUNT[i:0..MAX] = (when i<MAX borrow -> COUNT[i+1]
 
 FREEZE[i:0..MAX] = (when i>0 return[j:1..i] -> COUNT[i-j]
 				   |when i>0 unfreeze -> COUNT[i]).
+				   
+OR
+
+const M = 10
+range B = 0..M
+LIBRARY_ACC = ACC[0][0],
+ACC[i:B][f:0..1] = (when(f==0 && i<M) borrow[i+1] -> ACC[i+1][f]
+			|when(i>0) return[i] -> ACC[i-1][f]
+			|when(f==0) freeze -> ACC[i][1]
+			|when(f==1) unfreeze -> ACC[i][0]).
 ```
 
 ### 3a
