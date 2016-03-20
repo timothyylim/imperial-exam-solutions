@@ -172,30 +172,47 @@ c.
 a.
 
 ```
-public synchronized void aquireWrite() throws InterruptedException{
+public aquireWriterLock() throws InterruptedException{
+
   while (readers > 0 || writing) wait();
-  writer = true;
+  
+  synchronized(lock){
+        writer = true; 
+  }
+  
 }
 
 public synchronized void aquireRead() throws InterruptedException{
+
   while (writer) wait();
-  readers++;
+  
+  synchronized(lock){
+          readers++;
+  }
+  
 }
 
-// how to share lock?
 ```
+
 
 b.
 
 ```
-public synchronized void releaseRead(){
+public void releaseReaderLock(){
   readers--;
   if(readers ==0) notify();
 }
 
-public synchronized void releaseWrite(){
+public synchronized void releaseWriterLock(){
   write = false;
   notifyAll();
 }
 ```
+
+c.
+
+
+
+
+
 
