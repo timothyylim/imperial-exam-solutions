@@ -143,15 +143,18 @@ public class MyBuffer implements Buffer {
             while (used == N) wait();
             used++;
             chars[curr] = ch;
-            curr = (curr + 1) % N;
+            ++curr;
             notifyAll();
         }
 
         public synchronized char swap(char[] ch, int s) throws InterruptedException {
             while (used + s >= N || s >= used) wait();
-            char[] ans;
-            for (int i = 0; i < s; i++) ans[i] = get();
-            for (int i = 0; i < s; i++) put(ch[i]);
+            char[] ans = new char[s];
+            int j = 0;
+            for (int i = curr; i < curr+s; i++) {
+                ans[j] = get(); j++;
+                }
+            notifyAll();
             return ans;
         }
 
@@ -159,7 +162,8 @@ public class MyBuffer implements Buffer {
             while (used == 0) wait();
             used--;
             char ans = chars[curr];
-            curr (curr + N - 1) % N;
+            when (i>0) {--curr};
+            notifyAll();
             return ans;
         }
 }
