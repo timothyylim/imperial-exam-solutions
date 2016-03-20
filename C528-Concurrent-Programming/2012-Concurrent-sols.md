@@ -119,16 +119,13 @@ synchronized(this) {
 a.
 
 ```
-BUFFER(N=8) = SPACE[0],
-SPACE[i:0..8] = (
-    when (i > 0) get -> SPACE[i-1] |
-    when (i < N) put -> SPACE[i+1] |
-    when (i == 4) swap[4] -> SPACE[i] |
-    when (i >= 3 && i <= 5) swap[3] -> SPACE[i] |
-    when (i >= 2 && i <= 6) swap[2] -> SPACE[i] |
-    when (i >= 1 && i <= 7) swap [1] -> SPACE[i] |
-    swap[0] -> SPACE[i]
-).
+const N = 8
+BUFFER = SPACE[0],
+SPACE[i:0..N] = 
+	(swap[s:0..i] -> SPACE[i]
+	|when (i > 0) get -> SPACE[i-1] 
+    |when (i < N) put -> SPACE[i+1] 
+    ). 
 ```
 
 b.
