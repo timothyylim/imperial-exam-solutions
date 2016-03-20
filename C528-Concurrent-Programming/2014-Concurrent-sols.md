@@ -99,7 +99,7 @@ Whenever the condition changes, notify() is called to wake up the current thread
 
 Yes - when the first thread calls wait, it releases the monitor lock, so the second thread is able to acquire it, enter the function, print the message and get blocked on wait().
 
-### 2ai)
+### 2a)
 
 ```
 const MAX = 2
@@ -118,12 +118,26 @@ OR
 const M = 10
 range B = 0..M
 LIBRARY_ACC = ACC[0][0],
-ACC[i:B][f:0..1] = (when(f==0 && i<M) borrow[i+1] -> ACC[i+1][f]
-			|when(i>0) return[i] -> ACC[i-1][f]
+ACC[i:B][f:0..1] = (when(f==0 && i<M) borrow -> ACC[i+1][f]
+			|when(i>0) return -> ACC[i-1][f]
 			|when(f==0) freeze -> ACC[i][1]
 			|when(f==1) unfreeze -> ACC[i][0]).
 ```
 
+### 2ci)
+
+```
+||SYSTEM = (ADMIN || lina:MEMBER ||will:MEMBER || {lina,will}::LIBRARY_ACC)/{freeze/{lina.freeze,will.freeze},unfreeze/{lina.unfreeze,will.unfreeze}}.
+```
+### 2cii)
+```
+property NO_BORROW_WHEN_FROZEN = ({borrow,return}->NO_BORROW_WHEN_FROZEN | freeze->RETURN),
+RETURN = (return -> RETURN | unfreeze -> NO_BORROW_WHEN_FROZEN).
+```
+### 2cii)
+```
+progress ALWAYS_BORROW = {will.borrow,lina.borrow}
+```
 ### 3a
 
 “A safety property asserts that nothing bad happens during execution. A liveness property asserts that something good eventually happens. Another way of putting this is that safety is concerned with a program not reaching a bad state and that liveness is concerned with a program eventually reaching a good state.”
