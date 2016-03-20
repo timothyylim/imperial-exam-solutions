@@ -119,43 +119,49 @@ synchronized(this) {
 a.
 
 ```
-BUFF = COUNT[0],
-COUNT[i:0..8] = (when i>0 get -> BUFF[i-1],
-    |when i<8 put -> BUFF[i+1],
-    |swap[i] -> BUFFER[i]).
+BUFFER(N=8) = SPACE[0],
+SPACE[i:0..8] = (
+    when (i > 0) get -> SPACE[i-1] |
+    when (i < N) put -> SPACE[i+1] |
+    when (i == 4) swap[4] -> SPACE[i] |
+    when (i >= 3 && i <= 5) swap[3] -> SPACE[i] |
+    when (i >= 2 && i <= 6) swap[2] -> SPACE[i] |
+    when (i >= 1 && i <= 7) swap [1] -> SPACE[i] |
+    swap[0] -> SPACE[i]
+).
 ```
 
 b.
 
 ```
 public class MyBuffer implements Buffer {
-  private char[] chars;
-  private int curr = 0;
-  private int used = 0;
+        private char[] chars;
+        private int curr = 0;
+        private int used = 0;
 
-  public synchronized void put(char ch) throws InterruptedException {
-    while (used == N) wait();
-    used++;
-    chars[curr] = ch;
-    curr = (curr + 1) % N;
-    notifyAll();
-  }
+        public synchronized void put(char ch) throws InterruptedException {
+            while (used == N) wait();
+            used++;
+            chars[curr] = ch;
+            curr = (curr + 1) % N;
+            notifyAll();
+        }
 
-  public synchronized char swap(char[] ch, int s) {
-    while (used + s >= N || s >= used) wait();
-    char[] ans;
-    for (int i = 0; i < s; i++) ans[i] = get();
-    for (int i = 0; i < s; i++) put(ch[i]);
-    return ans;
-  }
+        public synchronized char swap(char[] ch, int s) throws InterruptedException {
+            while (used + s >= N || s >= used) wait();
+            char[] ans;
+            for (int i = 0; i < s; i++) ans[i] = get();
+            for (int i = 0; i < s; i++) put(ch[i]);
+            return ans;
+        }
 
-  public synchronized char get() throws InterruptedError {
-    while (used == 0) wait();
-    used--;
-    char ans = chars[curr];
-    curr (curr + N - 1) % N;
-    return ans;
-  }
+        public synchronized char get() throws InterruptedError {
+            while (used == 0) wait();
+            used--;
+            char ans = chars[curr];
+            curr (curr + N - 1) % N;
+            return ans;
+        }
 }
 ```
 
