@@ -130,3 +130,71 @@ WORKING = (program -> WORKING
 ### 2c)
 
 Only the monitor lock of the object on which wait() is called is released, any other monitor locks held by the current thread are unaffected.
+
+
+
+### 3
+
+a. 
+
+```
+MEETING_SCHEDULER = COUNT[0],
+COUNT = (when i < N attend -> COUNT[i+1]
+	|when i > 0 cancel -> COUNT[i-1]
+	|when (i-capacity) >= 0 process[j:1..capacity] -> COUNT[i+j]).
+```
+
+b.
+
+c.
+
+d.
+
+```
+Class meething_scheduler{
+        Private static int capacity =5;
+        Private int[] staff_ids ] {1,2,3,4,5,6,7,8}
+        Private int[] attendance = new int[Capacity]
+        Int coming=0;
+        
+        Public synchronised boolean attend (int id) throws interruptedException{
+            while(coming==5) wait();
+            attendance[coming]=id;
+            Coming++;
+            notifyAll();
+            Return true;
+}
+public synchronised boolean cancel (int id) throws interruptedException{
+    while(coming==0) wait();
+    Private int[] attendence1= new int[Capacity];
+    Int k=0;
+    for(int i=0; i<5;i++){
+        if(attendence[i] !=null){
+            if(attendance[i]!=id){
+    attendence[k]=attendenace[i];
+    K++;
+
+}else{
+    
+}
+
+}
+}
+attendence=Attendence1;
+Coming--;
+notifyAll();
+Return true;
+}
+public synchronised void process(int [] list, int n){
+    while(n+coming>Capacity){wait()}
+    for(int i=0; i<n;i++){
+        Attendence[coming+i] = list[i]
+}
+    Coming=coming - n ;
+notifyAll();
+}
+
+
+
+}
+```
