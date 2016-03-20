@@ -1,18 +1,13 @@
 # Section A
 ### 1a)
 
-1. extends Thread:
+class MyThread extends Thread { … } Thread a = new MyThread();
 
-your thread creates unique object and associate with it
+Manages a single thread; threads can be created and deleted dynamically.
 
-2. implements Runnable:
+class MyRun implements Runnable { … } Thread b = new Thread(new MyRun());
 
-it shares the same object to multiple threads
-
-Another thing to note, since you can extend only one class in Java, if you extends Thread, you can't extend another class. 
-If you choose to implement Runnable, you can extend class then.
-
-http://stackoverflow.com/questions/17311842/why-there-are-two-way-of-using-thread-in-java
+Java does not allow multiple inheritance, so sometimes it’s better to implement interface Runnable instead.
 
 ### bi)
 
