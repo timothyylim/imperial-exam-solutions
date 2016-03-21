@@ -17,6 +17,12 @@ PARKING_METRE[i:1..4] = (when i < 4 pay[1] -> PARKING_METRE[i+1]
 						|when i < 3 pay[2] -> PARKING_METRE[i+2]
 						|when i < 2 pay[3] -> PARKING_METRE[i+3]
 						|print_ticket[i] -> PARKING_METRE).
+						
+OR 
+
+PARKING_METRE = (pay[i:1..4]->LEFT[4-i]),
+LEFT[i:0..3] = (print_ticket[4-i]->PARKING_METRE
+		| when(i>0) pay[j:1..i] -> LEFT[i-j]).
 ```
 
 ### bii)
