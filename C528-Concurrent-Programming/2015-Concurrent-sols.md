@@ -198,3 +198,79 @@ No progress violations were caused.
 
 No progress violations. Maybe I'm missing something here?
 
+
+
+### 4
+
+a.i.
+
+Unitentional interference occurs when concurrent processes have arbitary interleavings when reading/writing to a shared state.
+
+```
+class State{
+
+	private int N = 0;
+	
+	public int increment(){
+		int temp = N;
+		simulate.HWINterrupt();
+		N = temp +1;
+		return N; 
+	}
+	
+}
+
+class myThread extends Thread{
+
+	private State myState;
+	
+	public myThread (State s){
+		myState = s;
+	}
+	
+	public void run(){
+		int N = myState.increment();
+	}
+}
+```
+
+a.ii.
+
+b.
+
+```
+public class myMonitor{
+	private int n;
+	private int N;
+	
+	public myMonitor(int _N){
+		N = _N;
+		n = 0;
+	}
+
+}
+
+public synchronized boolean CheckFirst()
+	throwsInterruptedException{
+	
+	n++;
+	notifylAll();
+	
+	if(n==1){
+		while(n<N) wait();
+		
+		n = 0 //For reusability
+		
+		return true;
+	}
+	else{
+		while(n<N) wait();
+		return false; 
+	}	
+```
+ 
+
+
+
+
+
