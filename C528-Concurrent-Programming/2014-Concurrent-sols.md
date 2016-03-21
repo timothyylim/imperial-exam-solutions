@@ -183,14 +183,60 @@ progress ALWAYS_BORROW = {will.borrow,lina.borrow}
 ### b
 
 ```
-const M = 5
-const MAX = 7 
+const M=5
+const Max = 7
 
-set Arsenal = {arsenal[1..MAX]}
-set Chelsea = {chelsea[1..MAX]}
+set Arsenal ={arsenal[1..Max]}
+set Chelsea = {chelsea[1..Max]}
 
 SUPPORTER = (enter -> dine -> exit -> SUPPORTER).
-DININGROOM = 
 
-||PUB = (Chelsea:SUPPORTER || ARSENAL:SUPPORTER|| DININGROOM).
+DININGROOM = DININGROOM[0][0],
+
+DININGROOM[a:0..Max][c:0..Max] = ( when(c==0 && a < Max) arsenal[1..Max].enter -> DININGROOM[a+1][c]
+				| arsenal[1..Max].exit -> DININGROOM[a-1][c]
+				| when(a==0 && c< Max) chelsea[1..Max].enter -> DININGROOM[a][c+1]
+				| chelsea[1..Max].exit -> DININGROOM[a][c-1]).
+
+||PUB = (Chelsea:SUPPORTER||Arsenal:SUPPORTER||DININGROOM).
 ```
+
+### ci
+
+
+this needs to be improved:
+
+```
+property NOCONFLICT = (arsenal[1..Max].enter -> CONTROL1[1] 
+		      |chelsea[1..Max].enter -> CONTROL2[1]),
+
+CONTROL1[i:0..Max] = (  arsenal[1..Max].enter -> CONTROL1[i+1]
+			|when(i>1) arsenal[1..Max].exit -> CONTROL1[i-1]
+			|when(i==1) arsenal[1..Max].exit  -> NOCONFLICT), 
+
+CONTROL2[i:0..Max] = (  chelsea[1..Max].enter -> CONTROL2[i+1]
+			|when(i>1) chelsea[1..Max].exit -> CONTROL2[i-1]
+			|when(i==1) chelsea[1..Max].exit  -> NOCONFLICT).
+```
+
+### cii
+
+```
+property OVERFLOW = CONTROL[0],
+CONTROL[i:0..Max] = (when(i>0){Arsenal.enter,Chelsea.enter} -> CONTROL[i+1]
+                    |when(i<Max){Arsenal.exit,Chelsea.exit} -> CONTROL[i-1]).
+```
+
+### ciii
+
+```
+progress TURNOVER1 = {arsenal[1..Max].enter}
+progress TURNOVER2 = {chelsea[1..Max].enter}
+```
+
+### d 
+
+“When the consumer calls get, it acquires the Buffer monitor lock and then acquires the monitor lock for the full semaphore by calling full.down() to check if there is something in the buffer. Since initially the buffer is empty, the call to full.down() blocks the consumer thread (using wait()) and releases the monitor lock for the full semaphore. However, it does not release the monitor lock for Buffer. Consequently, the producer cannot enter the monitor to put a character into the buffer and so no progress can be made by either producer or consumer – hence the deadlock. The situation described above is known as the nested monitor problem.”
+
+### 4a
+
