@@ -125,9 +125,26 @@ WORKING = (program -> WORKING
 
 ### 2c)
 
+False. 
+
 Only the monitor lock of the object on which wait() is called is released, any other monitor locks held by the current thread are unaffected.
 
+Let's say you have the following method:
 
+```
+public synchronized void put()
+	throws InterrutedException{
+	
+		while (current == MAX) wait();
+	
+		current++;
+}
+
+```
+
+So if wait() is called on an object, only that object's lock is released i.e. it can't proceed. 
+
+Other threads are allowed to proceed to increment current.
 
 ### 3
 
