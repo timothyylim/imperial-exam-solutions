@@ -161,7 +161,7 @@ Register[i:0..Capacity] = (when(i<Capacity) attend[1..Max_id] -> Register[i+1]
 
 b.
 ```
-progress CanRegister = {attend[1..Max_id]}
+progress CanRegister[i:0..Max_id] = {attend[1]}
 ```
 c.
 question says "it is easier to provide a property for each staff member"
