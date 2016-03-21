@@ -240,3 +240,78 @@ progress TURNOVER2 = {chelsea[1..Max].enter}
 
 ### 4a
 
+
+### bi
+
+```
+const MAX = 4
+BUFFER = BUFFER[0],
+BUFFER[i:0..MAX] = (when i < MAX put -> BUFFER[i+1]
+				   |when i > 0 get -> BUFFER[i-1]
+				   |put_all[p:0..MAX-i] -> BUFFER[i+p])
+                   |get_all -> BUFFER).
+
+```
+
+### bii
+
+```
+const MAX = 4
+BUFFER = BUFFER[0],
+BUFFER[i:0..MAX] = (when i < MAX put -> BUFFER[i+1]
+				   |when i > 0 get -> BUFFER[i-1]
+				   |put_all[p:0..MAX-i] -> BUFFER[i+p])
+                   |get_all -> BUFFER).
+
+``` 
+
+### biii
+
+```
+Class safeBuffer extend Buffer {
+Int space = 0;
+Int Max = 8;
+
+Int[] buffer = new int[Max];
+
+Public synchronised void put(char ch) throw InterruptedException{
+	while(space==Max) wait();
+	Buffer[space] = ch;
+	space++;
+	NotifyAll();
+}
+Public synchronised void get() throw InterruptedException{
+	while(space==0) wait();
+	char ch = buffer[space-1];
+	buffer[space-1] = null;
+	space--;
+	notifyAll();
+	return ch;
+}
+Public synchronised void putall ( char[] ch ) throws InterruptedException{
+	Int j = ch.length();
+	While (space+j>Max) wait();
+	for(int i =0;i<j;i++){
+		Buffer[space+i] = ch[i];
+}
+space= j+space;
+notifyAll();
+}
+
+Public synchronised void getAll() throw InterruptedException{
+Int [] temp =  new int[space]
+if(space==0 ){
+Return temp
+}else{
+
+for(int i = 0; i=<space:i++){
+			temp[i]=space[i]
+			Space[i] = null;
+}
+Space =0;
+Return temp;
+}
+}
+}
+```
+
