@@ -114,6 +114,41 @@ FROZEN[i:B] = (freeze -> FROZEN[i]
 			  |when i > 0 return -> FROZEN[i-1]).
 ```
 
+### 2b)
+
+```
+class Library{
+
+	int final MAX = 10;
+	int current = 0;
+	boolean frozen = false;
+	
+	public synchronized void borrow()
+		throws InterruptedException{
+			while (current == MAX || frozen) wait();
+			current++;
+			notifyAll();
+		}
+
+	public synchronized void return()
+		throws InterruptedException{
+			while (current == 0) wait();
+			current--;
+			notifyAll();
+		}
+		
+	public synchronized void freeze(){
+		freeze = true;
+		notifyAll();
+	}
+		
+	public synchronized void unfreeze()
+		freeze = false;
+		notifyAll()
+	}
+}
+```
+
 ### 2ci)
 
 ```
