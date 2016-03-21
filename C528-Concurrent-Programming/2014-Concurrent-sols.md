@@ -102,26 +102,16 @@ Yes - when the first thread calls wait, it releases the monitor lock, so the sec
 ### 2a)
 
 ```
-const MAX = 2
-
-
-LIBRARY_ACC = COUNT[0],
-COUNT[i:0..MAX] = (when i<MAX borrow -> COUNT[i+1]
-				  |when i>0 return[j:1..i] -> COUNT[i-j]
-				  |when i<MAX freeze -> FREEZE[i]),
-
-FREEZE[i:0..MAX] = (when i>0 return[j:1..i] -> COUNT[i-j]
-				   |when i>0 unfreeze -> COUNT[i]).
-				   
-OR
-
 const M = 10
 range B = 0..M
-LIBRARY_ACC = ACC[0][0],
-ACC[i:B][f:0..1] = (when(f==0 && i<M) borrow -> ACC[i+1][f]
-			|when(i>0) return -> ACC[i-1][f]
-			|when(f==0) freeze -> ACC[i][1]
-			|when(f==1) unfreeze -> ACC[i][0]).
+
+LIBRARY = LIBRARY[0],
+LIBRARY[i:B] = (when i < M borrow -> LIBRARY[i+1]
+			   |when i > 0 return -> LIBRARY[i-1]
+			   |freeze -> FROZEN[i]),
+FROZEN[i:B] = (freeze -> FROZEN[i]
+			  |unfreeze-> LIBRARY[i]
+			  |when i > 0 return -> FROZEN[i-1]).
 ```
 
 ### 2ci)
