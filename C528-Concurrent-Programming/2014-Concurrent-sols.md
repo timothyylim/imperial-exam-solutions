@@ -164,7 +164,8 @@ class Library{
 ### 2ci)
 
 ```
-||SYSTEM = (ADMIN || lina:MEMBER ||will:MEMBER || {lina,will}::LIBRARY_ACC)/{freeze/{lina.freeze,will.freeze},unfreeze/{lina.unfreeze,will.unfreeze}}.
+||SYSTEM = (ADMIN || lina:MEMBER ||will:MEMBER || {lina,will}::LIBRARY_ACC)
+/{freeze/{lina.freeze,will.freeze},unfreeze/{lina.unfreeze,will.unfreeze}}.
 ```
 ### 2cii)
 ```
