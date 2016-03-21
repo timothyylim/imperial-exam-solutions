@@ -156,7 +156,7 @@ const Max_id = 8
 MeetingRegister = Register[0],
 Register[i:0..Capacity] = (when(i<Capacity) attend[1..Max_id] -> Register[i+1]
                           |when(i>0) cancel[1..Max_id] -> Register[i-1]
-                          |when(i>0) process_waiting_list[j:1..i] -> Register[i-j]).
+                          |when(i<Capacity) process_waiting_list[j:1..N-i] -> Register[i+j]).
 ```
 
 b.
