@@ -28,15 +28,11 @@ LEFT[i:0..3] = (print_ticket[4-i]->PARKING_METRE
 ### bii)
 
 ```
-MILKSHAKE = (icecream->banana->MADE
-			|ice_cream->strawberry-> MADE),
-
-MADE = (mix -> milk -> blend-> SERVABLE
-	   |mix -> SERVABLE
-	   |bannana-> MADE
-	   |strawberry-> MADE),
-
-SERVABLE = (serve -> MILKSHAKE).
+MILKSHAKE = (icecream->banana->MIX 
+			| icecream -> strawberry -> MIX),
+MIX = ({banana,strawberry}-> MIX
+		| mix->PROCESS),
+PROCESS = (milk -> blend -> PROCESS | serve -> MILKSHAKE).
 ```
 
 ### biii)
