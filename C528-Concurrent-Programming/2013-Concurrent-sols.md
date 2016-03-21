@@ -138,10 +138,12 @@ Only the monitor lock of the object on which wait() is called is released, any o
 a. 
 
 ```
-MEETING_SCHEDULER = COUNT[0],
-COUNT = (when i < N attend -> COUNT[i+1]
-	|when i > 0 cancel -> COUNT[i-1]
-	|when (i-capacity) >= 0 process[j:1..capacity] -> COUNT[i+j]).
+const Capacity = 5
+const Max_id = 8
+MeetingRegister = Register[0],
+Register[i:0..Capacity] = (when(i<Capacity) attend[1..Max_id] -> Register[i+1]
+                          |when(i>0) cancel[1..Max_id] -> Register[i-1]
+                          |when(i<Capacity) process_waiting_list[j:1..Capacity-i] -> Register[i+j]).
 ```
 
 b.

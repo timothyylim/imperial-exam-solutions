@@ -121,11 +121,10 @@ a.
 ```
 const N = 8
 BUFFER = SPACE[0],
-SPACE[i:0..N] = 
-	(swap[s:0..i] -> SPACE[i]
-	|when (i > 0) get -> SPACE[i-1] 
-    |when (i < N) put -> SPACE[i+1] 
-    ). 
+SPACE[i:0..N] = (when(i>0) get -> SPACE[i-1]
+                |when(i<N) put -> SPACE[i+1]
+                |when(i<=N-i) swap[s:0..i] -> SPACE[i]
+                |when(i>N-i) swap[s:0..N-i] -> SPACE[i]).
 ```
 
 b.
@@ -171,11 +170,10 @@ c.
 ```
 const N = 8
 BUFFER = SPACE[0],
-SPACE[i:0..N] = 
-	(swap[s:0..i] -> SPACE[i]
-	|when (i > 0) get -> SPACE[i-1] 
-    |when (i < N) put -> SPACE[i+1] 
-    ). 
+SPACE[i:0..N] = (when(i>0) get -> SPACE[i-1]
+                |when(i<N) put -> SPACE[i+1]
+                |when(i<=N-i) swap[s:0..i] -> SPACE[i]
+                |when(i>N-i) swap[s:0..N-i] -> SPACE[i]).
 
 progress CHECK = {swap[N/2]}
 
