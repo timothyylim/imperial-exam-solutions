@@ -164,7 +164,15 @@ b.
 progress CanRegister = {attend[1..Max_id]}
 ```
 c.
+question says "it is easier to provide a property for each staff member"
+I think this will be 8 different properties equivalent to this:
+```
+property RegisterOnce_s1 = (attend[1] -> Attending_s1),
+Attending_s1 = 
+	(cancel[1] -> RegisterOnce_s1 
+	|process_waiting_list[1..Capacity] -> RegisterOnce_s1).
 
+```
 d.
 
 ```
