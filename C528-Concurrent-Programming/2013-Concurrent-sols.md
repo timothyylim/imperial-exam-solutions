@@ -38,20 +38,14 @@ PROCESS = (milk -> blend -> PROCESS | serve -> MILKSHAKE).
 ### biii)
 
 ```
-property SAFE = (start->STARTED
-				|end -> HOLIDAY
-				|read -> rest ->STARTED
-				|surf -> SURF
-				|rest -> STARTED),
-
-HOLIDAY = (start -> STARTED),
-
-STARTED = (end -> HOLIDAY
-		  |read -> rest ->STARTED
-		  |surf -> SURF),
-
-SURF = (surf -> SURF
-		|rest -> STARTED).
+property HOLIDAY = (start->ENJOY),
+ENJOY = (end -> HOLIDAY 
+	| read->READ 
+	| surf -> SURF),
+READ = (read-> READ 
+	| rest->ENJOY),
+SURF = (surf->SURF 
+	| rest -> ENJOY).
 ```
 
 ### 1c
