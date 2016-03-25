@@ -10,6 +10,7 @@ Being the original protocol, POP follows the simplistic idea that only one clien
 - Saves server storage space
 - Option to leave copy of mail on server
 - Consolidate multiple email accounts and servers into one inbox
+- this is mo!
 
 http://www.makeuseof.com/tag/pop-vs-imap/
 
