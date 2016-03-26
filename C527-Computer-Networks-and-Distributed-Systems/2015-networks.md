@@ -156,6 +156,33 @@ The ARP would exist in the Link layer.
 
 # 3
 
+a.
+
+Security for information resources has three components:
+confidentiality (protection against disclosure to unauthorized individuals), integrity
+(protection against alteration or corruption), and availability (protection against
+interference with the means to access the resources).
+
+
+---
+
+b.
+
+**IP packet filtering**: This is a filter process examining individual IP packets. It may make decisions based on the destination and source addresses. It may also examine the service type field of IP packets and interpret the contents of the packets based on the type. For example, it may filter TCP packets based on the port number to which they are addressed, and since services are generally located at well-known ports, this enables packets to be filtered based on the service requested. For example, many sites prohibit the use of NFS servers by external clients.
+For performance reasons, IP filtering is usually performed by a process within the operating system kernel of a router. If multiple firewalls are used, the first may mark certain packets for more exhaustive examination by a later firewall, allowing ‘clean’ packets to proceed. It is possible to filter based on sequences of IP packets, for example, to prevent access to an FTP server before a login has been performed.
+
+
+**TCP gateway**: A TCP gateway process checks all TCP connection requests and segment transmissions. When a TCP gateway process is installed, the setting up of TCP connections can be controlled and TCP segments can be checked for correctness (some denial of service attacks use malformed TCP segments to disrupt client operating systems). When desired, they can be routed through an application-level gateway for content checking.
+
+
+**Application-level gateway**: An application-level gateway process acts as a proxy for an application process. For example, a policy may be desired that allows certain internal users to make Telnet connections to certain external hosts. When a user runs a Telnet program on their local computer, it attempts to establish a TCP connection with a remote host. The request is intercepted by the TCP gateway. The TCP gateway starts a Telnet proxy process and the original TCP connection is routed to it. If the proxy approves the Telnet operation (i.e., if the user is authorized to use the requested host) it establishes another connection to the requested host and relays all of the TCP packets in both directions. A similar proxy process would run on behalf of each Telnet client, and similar proxies might be employed for FTP and other services.
+
+Colouris 124
+
+---
+
+c.
+
 
 
 # 4
