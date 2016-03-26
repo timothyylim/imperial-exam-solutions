@@ -106,6 +106,54 @@ Another difference between CSMA CD and CSMA CA is where they are typically used.
 
 Read more: Difference Between CSMA CA and CSMA CD | Difference Between | CSMA CA vs CSMA CD http://www.differencebetween.net/technology/protocols-formats/difference-between-csma-ca-and-csma-cd/#ixzz441MohWgH
 
+---
+
+c.
+
+no idea
+
+---
+
+d.
+
+**HTTP**
+Short for HyperText Transfer Protocol, HTTP is the underlying protocol used by the World Wide Web. HTTP defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands. For example, when you enter a URL in your browser, this actually sends an HTTP command to the Web server directing it to fetch and transmit the requested Web page.
+
+HTTP is part of the application layer.
+
+**Network Switch**
+
+A network switch (also called switching hub, bridging hub, officially MAC bridge[1]) is a computer networking device that connects devices together on a computer network, by using packet switching to receive, process and forward data to the destination device. Unlike less advanced network hubs, a network switch forwards data only to one or multiple devices that need to receive it, rather than broadcasting the same data out of each of its ports.[2]
+
+https://en.wikipedia.org/wiki/Network_switch
+
+A Network Switch would exist in the link layer.
+
+**Subnet**
+
+A subnetwork, or subnet, is a logical, visible subdivision of an IP network.
+
+Subnets are smaller networks that form connection – Subnets segment traffic
+ - Limit propagation of signals
+ 
+Support for underlying networks
+- With different physical technologies
+- With different administrative ownerships
+
+Subnets would exist in the Internet layer.
+
+**ARP**
+
+The Address Resolution Protocol (ARP) is a telecommunication protocol used for resolution of network layer addresses into link layer addresses, a critical function in multiple-access networks.
+
+Although every machine on the Internet has one or more IP addresses, these addresses are not sufficient for sending packets. Data link layer NICs (Network Interface Cards) such as Ethernet cards do not understand Internet addresses. In the case of Ethernet, every NIC ever manufactured comes equipped with a unique 48-bit Ethernet address. Manufacturers of Ethernet NICs request a block of Ethernet addresses from IEEE to ensure that no two NICs have the same address (to avoid conflicts should the two NICs ever appear on the same LAN). 
+
+Tanenbaum 468
+
+The ARP would exist in the Link layer. 
+
+
+
 # 3
 
 
