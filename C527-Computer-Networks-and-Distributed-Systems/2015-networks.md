@@ -217,3 +217,8 @@ RMI-IIOP, RMI-IDL etc. Whereas RPC does not translate well into Distributed obje
 systems, where program-level objects residing in different address space is needed.
 
 http://itgs.tistory.com/attachment/1406296529.pdf
+
+---
+
+c.
+
