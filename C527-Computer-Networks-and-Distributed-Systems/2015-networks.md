@@ -186,3 +186,34 @@ c.
 
 
 # 4
+
+a.
+
+ In RMI applications, if no security manager is set, stubs and classes can only be loaded from local classpath – protect application from downloaded code
+
+---
+
+lecture slides
+
+b.
+
+At the most basic level, RMI is Java's remote procedure call (RPC) mechanism. RMI has
+several advantages over traditional RPC systems because it is part of Java's object oriented
+approach. Traditional RPC systems are language-neutral, and therefore are essentially leastcommon-denominator
+systems so they cannot provide functionality that is not available on
+all possible target platforms.
+
+
+RMI is focused on Java, with connectivity to existing systems using native methods. This
+means RMI can take a natural, direct, and fully powered approach to provide a distributed
+computing technology that allows us to add Java functionality throughout the system. To
+get the cross-platform portability that Java provides, RPC requires a lot more overheads than
+RMI. RPC has to convert the arguments between architecture so that each computer can use
+its native datatype. 
+
+RMI’s biggest limitation is it can only call methods in Java. To call
+methods written in other languages it has to rely on other technologies like JNI, JDBC,
+RMI-IIOP, RMI-IDL etc. Whereas RPC does not translate well into Distributed object
+systems, where program-level objects residing in different address space is needed.
+
+http://itgs.tistory.com/attachment/1406296529.pdf
