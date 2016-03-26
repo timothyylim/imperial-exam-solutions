@@ -87,6 +87,8 @@ Ch4 Tanenbaum
 
 ---
 
+b.
+
 CSMA CA vs CSMA CD
 
 Carrier Sense Multiple Access or CSMA is a Media Access Control (MAC) protocol that is used to control the flow of data in a transmission media so that packets do not get lost and data integrity is maintained. There are two modifications to CSMA, the CSMA CD (Collision Detection) and CSMA CA (Collision Avoidance), each having its own strengths.
@@ -101,9 +103,6 @@ Another difference between CSMA CD and CSMA CA is where they are typically used.
 2. CSMA CA reduces the possibility of a collision while CSMA CD only minimizes the recovery time.
 3. CSMA CD is typically used in wired networks while CSMA CA is used in wireless networks.
 
-
-
-Read more: Difference Between CSMA CA and CSMA CD | Difference Between | CSMA CA vs CSMA CD http://www.differencebetween.net/technology/protocols-formats/difference-between-csma-ca-and-csma-cd/#ixzz441MwV2tF
 
 Read more: Difference Between CSMA CA and CSMA CD | Difference Between | CSMA CA vs CSMA CD http://www.differencebetween.net/technology/protocols-formats/difference-between-csma-ca-and-csma-cd/#ixzz441MohWgH
 
