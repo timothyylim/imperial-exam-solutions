@@ -19,4 +19,4 @@
 - Quick Sort 
   - Pseudocode
   - Worst-case analysis
-  - Strategies to avoid O^2 
+  - Strategies to avoid O(N^2) 
