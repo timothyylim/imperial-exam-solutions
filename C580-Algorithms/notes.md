@@ -55,3 +55,27 @@
   - Pseudocode
   - Worst-case analysis
   - Strategies to avoid O(N^2) 
+
+# Dynamic Data Structures
+
+- Stack
+
+- Queue 
+
+- Binary Heap Implementation of a Priority Queue 
+  - Pseudocode for add(key k, data d)
+  - Pseudocode for remove
+
+- Sets
+
+- Trees
+
+- Binary Search Tree
+  - Add 
+  - Search
+  - Performance 
+
+- Hash Tables
+
+
+
