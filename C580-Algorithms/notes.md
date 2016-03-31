@@ -59,23 +59,47 @@
 # Dynamic Data Structures
 
 - Stack
+  - Amortised runtime = T(N) = 3Nc-c 
 
 - Queue 
 
 - Binary Heap Implementation of a Priority Queue 
   - Pseudocode for add(key k, data d)
+  ```
+  add(key k, data d)
+    - insert new node n = (k,d)
+    - while k > key of n's parents
+      - swap n with its parents
+    return 
+  ```
   - Pseudocode for remove
-
+  ```
+  remove
+    - Store top node
+    - n = (k,d)
+    - while k < key of any child of n
+      - swap n with child of highest key 
+  ```
+  - dynamic array
+    - parent of a[n] is a[n/2]
+    - children of a[n] are [2*n] and a[2*n+1]
 - Sets
 
-- Trees
 
+- Trees
+  
 - Binary Search Tree
-  - Add 
-  - Search
+  - Definition
+    - all keys in left subtree are less or equal to root key and all keys in the right subtree are greater or equal to the root key 
   - Performance 
+    -  
 
 - Hash Tables
+  - Collision resolution
+    - Chaining (worst case is when all keys hash to the same value O(N)
+      - Average time is O(N/m) 
+    - Probing
+      - Probe until a space is found  
 
 
 
