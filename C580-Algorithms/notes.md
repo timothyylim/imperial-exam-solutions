@@ -133,3 +133,65 @@
   Worst case is O(V+E) time 
     - worst case is if graph is connected
     
+
+- DFS
+  - Pseudocode
+  ```
+  DFS
+  mark s as visited
+  for each vertex v such that g has an edge {s,v}
+    if v has not been visited
+      DFS(g,v)
+  ```
+
+- Kruskal's
+  ```
+  1. T (the final spanning tree) is defined to be the empty set;
+  2. For each vertex v of G, make the empty set out of v;
+  3. Sort the edges of G in ascending (non-decreasing) order;
+  4. For each edge (u, v) from the sored list of step 3.
+      If u and v belong to different sets
+         Add (u,v) to T;
+         Get together u and v in one single set;
+  5. Return T
+  ```
+  
+- Prims
+  ```
+  1.  Make a queue (Q) with all the vertices of G (V);
+  2.  For each member of Q set the priority to INFINITY;
+  3.  Only for the starting vertex (s) set the priority to 0;
+  4.  The parent of (s) should be NULL;
+  5.  While Q isn’t empty
+  6.     Get the minimum from Q – let’s say (u); (priority queue);
+  7.     For each adjacent vertex to (v) to (u)
+  8.        If (v) is in Q and weight of (u, v) < priority of (v) then
+  9.           The parent of (v) is set to be (u)
+  10.          The priority of (v) is the weight of (u, v)
+  ```
+
+- Bellman-Ford
+ ```
+ Bellman-Ford(input: weight graph G and vertex s)
+ set distance[v] to infinity for all verticies
+ set distance[s] = 0
+ repeat |V| -1 times
+  for each edge e in E
+    relax e
+  for each edge (u,v) in E
+    if distance[v] > distance[u] + w(u,v)
+      return FALSE
+  return TRUE
+ ```
+ 
+ - Dijkstra's
+ ```
+ distance[v] = infinity
+ distance[s] = 0
+ S = 0
+ while V - S != 0
+  u is the vertex V - S with least distance[u]
+  for each vertex v adjacent to u
+    relax (u,v)
+  S = S U {u}
+ ```
