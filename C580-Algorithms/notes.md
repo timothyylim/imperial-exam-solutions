@@ -102,4 +102,34 @@
       - Probe until a space is found  
 
 
+# Graphs
 
+- BFS
+  - Pseudocode
+  ```
+  BFS (given graph g and source vertex s)
+  initialize Q = <s> of verticies
+  while Q is not empty
+    remove vertex u from Q
+    for each vertext that has an edge {u,v}
+      if v is not yet visited
+        mark v as visited 
+        add v to Q
+  ```
+  - Shortest Path pseudocode
+  ```
+  BFS Shortest Paths(input: graph G = (V,E), source vertex s)
+  Initialise a Q = <s> of verticies
+  dist = <d1,...,dv> = <inf,...,inf>
+  ds = 0
+  while the Q is not empty
+    remove vertex u from Q
+    for each vertex v such that g has an edge {u,v}
+      if v has not yet been visited
+      dv = du +1
+      add v to Q
+  ```
+  
+  Worst case is O(V+E) time 
+    - worst case is if graph is connected
+    
