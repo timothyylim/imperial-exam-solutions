@@ -1,8 +1,10 @@
-# Introdution
+should be able to recall the pseudocode and run time analysis for the following:
+
+### misc.
 
 - Binary Search
 
-# Sorting
+### Sorting
 
 - Insert
 - Merge
@@ -10,7 +12,7 @@
 - Count
 - Radix
 
-# Graphs
+### Graphs
 
 - BFS
 - DFS
@@ -19,12 +21,12 @@
 - Bellman-Ford
 - Dijkstras
 
-# Dynamic Data Structures
+### Dynamic Data Structures
 
 - Binary Heap
 - Binary Search Tree
 
-# String Matching 
+### String Matching 
 
 - KMP
 - BM 
