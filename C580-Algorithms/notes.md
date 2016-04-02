@@ -86,6 +86,28 @@
   
 - Quick Sort 
   - Pseudocode
+  ```
+  Quicksort (Input: sequence A = a1, . . . , aN)
+  
+  if A has more than one element
+  	p = Partition A 
+  	Quicksort (a[0]...a[p-1])
+  	Quicksort (a[p+1]...a[n])
+  else return
+  ```
+  
+  ```
+  Partition (Input: A = (a[0]...a[n]))
+  choose pivot p from A
+  swap p and a[n]
+  storeIndex = 1
+  for each a in (a[0]...a[n-1])
+  	if a < p
+  		swap a and A[storeindex]
+  		sotreIndex++
+  swap a[n] and a[storeIndex]
+  return storeIndex
+  ```
   - Worst-case analysis
   - Strategies to avoid O(N^2) 
 
