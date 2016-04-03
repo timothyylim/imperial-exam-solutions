@@ -78,6 +78,14 @@
   b = MergeSort(a[N/2]...a[N])
   return Merge(a,b)
   ```
+  ```
+  Merge(Input sequence A, indicies L,M and N where N>M>=L)
+  copy (aL...aM) to new list P and (aM+1...aN) to new list Q
+  copy elements of P and Q to form (aL'...aN') as follows:
+  	p is smallest element of P not yet used
+  	q is smallest element of Q not yet used
+  	the next element is the smaller of p and q 
+  ```
   - Worst-case analysis
     - T(N) = Theta(Nlog2N)
   - How does it compare to insert sort?
