@@ -38,6 +38,17 @@ FROM airport AS airportA JOIN (SELECT *
                          AND airportA.iso_code = ports.iso_code
 
 ```
+Alternative solution
+
+SELECT acode 
+FROM serves
+EXCEPT (
+	      SELECT acode
+	      FROM serves JOIN airport AS airport_a ON airport_a.pcode = serves.pcode1 
+	      JOIN airport AS airport_b ON airport_b.pcode = serves.pcode2 
+	      AND airport_a.iso_code = airport_b.iso_code)
+
+
 -------------------------------------------------------------------------------
 Question 1 c) iii)
 ```
