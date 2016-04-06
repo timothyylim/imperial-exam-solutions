@@ -112,7 +112,8 @@ Question 2 a) iii)
 SELECT acode 
 FROM airline
 WHERE acode NOT IN (SELECT flag_carrier
-                    FROM country)
+                    FROM country
+                    WHERE flag_carrier IS NOT null)
  ```
 -------------------------------------------------------------------------------
 Question 2 a) iv)
