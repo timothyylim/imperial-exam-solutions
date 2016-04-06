@@ -1,9 +1,10 @@
 -------------------------------------------------------------------------------
 Question 1 a)
 
-π                      (σ                   airline ⋈ country ⋈ main.hub)
- aname, name, icao_code   start_year >= 1970
- 
+```
+π                       σ                     (airline ⋈ country ⋈ main.hub)
+ aname, name, icao_code    start_year >= 1970
+ ```
 ------------------------------------------------------------------------------- 
 Question 1 b)
 
