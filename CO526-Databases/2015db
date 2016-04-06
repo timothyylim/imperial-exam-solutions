@@ -1,6 +1,6 @@
 group: 2015_Past_Paper
 
-airline = {
+country = {
 	iso_code:string, name:string     , flag_carrier:string, population:number
 	'KE'           , 'Kenya'         , 'KQ'               , '45010056'              
 	'FR'           , 'France'        , 'AF'               , '63929000'              
@@ -8,7 +8,7 @@ airline = {
 	'GB'           , 'United Kingdom', 'BA'               , '64100000'              
 }
 
-country = {
+airline = {
 acode:string, pcode:string, start_year:number, no_aircraft:number, hq_in:string, aname:string     
 	'AF'        , 'CDG'       , 1974             , 245               , 'FR'        , 'Air France'     
 	'BA'        , 'LHR'       , 1974             , 297               , 'GB'        , 'British Airways'
