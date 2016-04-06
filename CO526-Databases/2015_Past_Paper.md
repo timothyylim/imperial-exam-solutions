@@ -141,7 +141,7 @@ Question 2 b)
 SELECT name, 
        COUNT (CASE WHEN elevation>=1000 THEN 1 END) AS high,
        COUNT (CASE WHEN elevation<1000 THEN 2 END) AS low
-FROM country JOIN airport ON country.iso_code = airport.iso_code
+FROM country LEFT JOIN airport ON country.iso_code = airport.iso_code
 GROUP BY name
  ```
 
