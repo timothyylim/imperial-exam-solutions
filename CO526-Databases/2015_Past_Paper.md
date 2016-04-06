@@ -14,10 +14,14 @@ Question 1 b)
 -------------------------------------------------------------------------------
 Question 1 c) i)
 
+This query could also be posed as: "which airlines only fly internationally?"
+```
 acode
 -----
 AF
-BE
+BA
+KQ
+```
 
 -------------------------------------------------------------------------------
 Question 1 c) ii)
