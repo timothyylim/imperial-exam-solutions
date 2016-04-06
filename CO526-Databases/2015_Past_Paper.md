@@ -48,15 +48,19 @@ subquery(Acode),
     airport_b(Pcode2, _, Isocode, _),
     serves(Acode, Pcode1, _)
     serves(Acode, _, Pcode2).
-    ```
+    
+    
+```
 -------------------------------------------------------------------------------
 Question 1 d) i)
+
 ```
 π                     flight - (π                          flight ÷ π   flight)
  acode, pcode1, pcode2           acode, pcode1, pcode2, dir          dir
 ```
 -------------------------------------------------------------------------------
 Question 1 d) ii)
+
 ```
 SELECT acode, pcode1, pcode2
 FROM flight AS flight_table
@@ -67,6 +71,7 @@ WHERE EXISTS (SELECT dir
               FROM flight
               WHERE flihgt.acode = flight_table.acode).
 ```
+
 -------------------------------------------------------------------------------
 Question 1 d) iii)
 ```
