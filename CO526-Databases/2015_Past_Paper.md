@@ -30,12 +30,13 @@ SELECT acode
 FROM airline
 EXCEPT
 SELECT acode
-FROM serves JOIN (SELECT *
-                  FROM airport AS airportA
-                  JOIN airport AS airportB
-                  ON airportA.isocode = airportB.isocode) AS ports
-            ON pcode1 = airportA.pcode
-            AND pcode2 = airportB.pcode
+FROM airport AS airportA JOIN (SELECT *
+                               FROM airport AS airportB
+                               JOIN serves 
+                               ON pcode2 = airportB.pcode) AS ports 
+                         ON pcode1 = airportA.pcode 
+                         AND airportA.iso_code = ports.iso_code
+
 ```
 -------------------------------------------------------------------------------
 Question 1 c) iii)
