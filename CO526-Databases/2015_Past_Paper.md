@@ -25,7 +25,7 @@ KQ
 
 -------------------------------------------------------------------------------
 Question 1 c) ii)
-
+```
 SELECT acode
 FROM airline
 EXCEPT
@@ -36,10 +36,10 @@ FROM serves JOIN (SELECT *
                   ON airportA.isocode = airportB.isocode) AS ports
             ON pcode1 = airportA.pcode
             AND pcode2 = airportB.pcode
-
+```
 -------------------------------------------------------------------------------
 Question 1 c) iii)
-
+```
 query(Acode) :-
     airline(Acode),
     ¬ subquery(Acode).
@@ -48,16 +48,16 @@ subquery(Acode),
     airport_b(Pcode2, _, Isocode, _),
     serves(Acode, Pcode1, _)
     serves(Acode, _, Pcode2).
-    
+    ```
 -------------------------------------------------------------------------------
 Question 1 d) i)
-
+```
 π                     flight - (π                          flight ÷ π   flight)
  acode, pcode1, pcode2           acode, pcode1, pcode2, dir          dir
-
+```
 -------------------------------------------------------------------------------
 Question 1 d) ii)
-
+```
 SELECT acode, pcode1, pcode2
 FROM flight AS flight_table
 WHERE EXISTS (SELECT dir
@@ -66,10 +66,10 @@ WHERE EXISTS (SELECT dir
               SELECT dir
               FROM flight
               WHERE flihgt.acode = flight_table.acode).
-
+```
 -------------------------------------------------------------------------------
 Question 1 d) iii)
-
+```
 notInAndOut(Acode, Pcode1, Pcode2) :-
     flight(_, Acode, Pcode1, Pcode2, _),
     ¬ inAndOut(Acode, Pcode1, Pcode2).
@@ -77,21 +77,21 @@ notInAndOut(Acode, Pcode1, Pcode2) :-
 inAndOut(Acode, Pcode1, Pcode2):
     flight(_, Acode, Pcode1, Pcode2, 'O'),
     flight(_, Acode, Pcode1, Pcode2, 'I').
-
+```
 -------------------------------------------------------------------------------
 Question 1 e)
-
+```
 = (A ∪ Δa) ⋈ (P ∪ Δp)
 = A ⋈ (P ∪ Δp) ∪ Δa ⋈ (P ∪ Δp)  
 = (A ⋈ P) ∪ (A ⋈ Δp) ∪ (Δa ⋈ Δp)  
 
 Therefore ans = (airline ⋈ Δp) ∪ (airport ⋈ Δa) ∪ (Δa ⋈ Δp)  
-
+```
 -------------------------------------------------------------------------------
 Question 2 a) i)
-
+```
 BE
-
+```
 -------------------------------------------------------------------------------
 Question 2 a) ii)
 
@@ -102,21 +102,21 @@ only one instance of acode in airline would be excluded by EXCEPT ALL.
 
 -------------------------------------------------------------------------------
 Question 2 a) iii)
-
+```
 SELECT acode 
 FROM airline
 WHERE acode NOT IN (SELECT flag_carrier
                     FROM country)
- 
+ ```
 -------------------------------------------------------------------------------
 Question 2 a) iv)
-
+```
 SELECT acode 
 FROM airline
 WHERE NOT EXISTS (SELECT flag_carrier
                   FROM country
                   WHERE acode = flag_carrier)
- 
+ ```
 -------------------------------------------------------------------------------
 Question 2 b)
 
