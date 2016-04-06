@@ -1,0 +1,82 @@
+group: 2015_Past_Paper
+
+airline = {
+	iso_code:string, name:string     , flag_carrier:string, population:number
+	'KE'           , 'Kenya'         , 'KQ'               , '45010056'              
+	'FR'           , 'France'        , 'AF'               , '63929000'              
+	'UG'           , 'Uganda'        , null               , '35873253'              
+	'GB'           , 'United Kingdom', 'BA'               , '64100000'              
+}
+
+country = {
+acode:string, pcode:string, start_year:number, no_aircraft:number, hq_in:string, aname:string     
+	'AF'        , 'CDG'       , 1974             , 245               , 'FR'        , 'Air France'     
+	'BA'        , 'LHR'       , 1974             , 297               , 'GB'        , 'British Airways'
+	'KQ'        , 'NBO'       , 1977             , 56                , 'KE'        , 'Kenya Airways'  
+	'BE'        , 'EXE'       , 1979             , 70                , 'GB'        , 'BlyBe'          
+}
+
+airport = {
+	pcode:string, elevation:number, iso_code:string, cname:string
+	'EBB'       , 3782            , 'UG'           , 'Kampala'   
+	'EXE'       , 102             , 'GB'           , 'Exeter'    
+	'NBO'       , 5327            , 'KE'           , 'Nairobi'   
+	'LGW'       , 203             , 'GB'           , 'London'    
+	'LHR'       , 83              , 'GB'           , 'London'    
+	'CDG'       , 392             , 'FR'           , 'Paris'     
+}
+
+serves = {
+	acode:string, pcode1:string, pcode2:string
+	'BA'        , 'LHR'        , 'NBO'        
+	'BA'        , 'EBB'        , 'LHR'        
+	'BA'        , 'LHR'        , 'CDG'        
+	'AF'        , 'LHR'        , 'CDG'        
+	'KQ'        , 'LHR'        , 'NBO'        
+	'KQ'        , 'EBB'        , 'NBO'        
+	'KQ'        , 'NBO'        , 'CDG'        
+	'BE'        , 'LGW'        , 'EXE'        
+}
+
+city = {
+	iso_code:string, cname:string, is_capital:string
+	'KE'           , 'Nairobi'   , 't'              
+	'GB'           , 'London'    , 't'              
+	'GB'           , 'Newquay'   , 'f'              
+	'GB'           , 'Exeter'    , 'f'              
+	'FR'           , 'Paris'     , 't'              
+	'UG'           , 'Kampala'   , 't'              
+}
+
+flight = {
+	fcode:string, acode:string, pcode1:string, pcode2:string, dir:string
+	'KQ0101'    , 'KQ'        , 'LHR'        , 'NBO'        , 'O'       
+	'KQ0102'    , 'KQ'        , 'LHR'        , 'NBO'        , 'I'       
+	'KQ0112'    , 'KQ'        , 'NBO'        , 'CDG'        , 'O'       
+	'BA0065'    , 'BA'        , 'LHR'        , 'NBO'        , 'O'       
+	'BA0064'    , 'BA'        , 'LHR'        , 'NBO'        , 'I'       
+	'BA0304'    , 'BA'        , 'LHR'        , 'CDG'        , 'O'       
+	'BA0306'    , 'BA'        , 'LHR'        , 'CDG'        , 'O'       
+	'BA0308'    , 'BA'        , 'LHR'        , 'CDG'        , 'O'       
+	'BA0303'    , 'BA'        , 'LHR'        , 'CDG'        , 'I'       
+	'BA0307'    , 'BA'        , 'LHR'        , 'CDG'        , 'I'       
+	'BA0309'    , 'BA'        , 'LHR'        , 'CDG'        , 'I'       
+	'BE0120'    , 'BE'        , 'LGW'        , 'EXE'        , 'I'       
+	'BE0129'    , 'BE'        , 'LGW'        , 'EXE'        , 'O'       
+}
+
+flight_day = {
+	fcode:string, day:string
+	'KQ0112'    , 'Fri'     
+	'KQ0112'    , 'Sat'     
+	'KQ0112'    , 'Sun'     
+	'KQ0112'    , 'Tue'     
+	'KQ0112'    , 'Thur'    
+}
+
+main_hub = {
+	pcode:string, icao_code:string
+	'NBO'       , 'HKJK'          
+	'LHR'       , 'EGLL'          
+	'CDG'       , 'LFPG'          
+}
