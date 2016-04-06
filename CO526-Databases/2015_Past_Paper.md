@@ -39,7 +39,7 @@ FROM airport AS airportA JOIN (SELECT *
 
 ```
 Alternative solution
-
+```
 SELECT acode 
 FROM serves
 EXCEPT (
@@ -47,7 +47,7 @@ EXCEPT (
 	      FROM serves JOIN airport AS airport_a ON airport_a.pcode = serves.pcode1 
 	      JOIN airport AS airport_b ON airport_b.pcode = serves.pcode2 
 	      AND airport_a.iso_code = airport_b.iso_code)
-
+```
 
 -------------------------------------------------------------------------------
 Question 1 c) iii)
