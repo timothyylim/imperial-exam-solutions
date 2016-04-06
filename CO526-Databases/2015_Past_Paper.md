@@ -113,7 +113,7 @@ BE
 Question 2 a) ii)
 
 Yes, EXCEPT ALL would have the effect of turning both 'SELECT acode FROM airline' and 
-'SELECT flag_carrier FROM country' into sets. This means that if there were duplicate 
+'SELECT flag_carrier FROM country' from sets into bags. This means that if there were duplicate 
 acodes in airline and only one instance of that acode (as flag_carrier) in country then 
 only one instance of acode in airline would be excluded by EXCEPT ALL. 
 
