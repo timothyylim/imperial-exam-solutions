@@ -145,7 +145,32 @@ FROM country LEFT JOIN airport ON country.iso_code = airport.iso_code
 GROUP BY name
  ```
 
+---
 
+Question 4 a) i)
+
+```
+S = {A -> BCH, C -> H, D -> E, DG -> A, E -> F, EFG -> ADE, F-> E}
+```
+
+Rewrite S to an equivalent set of FDs which only have a single attribute on the RHS of each FD
+
+```
+S' = {A -> B, A -> C, A -> H, C -> H, D -> E, DG -> A, E -> F, EFG -> A, EFG -> D, EFG -> E, F -> E}
+```
+
+Simplify LHS
+
+```
+Since F -> E
+EFG -> E => EG -> E
+EFG -> D => EG -> D
+EFG -> A => EG -> A
+```
+
+```
+S'' = {A -> B, A -> C, A -> H, C -> H, D -> E, DG -> A, E -> F, EG -> A, EG -> D, EG -> E, F -> E}
+```
 
 
 
