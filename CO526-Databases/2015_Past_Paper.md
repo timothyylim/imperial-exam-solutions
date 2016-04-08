@@ -257,9 +257,69 @@ Question 4 a) iii)
 Decompose into 3NF
 
 ```
+R = {A,B,C,D,E,F,G}
+
 Candidate keys: D, EG, FG
 
 A,B,C are non prime 
 
-Since A -> 
+Since DG -> A and DG is not a superkey, must decompose
+R1(D,G,A)
+
+Since A -> B and A is not a superkey, must decompose
+R2(A,B)
+
+Since A -> C and A is not a superkey, must decompose
+R3(A,C)
+
+Leaving
+
+R4(D,E,F,G)
 ```
+
+---
+
+Question 4 a) iv)
+
+Decompose into BCNF
+
+_every attribute is dependent on the key, the whole key and nothing but the key_
+
+```
+R = {A,B,C,D,E,F,G}
+Sc = {	
+	A -> B, 
+	A -> C,
+	C -> H,
+	D -> E, 
+	DG -> A,  
+	E -> F, 
+	EG -> A, 
+	EG -> D, 
+	F -> E	}
+Candidate keys: D, EG, FG
+
+R1(D,G,A)
+
+R2(A,B)
+
+R3(A,C)
+
+R4(D,E,F,G)
+
+R4 is not in BCNF because F -> E and F is not a candidate key must decompose
+
+R5 (F, E)
+
+Leaving R6 (D,F,G)
+
+Note that R2 and R3 have a common key so they can be combined to R7(A,B,C)
+
+Finally,
+
+R1(D,G,A)
+R5(F,E)
+R6(D,F,G)
+R7(A,B,C)
+```
+
