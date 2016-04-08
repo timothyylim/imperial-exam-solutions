@@ -226,4 +226,25 @@ S'''' = {
 
 ```
 
+---
+
+Question 4 a) ii)
+
+Identify and justify all candidate keys of R
+
+```
+	A -> B, 
+	A -> C,
+	C -> H,
+	D -> E, 
+	DG -> A,  
+	E -> F, 
+	EG -> A, 
+	EG -> D, 
+	F -> E	
+
+with trial and error we can see 
+
+D+ = ABCDEFG
+```
 
