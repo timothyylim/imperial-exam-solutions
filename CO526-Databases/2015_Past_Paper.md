@@ -170,7 +170,60 @@ EFG -> A => EG -> A
 
 ```
 S'' = {A -> B, A -> C, A -> H, C -> H, D -> E, DG -> A, E -> F, EG -> A, EG -> D, EG -> E, F -> E}
+or for easier reading:
+
+S'' = {	
+	A -> B, 
+	A -> C, 
+	A -> H, 
+	C -> H, 
+	D -> E, 
+	DG -> A, 
+	E -> F, 
+	EG -> A, 
+	EG -> D, 
+	EG -> E, 
+	F -> E	
+	
+}
+
 ```
 
+Redundant FD X-> A is equivalent to the transative closure of other FDs (i.e. just cancel out transative functions)
+
+```
+Since A -> C and C -> H,
+A -> H => 0
+
+S''' = {	
+	A -> B, 
+	A -> C, 
+	C -> H, 
+	D -> E, 
+	DG -> A, 
+	E -> F, 
+	EG -> A, 
+	EG -> D, 
+	EG -> E, 
+	F -> E	
+	
+}
+
+Since EG -> D and D -> E,
+EG -> E => 0
+
+S'''' = {	
+	A -> B, 
+	A -> C, 
+	C -> H, 
+	D -> E, 
+	DG -> A, 
+	E -> F, 
+	EG -> A, 
+	EG -> D, 
+	F -> E	
+}
+
+```
 
 
