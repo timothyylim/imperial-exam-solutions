@@ -246,5 +246,20 @@ Identify and justify all candidate keys of R
 with trial and error we can see 
 
 D+ = ABCDEFG
+Since EG -> D, EG is also a candidate key
+Since F -> E, FG is also a candidate key
 ```
 
+---
+
+Question 4 a) iii)
+
+Decompose into 3NF
+
+```
+Candidate keys: D, EG, FG
+
+A,B,C are non prime 
+
+Since A -> 
+```
