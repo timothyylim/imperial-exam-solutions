@@ -323,3 +323,47 @@ R6(D,F,G)
 R7(A,B,C)
 ```
 
+---
+
+Question 4 b) i)
+
+
+---
+
+Question 4 b) ii)
+
+Steps to recover a database:
+
+- Find set of commited transactions, uncommited transactions and list of undo actions
+- Actions to be undone before cp record
+- Actions to be redone after cp record
+
+- Find set of commited transactions, uncommited transactions and list of undo actions:
+
+```
+C = {1,2}
+I = {3,1}
+UNDO w1[aKQ, no_aircraft = 55]
+UNDO w3[aBA, no_aircraft = 297]
+```
+- Actions to be undone before cp record
+
+```
+cp-C={3}
+UNDO w3[aAF, no_aircraft = 242]
+```
+
+- Actions to be redone
+
+```
+All in C after cp
+
+REDO w1[aKQ, no_aircraft = 56]
+REDO w2[aKQ, no_aircraft = 57]
+```
+
+Finally
+```
+AF = 242
+KQ = 57
+```
