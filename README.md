@@ -4,3 +4,21 @@ Past exam solutions and tutorials for Msc. Computing at Imperial College.
 
 This is very much a work in progress and any additions and corrections are welcome. 
 
+### how to make corrections 
+
+1. make a github account (duh)
+
+2. raise an issue and link to the exam where the mistake is (check out the example issue near the top of your screen)
+
+3. fork the imperial-exam-solutions (this basically means make your own copy of it)
+
+4. on your own for of the repository, make the correction and then make a pull request leaving a comment stating which issue you've fixed
+
+
+### how to contribute 
+
+1. make a github account (duh)
+
+2. fork the imperial-exam-solutions (this basically means make your own copy of it)
+
+3. on your own fork of the repository, make whatever files you want to make then make a pull request 
