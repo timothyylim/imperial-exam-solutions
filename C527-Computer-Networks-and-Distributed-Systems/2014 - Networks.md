@@ -47,4 +47,12 @@ Routing tables refer to the network layer.
 
 ### b i) 
 
-Medium Access Control - Sublayer of the data link layer. It provides addressing mechanism and channel access so each node can communicate with other nodes on the same or other networks. Supports multiplexing.
+Medium Access Control - Sublayer of the data link layer. I
+
+Network links can be divided into two categories: those using point-to-point connections and those using broadcast channels. In any broadcast network, the key issue is how to determine who gets to use the channel when there is competition for it.
+
+The protocols used to determine who goes next on a multiaccess channel belong to a sublayer of the data link layer called the MAC (Medium Access Control) sublayer. 
+
+### b ii)
+
+
