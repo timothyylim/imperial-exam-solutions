@@ -37,10 +37,14 @@ SMTP relates to the application layer.
 
 #### a iv)
 
-Routing table - lists routes and distance to particular network destinations. (Every computer that runs TCP/IP makes routing decisions that are determined by the IP routing table.)
+Think of a routing table like a map for each little router so it can figure out where in the world he is. 
 
+In computer networking a routing table is a data table stored in a router or a networked computer that lists the routes to particular network destinations, and in some cases, metrics (distances) associated with those routes. The routing table contains information about the topology of the network immediately around it.
 
+Routing tables refer to the network layer.
 
+---
 
-1b i) 
+### b i) 
+
 Medium Access Control - Sublayer of the data link layer. It provides addressing mechanism and channel access so each node can communicate with other nodes on the same or other networks. Supports multiplexing.
