@@ -1,6 +1,6 @@
 ### 1
 
-a i) 
+### a i) 
 
 ICMP - allows routers to send control/error messages to other routers/hosts and provide feedback about communication problems (e.g. no guarantee of delivery, control message return) 
 
@@ -15,19 +15,32 @@ For general knowledge:
 - Address Resolution Protocol / Reverse Address Resolution Protocol 
   - to initialize the use of Internet addressing on an Ethernet or other network that uses its own media access control (MAC). ARP allows a host to communicate with other hosts when only the Internet address of its neighbors is known. Before using IP, the host sends a broadcast ARP request containing the Internet address of the desired destination system. 
 
-a ii)
+
+ICMP relates to the Network Layer of the OSI Model.
+
+### a ii)
 
 Frame delimiter - indicate start/end of frame (protocol data unit of the data link layer). Comes after the preamble in the ethernet packet. 
 
 Preamble: establish synchronization
 
-1a iii)
 
-SMTP - used for sending mail from the client to the server of the recipient where it will be retrieved by using either POP3 or IMAP.
+### a iii)
 
-1a iv)
+Simple Mail Transfer Protocol (SMTP) is a protocal used by Mail Transfer Agents (e.g. Exchange) and Mail User Agents (Outlook, Thunderbird) for delivering mail from one system to another.
+
+two parties communicate using TCP and port 25.
+
+SMTP relates to the application layer.
+
+
+
+#### a iv)
 
 Routing table - lists routes and distance to particular network destinations. (Every computer that runs TCP/IP makes routing decisions that are determined by the IP routing table.)
+
+
+
 
 1b i) 
 Medium Access Control - Sublayer of the data link layer. It provides addressing mechanism and channel access so each node can communicate with other nodes on the same or other networks. Supports multiplexing.
