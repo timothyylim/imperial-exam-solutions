@@ -71,3 +71,8 @@ need to come back.
 One could use Network Address Translation. 
 
 Since only a small number of hosts need external access, it's possible to hide a large network in a small internet address range.
+
+---
+
+### 2 a i)
+
