@@ -2,15 +2,36 @@
 
 a.
 
-What Are The Advantages Of POP?
-Being the original protocol, POP follows the simplistic idea that only one client requires access to mail on the server and that mails are best stored locally. This leads to the following advantages:
+What Are The Advantages Of IMAP?
 
-- Mail stored locally, i.e. always accessible, even without internet connection
-- Internet connection needed only for sending and receiving mail
-- Saves server storage space
-- Option to leave copy of mail on server
-- Consolidate multiple email accounts and servers into one inbox
-- this is mo!
+IMAP was created to allow remote access to emails stored on a remote server. The idea was to allow multiple clients or users to manage the same inbox. So whether you log in from your home or your work computer, you will always see the same emails and folder structure since they are stored on the server and all changes you make to local copies are immediately synced to the server.
+
+As a result, IMAP has the following advantages:
+
+ - Mail stored on remote server, i.e. accessible from multiple different locations
+ - Internet connection needed to access mail
+ - Faster overview as only headers are downloaded until content is explicitly requested
+ - Mail is automatically backed up if server is managed properly
+ - Saves local storage space
+ - Option to store mail locally
+
+Extra information:
+
+Choose POP If…
+
+ - you want to access your mail from only one single device
+ - you need constant access to your email, regardless of internet availability
+ - your server storage space is limited
+
+Choose IMAP If…
+
+ - you want to access your email from multiple different devices
+ - you have a reliable and constant internet connection
+ - you want to receive a quick overview of new emails or emails on the server
+ - your local storage space is limited
+ - you are worried about backing up
+
+
 
 http://www.makeuseof.com/tag/pop-vs-imap/
 
