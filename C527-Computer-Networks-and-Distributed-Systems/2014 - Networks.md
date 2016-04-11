@@ -61,3 +61,13 @@ Standard Ethernet networks use CSMA/CD to physically monitor the traffic on the 
 
 If another collision occurs, the time intervals from which the random waiting time is selected are increased step by step. This is known as exponential back off.
 
+### b iii)
+
+need to come back.
+
+
+### b iv)
+
+One could use Network Address Translation. 
+
+Since only a small number of hosts need external access, it's possible to hide a large network in a small internet address range.
