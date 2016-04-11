@@ -72,6 +72,11 @@ The difference in the time takent to process queries to a domain may be the resu
 
 http://dyn.com/blog/dns-why-its-important-how-it-works/
 
+An interesting discussion on Stack Exchange:
+
+http://superuser.com/questions/22470/can-the-internet-work-without-dns/22472
+
+
 ---
 
 d. 
@@ -93,7 +98,27 @@ http://stackoverflow.com/questions/1099672/when-is-it-appropriate-to-use-udp-ins
 
 e.
 
-no idea.
+TCP in networks with high packet loss rates suffers from throughput penalties, since TCP regards packet losses as signals of network congestion; TCP then reduces the data transmission rate whenever the protocol detects packet losses, even though they may occur as a result of the link errors that are usual in wireless networks. 
+
+http://www.sciencedirect.com/science/article/pii/S1389128609002060
+
+
+
+"Reliable" does not mean the same thing for everyone. Reliable for TCP means that if you use it on lossy networks or on networks that corrupts and/or reorder packets, then you will not get garbled data, and will essentially receive good data at the end.
+
+The problem is that TCP sucks, and while it works in these cases, it's just horribly slow. So when you use raw TCP on links that regularly loose 0.5% of packets, you will get much less performance than the theoretical data rate of (link_data_rate / (1 - packet loss rate)) on a single link, because of the TCP assumption that all packet loss are caused by congestion.
+
+TCP was designed for networks that seldom loose packets, so TCP only has to tolerate packet loss.
+
+One of the tasks of the reliable link thing on layer two is mainly here to compensate for TCP suckiness. They aren't supposed to be 100% reliable like TCP. For example, 802.11 accept to loose packet if the retransmission count get above a certain threshold, whereas TCP doesn't and will retransmit forever until the application or user decides that it is enough.
+
+The reliable link thing on layer 2 is mainly there for speed. For example, on 802.11, the ack mechanism is also used by nodes so that they can decrease the modulation speed if the wireless link degrades. When 802.11 can't do ACK (e.g. for multicast frames), it typically uses the lowest modulation rate, which is often 1 Mb/s, to get maximum reliability, at the huge expense of speed.
+
+Sometimes, when you have a network with many highly unreliable links, you may need layer 2 reliability, otherwise the whole path may have many unreliable links and the path packet loss rate might get too high to be useful. But this is often not the case on your typical networks.
+
+Historically, TCP picked up because it allowed routers to loose packets. So routers were simpler, faster and the global result was that handling reliability on the endpoints had better performance than handling it in the core network.
+
+http://superuser.com/questions/401935/difference-between-the-reliable-delivery-by-link-protocols-and-by-tcp
 
 
 # 2
