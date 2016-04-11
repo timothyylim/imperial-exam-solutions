@@ -55,4 +55,9 @@ The protocols used to determine who goes next on a multiaccess channel belong to
 
 ### b ii)
 
+CSMA/CD is a set of rules determining how network devices respond when two devices attempt to use a data channel simultaneously (called a collision). 
+
+Standard Ethernet networks use CSMA/CD to physically monitor the traffic on the line at participating stations. If no transmission is taking place at the time, the particular station can transmit. If two stations attempt to transmit simultaneously, this causes a collision, which is detected by all participating stations. After a random time interval, the stations that collided attempt to transmit again. 
+
+If another collision occurs, the time intervals from which the random waiting time is selected are increased step by step. This is known as exponential back off.
 
