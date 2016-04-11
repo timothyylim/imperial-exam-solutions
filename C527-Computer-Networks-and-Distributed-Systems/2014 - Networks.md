@@ -1,8 +1,21 @@
-1a i) 
+### 1
+
+a i) 
 
 ICMP - allows routers to send control/error messages to other routers/hosts and provide feedback about communication problems (e.g. no guarantee of delivery, control message return) 
 
-1a ii)
+For general knowledge:
+
+- ICMP
+  - Internet Control Message Protocol - messages which generally contain information about routing difficulties with IP datagrams or simple exchanges such as time-stamp or echo transactions.
+
+- Dynamic Host Configuration Protocol 
+  - provides Internet hosts with configuration parameters. DHCP is an extension of BOOTP. DHCP consists of two components: a protocol for delivering host-specific configuration parameters from a DHCP server to a host and a mechanism for allocation of network addresses to hosts. 
+
+- Address Resolution Protocol / Reverse Address Resolution Protocol 
+  - to initialize the use of Internet addressing on an Ethernet or other network that uses its own media access control (MAC). ARP allows a host to communicate with other hosts when only the Internet address of its neighbors is known. Before using IP, the host sends a broadcast ARP request containing the Internet address of the desired destination system. 
+
+a ii)
 
 Frame delimiter - indicate start/end of frame (protocol data unit of the data link layer). Comes after the preamble in the ethernet packet. 
 
