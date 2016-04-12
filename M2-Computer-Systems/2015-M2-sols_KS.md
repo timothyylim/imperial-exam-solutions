@@ -65,6 +65,8 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 * **REG** or register for specifying the 1st operand for instruction -- 2 bits
 * **ADDRESS** for specifying the 2nd operand for instruction -- 10 bits
 
+For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slide 6.
+
 **(ii.)** Three possible ways to address operands in an instruction:
 
 1. **Register Operands:** operand is stored in general purpose registers.
