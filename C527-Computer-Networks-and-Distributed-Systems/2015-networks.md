@@ -229,6 +229,7 @@ Colouris 124
 
 c.
 
+didn't really go through this in the lecture slides...
 
 
 # 4
