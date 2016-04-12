@@ -32,6 +32,7 @@ multiple adjacent memory locations.
 ###1 c.
 
 ![alt text](http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/ietron/nor2.gif "Logo Title Text 1")
+
 From Tim.
 
 ###1 d.
@@ -46,7 +47,7 @@ From Tim.
 
 5. Sign: 1 
 
-6. Put it all together... 1100 0010 0101 0001 0011 0011 0011 0011
+6. Put it all together... Sign + Exponent + Significand = 1 + 1000 0100 + 1010 0010 0110 0110 0110 011
 
 | Binary | 1100 | 0010 | 0101 | 0001 | 0011 | 0011 | 0011 |0011 |
 |--------|------|------|------|------|------|------|------|-----|
