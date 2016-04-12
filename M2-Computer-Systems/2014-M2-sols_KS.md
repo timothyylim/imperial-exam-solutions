@@ -61,7 +61,7 @@ For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleu
 
 **(iii.)** 
 
-**(iv.)**  The CPU will receive an interrupt in the form of an interrupt vector number (0 to 255 on a Pentium CPU) which is an index that will determine where to find the "descriptor" in the interrupt descriptor table.  The descriptor will include the Interrupt Handler's start address which is held in the IDT Base Register.
+**(iv.)**  The CPU will receive an interrupt in the form of an interrupt vector number (0 to 255 on a Pentium CPU) which is an index that will determine where to find the "descriptor" in the interrupt descriptor table.  The descriptor will include the Interrupt Handler's start address which is held in a special CPU register called the IDT Base Register.
 
 When an Interrupt occurs the Pentium CPU will:
 
@@ -70,5 +70,6 @@ When an Interrupt occurs the Pentium CPU will:
 * clear the interrupt flag bit in the EFLAGS register - this disables further interrupts
 * push the return address (i.e. contents of the EIP register) onto the stack
 * call the interrupt handler using the entry in the itnerrupt descriptor table
+* to return, the interrupt handler executs the iret instruction which restores the state (e.g. EFLAGS and EIP) and jumps to the return address on the stack.  It is the programmers responsibility to resotre any other registers.
 
 For more information see [Pentium I/O](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/8_Slides_IO.PPT) slides 24-28.
