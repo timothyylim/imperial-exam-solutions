@@ -73,6 +73,7 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 3. REG, ADDRESS, OPCODE
 
 I don't know which one is the most efficient but I would assume #1 because that's what the lecture notes mostly use. :/
+There is also some stusff on instruction format regarding intel processors on slide 10 of Pentium architecture: registers & addressing modes.
 
 **(iii.)**
 
