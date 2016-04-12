@@ -76,4 +76,4 @@ E = A + B | idempotent
 
 **(ii.)** The use of methods involves using a stack and a stack pointer register (esp) as well as the base pointer register (ebp). When a method is first called using call, the eip (return address) is pushed to the stack and we jump to the start of method. Then when we run ret (return), we pop the return address into eip. Parameters and objects can also be passed if necessary using the stack. [Pentium Architecture: Methods](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
 
-**(iii.)** TEMPORARY-UNCERTAIN ANSWER: In order to make sure the program execution resumes with the CPU state identical to that immediately before the prcedure call, the assembly programmer should setup a frame poitner and allocate space for local variables upon entry and then de-allocate local variables and restore the frame pointer upon exit. [Slide 15](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
+**(iii.)** [Slide 15](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt)?
