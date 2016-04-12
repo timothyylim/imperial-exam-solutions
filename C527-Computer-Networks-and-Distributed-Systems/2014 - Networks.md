@@ -103,6 +103,10 @@ Connection Oriented services maintain a connection between endpoints in the form
 
 a CL service cannot be provided on a Circuit Switched Network because the unit of transfer in a CL network is a datagram. This is not possible in a CS network. 
 
+### 2 bi)
+
+![alt text](images/2014-2bi)
+
 ---
 
 ### 3 a)
