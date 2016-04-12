@@ -60,12 +60,9 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 ##Section B
 ###2 a.
 
-**(i.)** Every machine instruction (16 bits) has a:
-* **OPCODE** or operation code for selecting CPU instruction -- 4 bits
-* **REG** or register for specifying the 1st operand for instruction -- 2 bits
-* **ADDRESS** for specifying the 2nd operand for instruction -- 10 bits
+**(i.)** Every machine instruction must have an **OPCODE** or operation code for selecting CPU instruction (4 bits).
 
-For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slide 6.
+For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slides 6-8.
 
 **(ii.)** Three possible ways to address operands in an instruction:
 
