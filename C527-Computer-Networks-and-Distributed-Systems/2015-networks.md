@@ -252,26 +252,43 @@ lecture slides
 
 b.
 
-At the most basic level, RMI is Java's remote procedure call (RPC) mechanism. RMI has
-several advantages over traditional RPC systems because it is part of Java's object oriented
-approach. Traditional RPC systems are language-neutral, and therefore are essentially leastcommon-denominator
-systems so they cannot provide functionality that is not available on
-all possible target platforms.
+Both RPC and RMI try and solve the problem of getting executing code on a remote machine. To figure out the difference between the two it helps to understand what the bloody acronyms mean. RPC => remote procedure call, RMI => remote method invocation. To call a procedure remotely means to ask a routine to run remotely. Since methods are associated with objects, we can deduce that RMI based on object-oriented programming. 
+
+The benefits of RMI over RPC are closely associated with the benefits of using object: i.e. you can do more complicated shit at an overhead cost. 
+
+Three advantages:
+- transparency, 
+-
+-
+
+RPC is C based, and as such it has structured programming semantics, on the other side, RMI is a Java based technology and it's object oriented.
+
+With RPC you can just call remote functions exported into a server, in RMI you can have references to remote objects and invoke their methods, and also pass and return more remote object references that can be distributed among many JVM instances, so it's much more powerful.
+
+RMI stands out when the need to develop something more complex than a pure client-server architecture arises. It's very easy to spread out objects over a network enabling all the clients to communicate without having to stablish individual connections explicitly.
 
 
-RMI is focused on Java, with connectivity to existing systems using native methods. This
-means RMI can take a natural, direct, and fully powered approach to provide a distributed
-computing technology that allows us to add Java functionality throughout the system. To
-get the cross-platform portability that Java provides, RPC requires a lot more overheads than
-RMI. RPC has to convert the arguments between architecture so that each computer can use
-its native datatype. 
 
-RMI’s biggest limitation is it can only call methods in Java. To call
-methods written in other languages it has to rely on other technologies like JNI, JDBC,
-RMI-IIOP, RMI-IDL etc. Whereas RPC does not translate well into Distributed object
-systems, where program-level objects residing in different address space is needed.
+1. Approach:
 
-http://itgs.tistory.com/attachment/1406296529.pdf
+RMI uses an object-oriented paradigm where the user needs to know the object and the method of the object he needs to invoke.
+
+RPC doesn't deal with objects. Rather, it calls specific subroutines that are already established.
+
+2. Working:
+
+With RPC, you get a procedure call that looks pretty much like a local call. RPC handles the complexities involved with passing the call from local to the remote computer.
+
+RMI does the very same thing, but RMI passes a reference to the object and the method that is being called.
+
+RMI = RPC + Object-orientation
+
+3. Better one:
+
+RMI is a better approach compared to RPC, especially with larger programs as it provides a cleaner code that is easier to identify if something goes wrong.
+
+
+
 
 ---
 
