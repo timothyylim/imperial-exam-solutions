@@ -75,9 +75,7 @@ For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleu
 
 3. **Memory Operands:** operand is stored in a memory address location.
 
-Immediate addressing is the fastest because it doesn't require any lookup.
-
-See slide 14 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) for examples or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for more information.
+Immediate addressing is the fastest because it doesn't require any lookup.  See slide 14 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) for examples or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for more information.
 
 **(iii.)** 
 
