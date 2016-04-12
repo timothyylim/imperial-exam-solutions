@@ -240,7 +240,7 @@ a.
  The job of a security manager is to prevent any nasty surprises from remotely loaded classes. Therefore, you only need to install a security manager for RMI if the peer is using the codebase facility to supply classes to you dynamically.
 
 The checks a security manager does (just imagine him as some fat security guard) is the access to
-- communications 
+- communications
 - files
 - control of the virtual machine
 
