@@ -235,7 +235,16 @@ c.
 
 a.
 
- In RMI applications, if no security manager is set, stubs and classes can only be loaded from local classpath – protect application from downloaded code
+ A security manager is not necessary when using RMI in Java. To understand why this is the case let's look at what a security manager does:
+ 
+ The job of a security manager is to prevent any nasty surprises from remotely loaded classes. Therefore, you only need to install a security manager for RMI if the peer is using the codebase facility to supply classes to you dynamically.
+
+The checks a security manager does (just imagine him as some fat security guard) is the access to
+- communications 
+- files
+- control of the virtual machine
+
+ In RMI applications, if no security manager is set, stubs and classes can only be loaded from local classpath, so yes, you can survive without a security manager. Living without the security manager is either unecessarily risky or completely fine depending where you are loading your stubs from. 
 
 ---
 
