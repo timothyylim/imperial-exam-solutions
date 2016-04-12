@@ -47,7 +47,9 @@ Binary | 1100 | 0011 | 0000 | 1011 | 0101 | 0011 | 0011 | 0011
 **Hex**    | **C**    | **3**    |  **0**   | **B**   |   **5**  |  **3**   |  **3**   | **3**
 
 
-##1 d. It's a really long proof so I haven't typed out every single step.
+##1 d.
+
+It's a really long proof so I haven't typed out every single step.
 
 Equation | Rule
 -------- | ---------
