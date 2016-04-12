@@ -64,7 +64,7 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 * **ADDRESS** for specifying the 2nd operand for instruction -- 10 bits
 
 **(ii.)** Three possible ways to address operands in an instruction:
-1. 
-2. 
-3. 
+1. a
+2. b
+3. c
 
