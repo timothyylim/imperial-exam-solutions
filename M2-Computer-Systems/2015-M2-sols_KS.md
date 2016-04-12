@@ -2,15 +2,15 @@
 ##Section A
 ###1 a.
 
-**(i).** Sign and Magnitude: just flip the sign for negatives.
+**(i).** Sign and Magnitude: find the positive binary and, if negative, flip the sign (first bit).
 
 1010 1101
 
-**(ii).** One's complement: invert all digits.
+**(ii).** One's complement: find positive binary and, if negative, flip all of the bits.
 
 1101 0010
 
-**(iii).**  Two's complement: add one to the one's complement.
+**(iii).**  Two's complement: same as one's complement but if negative, add one to the one's complement.
 
 1101 0011
 
