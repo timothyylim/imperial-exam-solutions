@@ -18,7 +18,9 @@
 64 is the offset (excess-64), -45 is the number we want.
 So we do the binary of 19... 0001 0011.
 
-###1 b. **High Order Interleaving** involves putting the module address bits first in the address
+###1 b.
+
+**High Order Interleaving** involves putting the module address bits first in the address
 which results in having the adjacent addresses all come from the same module. If multiple memory
 modules can be accessed concurrently then separate processors can access different rows simultaneously
 allowing for parallel operation.
