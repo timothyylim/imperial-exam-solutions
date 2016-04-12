@@ -8,7 +8,7 @@ Decimal       | Binary
 -4            | 1111 1100
 13 + (-4) = 9 | **1** 0000 1001
 
-The bolded bit gets discarded so we end up with 0000 1001.
+The bolded bit gets discarded so we end up with 0000 1001.  Note: if we had A - (-B) = -C or -A - B = C where A and B had different signs but C had the same sign as the subtrahend then we'd have to worry about overflow.
 
 ###1 b.
 
@@ -57,4 +57,6 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slides 6-8.
 
-**(ii.)** 
+**(ii.)** Operands can be stored in either a register or a memory location (address).  Register addressing is faster than memory addressing because it doesn't involve accessing the memory which is time intensive.  See this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for further reading.
+
+**(iii.)** 
