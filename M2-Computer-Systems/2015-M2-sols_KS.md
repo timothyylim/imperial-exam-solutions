@@ -71,7 +71,7 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 2. **Immediate Operands:** operand is included in instruction (constant).
 
-3. *Memory Operands:** operand is stored in a memory address location.
+3. **Memory Operands:** operand is stored in a memory address location.
 
 Immediate addressing is the fastest because it doesn't require any lookup.
 
