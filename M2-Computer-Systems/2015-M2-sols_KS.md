@@ -75,10 +75,10 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 Immediate addressing is the fastest because it doesn't require any lookup.
 
-See slide 14 of Pentium Architecture: Registers & Addressing Modes for examples or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for more information.
+See slide 14 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) for examples or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for more information.
 
 **(iii.)** 
 
-**(iv.)** The call instruction will begin the instruction no matter what. Jump instructions typically have a conditional flag where they will only jump to a different address within the stack if the flag contains a specific value. This can be used to create a nested function by jumping "backwards" in the stack and then subsequently executing calls in order from there ultimately leading back to the jump instruction. The jump instruction will, if used correctly, eventually be bypassed due to some condition which is also how while and for loops work. For more information on jump instructions and nested loops see slides 14-21 of Pentium Architecture: Introductory Programming.
+**(iv.)** The call instruction will begin the instruction no matter what. Jump instructions typically have a conditional flag where they will only jump to a different address within the stack if the flag contains a specific value. This can be used to create a nested function by jumping "backwards" in the stack and then subsequently executing calls in order from there ultimately leading back to the jump instruction. The jump instruction will, if used correctly, eventually be bypassed due to some condition which is also how while and for loops work. For more information on jump instructions and nested loops see slides 14-21 of [Pentium Architecture: Introductory Programming](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt).
 
 ###2 b.
