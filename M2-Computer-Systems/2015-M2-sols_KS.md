@@ -14,9 +14,11 @@
 
 1101 0011
 
-**(iv).** I wonder if I'm doing this one wrong but I did -45 + 64 = 19.
-64 is the offset (excess-64), -45 is the number we want.
-So we do the binary of 19... 0001 0011.
+**(iv).** -45 + 64 = 19
+
+64 is the offset (excess-64), -45 is the number we want so we'll do the binary of 19.
+
+0001 0011.
 
 ###1 b.
 
@@ -64,7 +66,17 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 * **ADDRESS** for specifying the 2nd operand for instruction -- 10 bits
 
 **(ii.)** Three possible ways to address operands in an instruction:
-1. a
-2. b
-3. c
+1. OPCODE, REG, ADDRESS
 
+2. OPCODE, ADDRESS, REG
+
+3. REG, ADDRESS, OPCODE
+
+I don't know which one is the most efficient but I would assume #1 because that's what the lecture notes mostly use. :/
+
+**(iii.)**
+
+
+**(iv.)** 
+
+For more information on jump instructions and nested loops see Introductory Pentium slides 14-21.
