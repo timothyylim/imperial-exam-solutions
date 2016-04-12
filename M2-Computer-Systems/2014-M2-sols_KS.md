@@ -2,11 +2,13 @@
 ##Section A
 ###1 a.
 
-Decimal | Binary
---------|-------
-13 | 0000 1101
-4 | 0000 0100
-13 - 4 = 9 | 0000 1001
+Decimal       | Binary
+--------------|-------
+13            | 0000 1101
+-4            | 1111 1100
+13 + (-4) = 9 | **1** 0000 1001
+
+The bolded bit gets discarded so we end up with 0000 1001.
 
 ###1 b.
 
