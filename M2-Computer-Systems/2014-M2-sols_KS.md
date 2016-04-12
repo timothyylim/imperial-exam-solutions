@@ -53,7 +53,7 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 ##Section B
 ###2 a.
 
-**(i.)** Every machine instruction must have an OPCODE or operation code for selecting CPU instruction (4 bits).
+**(i.)** Every machine instruction must have an OPCODE or operation code for selecting a CPU instruction (4 bits).
 
 For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slides 6-8.
 
