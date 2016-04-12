@@ -67,18 +67,16 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 **(ii.)** Three possible ways to address operands in an instruction:
 
-1. OPCODE, REG, ADDRESS
+1. 
 
-2. OPCODE, ADDRESS, REG
+2. 
 
-3. REG, ADDRESS, OPCODE
-
-I don't know which one is the most efficient but I would assume #1 because that's what the lecture notes mostly use. :/
-There is also some stusff on instruction format regarding intel processors on slide 10 of Pentium architecture: registers & addressing modes.
+3. 
 
 **(iii.)**
 
 
-**(iv.)** 
+**(iv.)** The call instruction will begin the instruction no matter what.  Jump instructions inherrently have a conditional flag
+where they will only jump to a different 
 
 For more information on jump instructions and nested loops see Introductory Pentium slides 14-21.
