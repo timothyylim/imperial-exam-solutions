@@ -1,4 +1,5 @@
 #Computer Systems 2012
+*Ananda didn't teach this year*
 ##Section A
 ###1 a.
 2M X 16-bit memory made up from 256K x 4-bit chips.
