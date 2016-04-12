@@ -333,3 +333,26 @@ bool call (request, reply){
 ---
 
 
+```
+include vote.idl
+
+void main() {
+ status = export(vote, "voteserver", docnameserver);
+ status = RPCServerListen();
+ ranked : 2D array of booleans of projectid and studentid of clients indicating whether they have voted
+ rankings: 2D array integers [projectid][studentid] storing the rank of each project by each student
+}
+
+void rank(studentid, projectid, myrank){
+ if not (ranked[prjectid][studentid]){
+  ranked[projectid][studentid]:= true;
+  rankings[projectid][studentid] = myrank;
+  } //else do nothing as you can't rank more than once on a project
+}
+
+void listrank(studentid, projectid, myrank){
+ myrank := rankings[projectid][studentid];
+}
+
+
+```
