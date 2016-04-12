@@ -354,5 +354,4 @@ void listrank(studentid, projectid, myrank){
  myrank := rankings[projectid][studentid];
 }
 
-
 ```
