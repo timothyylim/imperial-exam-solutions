@@ -257,9 +257,14 @@ Both RPC and RMI try and solve the problem of getting executing code on a remote
 The benefits of RMI over RPC are closely associated with the benefits of using object: i.e. you can do more complicated shit at an overhead cost. 
 
 Three advantages:
-- transparency, 
--
--
+- transparency (in terms of location and access)
+ - access transparency: emote invocations should be made 
+transparent in the sense that syntax of a remote 
+invocation is the same as the syntax of local invocation 
+ - location transparency:In a distributed system it is the idea that the resources accessed by a user can be anywhere on the network without the user having any idea where the resource is located. A file could be on the user's own PC, or thousands of miles away on another server, for example. The user would access it in the same way. 
+- type checking => fewer errors
+- write once, write everywhere
+ - due to inheritance based structure of OOP 
 
 RPC is C based, and as such it has structured programming semantics, on the other side, RMI is a Java based technology and it's object oriented.
 
