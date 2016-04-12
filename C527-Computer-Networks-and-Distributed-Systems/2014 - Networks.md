@@ -105,7 +105,7 @@ a CL service cannot be provided on a Circuit Switched Network because the unit o
 
 ### 2 bi)
 
-![alt text](images/2014-2bi)
+![alt text](images/2014-2bi.jpg)
 
 ---
 
