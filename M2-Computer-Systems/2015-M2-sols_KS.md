@@ -71,11 +71,11 @@ For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleu
 
 1. **Register Operands:** operand is stored in general purpose registers.
 
-2. **Immediate Operands:** operand is included in instruction (constant).
+2. **Immediate Operands:** an operand is included in instruction as a constant.
 
 3. **Memory Operands:** operand is stored in a memory address location.
 
-I don't know which is faster for sure but it seems to me that immediate addressing doesn't require any lookup (I don't think) but register addressing  provides faster processing of data (according to the page below) because it does not involve memory.  See slide 14 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) for examples or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for more information.
+Immediate addressing is the fastest because it doesn't require any look-up but register addressing is faster than memory addressing because it doesn't require any memory. See slide 14 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) for examples or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) or this [page](http://www.teach-ict.com/as_as_computing/ocr/H447/F453/3_3_8/lowlevel/miniweb/pg2.htm) for more information.
 
 **(iii.)** 
 
