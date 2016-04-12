@@ -59,7 +59,7 @@ For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleu
 
 **(ii.)** Operands can be stored in either a register or a memory location (address).  Register addressing is faster than memory addressing because it doesn't involve accessing the memory which is time intensive.  See this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm) for further reading.
 
-**(iii.)** 
+**(iii.)** This question seems to refer to arithmetic shifts (sal, [slide 6](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt)).  These are used as quick ways of multiplying and dividing by powers of 2.  A shift to the left would multiply the operand in the register by 2^2 and store it in the same register.
 
 **(iv.)**  The CPU will receive an interrupt in the form of an interrupt vector number (0 to 255 on a Pentium CPU) which is an index that will determine where to find the "descriptor" in the interrupt descriptor table.  The descriptor will include the Interrupt Handler's start address which is held in a special CPU register called the IDT Base Register.
 
