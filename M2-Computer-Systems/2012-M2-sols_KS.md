@@ -10,9 +10,9 @@
 
 256 x 2^10 = 2^8 x 2^10 = 2^18 rows per chip.
 
-**(i.)** 4 chips per module are required (4-bit x N = 16-bit).  Since each module will have 512K, 4 modules will be required to make up 2M.
+**(i.) 4 chips** per module are required (4-bit x N = 16-bit).  Since each module will have 512K, **4 modules** will be required to make up 2M.
 
-**(ii.)** Bits required to access byte-addressable memory: 2^21 rows * 2^1 bytes per row = 2^22 bits.  Bits required to access word-addressable memory: 2^21 bits.
+**(ii.)** Bits required to access byte-addressable memory: 2^21 rows * 2^1 bytes per row = 2^22 bits.  Bits required to access word-addressable memory: **2^21 bits.**
 
 **(iii.) Big Endian**
 
