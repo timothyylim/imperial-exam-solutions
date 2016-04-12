@@ -86,7 +86,10 @@ A CS network route breaks if any link or switch on the route fails. PS networks 
 
 ### a ii)
 
-Packet Switched Networks are more suitable for video streaming as it doesn't matter a few packets get lost, more will be transmitted. As the video needs to keep playing, there is no use recreating frames that have passed.
+Circuit switched networks are more suitable for live video streaming because you need guaranteed resources. In addition, information cannot be sent out of order otherwise the video would not functoin properly.
+
+Another reason is that a CS network will not have congestion once the initial set up is created.
+
 
 ###  a iii)
 
