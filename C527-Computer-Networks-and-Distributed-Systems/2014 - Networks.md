@@ -4,7 +4,7 @@
 
 ICMP - allows routers to send control/error messages to other routers/hosts and provide feedback about communication problems (e.g. no guarantee of delivery, control message return) 
 
-For general knowledge:
+For general knowledge of different internet protocols:
 
 - ICMP
   - Internet Control Message Protocol - messages which generally contain information about routing difficulties with IP datagrams or simple exchanges such as time-stamp or echo transactions.
@@ -63,16 +63,49 @@ If another collision occurs, the time intervals from which the random waiting ti
 
 ### b iii)
 
-need to come back.
+need to come back to this.
 
 
 ### b iv)
 
-One could use Network Address Translation. 
+You can connect multiple hosts in a LAN using a switch.
 
-Since only a small number of hosts need external access, it's possible to hide a large network in a small internet address range.
+Note: a bridge is the same thing as a switch but can only connect two hosts. 
 
 ---
 
 ### 2 a i)
+
+Circuit switched networks are essentially a maintained path (think telephones). Packet Switched Networks are an out of order transfer system (think sending letters).
+
+CS networks only incur costs at the set up connection while PS networks are charged with each packet.
+
+CS networks provide guaranteed resources (just like a phone call) whereas resources may not be guaranteed. 
+
+A CS network route breaks if any link or switch on the route fails. PS networks are more robust because failures are accomodated transparently when packets get lost (i.e. you know when a PS network starts to fuck up and it won't result in a catastrophic failure). 
+
+### a ii)
+
+Packet Switched Networks are more suitable for video streaming as it doesn't matter a few packets get lost, more will be transmitted. As the video needs to keep playing, there is no use recreating frames that have passed.
+
+###  a iii)
+
+CL vs CO. 
+
+Connectionless services do not maintain a connection or a specific routes. Datagrams (packets) are addressed by destination and are handle separately (again, think letters). Connectionless services are maintained using packet switching. 
+
+Connection Oriented services maintain a connection between endpoints in the form of a circuit. Cicruit switched networks provide a pure CO service. PS networks, on the other hand, provide a CO service by creating virtual circuits.
+
+### a iv)
+
+a CL service cannot be provided on a Circuit Switched Network because the unit of transfer in a CL network is a datagram. This is not possible in a CS network. 
+
+---
+
+### 3 a)
+
+
+
+
+
 
