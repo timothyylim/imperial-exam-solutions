@@ -297,5 +297,39 @@ RMI is a better approach compared to RPC, especially with larger programs as it 
 
 ---
 
-c.
+c. ii.
+
+Maybe (Best-Efforts) Call Semantics (aka Call Me Maybe)
+
+If the call fails, then too bad. No one will ever know about it. If it succeeds, you get one confirmation. This may be desirable for a system like a Bank's since multiple confirmations may corrupt the data.
+
+```
+bool call(request, reply){
+ send(request);
+ return receive(reply,T);
+
+}
+```
+
+c. i.
+
+At-Least-Once Call Semantics (aka Let Me Know ft. Future)
+
+If the call fails, at least one message will be sent. The client will retry up to N times, this also means that the server may receive up to n messages.
+
+```
+bool call (request, reply){
+ int retries = n;
+ while (retries--){
+  send(request);
+  if (receive(reply,T)) return True;
+ }
+ 
+ return False;
+}
+
+```
+
+---
+
 
