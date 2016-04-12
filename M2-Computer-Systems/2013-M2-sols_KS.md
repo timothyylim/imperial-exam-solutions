@@ -47,21 +47,26 @@ Binary | 1100 | 0011 | 0000 | 1011 | 0101 | 0011 | 0011 | 0011
 **Hex**    | **C**    | **3**    |  **0**   | **B**   |   **5**  |  **3**   |  **3**   | **3**
 
 
-##1 d.
+##1 d. It's a really long proof so I haven't typed out every single step.
 
 Equation | Rule
------------- | -------------
+-------- | ---------
 E = A' \* (A + B) + (B + A \* A) \* (A + B') | given
 E = (A' \* A) + (A' \* B) + (B + A \* A) \* (A + B') | distributive
 E = 0 + (A' \* B) + (B + A \* A) \* (A + B') | negation
 E = (A' \* B) + (B + A \* A) \* (A + B') | simplification
 E = (A' \* B) + (B + A) \* (A + B') | idempotent
-E = ((A' \* B) + B) + A \* (A + B') | associative
-E = (A' + B) \* (B + B) + A \* (A + B') | distributive
-E = (A' + B) \* B + A \* (A + B') | simplification (A + A = A)
-E = (A' + 1) \* B + A \* (1 + B') | simplification (A \* 1 = A)
-E = 1 \* B + A \* 1 | simplification (A + 1 = 1)
-E = A + B | simplification (A \* 1 = A)
+E = (A' \* B) + (B + A) \* A + (B + A) \* B' | distributive
+E = (A' \* B) + A \* A + B \* A + B' \* B + B' \* A | distributive
+E = (A' \* B) + A + B \* B + A \* B' | idempotent, negation, and simplification
+E = (A + A) \* (A + B) + A' \* B + A \* B' | distributive
+E = A + A' \* B + A \* B' | negation and simplification
+E = (A + A') \* (A + B) + (A \* B') | distributive
+E = (A + B) + (A \* B') | negation and simplification
+E = A + (B + (A \* B')) | associative
+E = A + (B + A) \* (B + B') | distributive
+E = A + (B + A) | negation and simplification
+E = A + B | idempotent
 
 ##2 a.
 
