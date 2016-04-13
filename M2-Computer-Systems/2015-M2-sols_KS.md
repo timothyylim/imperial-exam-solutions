@@ -107,7 +107,5 @@ Address | Contents            | Pseudocode
 200H    | A[0]                | holds A[0]
 ...     |                     |
 250H*   | A[n-1]              | holds A[n-1]
-...     |                     |
-300H    | n                   | holds n
 
 *let's call 200H + n-1 = 250H (n=51)
