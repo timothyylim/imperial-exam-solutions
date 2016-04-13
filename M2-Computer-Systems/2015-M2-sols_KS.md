@@ -92,12 +92,26 @@ R2 | temporary index value of A
 R3 | lower index value of A
 R4 | higher index value of A
 
-Address | Contents        | Notes
---------|-----------------|-------
-080H    | to be continued    | 
-200H    | A[0]            | holds A[0]
-...     |                 |
-200H + n-1 | A[n-1]       | holds A[n-1]
-300H    | n               | holds n
-301H    | 0               | constant 0
-302H    | 1               | constant 1
+**I haven't quite finished with the code below.  Just started.  Will come back to it.**
+
+Address | Contents            | Notes
+--------|---------------------|-------
+080H    | LOAD R1, 300H       | set the counter = n 
+081H    | LOAD R2, 200H       | temporarily save the lower value
+082H    | LOAD R3, 200H       | point to the lower value
+083H    | LOAD R4, 250H       | point to the higher value
+084H    | STORE               | swap the values
+085H    | STORE               | swap the values
+086H    | INC R3              | point to the next lowest value
+087H    | DEC R4              | point to the next highest value
+088H    | DEC R1              | decrement the counter
+089H    | JGT R1, 300H, 081H  | loop
+090H    | STOP                | end the program
+...     |                     |
+200H    | A[0]                | holds A[0]
+...     |                     |
+250H*   | A[n-1]              | holds A[n-1]
+300H    | n                   | holds n
+301H    | 0                   | constant 0
+
+*let's call 200H + n-1 = 250H (n=51)
