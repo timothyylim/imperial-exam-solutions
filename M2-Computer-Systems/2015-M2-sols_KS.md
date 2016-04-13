@@ -108,4 +108,4 @@ Address | Contents            | Pseudocode
 ...     |                     |
 250H*   | A[n-1]              | holds A[n-1]
 
-*let's call 200H + n-1 = 250H (n=51) -- I'm undecided if I should have written some code at the beginning to find the address by using the value of n (which could be stored at, let's say, 300H).  So we could say R0 = [300H], DEC R0 (to get n-1), R3 = 200H and then INC R3 and DEC R0 while [R0] > 0 or something but then we'd have to use JGT which doesn't technically say you can compare values, just addresses but I think you could use it for values to.  I'm not sure.
+*let's call 200H + n-1 = 250H (n=51) -- I'm undecided if I should have written some code at the beginning to find the address by using the value of n (which could be stored at, let's say, 300H).  So we could say R0 = [300H], DEC R0 (to get n-1), R3 = 200H and then INC R3 and DEC R0 while [R0] > 0 or something but then we'd have to use JGT which doesn't technically say you can compare values, just addresses but I think you could use it for values too.  I'm not sure.
