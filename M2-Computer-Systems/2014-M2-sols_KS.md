@@ -76,7 +76,7 @@ When an Interrupt occurs the Pentium CPU will:
 
 For more information on interrupts see [Pentium I/O](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/8_Slides_IO.PPT) slides 24-29. For more information on the EIP and EFLAGS registers, see slides 6 and 7 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt).
 
-###2 b.
+###2 b. I will come back to this one... feel free to put your own answer in.
 
 I don't know if this is too pedantic but because of the way variables get passed into methods, the variables X, Y, Z would technically be placed on the stack first (with Z going first) and then the output would be passed to EAX (so we'd pass A there). Then I think we would *technically* push the EIP during the CALL function (if I'm not mistaken) and then we'd get the local variables going. I'm not sure how necessary all that is though.  At the end we'd pop EIP using RET.  In theory.
 
