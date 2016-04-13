@@ -64,3 +64,30 @@ Immediate addressing is the fastest because it doesn't require any look-up (alth
 **(iii.)** Stack memory is a LIFO queue. The largest address is used as the beginning of the stack (the esp will point to the start of the stack) and the stack grows downwards in memory. When a function is called, the calling method first passes parameters. Then the called method sets up the frame pointer (ebp) and allocates local variables as necessary. The eip is also pushed to the stack (registers are saved) and the method is executed.  Once finished, the method results are copied to eax, the eip is pushed (registers are restored) and the local variable memory is deallocated.  The method returns and executes the next call (now in eip). [more information](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
 
 ###2 b.
+
+The following program will calculate A[0] - A[1] + A[2] - A[3] +...+ A[n-2] - A[n-1]. n is a positive, even integer. I'm going to use the following registers as such:
+
+Register | Use
+---|----
+R0 | counter
+R1 | pointer
+R2 | value
+R3 | not used
+
+Address | Contents            | Pseudocode
+--------|---------------------|-------
+080H    | LOAD R0, [300H]     | counter = C
+081H    | LOAD R2, [302H]     | R2 = 0
+082H    | STORE R2, [300H]    | A = R2 = 0
+**083H**| **ADD**             | **A = A + B**
+084H    | SUB R0, [304H]      | counter = counter - 1
+085H    | IFZER R0, 088H      | if counter = 0, stop
+086H    | IFNEG R0, 088H      | if counter < 0, stop
+**087H**| **GOTO 083H**       | **if counter > 0, loop**
+088H    | STOP                | end the program
+...     |                     |
+300H    | A                   | holds result
+301H    | B                   | holds B
+302H    | C                   | holds C
+303H    | 0                   | constant, 0
+304H    | 1                   | constant, 1
