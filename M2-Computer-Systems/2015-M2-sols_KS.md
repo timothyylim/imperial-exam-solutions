@@ -85,11 +85,12 @@ Immediate addressing is the fastest because it doesn't require any look-up (alth
 ###2 b.
 I'm going to use the following registers as such:
 
-R1 | **counter**
+Register | Use
 ---|----
-**R2** | temporary index value of A
-**R3** | lower index value of A
-**R4** | higher index value of A
+R1 | counter
+R2 | temporary index value of A
+R3 | lower index value of A
+R4 | higher index value of A
 
 Address | Contents        | Notes
 --------|-----------------|-------
