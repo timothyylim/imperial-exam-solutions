@@ -79,3 +79,5 @@ E = A + B | idempotent
 **(iii.)** IRET (return from an interrupt handler) will restore the state (EFLAGS and EIP) and then jump to the return address on the stack. RET (return from a call) will pop the return address into eip. It is the programmer's responsibility to restore any other registers. [Slide 26](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/8_Slides_IO.PPT) and [slide 11](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
 
 **(iv.)** A function call is synchronus while a hardware interrupt is asynchronus.  Also, before calling the interrupt handler, a pentium cpu will push the EFLAGS register and disable further interrupts.  A regular function call does not do this, it will only push EIP.
+
+None of my above answers really involve ebp, parameter passing, or local variables... not sure how to feel about that.
