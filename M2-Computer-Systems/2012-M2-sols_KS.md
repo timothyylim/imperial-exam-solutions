@@ -42,3 +42,13 @@ Integer #2 = 0180 (hex) = 0000 0001 1000 0000 (binary) = 384 (decimal)
 
 
 ###1 b.
+
+
+
+##Section B
+###2 a.
+
+**(i.)** The two fields are the OPCODE for **JMP and the new address** to load into the EIP register which will dictate where the program goes next.  The address can also be stored in the EAX register which could also be used after JMP.
+[Slides 14-15](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt) and [wikipedia](https://en.wikipedia.org/wiki/JMP_(x86_instruction)) have helpful information on this.
+
+**(ii.)** 
