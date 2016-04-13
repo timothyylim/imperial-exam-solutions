@@ -35,11 +35,11 @@ multiple adjacent memory locations.
 
 ![alt text](http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/ietron/nor2.gif "Logo Title Text 1")
 
-**i)** Idempotent law A + A = A 
+**(i)** Idempotent law A + A = A 
 
-**ii)** DeMorgan's law A + B = A' . B'
+**(ii)** DeMorgan's law A + B = A' . B'
 
-**iii)** Negation
+**(iii)** Negation
 
 ###1 d.
 
@@ -83,3 +83,20 @@ Immediate addressing is the fastest because it doesn't require any look-up (alth
 **(iv.)** CALL will always push the EIP so that we can return to where we were before the call using RET. Jump instructions do not save (push) the EIP register and therefore will not return to any location after jumping. Jump also typically has a conditional flag only allowing the program to jump to a different address if the flag contains a specific value (although an unconditional jump does exist). This can be used to create a nested function by jumping "backwards" and then subsequently executing calls in order from there ultimately leading back to the jump instruction. The jump instruction will, if used correctly, eventually be bypassed due to some condition which is also how while and for loops work. For more information on jump instructions and nested loops see [slides 14-21](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt).
 
 ###2 b.
+I'm going to use the following registers as such:
+
+R1 | **counter**
+---|----
+**R2** | temporary index value of A
+**R3** | lower index value of A
+**R4** | higher index value of A
+
+Address | Contents        | Notes
+--------|-----------------|-------
+080H    | to be continued    | 
+200H    | A[0]            | holds A[0]
+...     |                 |
+200H + n-1 | A[n-1]       | holds A[n-1]
+300H    | n               | holds n
+301H    | 0               | constant 0
+302H    | 1               | constant 1
