@@ -81,3 +81,40 @@ E = A + B | idempotent
 **(iv.)** A function call is synchronus while a hardware interrupt is asynchronus.  Also, before calling the interrupt handler, a pentium cpu will push the EFLAGS register and disable further interrupts.  A regular function call does not do this, it will only push EIP.
 
 None of my above answers really involve ebp, parameter passing, or local variables... not sure how to feel about that.
+
+##2 b.
+
+The following program will calculate A[0] - A[1] + A[2] - A[3] +...+ A[n-2] - A[n-1]. n is a positive, even integer. I'm going to use the following registers as such:
+
+Register | Use
+---|----
+R0 | point to address of A
+R1 | counter
+R2 | not used
+R3 | not used
+
+Address | Contents            | Pseudocode
+--------|---------------------|-------
+080H    | LOAD R1, [300H]     | counter = n
+081H    | LOAD 301H, [302H]   | B = 0
+082H    | LOAD R0, 200H       | R0 points to first element
+**083H**    | **ADD [R0], 301H**      | **Sum even indexes ...+ A[0] + A[2]...**
+084H    | ADD [303H], R0      | increment pointer
+085H    | SUB [R0], 301H      | Subtract negative indexes ...- A[1] - A[3]...
+086H    | ADD [303H], R0      | increment pointer
+087H    | SUB [303H], R1      | decrement counter
+088H    | SUB [303H], R1      | decrement counter
+089H    | IFZER [R1], 092H    | if counter == 0, exit loop
+090H    | IFNEG [R1], 092H    | if counter < 0, exit loop
+**091H**    | **GOTO 083H**           | **loop if counter > 0**
+092H    | STOP                | end the program
+...     |                     |
+200H    | A[0]                | holds A[0]
+201H    | A[1]                | holds A[1]
+...     |                     |
+200H + n-1 | A[n-1]           | holds A[n-1]
+...     |                     |
+300H    | n                   | holds n
+301H    | B                   | holds B (the result)
+302H    | 0                   | constant, 0
+303H    | 1                   | constant, 1
