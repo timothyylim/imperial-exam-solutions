@@ -108,7 +108,7 @@ Address | Contents            | Notes
 087H    | DEC R4              | point to the next highest value
 088H    | DEC R1              | decrement the counter
 089H    | DEC R1              | decrement counter again
-090H    | JGT R1, 300H, 081H  | loop if the counter > 0
+090H    | JGT R1, 301H, 081H  | loop if the counter > 0
 091H    | STOP                | end the program
 ...     |                     |
 200H    | A[0]                | holds A[0]
