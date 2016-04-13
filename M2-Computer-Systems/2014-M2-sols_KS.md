@@ -36,9 +36,9 @@ E = 1 | negation
 
 C304 F000 ==> **1100 0011 0000 0100 1111 0000 0000 0000 (binary)**
 
-Sign (1st bit): 1 --> negative number
+Sign (1st bit): 1 ==> negative number
 
-Exponent (middle 8-bits): 1000 0110 = 134 --> E = 134 - 127 = 7
+Exponent (middle 8-bits): 1000 0110 = 134 ==> E = 134 - 127 = 7
 
 Significand + **hidden bit** (last 23-bits): **1**.000 0100 1111 0000 0000 0000
 
@@ -75,3 +75,6 @@ When an Interrupt occurs the Pentium CPU will:
 * to return, the interrupt handler executs the iret instruction which restores the state (e.g. EFLAGS and EIP) and jumps to the return address on the stack.  It is the programmers responsibility to resotre any other registers.
 
 For more information on interrupts see [Pentium I/O](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/8_Slides_IO.PPT) slides 24-29. For more information on the EIP and EFLAGS registers, see slides 6 and 7 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt).
+
+###2 b.
+
