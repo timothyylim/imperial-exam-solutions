@@ -109,3 +109,28 @@ Address | Contents            | Pseudocode
 250H*   | A[n-1]              | holds A[n-1]
 
 *let's call 200H + n-1 = 250H (n=51) -- I'm undecided if I should have written some code at the beginning to find the address by using the value of n (which could be stored at, let's say, 300H).  So we could say R0 = [300H], DEC R0 (to get n-1), R3 = 200H and then INC R3 and DEC R0 while [R0] > 0 or something but then we'd have to use JGT which doesn't technically say you can compare values, just addresses but I think you could use it for values too.  I'm not sure.
+
+##Section C
+###3 a.
+
+###4 a. A translation Look-aside Buffer (TLB) is a memory cache that stores recent translations of virtual memory to physical addresses for faster retrieval. See [slide 26](file://icnas4.cc.ic.ac.uk/ks815/Memory%20Management.pdf) or [this video](https://www.youtube.com/watch?v=95QpHJX55bM).
+
+###4 b.
+
+Memory Access Time = 200 ns (m)
+
+TLB Access Time = 10 ns (e, epsilon)
+
+Hit Ratio = 97% (a, alpha)
+
+Three Level Paging System
+
+Effective Access Time (EAT) = 2\*m + e - m\*a
+
+Access Time for a "miss" (so a = 0) = 2\*m + e
+
+**EAT** = 2\*200 + 10 - 200\*0.97 = **216 ns**
+
+**Access Time for a "miss"** = 2\*200 + 10 = **410 ns**
+
+See [slide 28](file://icnas4.cc.ic.ac.uk/ks815/Memory%20Management.pdf).
