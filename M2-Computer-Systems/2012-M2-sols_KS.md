@@ -48,7 +48,15 @@ Integer #2 = 0180 (hex) = 0000 0001 1000 0000 (binary) = 384 (decimal)
 ##Section B
 ###2 a.
 
-**(i.)** The two fields are the OPCODE for **JMP and the new address** to load into the EIP register which will dictate where the program goes next.  The address can also be stored in the EAX register which could also be used after JMP.
+**(i.)** The two fields are the OPCODE for **JMP** and **the new address** to load into the EIP register which will dictate where the program goes next.  The address can also be stored in the EAX register which could also be used after JMP.
 [Slides 14-15](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt) and [wikipedia](https://en.wikipedia.org/wiki/JMP_(x86_instruction)) have helpful information on this.
 
-**(ii.)** 
+**(ii.)** Three possible ways to address operands in an instruction:
+
+1. **Register Operands:** both operands are stored in general purpose registers.
+
+2. **Immediate Operands:** one operand is included in instruction as a constant.
+
+3. **Memory Operands:** operand is stored in a memory address location.
+
+Immediate addressing is the fastest because it doesn't require any look-up (although the other operand is usually a register or memory address then) but register addressing is faster than memory addressing because it doesn't require any memory. For more information and examples see slides 14-20 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm).
