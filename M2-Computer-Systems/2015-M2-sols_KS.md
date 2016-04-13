@@ -96,8 +96,7 @@ R4 | higher address of A
 
 Address | Contents            | Notes
 --------|---------------------|-------
-078H    | LOAD R1, 300H       | set the counter = n 
-079H    | DEC R1              | decrement the counter
+079H    | LOAD R1, 300H       | set the counter = n 
 080H    | DEC R1              | decrement the counter
 081H    | LOAD R3, 200H       | R3 = memory address of lower index of A
 082H    | LOAD R4, 250H       | R4 = memory address of higher index of A
