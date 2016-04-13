@@ -101,7 +101,7 @@ Address | Contents            | Pseudocode
 085H    | STORE R3, [R1]      | set higher memory address to temp memory address value (swap)
 086H    | INC R2              | point to the next lowest value
 087H    | DEC R3              | point to the next highest value
-**088H**| **JGT R3, R2, 083H**| **loop if R3 has passed R3**
+**088H**| **JGT R2, R3, 083H**| **loop if R3 has passed R3**
 089H    | STOP                | end the program
 ...     |                     |
 200H    | A[0]                | holds A[0]
