@@ -64,7 +64,7 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 ##Section B
 ###2 a.
 
-**(i.)** Every machine instruction must have an OPCODE or operation code for selecting CPU instruction (4 bits).
+**(i.)** Every machine instruction must have an OPCODE or operation code for selecting a CPU instruction (4 bits).
 
 For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slides 6-8.
 
@@ -88,25 +88,26 @@ I'm going to use the following registers as such:
 Register | Use
 ---|----
 R1 | counter
-R2 | temporary index value of A
-R3 | lower index value of A
-R4 | higher index value of A
+R2 | value of A at lower index
+R3 | lower address of A
+R4 | higher address of A
 
 **I haven't quite finished with the code below.  Just started.  Will come back to it.**
 
 Address | Contents            | Notes
 --------|---------------------|-------
 080H    | LOAD R1, 300H       | set the counter = n 
-081H    | LOAD R2, 200H       | temporarily save the lower value
-082H    | LOAD R3, 200H       | point to the lower value
-083H    | LOAD R4, 250H       | point to the higher value
-084H    | STORE               | swap the values
-085H    | STORE               | swap the values
+081H    | LOAD R3, 200H       | R3 = memory address of lower index of A
+082H    | LOAD R4, 250H       | R4 = memory address of higher index of A
+083H    | STORE R2, [R3]      | R2 = value of A at the lower memory address (temp)
+084H    | STORE R3, [R4]      | set lower memory address to higher memory address value
+085H    | STORE R4, [R2]      | set higher memory address to temp memory address value
 086H    | INC R3              | point to the next lowest value
 087H    | DEC R4              | point to the next highest value
 088H    | DEC R1              | decrement the counter
-089H    | JGT R1, 300H, 081H  | loop
-090H    | STOP                | end the program
+089H    | DEC R1              | decrement counter again
+090H    | JGT R1, 300H, 081H  | loop if the counter > 0
+091H    | STOP                | end the program
 ...     |                     |
 200H    | A[0]                | holds A[0]
 ...     |                     |
