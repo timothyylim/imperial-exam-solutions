@@ -70,20 +70,20 @@ The following program will calculate A[0] - A[1] + A[2] - A[3] +...+ A[n-2] - A[
 Register | Use
 ---|----
 R0 | counter
-R1 | pointer
-R2 | value
+R1 | A (value)
+R2 | not used
 R3 | not used
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-080H    | LOAD R0, [300H]     | R0 = C
-081H    | LOAD R2, [302H]     | R2 = 0
+080H    | LOAD R0, [302H]     | R0 = C
+081H    | LOAD R1, [303H]     | R1 = 0
 **082H**| **ADD R2, [301H]** | **A = A + B**
 083H    | SUB R0, [304H]      | counter = counter - 1
 084H    | IFZER R0, 088H      | if counter = 0, stop
 085H    | IFNEG R0, 088H      | if counter < 0, stop
 **086H**| **GOTO 082H**       | **if counter > 0, loop**
-087H    | STORE R2, [300H]    | A = R2
+087H    | STORE R1, [300H]    | A = R1
 088H    | STOP                | end the program
 ...     |                     |
 300H    | A                   | holds result
