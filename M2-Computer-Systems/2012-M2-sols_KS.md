@@ -60,3 +60,7 @@ Integer #2 = 0180 (hex) = 0000 0001 1000 0000 (binary) = 384 (decimal)
 3. **Memory Operands:** operand is stored in a memory address location.
 
 Immediate addressing is the fastest because it doesn't require any look-up (although the other operand is usually a register or memory address then) but register addressing is faster than memory addressing because it doesn't require any memory. For more information and examples see slides 14-20 of [Pentium Architecture: Registers & Addressing Modes](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt) or check out this [page](http://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm).
+
+**(iii.)** Stack memory is a LIFO queue. The largest address is used as the beginning of the stack (the esp will point to the start of the stack) and the stack grows downwards in memory. When a function is called, the calling method first passes parameters. Then the called method sets up the frame pointer (ebp) and allocates local variables as necessary. The eip is also pushed to the stack (registers are saved) and the method is executed.  Once finished, the method results are copied to eax, the eip is pushed (registers are restored) and the local variable memory is deallocated.  The method returns and executes the next call (now in eip). [more information](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
+
+###2 b.
