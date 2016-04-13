@@ -35,7 +35,11 @@ multiple adjacent memory locations.
 
 ![alt text](http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/ietron/nor2.gif "Logo Title Text 1")
 
-From Tim.
+**i)** Idempotent law A + A = A 
+
+**ii)** DeMorgan's law A + B = A' . B'
+
+**iii)** Negation
 
 ###1 d.
 
