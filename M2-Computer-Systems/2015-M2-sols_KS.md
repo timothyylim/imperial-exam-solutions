@@ -111,6 +111,7 @@ Address | Contents            | Notes
 200H    | A[0]                | holds A[0]
 ...     |                     |
 250H*   | A[n-1]              | holds A[n-1]
+...     |                     |
 300H    | n                   | holds n
 301H    | 0                   | constant 0
 
