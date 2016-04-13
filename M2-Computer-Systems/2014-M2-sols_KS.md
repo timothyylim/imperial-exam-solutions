@@ -16,11 +16,11 @@ The bolded bit gets discarded so we end up with 0000 1001.  Note: if we had A - 
 
 **(i.) Word-Addressable Main Memory:**
 * word-addressable = address for every row (word = 1 row).
-* bits required for addressing: 8 x 2^30 = 2^3 x 2^30 = 2^33.
+* bits required for addressing: 8 x 2^30 = 2^3 x 2^30 = 2^33. Therefore, we need 33 bits. 
 
 **(ii.) Byte-Addressable Main Memory:**
 * byte-addressable = address for every byte.
-* bits required for addressing: 2 x 8 x 2^30 = 2^1 x 2^3 x 2^30 = 2^34.
+* bits required for addressing: 2 x 8 x 2^30 = 2^1 x 2^3 x 2^30 = 2^34. Therefore, we need 34 bits. 
 
 ###1 c.
 
