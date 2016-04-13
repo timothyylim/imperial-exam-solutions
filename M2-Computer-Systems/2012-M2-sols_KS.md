@@ -76,14 +76,14 @@ R3 | not used
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-080H    | LOAD R0, [300H]     | counter = C
+080H    | LOAD R0, [300H]     | R0 = C
 081H    | LOAD R2, [302H]     | R2 = 0
-082H    | STORE R2, [300H]    | A = R2 = 0
-**083H**| **ADD**             | **A = A + B**
-084H    | SUB R0, [304H]      | counter = counter - 1
-085H    | IFZER R0, 088H      | if counter = 0, stop
-086H    | IFNEG R0, 088H      | if counter < 0, stop
-**087H**| **GOTO 083H**       | **if counter > 0, loop**
+**082H**| **ADD R2, [301H]** | **A = A + B**
+083H    | SUB R0, [304H]      | counter = counter - 1
+084H    | IFZER R0, 088H      | if counter = 0, stop
+085H    | IFNEG R0, 088H      | if counter < 0, stop
+**086H**| **GOTO 082H**       | **if counter > 0, loop**
+087H    | STORE R2, [300H]    | A = R2
 088H    | STOP                | end the program
 ...     |                     |
 300H    | A                   | holds result
