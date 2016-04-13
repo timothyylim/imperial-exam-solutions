@@ -92,22 +92,20 @@ R2 | value of A at lower index
 R3 | lower address of A
 R4 | higher address of A
 
-**I haven't quite finished with the code below.  Just started.  Will come back to it.**
-
 Address | Contents            | Notes
 --------|---------------------|-------
 079H    | LOAD R1, 300H       | set the counter = n 
 080H    | DEC R1              | decrement the counter
 081H    | LOAD R3, 200H       | R3 = memory address of lower index of A
 082H    | LOAD R4, 250H       | R4 = memory address of higher index of A
-083H    | STORE R2, [R3]      | R2 = value of A at the lower memory address (temp)
+**083H**    | **STORE R2, [R3]**      | **R2 = value of A at the lower memory address (temp)**
 084H    | STORE R3, [R4]      | set lower memory address to higher memory address value
 085H    | STORE R4, [R2]      | set higher memory address to temp memory address value
 086H    | INC R3              | point to the next lowest value
 087H    | DEC R4              | point to the next highest value
 088H    | DEC R1              | decrement the counter
 089H    | DEC R1              | decrement counter again
-090H    | JGT R1, 301H, 081H  | loop if the counter > 0
+**090H**    | **JGT R1, 301H, 083H**  | **loop if the counter > 0**
 091H    | STOP                | end the program
 ...     |                     |
 200H    | A[0]                | holds A[0]
