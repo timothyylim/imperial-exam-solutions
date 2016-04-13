@@ -78,3 +78,21 @@ For more information on interrupts see [Pentium I/O](http://www.commsp.ee.ic.ac.
 
 ###2 b.
 
+I don't know if this is too pedantic but because of the way variables get passed into methods, the variables X, Y, Z would technically be placed on the stack first (with Z going first) and then the output would be passed to EAX (so we'd pass A there). Then I think we would *technically* push the EIP during the CALL function (if I'm not mistaken) and then we'd get the local variables going. I'm not sure how necessary all that is though.  At the end we'd pop EIP using RET.  In theory.
+
+Stack   | Contents            | Pseudocode
+--------|---------------------|-------
+200H    | Z                   | Input Variable
+199H    | Y                   | Input Variable
+198H    | X                   | Input Variable
+197H    | A                   | Return Value
+196H    | 5                   | Local Constant
+195H    | LOAD [197H]         | SP = Address of A
+        | I don't know        | 
+        |                     |
+        |                     |
+        |                     |
+        |                     |
+        | STOP                | End of Program
+...     |                     | 
+
