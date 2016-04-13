@@ -20,12 +20,12 @@ Memory Size = 2M x 2 Bytes = 4MB
 
 Integer #1 = 03F7 (hex) = 0000 0011 1111 0111 (binary) = 1+2+4+16+32+64+128+256+512 = 1015 (decimal)
 
-Integer #2 = 8001 (hex) = 1000 0000 0000 0001 (binary) = -(2^N-1) - (2^0) = -2^15-1 = -32769 (decimal)
+Integer #2 = 8001 (hex) = 1000 0000 0000 0001 (binary) = [subtract 1 then flip] = -32767 (decimal)
 
 | Two's Complement | Binary              | Decimal |
 |------------------|---------------------|---------|
 | Integer #1       | 0000 0011 1111 0111 | 1015    |
-| Integer #2       | 1000 0000 0000 0001 | -32769  |
+| Integer #2       | 1000 0000 0000 0001 | -32767  |
 | Sum              | 1000 0011 1111 1000 | -31752  |
 
 **(iv.) Little Endian**
