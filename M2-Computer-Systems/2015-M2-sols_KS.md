@@ -164,3 +164,6 @@ Maximimum Physical Memory Size: 16 MB = 2^4 \* 2^20 = 2^24 bits / 21
 How many bits are required for each page table entry?  There can be at most 2^24 / 2^12 = 2^12 frames in main memory, so a page table entry will require 12 bits for a frame number, plus protection and reference bits, etc.
 
 Equations taken from memory management tutorial solutions.
+
+###4 d.
+
