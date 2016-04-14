@@ -103,6 +103,9 @@ if 0:
 
 
 a simpler explanation:
+
+A JMP instruction permanently changes the program counter. A CALL instruction leaves information on the stack so that the original program execution sequence can be resumed.
+
 - JMP performs a jump to a location, without doing anything else
 - CALL pushes the current instruction pointer on the stack (rather: one after the current instruction), and then JMPs to the location. With a RET you can get back to where you were.
 
