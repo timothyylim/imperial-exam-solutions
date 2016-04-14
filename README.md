@@ -22,3 +22,8 @@ This is very much a work in progress and any additions and corrections are welco
 2. fork the imperial-exam-solutions (this basically means make your own copy of it)
 
 3. on your own fork of the repository, make whatever files you want to make then make a pull request 
+
+
+---
+
+or you could fb message me your github username and i'll add you as a collaborator :D
