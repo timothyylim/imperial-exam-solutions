@@ -122,7 +122,7 @@ Address | Contents            | Pseudocode
 
 ###4 a.
 
-A translation Look-aside Buffer (TLB) is a memory cache (hardware) that stores recent translations of virtual memory to physical addresses for faster retrieval. See slide 26 from Memory Management or [this video](https://www.youtube.com/watch?v=95QpHJX55bM).
+A translation Look-aside Buffer (TLB) is a memory cache (hardware) that stores the most recently used page numbers and their corresponding frame addresses for faster retrieval. It speeds up the process of using a page table so that we don't have to access the memory twice every time. See slide 26 from Memory Management or [this video](https://www.youtube.com/watch?v=95QpHJX55bM).
 
 ###4 b.
 
