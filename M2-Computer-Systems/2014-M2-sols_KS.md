@@ -96,3 +96,10 @@ Stack   | Contents            | Pseudocode
         | STOP                | End of Program
 ...     |                     | 
 
+###4 a.
+
+DMA is Direct Memory Access. To be continued.
+
+See Device Management lecture notes.
+
+
