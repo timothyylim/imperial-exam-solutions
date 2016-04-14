@@ -169,11 +169,11 @@ See slide 28 from Memory Management.
 
 ###4 c.
 
-Maximum Size of Address Space: 64 MB = 2^6 \* 2^20 = 2^26 bits / 24
+Maximum Size of Address Space: 64 MB = 2^6 \* 2^20 = 2^26 bits
 
-Page Size: 4096 Bytes = 4KB = 2^2 \* 2^10 = 2^12 bits / 10
+Page Size: 4096 Bytes = 4KB = 2^2 \* 2^10 = 2^12 bits
 
-Maximimum Physical Memory Size: 16 MB = 2^4 \* 2^20 = 2^24 bits / 21
+Maximimum Physical Memory Size: 16 MB = 2^4 \* 2^20 = 2^24 bits
 
 **(i.)** A virtual address has **24 bits.**
 
