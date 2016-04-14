@@ -68,6 +68,13 @@ http://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/3_Slides_CPUOrganisation.ppt) slides 6-8.
 
+The instruction format looks like this:
+
+Opcode | Register | Address
+---|----|----
+
+So you could have chosen any one of the three. 
+
 **(ii.)** Three possible ways to address operands in an instruction:
 
 1. **Register Operands:** both operands are stored in general purpose registers.
