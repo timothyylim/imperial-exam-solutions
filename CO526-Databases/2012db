@@ -1,0 +1,73 @@
+group: 2011-2012_Paper 
+
+encompasses = {
+	country:string, continent:string,percentage
+	'AUS' , 'Australia/Oceania', 100.00
+	'CH' , 'Europe', 100.00
+	'DK' , 'Europe', 100.00
+	'FL' , 'Europe', 100.00
+	'IS' , 'Europe', 100.00
+	'N' , 'Europe', 100.00
+	'NZ' , 'Australia/Oceania', 100.00
+	'S' , 'Europe', 100.00
+	'SF' , 'Europe', 100.00
+	'USA' , 'America', 100.00
+	'ET' , 'Africa', 90.00
+	'ET' , 'Asia', 10.00
+	'TR' , 'Asia', 97.00
+	'TR' , 'Europe', 3.00
+}
+
+organization = {
+	abbreviation:string, city:string, established:date
+	'ANZUS'            , 'Canberra' , 1951-09-01      
+	'EFTA'             , 'Geneva'   , 1960-01-04      
+	'NATO'             , 'Brussels' , 1949-09-17      
+	'NC'               , 'Stockholm', 1952-03-16      
+}
+is_member = {
+	country:string, organization:string
+	'AUS'  , 'ANZUS' 
+	'CH'  , 'EFTA' 
+	'DK'  , 'NATO' 
+	'DK'  , 'NC' 
+	'FL'  , 'EFTA' 
+	'IS'  , 'EFTA' 
+	'IS'  , 'NATO' 
+	'IS'  , 'NC'
+	'N'  , 'EFTA' 
+	'N'  , 'NATO' 
+	'N'  , 'NC' 
+	'NZ'  , 'ANZUS' 
+	'S'  , 'NC' 
+	'SF'  , 'NC' 
+	'TR'  , 'NATO' 
+	'USA'  , 'ANZUS' 
+	'USA' , 'NATO'
+}
+
+country = {
+	name:string, code:string, capital:string, area, population:number
+	'Australia'     , 'AUS'  , 'Canberra' , 7686850.00, 18260863
+	'Switzerland'     , 'CH'  , 'Bern' , 41290.00, 7207060
+	'Denmark'     , 'DK'   , 'Copenhagen' , 43070.00, 5249632
+	'Liechtenstein'     , 'FL'  , 'Vaduz' , 160.00, 5249632
+	'Iceland'      , 'IS'   , 'Reykjavik' , 103000.00, 31122
+	'Norway'      , 'N'  , 'Oslo' , 324220.00, 4383807
+	'New Zealand'      , 'NZ'      , 'Wellington' , 268680.00, 3547983
+	'Sweden'      , 'S'      , 'Stockholm' , 449964.00, 8900954
+	'Finland'      , 'SF'      , 'Helsinki' , 337030.00, 5105230
+	'United States'      , 'USA'      , 'Washington' , 9372610.00, 266476278
+	'Turkey'      , 'TR'      , 'Ankara' , 780580.00, 62484478
+	'Egypt'      , 'ET'      , 'Cairo' , 1001450.00, 63575107
+	
+}
+
+located = {
+	city:string, province:string, country:string, river:string, lake:string, sea:string
+	'Copenhagen'  , 'Denmark', 'DK', NULL, NULL, 'Baltic Sea'
+	'Helsinki'  , 'Uusimaa', 'SF', NULL, NULL, 'Baltic Sea' 
+	'Oslo'  , 'Oslo', 'N', NULL, NULL, 'North Sea'
+	'Stockholm'  , 'Stockholm', 'S', NULL, 'Maelaren', 'Baltic Sea' 
+	'Reykjavik'  , 'Iceland', 'IS', NULL, NULL, 'Atlantic Ocean' 
+}
