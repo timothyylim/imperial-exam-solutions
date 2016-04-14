@@ -1,0 +1,77 @@
+group: 2013-2014_Paper 
+ 
+organization= {
+abbreviation:string, city:string, country:string, established:date
+'AL','Cairo','ET',1945-03-22
+'C','London','GB',1931-12-31
+'CERN','Geneva','CH',1953-07-01
+'NATO','Brussels','B',1949-09-17
+'WFTU','Prague','null',1945-10-03
+}
+encompasses = {
+country:string, continent:string, percentage:number
+'CZ'          , 'Europe'        , 100              
+'CH'          , 'Europe'        , 100              
+'R'           , 'Europe'        , 20               
+'R'           , 'Asia'          , 80               
+'B'           , 'Europe'        , 100              
+'TR'          , 'Europe'        , 32               
+'TR'          , 'Asia'          , 68               
+'GB'          , 'Europe'        , 100              
+'ET'          , 'Asia'          , 10               
+'ET'          , 'Africa'        , 90               
+}
+located = {
+city:string, province:string   , country:string
+'Cardiff'  , 'Cardiff'         , 'GB'          
+'London'   , 'Greater London'  , 'GB'          
+'Belfast'  , 'Northern Ireland', 'GB'          
+}
+ 
+country = {
+name:string     , code:string, capital:string, area:number, population:number
+'Czech Republic', 'CZ'       , 'Prague'      , 78703      , 10321120         
+'Switzerland'   , 'CH'       , 'Bern'        , 41290      , 7207060          
+'Russia'        , 'R'        , 'Moscow'      , 17075200   , 148178060        
+'Belgium'       , 'B'        , 'Brussels'    , 30510      , 10170241         
+'Turkey'        , 'TR'       , 'Ankara'      , 780580     , 62484478         
+'United Kingdom', 'GB'       , 'London'      , 244820     , 58489975         
+'Egypt'         , 'ET'       , 'Cairo'       , 1001450    , 63575107         
+}
+ 
+is_member = {
+country:string, organization:string, type:string
+'CZ'          , 'CERN'             , 'member'   
+'CZ'          , 'WFTU'             , 'member'   
+'CH'          , 'CERN'             , 'member'   
+'R'           , 'CERN'             , 'observer' 
+'B'           , 'CERN'             , 'member'   
+'B'           , 'NATO'             , 'member'   
+'TR'          , 'CERN'             , 'observer' 
+'TR'          , 'NATO'             , 'member'   
+'TR'          , 'WFTU'             , 'member'   
+'GB'          , 'C'                , 'member'   
+'GB'          , 'CERN'             , 'member'   
+'GB'          , 'NATO'             , 'member'   
+}
+ 
+borders = {
+country1:string, country2:string, length:number
+'GR'           , 'TR'           , 206          
+'CZ'           , 'A'            , 362          
+'CZ'           , 'D'            , 646          
+'CZ'           , 'PL'           , 658          
+'FL'           , 'CH'           , 41           
+'SK'           , 'CZ'           , 215          
+'CH'           , 'F'            , 573          
+'CH'           , 'A'            , 164          
+'CH'           , 'D'            , 334          
+'CH'           , 'I'            , 740          
+'PL'           , 'R'            , 206          
+'UA'           , 'R'            , 1576         
+'B'            , 'F'            , 620          
+'B'            , 'D'            , 167          
+'B'            , 'NL'           , 450          
+'L'            , 'B'            , 148          
+'TR'           , 'IR'           , 499          
+}
