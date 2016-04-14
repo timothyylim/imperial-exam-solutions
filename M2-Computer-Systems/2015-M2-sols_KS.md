@@ -94,6 +94,8 @@ a simpler explanation:
 - JMP performs a jump to a location, without doing anything else
 - CALL pushes the current instruction pointer on the stack (rather: one after the current instruction), and then JMPs to the location. With a RET you can get back to where you were.
 
+Jump acts like a GOTO whereas CALL acts more like a function call. 
+
 
 ###2 b.
 The following program will take an array A[] and reverse it. E.g. A = [1, 2, 3] will be come A = [3, 2, 1]. I'm going to use the following registers as such:
