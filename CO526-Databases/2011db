@@ -1,0 +1,54 @@
+group: 2010-2011_Paper 
+
+engine = {
+	serial_no:number, e_type:string, reg:string, miles:number
+	230000901       , 'CFM56'      , 'G-CWQS'  , 567333      
+	230002380       , 'CFM56'      , 'G-CWQS'  , 56000       
+	230002381       , 'CFM56'      , null      , 12345       
+	230002382       , 'CFM56'      , null      , 12645       
+	230002383       , 'CFM56'      , 'G-KLSD'  , 902645      
+	230002384       , 'CFM56'      , null      , 933645      
+	911002310       , 'RB211'      , 'G-UGHJ'  , 23500       
+	911002311       , 'RB211'      , 'G-UGHJ'  , 23500       
+	911002312       , 'RB211'      , 'G-UGHJ'  , 24500       
+	911002313       , 'RB211'      , 'G-UGHJ'  , 23500       
+}
+
+engine_type = {
+	etype:string, manufacturer:string
+	'CFM56'     , 'CFM'              
+	'RB211'     , 'Rolls_Royce'      
+	'JT8D'      , 'P&W'              
+	'JT8D'      , 'P&W'              
+}
+aircraft = {
+	reg:string, model:string, miles:number
+	'G-CWQS'  , '737-400C'  , 2945321     
+	'G-FDWC'  , '737-400'   , 506834      
+	'G-FXDC'  , '737-400'   , 34760       
+	'G-KLSD'  , '737-400'   , 590         
+	'G-UGHJ'  , '380'       , 4544        
+}
+
+mountable = {
+	etype:string, model:string
+	'RB211'     , '380'       
+	'RB211'     , '747'       
+	'CFM56'     , '737-400'   
+	'CFM56'     , '737-400C'  
+	'JT8D'      , '737-400'   
+	'JT8D'      , '737-400C'  
+	'JT8D'      , '747'       
+}
+
+aircraft_type = {
+	model:string, manufacturer:string, no_engines:number
+	'727'       , 'Boeing'           , 3                
+	'737-200'   , 'Boeing'           , 2                
+	'737-400'   , 'Boeing'           , 2                
+	'737-400C'  , 'Boeing'           , 2                
+	'737-500'   , 'Boeing'           , 2                
+	'380'       , 'Airbus'           , 4                
+	'747'       , 'Boeing'           , 4                
+	'MD11'      , 'MD'               , 3                
+}
