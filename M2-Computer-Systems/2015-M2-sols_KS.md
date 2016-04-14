@@ -124,11 +124,11 @@ R3 | higher address of A
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-081H    | LOAD R2, 200H       | R2 = memory address of lowest index of A
-082H    | LOAD R3, 250H       | R3 = memory address of highest index of A
+081H    | LOAD R2, 200H       | Load value of memory address 200H into R2
+082H    | LOAD R3, 250H       | Load value of memory address 250H into R3
 **083H**| **STORE R1, [R2]**  | **R1 = value of A at the lower memory address (temp)**
-084H    | STORE R2, [R3]      | set lower memory address to higher memory address value (swap)
-085H    | STORE R3, [R1]      | set higher memory address to temp memory address value (swap)
+084H    | STORE R2, [R3]      | Value of R2 replaced with value of R3
+085H    | STORE R3, [R1]      | 
 086H    | INC R2              | point to the next lowest value
 087H    | DEC R3              | point to the next highest value
 **088H**| **JGT R2, R3, 083H**| **loop if R2 has passed R3**
