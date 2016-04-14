@@ -133,14 +133,27 @@ Access Time for a TLB Miss (so a = 0) = 2\*m + e
 
 **EAT** = 2\*200 + 10 - 200\*0.97 = **216 ns**
 
-**Access Time for a TLB Miss** = 2\*200 + 10 = **410 ns**
+**Access Time for a TLB Miss** = 2\*200 + 10 = **410 ns** (set a = 0 because there is no hit)
 
 See slide 28 from Memory Management.
 
 ###4 c.
 
-**(i.)** 
+Maximum Size of Address Space: 64 MB = 2^6 \* 2^20 = 2^26 bits / 24
 
-**(ii.)** 
+Page Size: 4096 Bytes = 4KB = 2^2 \* 2^10 = 2^12 bits / 10
 
-**(iii.)** 
+Maximimum Physical Memory Size: 16 MB = 2^4 \* 2^20 = 2^24 bits / 21
+
+**(i.)** A virtual address has **24 bits.**
+
+**(ii.)** The maximum number of entries in a page table is 2^26 / 2^12 = 2^14 = **16384 entries.**
+
+**(iii.)** The actual physical address translation for the virtual addresses:
+
+* 13086: 13086 must be on page 1 which lies in frame 8 with an offset of 13086 % 4096 = 798. So, 13086 maps to physical address 8 \* 4096 + 798 = **33566.**
+* 21200: 21200 must be on page 2 which lies in frame 16 with an offset of 21200 % 4096 = 720. So, 13086 maps to physical address 16 \* 4096 + 720 = **66256.**
+
+How many bits are required for each page table entry?  There can be at most 2^24 / 2^12 = 2^12 frames in main memory, so a page table entry will require 12 bits for a frame number, plus protection and reference bits, etc.
+
+Equations taken from memory management tutorial solutions.
