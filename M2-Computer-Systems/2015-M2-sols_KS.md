@@ -96,11 +96,7 @@ if 0:
 -> program counter register // Address
 ```
 
-A more descriptive answer:
-1. JZ Ri, Address goes into the register decoder
-2. Ri goes to the ALU where the comparison is done
-3. ALU outputs 1 or 0
-4. if the ALU outputs 1 then put Address into eip
+
 
 
 **(iv.)** CALL will always push the EIP so that we can return to where we were before the call using RET. Jump instructions do not save (push) the EIP register and therefore will not return to any location after jumping. Jump also typically has a conditional flag only allowing the program to jump to a different address if the flag contains a specific value (although an unconditional jump does exist). This can be used to create a nested function by jumping "backwards" and then subsequently executing calls in order from there ultimately leading back to the jump instruction. The jump instruction will, if used correctly, eventually be bypassed due to some condition which is also how while and for loops work. For more information on jump instructions and nested loops see [slides 14-21](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt).
