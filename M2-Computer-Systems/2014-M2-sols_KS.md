@@ -88,7 +88,7 @@ Stack   | Contents            | Pseudocode
 197H    | A                   | Return Value
 196H    | 5                   | Local Constant
 195H    | LOAD [197H]         | SP = Address of A
-        | I don't know        | 
+194H    |                     | 
         |                     |
         |                     |
         |                     |
