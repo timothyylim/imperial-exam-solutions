@@ -78,8 +78,8 @@ For more information on interrupts see [Pentium I/O](http://www.commsp.ee.ic.ac.
 
 ###2 b. 
 
-Stack   | Contents            | Pseudocode
---------|---------------------|-------
+Address| Contents            | Pseudocode
+-------|---------------------|-------
 001H   | A                   | Ouput Variable
 002H   | X                   | Input Variable
 003H   | Y                   | Input Variable
