@@ -139,15 +139,15 @@ A different solution:
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-081H    | LOAD R0, 201H       | 
-081H    | LOAD R1, 250H       | 
-100H    |LOAD R2, [R0]        | 
-        |LOAD R3, [R1]        | 
-        |STORE R3, [R0]       | 
-        |STORE R2, [R1]       | 
-        |INC R0               | 
-        |DEC R1               | 
-        |JGT R1,R0,100H       |  
+081H    | LOAD R0, 200H       | load A[0] into R0
+081H    | LOAD R1, 250H       | load A[n] into R1
+100H    |LOAD R2, [R0]        | load the value of A[0] into R2
+        |LOAD R3, [R1]        | load the value of A[n] into R3
+        |STORE R3, [R0]       | Set R0 to the value of R3
+        |STORE R2, [R1]       | Set R1 to the value of R2
+        |INC R0               | Increment the address of R0 (to A[1])
+        |DEC R1               | Decrement the addres of R1 (to A[n-1])
+        |JGT R1,R0,100H       | If address of R1 is greater than address of R0, keep looping 
         |STOP                 |  
 
 
