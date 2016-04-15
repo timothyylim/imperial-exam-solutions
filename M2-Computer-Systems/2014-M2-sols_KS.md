@@ -91,11 +91,11 @@ Stack   | Contents            | Pseudocode
        | push [002H]         | Push X onto the stack 
        | push [003H]         | Push Y onto the stack 
        | mult                | Multiply X and Y 
-       | add                 | (X*Y)+(Z*5)
+       | add                 | (X * Y)+(Z * 5)
        | push [002H]         | Push X onto the stack 
        | push [003H]         | Push Y onto the stack 
        | sub                 | X - Y
-       | mult                | (X*Y)+(Z*5) + (X-Y)
+       | mult                | (X * Y)+(Z * 5) + (X-Y)
        | pop[001H]           | returns the solution
 
 
