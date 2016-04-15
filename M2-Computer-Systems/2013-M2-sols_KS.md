@@ -120,3 +120,11 @@ Address | Contents            | Pseudocode
 301H    | B                   | holds B (the result)
 302H    | 0                   | constant, 0
 303H    | 1                   | constant, 1
+
+
+A different answer:
+
+
+Address | Contents            | Pseudocode
+--------|---------------------|-------
+080H    | LOAD R1, [300H]     | counter = n
