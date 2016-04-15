@@ -127,4 +127,18 @@ A different answer:
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-080H    | LOAD R1, [300H]     | counter = n
+001H    | LOAD R0, [300H]     | Set the counter to n, we will decrement this with each computation
+002H    | LOAD R1, 200H       | Hold the address of the first value of A in R1
+003H    | LOAD R2, [302H]     | Set the value of B to 0, hold this in register R2 for now
+004H    | ADD R2 , [R1]       | Add A[0] to B 
+005H    | ADD R1 , [303H]     | Increment the pointer by 1 so it points to A[1]
+006H    | SUB R0, [303H]      | Decrement counter
+007H    | SUB R2 , [R1]       | Subtract A[1] from B 
+008H    | ADD R1 , [303H]     | Increment the pointer by 1 so it points to A[2]
+009H    | SUB R0, [303H]      | Decrement counter
+010H    | IFZER R0, 012H      | Break loop if counter is 0 
+011H    | GOTO 004H           | Loop
+012H    | STORE R2, [301H]    | Store the result in the address 301H
+013H    | STOP                | hammer time. 
+
+
