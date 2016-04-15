@@ -99,6 +99,9 @@ Stack   | Contents            | Pseudocode
        | pop[001H]           | returns the solution
 
 
+Protip: draw a stack on a piece of paper while you work through the solution.
+
+
 ###4 a.
 
 DMA is Direct Memory Access. To be continued.
