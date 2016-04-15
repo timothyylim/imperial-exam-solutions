@@ -87,15 +87,9 @@ Immediate addressing is the fastest because it doesn't require any look-up (alth
 
 **(iii.)** 
 
-pseudocode:
+JZ will check the eflags register to see if zf is equal to 1. If it is then the program fetches the instruction located at memory address Address.
 
-```
-MCP Ri, 0                   // Compare Ri, and 0 if Ri == 0 set the zf flag to 1
--> flag register:           // zf flag changed
-if 0:
--> program counter register // Address
-```
-
+See [page 14](https://github.com/timothyylim/Imperial-College/blob/master/fall/computer-architecture/lecture-slides-comparch-part2/6_Pentium3.pdf)
 
 
 
