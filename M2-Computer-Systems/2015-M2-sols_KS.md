@@ -70,14 +70,11 @@ For more information see [CPU Organization](http://www.commsp.ee.ic.ac.uk/~kkleu
 
 
 
-The instruction format looks like this:
+For general knowledge, the instruction format looks like this:
 
 Opcode | Register | Address
 ---|----|----
 
-So you could have chosen any one of the three. 
-
-I disagree, you don't always have to have a register or an address. I believe you can sometimes have a constant and a register or a constant and an address, if I'm not mistaken, so it seems every machine instruction must have an OPCODE.  I'm not sure the same could be said of a register or an address.
 
 **(ii.)** Three possible ways to address operands in an instruction:
 
