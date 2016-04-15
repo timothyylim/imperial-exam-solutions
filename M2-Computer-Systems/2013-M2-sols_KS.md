@@ -72,9 +72,11 @@ E = A + B | idempotent
 
 ##2 a.
 
-**(i.)** The **EIP** (instruction pointer) register holds the address of the next instruction to be executed.  EIP is not normally manipulated explicitly by programs.  The eip register corresponds to the program counter register in other architectures.  It is updated by special control-flow CPU instructions (e.g. call, jmp, ret).  [Slide 6](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt).
+**(i.)** The **EIP** (instruction pointer) register holds the address of the next instruction to be executed.  EIP is not normally manipulated explicitly by programs.  
 
-**(ii.)** The use of methods involves using a stack and a stack pointer register (esp) as well as the base pointer register (ebp). When a method is first called using call, the eip (return address) is pushed to the stack and we jump to the start of method. Then when we run ret (return), we pop the return address into eip. Parameters and objects can also be passed if necessary using the stack. [Pentium Architecture: Methods](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
+The eip register corresponds to the program counter register in other architectures.  It is updated by special control-flow CPU instructions (e.g. call, jmp, ret).  [Slide 6](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/5_Pentium1-2.ppt).
+
+**(ii.)**The use of methods involves using a stack and a stack pointer register (esp) as well as the base pointer register (ebp). When a method is first called using call, the eip (return address) is pushed to the stack and we jump to the start of method. Then when we run ret (return), we pop the return address into eip. Parameters and objects can also be passed if necessary using the stack. [Pentium Architecture: Methods](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
 
 **(iii.)** IRET (return from an interrupt handler) will restore the state (EFLAGS and EIP) and then jump to the return address on the stack. RET (return from a call) will pop the return address into eip. It is the programmer's responsibility to restore any other registers. [Slide 26](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/8_Slides_IO.PPT) and [slide 11](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/7_Pentium4-5.ppt).
 
