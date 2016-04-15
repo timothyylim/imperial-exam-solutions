@@ -3,6 +3,7 @@ should be able to recall the pseudocode and run time analysis for the following:
 ### misc.
 
 - Binary Search
+- Amortized analysis
 
 ### Sorting
 
@@ -11,6 +12,7 @@ should be able to recall the pseudocode and run time analysis for the following:
 - Quick
 - Count
 - Radix
+- Heap sort
 
 ### Graphs
 
@@ -21,8 +23,14 @@ should be able to recall the pseudocode and run time analysis for the following:
 - Bellman-Ford
 - Dijkstras
 
-### Dynamic Data Structures
+### Data Structures
 
+- Hashtable
+- Queue
+- Array
+- Stack
+- Red Black Tree
+- Set
 - Binary Heap
 - Binary Search Tree
 
