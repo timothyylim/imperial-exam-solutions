@@ -135,6 +135,23 @@ Address | Contents            | Pseudocode
 
 *let's call 200H + n-1 = 250H (n=51) -- I'm undecided if I should have written some code at the beginning to find the address by using the value of n (which could be stored at, let's say, 300H).  So we could say R0 = [300H], DEC R0 (to get n-1), R3 = 200H and then INC R3 and DEC R0 while [R0] > 0 or something but then we'd have to use JGT which doesn't technically say you can compare values, just addresses but I think you could use it for values too.  I'm not sure.
 
+A different solution:
+
+Address | Contents            | Pseudocode
+--------|---------------------|-------
+081H    | LOAD R0, 201H       | Load value of memory address 200H into R2
+081H    | LOAD R1, 201H       | Load value of memory address 200H into R2
+100H    |LOAD R2, [R0]        | 
+        |LOAD R3, [R1]        | 
+        |STORE R3, [R0]       | 
+        |STORE R2, [R1]       | 
+        |INC R0               | 
+        |DEC R1               | 
+        |JGT R1,R0,100H       |  
+        |STOP                 |  
+
+
+
 ##Section C
 ###3 a.
 
