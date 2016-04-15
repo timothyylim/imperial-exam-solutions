@@ -139,8 +139,8 @@ A different solution:
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-081H    | LOAD R0, 201H       | Load value of memory address 200H into R2
-081H    | LOAD R1, 201H       | Load value of memory address 200H into R2
+081H    | LOAD R0, 201H       | 
+081H    | LOAD R1, 250H       | 
 100H    |LOAD R2, [R0]        | 
         |LOAD R3, [R1]        | 
         |STORE R3, [R0]       | 
