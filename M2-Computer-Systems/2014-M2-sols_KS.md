@@ -109,6 +109,20 @@ Newly created processes are not allowed to run immediately because some processe
 
 ###3 b.
 
+For Preemptive Scheduling (in the case you want to control runaway processes as opposed to non-preemptive scheduling)
+
+- Let process run for a maximum amount of fixed time
+       - Requires clock interrupt
+– External event results in higher priority process
+being run
+
+A clock is necessary because you often need to give processes time limits. 
+
+https://en.wikipedia.org/wiki/Fixed-priority_pre-emptive_scheduling
+
+
+### 3 c.
+
 
 
 
