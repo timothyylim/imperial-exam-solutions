@@ -103,7 +103,7 @@ Protip: draw a stack on a piece of paper while you work through the solution.
 
 ###3 a.
 
-See Semaphores slide 3 for the process state diagram
+See Scheduling slide 3 for the process state diagram
 
 Newly created processes are not allowed to run immediately because some processes may be already running. The scheduler put new processes on the CPU when it is ready.
 
