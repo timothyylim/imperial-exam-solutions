@@ -143,6 +143,12 @@ Address | Contents            | Pseudocode
 
 ### 3 a)
 
+The main requirement when dealing with I/O is responsiveness. 
+
+In a multi-user system, running processes run by other users need to be interrupted to ensure the I/O operations of a user are responsive and to ensure fairness. (bullshit as necessary with the following keywords: cpu intensive, good response time, fairness, human rights). 
+
+### 3 b)
+
 
 
 
