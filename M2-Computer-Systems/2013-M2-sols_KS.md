@@ -154,8 +154,13 @@ In a multi-user system, running processes run by other users need to be interrup
 3. Read the effective address: In case of a memory instruction (direct or indirect) the execution phase will be in the next clock pulse. 
 4. Execute  the instruction: The control unit of the CPU passes the decoded information as a sequence of control signals to the relevant function units of the CPU to perform the actions required by the instruction such as reading values from registers, passing them to the ALU to perform mathematical or logic functions on them, and writing the result back to a register. 
 
-There exists an interrupt handler table. 
+There exists an interrupt descriptor table it contains the address of the instruction to be executed for a specific interrupt.
 
+Therefore, when an interrupt occurs, the CPU will complete the current instruction, recognize the interrupt then save all data related to the current process then call the interrupt handler which will point to the address where the interrupt instructions are stored (the interrupt descriptor table). Then run the interrupt then resume. 
+
+### 3 c)
+
+Every interrupt comes with an ID for that interrupt and the 
 
 
 ##4.d
