@@ -123,14 +123,18 @@ https://en.wikipedia.org/wiki/Fixed-priority_pre-emptive_scheduling
 
 ### 3 c.
 
-The send, receive, and reply operations may be synchronous or asynchronous. A synchronous operation blocks a process till the operation completes. An asynchronous operation is non-blocking and only initiates the operation. 
+The send, receive, and reply operations may be synchronous or asynchronous. Synchronous message passing occurs between objects that are running at the same time. With asynchronous message passing it is possible for the receiving object to be busy or not running when the requesting object sends the message.
 
- Asynchronous message passing allows more parallelism. Since a process does not block, it can do some computation while the message is in transit. In the case of receive, this means a process can express its interest in receving messages on multiple ports simultaneously. (The select primitive discussed later provides this facility for synchronous receives). In a synchronous system, such parallelism can be achieved by forking a separate process for each concurrent operation, but this approach incurs the cost of extra process management. This cost is typically bearable with lwps but not hwps.
+Synchronous message passing is what typical object-oriented programming languages such as Java and Smalltalk use. Asynchronous message passing requires additional capabilities for storing and retransmitting data for systems that may not run concurrently.
 
-Asynchronous message passing introduces several problems. What happens if a message cannot be delivered? The sender may never wait for delivery of the message, and thus never hear about the error. Similarly, a mechanism is needed to notify an asynchronous receiver that a message has arrived. The operation invoker could learn about completion/errors by polling, getting a software interrupt, or by waiting explicitly for completion later using a special sycnhronous wait call. An asynchronous operation needs to return a call/transaction id if the application needs to be later notified about the operation. At notification time, this id would be placed in some global location or passed as an argument to a handler or wait call. 
+The buffer required in asynchronous communication can cause problems when it is full. A decision has to be made whether to block the sender or whether to discard future messages. If the sender is blocked, it may lead to an unexpected deadlock. If messages are dropped, then communication is no longer reliable.
 
-http://www.cs.unc.edu/~dewan/242/s07/notes/ipc/node9.html
+If you don't specify a time limit then you may result in a buffer overflow.
 
+https://en.wikipedia.org/wiki/Message_passing
+
+
+### 3 d.
 
 
 
