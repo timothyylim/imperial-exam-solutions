@@ -141,6 +141,10 @@ Address | Contents            | Pseudocode
 012H    | STORE R2, [301H]    | Store the result in the address 301H
 013H    | STOP                | hammer time. 
 
+### 3 a)
+
+
+
 
 ##4.d
 
