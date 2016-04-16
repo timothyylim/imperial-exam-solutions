@@ -175,8 +175,16 @@ http://stackoverflow.com/questions/5090731/why-fork-and-exec-are-kept-2-seperate
 
 ###4 a.
 
-DMA is Direct Memory Access. To be continued.
+DMA which stands for Direct Memory Access is a system in which a hardware component of a computer gains access to the Memory Bus and controls the transfer. Say A CD/DVD drive usually works using DMA. But remember that the CPU is always the MASTER of everything, that means even though the CPU has given the DMA controller the mastership, It still has the power to check DMA. It can reinvoke the Bus control any time it wants, it may even do the task of DMA. There are registers that are used to set the Control of Bus from CPU to DMA and DMA to CPU. Once the DMA controller is done, it may interrupt or signal the CPU that it has finished its job. That's about DMA.
 
-See Device Management lecture notes.
+Now coming to Interrupt I/O. Interrupt I/O is way more frequent than DMA. A process usually undergoes I/O plenty of times. Asking for a input from the user would be an interrupt I/O. Not DMA. There are two types of interrupts.
+
+    Software Interupt
+    Hardware Interupt
+
+Each interrupt has a special number assigned to it. And each interrupt is serviced by a Interupt Routine ( a simple function ) that is saved somewhere inside your RAM and which is invoked from a Table that consists of Interrupt numbers. I'm telling this for your understanding. When you move your mouse or type on keyboard, Its actually an interrupt that is happening. 
+
+http://stackoverflow.com/questions/25318145/dma-vs-interrupt-driven-i-o
+
 
 
