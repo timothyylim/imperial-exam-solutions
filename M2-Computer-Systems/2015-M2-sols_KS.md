@@ -202,3 +202,25 @@ Equations taken from memory management tutorial solutions.
 
 ###4 d.
 
+Interactive Users require:
+
+- Response time crucial = quick response to requests
+- Meet users expectations = predictability
+
+Background Jobs (batch systems, I guess) require:
+
+- Throughput = maximize jobs per unit of time
+- Turnaround time = minimize time between job submission and termination
+
+A suitable process scheduling strategy would be a Multilevel Feedback Queue. 
+
+A MFQ has the following characteristics:
+
+- Run job on highest non-empty priority queue
+- Each queue can use different scheduling algorithm
+        - Usually round-robin
+        - Could be different quantum eg highest priority is I/O bound with short quantum. Exceed quantum, then move down level but get bigger quantum.
+
+This makes sense for our senario because we can specify short quantums for interactive processes so that the requirements of interactivity are met whilst specifying longer quantums for the background processes so they don't get in the way of user I/O but still have a chance to run.
+
+See the Scheduling slides for more details. 
