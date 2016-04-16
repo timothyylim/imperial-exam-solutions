@@ -166,9 +166,21 @@ This is in contrast to a polled interrupt system, in which a single interrupt se
 
 ### 3 d)
 
+https://docs.oracle.com/cd/E19120-01/open.solaris/817-4415/psched-16/index.html
+
+Sleeping in memory is the same as waiting.
+
+### 4 a)
+
+### 4 b)
 
 
-##4.d
+
+### 4 c)
+
+
+
+## 4.d
 
 The use of fork and exec exemplifies the spirit of UNIX in that it provides a very simple way to start new processes.
 
