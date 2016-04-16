@@ -160,7 +160,12 @@ Therefore, when an interrupt occurs, the CPU will complete the current instructi
 
 ### 3 c)
 
-Every interrupt comes with an ID for that interrupt and the 
+In computer science, a vectored interrupt is a processing technique in which the interrupting device directs the processor to the appropriate interrupt service routine. 
+
+This is in contrast to a polled interrupt system, in which a single interrupt service routine must determine the source of the interrupt by checking all potential interrupt sources, a slow and relatively laborious process.
+
+### 3 d)
+
 
 
 ##4.d
