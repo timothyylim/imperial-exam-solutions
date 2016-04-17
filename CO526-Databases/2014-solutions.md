@@ -66,13 +66,14 @@ Find the superkey
 ```
 GH+ = GHBCDEFA
 
-Trying without GH -> B: GH+ = GHCBADEF gets the same closure, so we can't remove it
+Trying without GH -> B: GH+ = GHCBADEF gets the same closure, so we can remove it
 
-Trying without GH -> C: GH+ = GHBDEFAB does not get C, so we can remove GH -> C  
+Trying without GH -> C: GH+ = GHBDEFAB does not get C, so we can't remove GH -> C  
 
-S''' = {
-  GH    -> B,
+S'' = {
+  GH    -> C,
   B     -> D,
+  B     -> E,
   B     -> F,
   C     -> H,
   E     -> D,
@@ -84,13 +85,11 @@ S''' = {
 
 B+ = DEF
 
-Trying without B -> D: B+ = EFD gets the same closure, so we can't remove it
+Trying without B -> D: B+ = EFD gets the same closure so we can remove it
 
-Trying without B -> E: B+ = DF does not get E, so we can remove B -> E 
-
-S'''' = {
-  GH    -> B,
-  B     -> D,
+S''' = {
+  GH    -> C,
+  B     -> E,
   B     -> F,
   C     -> H,
   E     -> D,
@@ -99,12 +98,60 @@ S'''' = {
   G     -> A,
   G     -> B
  } 
+ 
 
 
+Trying without B -> E: B+ = FD does not get the same closure so we cannot remove it
+
+Trying without B -> F: B+ = ED does not get the same closure so we cannot remove it
+
+C+ = H
+
+Can't remove anything
+
+E+ = D
+
+Can't remove anything
+
+F+ = BED
+
+Trying without F -> B: F+ = D does not get the same closure so we cannot remove it
+
+Trying without F -> D: F+ = BED gets the same closure so we can remove it
+
+S'''' = {
+  GH    -> C,
+  B     -> E,
+  B     -> F,
+  C     -> H,
+  E     -> D,
+  F     -> B,
+  G     -> A,
+  G     -> B
+ } 
+ 
+ 
+G+ = ABEDF
+
+Trying without G -> A can't remove as there is no A on the RHS
+
+Trying without G -> B, can't remove as A will never get B
+
+Minimal cover:
+
+S''''' = {
+  GH    -> C,
+  B     -> E,
+  B     -> F,
+  C     -> H,
+  E     -> D,
+  F     -> B,
+  G     -> A,
+  G     -> B
+ } 
 
 ```
 
-3 
 
 ### 4 aii)
 
