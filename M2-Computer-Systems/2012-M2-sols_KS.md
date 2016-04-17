@@ -118,7 +118,6 @@ http://stackoverflow.com/questions/11769772/os-does-the-process-scheduler-runs-i
 ### 3 d.
 
 
-
 ##Section D
 
 ### 4 a.
@@ -126,4 +125,54 @@ http://stackoverflow.com/questions/11769772/os-does-the-process-scheduler-runs-i
 Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory (RAM) independently of the central processing unit (CPU).
 
 Without DMA, when the CPU is using programmed input/output, it is typically fully occupied for the entire duration of the read or write operation, and is thus unavailable to perform other work. 
+
+I don't believe Ananda went over the parameters...
+
+### 4 b.
+
+
+
+Synchronous (one thread):
+
+```
+1 thread ->   |----A-----||-----B-----------||-------C------|
+```
+
+Synchronous (multi-threaded):
+
+```
+thread A -> |----A-----|   
+                        \  
+thread B ------------>   ->|-----B-----------|   
+                                              \   
+thread C ---------------------------------->   ->|-------C------| 
+```
+
+Asynchronous (one thread):
+
+```
+         A-Start ---------------------------------------- A-End   
+           | B-Start ----------------------------------------|--- B-End   
+           |   |     C-Start -------------------- C-End      |     |   
+           V   V       V                           V         V     V      
+1 thread-> |-A-|---B---|-C-|-A-|-C-|--A--|-B-|--C--|---A-----|--B--| 
+```
+
+
+Asynchronous (multi-Threaded):
+```
+ thread A ->     |----A-----|
+ thread B ----->     |-----B-----------| 
+ thread C --------->     |-------C----------|
+```
+
+Synchronized means "connected", or "dependent" in some way. In other words two synchronous tasks must be aware of one another, and one must execute in some way that is dependent on the other. In most cases that means that one cannot start until the other has completed. Asynchronous means they are totally independent and neither one must consider the other in any way, either in initiation or in execution.
+
+As an aside, I should mention that technically, the concept of synchronous vs. asynchronous really does not have anything to do with threads. Although, in general, it would be unusual to find asynchronous tasks running on the same thread, it is possible, (see below for e.g.) and it is common to find two or more tasks executing synchronously on separate threads... No, the concept of synchronous/asynchronous has to do solely with whether or not a second or subsequent task can be initiated before the other task has completed, or whether it must wait. That is all. What thread (or threads), or processes, or CPUs, or indeed, what hardware, the task[s] are executed on is not relevant. Indeed, to make this point I have edited the graphics to show this.
+
+ASYNCHRONOUS EXAMPLE. In solving many engineering problems, the software is designed to split up the overall problem into multiple individual tasks, and then execute them asynchronously. Inverting a matrix, or a finite element analysis problem, are good examples. In computing, sorting a list is an example. The quick sort routine, for example, splits the list into two lists, and sorts each of them by calling itself recursively. In both of the above examples, the two tasks can (and often were) executed asynchronously. They do not need to be on separate threads. Even a machine with one CPU, and only one thread of execution can be coded to initiate processing of a second task before a first one has completed. The only criterion is that the results of one task are not necessary as inputs to the other task. As long as the start and end times of the tasks overlap, (possible only if the output of neither is needed as inputs to the other), they are being executed asynchronously, no matter how many threads are in use.
+
+SYNCHRONOUS EXAMPLE. Any process consisting of multiple tasks where the tasks must be executed in sequence, but one must be executed on another machine (Fetch and/or update data, get a stock quote from a financial service, etc.). If it's on a separate machine it is on a separate thread, whether synchronous or asynchronous.
+
+http://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-does-it-really-mean
 
