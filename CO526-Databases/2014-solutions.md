@@ -43,8 +43,8 @@ ABGH -> C => AGH -> C
 
 ```
 S'' = {
-  AGH  -> B,
-  AGH  -> C,
+  AGH   -> B,
+  AGH   -> C,
   B     -> B,
   B     -> D,
   B     -> E,
@@ -58,6 +58,34 @@ S'' = {
   }
 ```
 
+Redundant FD X-> A is equivalent to the transative closure of other FDs (i.e. just cancel out transative functions)
+
+```
+Since B -> F and B -> D
+B -> B => 0
+
+Since F -> B and B -> D
+F -> D => 0
+```
+
+```
+S''' = {
+  AGH   -> B,
+  AGH   -> C,
+  B     -> D,
+  B     -> E,
+  B     -> F,
+  C     -> H,
+  E     -> D,
+  F     -> B,
+  G     -> A,
+  G     -> B
+  }
+```
+
+That's the minimal cover, I guess??
 
 
-###
+### 4 aii)
+
+
