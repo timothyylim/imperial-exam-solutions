@@ -91,3 +91,29 @@ Address | Contents            | Pseudocode
 302H    | C                   | holds C
 303H    | 0                   | constant, 0
 304H    | 1                   | constant, 1
+
+
+##Section C
+### 3 a.
+
+### 3 b.
+
+Synchronous Messages
+
+Synchronous messaging involves a client that waits for the server to respond to a message. Messages are able to flow in both directions, to and from. Essentially it means that synchronous messaging is a two way communication. i.e. Sender sends a message to receiver and receiver receives this message and gives reply to the sender. Sender will not send another message until get reply from receiver.
+
+Asynchronous Messages
+
+Asynchronous messaging involves a client that does not wait for a message from the server. An event is used to trigger a message from a server. So even if the client is down , the messaging will complete successfully. Asynchronous Messaging means that, it is a one way communication and the flow of communication is one way only.
+
+I assume the kernel has to maintain a buffer for asynchronous send but not for synchronous send. 
+
+
+### 3 c.
+
+The process schedule could feasibly run in a separate process, but such a design would be very inefficient since you would have to swap from one process to the scheduling process (which would then have to make several system calls to the kernel) and then back to the new process, as opposed to just placing the scheduler in the kernel where you will not need system calls nor need to swap contexts more than once. Therefore, the scheduler is generally in the exclusive realm of the kernel.
+
+http://stackoverflow.com/questions/11769772/os-does-the-process-scheduler-runs-in-separate-process
+
+### 3 d.
+
