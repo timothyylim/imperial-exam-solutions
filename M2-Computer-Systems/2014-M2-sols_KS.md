@@ -176,6 +176,7 @@ The main reason is likely that the separation of the fork() and exec() steps all
 DMA which stands for Direct Memory Access is a system in which a hardware component of a computer gains access to the Memory Bus and controls the transfer. Say A CD/DVD drive usually works using DMA. But remember that the CPU is always the MASTER of everything, that means even though the CPU has given the DMA controller the mastership, It still has the power to check DMA. It can reinvoke the Bus control any time it wants, it may even do the task of DMA. There are registers that are used to set the Control of Bus from CPU to DMA and DMA to CPU. Once the DMA controller is done, it may interrupt or signal the CPU that it has finished its job. That's about DMA.
 
 Now coming to Interrupt I/O. Interrupt I/O is way more frequent than DMA. A process usually undergoes I/O plenty of times. Asking for a input from the user would be an interrupt I/O. Not DMA. There are two types of interrupts:
+
 1. Software Interupt
 2. Hardware Interupt
 
@@ -186,9 +187,28 @@ Each interrupt has a special number assigned to it. And each interrupt is servic
 ###4 b.
 
 Three methods that connect blocks to files:
-1. Block Chaining
-2. File Allocation Table
-3. Index Blocks
+
+1. Block Chaining - for diagram see "Block Linkage (Chaining) II" from "File Systems"
+2. File Allocation Table - for diagram see "Block Allocation Table II" from "File Systems"
+3. Index Blocks - for diagram see "Index Blocks II" from "File Systems"
+
+In each of the diagrams, insert the block numbers and the name of the file accordingly.
+
+###4 c.
+
+An inode (index block in UNIX/Linux) consists of various pieces of information regarding a file including (but not limited to) access controls, user ID, access time, and a set of direct, indirect, double, and triple pointers. On file open, the OS opens the inode which is structured this way on the disk but also includes the disk device number, the inode number, the number of processes with opened file, and the major/minor device number.
+
+See "Unix/Linux: Inodes" from "File Systems".
+
+###4 d.
+
+In MINIX, each file or directory is represented as an inode, which records metadata including type (file, directory, block, char, pipe), IDs for user and group, three timestamps that record the date and time of last access, last modification, and last status change. An inode also contains a list of addresses that point to the zones in the data area where the file or directory data is actually stored.
+
+From [wikipedia](https://en.wikipedia.org/wiki/MINIX_file_system).
+
+As far as the diagram goes I think he might be looking for the one in "File Systems" on the "Inodes" slide. Otherwise I might write something like what you see when we type "ls -l".
+
+###4 e.
 
 
 
