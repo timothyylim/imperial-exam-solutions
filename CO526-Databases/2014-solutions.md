@@ -14,7 +14,7 @@ S = {
 
 Compute the minimum cover Sc of S
 
-1. Rewrite S to an equivalent set of FDs which only have a single attribute on the RHS of each FD:
+1 Rewrite S to an equivalent set of FDs which only have a single attribute on the RHS of each FD:
 
 ```
 S' = {
@@ -33,7 +33,30 @@ S' = {
   }
 ```
 
-2. Simplify LHS
+2 Simplify LHS
+
+```
+Since  G -> B
+ABGH -> B => AGH -> B
+ABGH -> C => AGH -> C
+```
+
+```
+S'' = {
+  AGH  -> B,
+  AGH  -> C,
+  B     -> B,
+  B     -> D,
+  B     -> E,
+  B     -> F,
+  C     -> H,
+  E     -> D,
+  F     -> B,
+  F     -> D,
+  G     -> A,
+  G     -> B
+  }
+```
 
 
 
