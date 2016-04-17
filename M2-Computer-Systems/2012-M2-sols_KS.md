@@ -117,3 +117,13 @@ http://stackoverflow.com/questions/11769772/os-does-the-process-scheduler-runs-i
 
 ### 3 d.
 
+
+
+##Section D
+
+### 4 a.
+
+Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory (RAM) independently of the central processing unit (CPU).
+
+Without DMA, when the CPU is using programmed input/output, it is typically fully occupied for the entire duration of the read or write operation, and is thus unavailable to perform other work. 
+
