@@ -36,16 +36,19 @@ S' = {
 2 Simplify LHS
 
 ```
-Since  G -> B
-ABGH -> B => AGH -> B
-ABGH -> C => AGH -> C
+Since G -> A and G -> B,
+
+ABGH -> B => GH -> B
+ABGH -> C => GH -> C
+
+We can also remove B -> B
+
 ```
 
 ```
 S'' = {
-  AGH   -> B,
-  AGH   -> C,
-  B     -> B,
+  GH  -> B,
+  GH  -> C,
   B     -> D,
   B     -> E,
   B     -> F,
@@ -55,36 +58,20 @@ S'' = {
   F     -> D,
   G     -> A,
   G     -> B
-  }
+ } 
 ```
 
-Redundant FD X-> A is equivalent to the transative closure of other FDs (i.e. just cancel out transative functions)
+Find the superkey
 
 ```
-Since B -> F and B -> D
-B -> B => 0
+GH+ = GHBCDEFA
 
-Since F -> B and B -> D
-F -> D => 0
-```
+Trying without GH -> B GH+ = GHCBADEF
+
 
 ```
-S''' = {
-  AGH   -> B,
-  AGH   -> C,
-  B     -> D,
-  B     -> E,
-  B     -> F,
-  C     -> H,
-  E     -> D,
-  F     -> B,
-  G     -> A,
-  G     -> B
-  }
-```
 
-That's the minimal cover, I guess??
-
+3 
 
 ### 4 aii)
 
