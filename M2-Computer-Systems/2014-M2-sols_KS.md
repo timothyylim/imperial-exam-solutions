@@ -103,25 +103,24 @@ Protip: draw a stack on a piece of paper while you work through the solution.
 
 ###3 a.
 
-See Scheduling slide 3 for the process state diagram
+See Scheduling slide 3 for the process state diagram.
 
 Newly created processes are not allowed to run immediately because some processes may be already running. The scheduler put new processes on the CPU when it is ready.
 
 ###3 b.
 
-For Preemptive Scheduling (in the case you want to control runaway processes as opposed to non-preemptive scheduling)
+For pre-emptive scheduling (in the case you want to control runaway processes as opposed to non-preemptive scheduling):
 
-- Let process run for a maximum amount of fixed time
-       - Requires clock interrupt
-– External event results in higher priority process
-being run
+* Let process run for a maximum amount of fixed time
+       * Requires clock interrupt
+* External event results in higher priority process being run
 
 A clock is necessary because you often need to give processes time limits. 
 
-https://en.wikipedia.org/wiki/Fixed-priority_pre-emptive_scheduling
+Read more about fixed priority pre-emptive scheduling on [wikipedia](https://en.wikipedia.org/wiki/Fixed-priority_pre-emptive_scheduling).
 
 
-### 3 c.
+###3 c.
 
 The send, receive, and reply operations may be synchronous or asynchronous. Synchronous message passing occurs between objects that are running at the same time. With asynchronous message passing it is possible for the receiving object to be busy or not running when the requesting object sends the message.
 
@@ -129,12 +128,12 @@ Synchronous message passing is what typical object-oriented programming language
 
 The buffer required in asynchronous communication can cause problems when it is full. A decision has to be made whether to block the sender or whether to discard future messages. If the sender is blocked, it may lead to an unexpected deadlock. If messages are dropped, then communication is no longer reliable.
 
-If you don't specify a time limit then you may result in a buffer overflow.
+If you don't specify a time limit then this may result in a buffer overflow.
 
-https://en.wikipedia.org/wiki/Message_passing
+Read more about message passing on [wikipedia](https://en.wikipedia.org/wiki/Message_passing).
 
 
-### 3 d.
+###3 d.
 
 Threads are execution streams that share the same address space. When multithreading is used, each process can
 contain one or more threads.
@@ -143,7 +142,7 @@ Threads exist in the user space and have their own registers and stack.
 
 Check out Process-Threads slide 45.
 
-### 3 e.
+###3 e.
 
 The use of fork and exec exemplifies the spirit of UNIX in that it provides a very simple way to start new processes.
 
@@ -157,34 +156,39 @@ So, fork and exec are often used in sequence to get a new program running as a c
 
 If the exec is called following fork (and this is what happens mostly), that causes a write to the process space and it is then copied for the child process.
 
-http://stackoverflow.com/questions/1653340/differences-between-exec-and-fork
+Check out the differences between exec and fork on [stackoverflow](http://stackoverflow.com/questions/1653340/differences-between-exec-and-fork).
 
 The main reason is likely that the separation of the fork() and exec() steps allows arbitrary setup of the child environment to be done using other system calls. For example, you can:
-
-    Set up an arbitrary set of open file descriptors;
-    Alter the signal mask;
-    Set the current working directory;
-    Set the process group and/or session;
-    Set the user, group and supplementary groups;
-    Set hard and soft resource limits;
+* Set up an arbitrary set of open file descriptors
+* Alter the signal mask
+* Set the current working directory
+* Set the process group and/or session
+* Set the user, group, and supplementary groups
+* Set hard and soft resource limits
 
 ...and many more besides.
 
-http://stackoverflow.com/questions/5090731/why-fork-and-exec-are-kept-2-seperate-calls
+[Why fork and exec are kept 2 separate calls.](http://stackoverflow.com/questions/5090731/why-fork-and-exec-are-kept-2-seperate-calls)
 
 
 ###4 a.
 
 DMA which stands for Direct Memory Access is a system in which a hardware component of a computer gains access to the Memory Bus and controls the transfer. Say A CD/DVD drive usually works using DMA. But remember that the CPU is always the MASTER of everything, that means even though the CPU has given the DMA controller the mastership, It still has the power to check DMA. It can reinvoke the Bus control any time it wants, it may even do the task of DMA. There are registers that are used to set the Control of Bus from CPU to DMA and DMA to CPU. Once the DMA controller is done, it may interrupt or signal the CPU that it has finished its job. That's about DMA.
 
-Now coming to Interrupt I/O. Interrupt I/O is way more frequent than DMA. A process usually undergoes I/O plenty of times. Asking for a input from the user would be an interrupt I/O. Not DMA. There are two types of interrupts.
-
-    Software Interupt
-    Hardware Interupt
+Now coming to Interrupt I/O. Interrupt I/O is way more frequent than DMA. A process usually undergoes I/O plenty of times. Asking for a input from the user would be an interrupt I/O. Not DMA. There are two types of interrupts:
+1. Software Interupt
+2. Hardware Interupt
 
 Each interrupt has a special number assigned to it. And each interrupt is serviced by a Interupt Routine ( a simple function ) that is saved somewhere inside your RAM and which is invoked from a Table that consists of Interrupt numbers. I'm telling this for your understanding. When you move your mouse or type on keyboard, Its actually an interrupt that is happening. 
 
-http://stackoverflow.com/questions/25318145/dma-vs-interrupt-driven-i-o
+[DMA vs Interrupt Driven I/O](http://stackoverflow.com/questions/25318145/dma-vs-interrupt-driven-i-o)
+
+###4 b.
+
+Three methods that connect blocks to files:
+1. Block Chaining
+2. File Allocation Table
+3. Index Blocks
 
 
 
