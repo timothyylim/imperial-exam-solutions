@@ -156,3 +156,21 @@ S''''' = {
 ### 4 aii)
 
 
+Indentify and justify all the candidate keys
+
+```
+Let's look at all the closures:
+
+GH+ = GHBCDEFA
+B+ = DEF
+C+ = H
+E+ = D
+F+ = BED
+G+ = ABEDF
+
+Since GH+ gets everything, this is the candidate key.
+
+Since C gives H, and GH is a candidate key then CG is also a candidate key.
+
+
+```
