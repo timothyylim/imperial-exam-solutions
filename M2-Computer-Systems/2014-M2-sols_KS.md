@@ -202,9 +202,7 @@ See "Unix/Linux: Inodes" from "File Systems".
 
 ###4 d.
 
-In MINIX, each file or directory is represented as an inode, which records metadata including type (file, directory, block, char, pipe), IDs for user and group, three timestamps that record the date and time of last access, last modification, and last status change. An inode also contains a list of addresses that point to the zones in the data area where the file or directory data is actually stored.
-
-From [wikipedia](https://en.wikipedia.org/wiki/MINIX_file_system).
+In MINIX, each file or directory is represented as an inode, which records metadata including type (file, directory, block, char, pipe), IDs for user and group, three timestamps that record the date and time of last access, last modification, and last status change. An inode also contains a list of addresses that point to the zones in the data area where the file or directory data is actually stored. From [wikipedia](https://en.wikipedia.org/wiki/MINIX_file_system).
 
 As far as the diagram goes I think he might be looking for the one in "File Systems" on the "Inodes" slide. Otherwise I might write something like what you see when we type "ls -l".
 
