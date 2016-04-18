@@ -9,9 +9,7 @@
 ```
 ### 1 c i)
 ```
-Arcadia
-John Lewis
-Shell
+
 ```
 ### 4 ai)
 
