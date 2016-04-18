@@ -129,5 +129,12 @@ Similarly
 
 R3(F, B, D)
 
+Similarly
+
+R4(G, A, B)
+
+Leaving
+
+R5(GH,B,C,E,F)
 
 ```
