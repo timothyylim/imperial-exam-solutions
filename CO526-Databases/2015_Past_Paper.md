@@ -306,6 +306,26 @@ Decompose into BCNF
 _every attribute is dependent on the key, the whole key and nothing but the key_
 
 ```
+From 3NF:
+R1(C,H)
+R2(A,B,C)
+R3(A,D,E,F,G)
+
+Since E is not a super key, decompose E -> F (F -> E is also taken out)
+
+R4 (E,F)
+
+Since D is not a super key, decompose D -> E
+
+R5 (D,E)
+
+Leaving:
+
+R6 (G,A,D)
+
+Can't combine any relations as none share a common key.
+
+We lost EG -> AD
 
 ```
 
