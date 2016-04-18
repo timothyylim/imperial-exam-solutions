@@ -7,7 +7,7 @@
 ```
 π cname, iso_code (company ⨝ country) - π cname, iso_code σ company.hq = country.iso_code (company ⨝ country)
 ```
-### 1 c)
+### 1 c i)
 ```
 Arcadia
 John Lewis
