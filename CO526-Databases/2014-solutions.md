@@ -86,5 +86,7 @@ Sc = {
 ### 4 aii)
 
 ```
-GH+ = BEFDCHGA
+AGH+ = ABEFDCGH
+
+
 ```
