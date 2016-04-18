@@ -61,33 +61,15 @@ S'' = {
  } 
 ```
 
-Find the superkey
+3 Find minimal cover by using transitivity
 
 ```
-GH+ = GHBCDEFA
+Since B -> E and E -> D, we can remove B -> D
 
-Trying without GH -> B: GH+ = GHCBADEF gets the same closure, so we can remove it
+The minimal cover is therefore:
 
-Trying without GH -> C: GH+ = GHBDEFAB does not get C, so we can't remove GH -> C  
-
-S'' = {
-  GH    -> C,
-  B     -> D,
-  B     -> E,
-  B     -> F,
-  C     -> H,
-  E     -> D,
-  F     -> B,
-  F     -> D,
-  G     -> A,
-  G     -> B
- } 
-
-B+ = DEF
-
-Trying without B -> D: B+ = EFD gets the same closure so we can remove it
-
-S''' = {
+Sc = {
+  GH    -> B,
   GH    -> C,
   B     -> E,
   B     -> F,
@@ -99,78 +81,9 @@ S''' = {
   G     -> B
  } 
  
-
-
-Trying without B -> E: B+ = FD does not get the same closure so we cannot remove it
-
-Trying without B -> F: B+ = ED does not get the same closure so we cannot remove it
-
-C+ = H
-
-Can't remove anything
-
-E+ = D
-
-Can't remove anything
-
-F+ = BED
-
-Trying without F -> B: F+ = D does not get the same closure so we cannot remove it
-
-Trying without F -> D: F+ = BED gets the same closure so we can remove it
-
-S'''' = {
-  GH    -> C,
-  B     -> E,
-  B     -> F,
-  C     -> H,
-  E     -> D,
-  F     -> B,
-  G     -> A,
-  G     -> B
- } 
- 
- 
-G+ = ABEDF
-
-Trying without G -> A can't remove as there is no A on the RHS
-
-Trying without G -> B, can't remove as A will never get B
-
-Minimal cover:
-
-S''''' = {
-  GH    -> C,
-  B     -> E,
-  B     -> F,
-  C     -> H,
-  E     -> D,
-  F     -> B,
-  G     -> A,
-  G     -> B
- } 
-
 ```
-
 
 ### 4 aii)
 
+Find candidate keys:
 
-Indentify and justify all the candidate keys
-
-```
-Let's look at all the closures:
-
-GH+ = GHBCDEFA
-B+ = DEF
-C+ = H
-E+ = D
-F+ = BED
-G+ = ABEDF
-
-Since GH+ gets everything, this is the candidate key.
-
-Since C gives H, and GH is a candidate key then CG is also a candidate key.
-
-
-```
