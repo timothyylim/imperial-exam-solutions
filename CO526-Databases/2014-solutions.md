@@ -183,3 +183,18 @@ population figures after recovery:
 | B                     | 10 170 241        | 
 | ...                      |          | 
 | ET                       |   63 575 107       | 
+
+
+### 4 bii)
+
+Must have written:
+
+w1[cR], w1[cH] since for UNDO only logs oe must flush all commited date to disk
+
+Might have written:
+
+w4[cCH], w2[cB], w3[cET], w2[cCH], w4[cR]
+
+Must not have written:
+
+w2[cR], w3[cB] since we cannot write data to disk before loggin an UNDO log
