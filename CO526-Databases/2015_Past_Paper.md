@@ -260,6 +260,39 @@ Question 4 a) iii)
 Decompose into 3NF
 
 ```
+Candidate keys: EG, FG, DG.
+
+Thus ABCH are non prime since they are not in the candidate keys.
+
+EDFG are prime.
+
+Minimal cover
+Sc = {
+	A -> B,
+	A -> C,
+	C -> H,
+	D -> E,
+	DG -> A,
+	E -> F,
+	EG -> A,
+	EG -> D,
+	F -> E
+}
+
+
+Since C is not a superkey and H is non-prime, 
+C -> H must be decomposed
+
+R1(C,H)
+
+Since A is not a superkey and BC are non-prime,
+A -> BC must be decomposed
+
+R2(A,B,C)
+
+Leaving 
+
+R3(A,D,E,F,G)
 
 ```
 
