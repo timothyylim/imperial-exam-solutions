@@ -89,3 +89,45 @@ Sc = {
 GH+ = ABEFDCGH
 GC gets GH so GC is also a candidate key.
 ```
+
+
+### 4 aiii)
+
+Decompose into 3NF
+
+```
+Candidate keys: GH, GC
+
+Thus ABDEF are non prime 
+
+and CGH are prime.
+
+The minimal cover:
+
+Sc = {
+  GH    -> B,
+  GH    -> C,
+  B     -> E,
+  B     -> F,
+  C     -> H,
+  E     -> D,
+  F     -> B,
+  F     -> D,
+  G     -> A,
+  G     -> B
+ } 
+
+Since B is not a superkey and EF is non prime, we can decompose
+
+R1(B,E,F)
+
+Since E is not a superkey and D is non prime, we can decompose
+
+R2(E, D)
+
+Similarly
+
+R3(F, B, D)
+
+
+```
