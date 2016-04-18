@@ -86,3 +86,9 @@ S'' = {
 }
 
 ```
+
+### 4 aii)
+
+Identify all candidate keys of R
+
+
