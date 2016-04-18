@@ -1,3 +1,11 @@
+### 1 a1)
+
+```
+π iso_code, cname, net_assets (company ⨝ office ⨝ public_company)
+
+
+```
+
 ### 4 ai)
 
 ```
