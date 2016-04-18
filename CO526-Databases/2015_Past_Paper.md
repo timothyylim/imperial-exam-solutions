@@ -238,7 +238,19 @@ Question 4 a) ii)
 Identify and justify all candidate keys of R
 
 ```
-DG+ = ABCH
+EG+ = ABCHDEFG
+
+So EG gets everything.
+
+Note nothing gets G, so G has to be in the candidate key.
+
+FG gets EG, so FG is also a candidate key.
+
+DG gets EG, so DG is also a candidate key (note D -> E).
+
+Therefore,
+
+EG, FG, DG are candidate keys.
 ```
 
 ---
