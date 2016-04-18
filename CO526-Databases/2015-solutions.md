@@ -122,6 +122,9 @@ Yes, EXCEPT ALL would have the effect of turning both 'SELECT acode FROM airline
 acodes in airline and only one instance of that acode (as flag_carrier) in country then 
 only one instance of acode in airline would be excluded by EXCEPT ALL. 
 
+-- 
+I think this should be No, it cannot lead to different answers because acode in airline is a primary key therefore only unique values of acode.
+
 -------------------------------------------------------------------------------
 Question 2 a) iii)
 ```
