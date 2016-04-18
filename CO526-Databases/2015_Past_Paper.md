@@ -65,7 +65,9 @@ subquery(Acode),
     
     
 ```
+
 I *think* serves needs to be at the top of the subquery since Acode is ground. That way, Pcode1 and Pcode2 are ground for the airport_a and airport_b calls unless that is just prolog nonsense. I could be wrong. -KS
+
 -------------------------------------------------------------------------------
 Question 1 d) i)
 
