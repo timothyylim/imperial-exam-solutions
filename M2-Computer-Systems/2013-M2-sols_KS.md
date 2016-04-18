@@ -1,5 +1,7 @@
 #Computer Systems 2013
-#n.b. Ananda did not teach OS question for this year.
+
+*n.b. Ananda did not teach OS question for this year.*
+
 ##1 a.
 
 Big Endian: The most significant bit of a word in memory comes first.
