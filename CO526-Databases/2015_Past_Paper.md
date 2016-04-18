@@ -155,79 +155,62 @@ GROUP BY name
 Question 4 a) i)
 
 ```
-S = {A -> BCH, C -> H, D -> E, DG -> A, E -> F, EFG -> ADE, F-> E}
+S = {
+	A -> BCH,
+	C -> H,
+	D -> E,
+	DG -> A,
+	E -> F,
+	EFG -> ADE,
+	F -> E
+}
 ```
 
-Rewrite S to an equivalent set of FDs which only have a single attribute on the RHS of each FD
+Rewrite RHS to only have one attribute
 
 ```
-S' = {A -> B, A -> C, A -> H, C -> H, D -> E, DG -> A, E -> F, EFG -> A, EFG -> D, EFG -> E, F -> E}
+S = {
+	A -> B,
+	A -> C,
+	A -> H,
+	C -> H,
+	D -> E,
+	DG -> A,
+	E -> F,
+	EFG -> A,
+	EFG -> D,
+	EFG -> E,
+	F -> E
+}
 ```
 
 Simplify LHS
 
 ```
-Since F -> E
-EFG -> E => EG -> E
-EFG -> D => EG -> D
+Since E -> F,
 EFG -> A => EG -> A
-```
+EFG -> D => EG -> D
+EFG -> E => EG -> E
 
-```
-S'' = {A -> B, A -> C, A -> H, C -> H, D -> E, DG -> A, E -> F, EG -> A, EG -> D, EG -> E, F -> E}
-or for easier reading:
 
-S'' = {	
-	A -> B, 
-	A -> C, 
-	A -> H, 
-	C -> H, 
-	D -> E, 
-	DG -> A, 
-	E -> F, 
-	EG -> A, 
-	EG -> D, 
-	EG -> E, 
-	F -> E	
-	
+S' = {
+	A -> B,
+	A -> C,
+	A -> H,
+	C -> H,
+	D -> E,
+	DG -> A,
+	E -> F,
+	EG -> A,
+	EG -> D,
+	EG -> E,
+	F -> E
 }
-
 ```
 
-Redundant FD X-> A is equivalent to the transative closure of other FDs (i.e. just cancel out transative functions)
+Find minimal cover using transitivity
 
 ```
-Since A -> C and C -> H,
-A -> H => 0
-
-S''' = {	
-	A -> B, 
-	A -> C, 
-	C -> H, 
-	D -> E, 
-	DG -> A, 
-	E -> F, 
-	EG -> A, 
-	EG -> D, 
-	EG -> E, 
-	F -> E	
-	
-}
-
-Since EG -> D and D -> E,
-EG -> E => 0
-
-S'''' = {	
-	A -> B, 
-	A -> C, 
-	C -> H, 
-	D -> E, 
-	DG -> A, 
-	E -> F, 
-	EG -> A, 
-	EG -> D, 
-	F -> E	
-}
 
 ```
 
@@ -238,21 +221,7 @@ Question 4 a) ii)
 Identify and justify all candidate keys of R
 
 ```
-	A -> B, 
-	A -> C,
-	C -> H,
-	D -> E, 
-	DG -> A,  
-	E -> F, 
-	EG -> A, 
-	EG -> D, 
-	F -> E	
 
-with trial and error we can see 
-
-D+ = ABCDEFG
-Since EG -> D, EG is also a candidate key
-Since F -> E, FG is also a candidate key
 ```
 
 ---
@@ -262,24 +231,7 @@ Question 4 a) iii)
 Decompose into 3NF
 
 ```
-R = {A,B,C,D,E,F,G}
 
-Candidate keys: D, EG, FG
-
-A,B,C are non prime 
-
-Since DG -> A and DG is not a superkey, must decompose
-R1(D,G,A)
-
-Since A -> B and A is not a superkey, must decompose
-R2(A,B)
-
-Since A -> C and A is not a superkey, must decompose
-R3(A,C)
-
-Leaving
-
-R4(D,E,F,G)
 ```
 
 ---
@@ -291,41 +243,7 @@ Decompose into BCNF
 _every attribute is dependent on the key, the whole key and nothing but the key_
 
 ```
-R = {A,B,C,D,E,F,G}
-Sc = {	
-	A -> B, 
-	A -> C,
-	C -> H,
-	D -> E, 
-	DG -> A,  
-	E -> F, 
-	EG -> A, 
-	EG -> D, 
-	F -> E	}
-Candidate keys: D, EG, FG
 
-R1(D,G,A)
-
-R2(A,B)
-
-R3(A,C)
-
-R4(D,E,F,G)
-
-R4 is not in BCNF because F -> E and F is not a candidate key must decompose
-
-R5 (F, E)
-
-Leaving R6 (D,F,G)
-
-Note that R2 and R3 have a common key so they can be combined to R7(A,B,C)
-
-Finally,
-
-R1(D,G,A)
-R5(F,E)
-R6(D,F,G)
-R7(A,B,C)
 ```
 
 ---
