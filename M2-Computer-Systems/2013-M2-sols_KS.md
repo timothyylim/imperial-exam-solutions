@@ -1,4 +1,5 @@
 #Computer Systems 2013
+#n.b. Ananda did not teach OS question for this year.
 ##1 a.
 
 Big Endian: The most significant bit of a word in memory comes first.
@@ -141,46 +142,52 @@ Address | Contents            | Pseudocode
 012H    | STORE R2, [301H]    | Store the result in the address 301H
 013H    | STOP                | hammer time. 
 
-### 3 a)
+###3 a.
 
 The main requirement when dealing with I/O is responsiveness. 
 
-In a multi-user system, running processes run by other users need to be interrupted to ensure the I/O operations of a user are responsive and to ensure fairness. (bullshit as necessary with the following keywords: cpu intensive, good response time, fairness, human rights). 
+In a multi-user system, running processes run by other users need to be interrupted to ensure the I/O operations of a user are responsive and to ensure fairness. (Bullshit as necessary with the following keywords: cpu intensive, good response time, fairness, human rights).
 
-### 3 b)
+###3 b.
 
-1. Fetch the instruction: The next instruction is fetched from the memory address that is currently stored in the program counter (PC), and stored in the instruction register (IR). At the end of the fetch operation, the PC points to the next instruction that will be read at the next cycle.
-2. Decode the instruction: During this cycle the encoded instruction present in the IR (instruction register) is interpreted by the decoder
-3. Read the effective address: In case of a memory instruction (direct or indirect) the execution phase will be in the next clock pulse. 
-4. Execute  the instruction: The control unit of the CPU passes the decoded information as a sequence of control signals to the relevant function units of the CPU to perform the actions required by the instruction such as reading values from registers, passing them to the ALU to perform mathematical or logic functions on them, and writing the result back to a register. 
+**1. Fetch the instruction:** The next instruction is fetched from the memory address that is currently stored in the program counter (PC), and stored in the instruction register (IR). At the end of the fetch operation, the PC points to the next instruction that will be read at the next cycle.
+**2. Decode the instruction:** During this cycle the encoded instruction present in the IR (instruction register) is interpreted by the decoder.
+**3. Read the effective address:** In case of a memory instruction (direct or indirect) the execution phase will be in the next clock pulse. 
+**4. Execute  the instruction**: The control unit of the CPU passes the decoded information as a sequence of control signals to the relevant function units of the CPU to perform the actions required by the instruction such as reading values from registers, passing them to the ALU to perform mathematical or logic functions on them, and writing the result back to a register. 
 
-There exists an interrupt descriptor table it contains the address of the instruction to be executed for a specific interrupt.
+There exists an interrupt descriptor table which contains the address of the instruction to be executed for a specific interrupt.
 
 Therefore, when an interrupt occurs, the CPU will complete the current instruction, recognize the interrupt then save all data related to the current process then call the interrupt handler which will point to the address where the interrupt instructions are stored (the interrupt descriptor table). Then run the interrupt then resume. 
 
-### 3 c)
+###3 c.
 
-In computer science, a vectored interrupt is a processing technique in which the interrupting device directs the processor to the appropriate interrupt service routine. 
+In computer science, a vectored interrupt is a processing technique in which the interrupting device directs the processor to the appropriate interrupt service routine.
 
 This is in contrast to a polled interrupt system, in which a single interrupt service routine must determine the source of the interrupt by checking all potential interrupt sources, a slow and relatively laborious process.
 
-### 3 d)
+###3 d.
 
-https://docs.oracle.com/cd/E19120-01/open.solaris/817-4415/psched-16/index.html
+[Process State Transition](https://docs.oracle.com/cd/E19120-01/open.solaris/817-4415/psched-16/index.html)
 
 Sleeping in memory is the same as waiting.
 
-### 4 a)
-
-### 4 b)
+###3 e.
 
 
 
-### 4 c)
+###4 a.
 
 
 
-## 4.d
+###4 b.
+
+
+
+###4 c.
+
+
+
+##4 d.
 
 The use of fork and exec exemplifies the spirit of UNIX in that it provides a very simple way to start new processes.
 
