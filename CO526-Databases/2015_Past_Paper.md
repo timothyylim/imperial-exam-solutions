@@ -230,6 +230,7 @@ Sc = {
 	F -> E
 }
 ```
+I'm pretty sure you can remove EG -> A as well because if you remove it, EG+ is still ABCDEFGH. -KS
 
 ---
 
