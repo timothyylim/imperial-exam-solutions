@@ -125,3 +125,12 @@ R7(A,B,G,H)
 
 No FD lost.
 ```
+
+### 4 bi)
+
+Backward scan
+
+| log  | action    |
+|---|----|
+| ...  | c = {}, D = {}    |
+| w[cUsa ]|       |
