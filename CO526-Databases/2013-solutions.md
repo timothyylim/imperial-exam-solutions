@@ -56,6 +56,16 @@ UNION
 SELECT trades_on.cname, exchange.based
 FROM trades_on JOIN exchange ON exchange.xname = trades_on.xname
 ```
+###1 d iii)
+```
+links_to_country(Cname,Isocode):-
+    company(Cname,Isocode,_)
+    ;
+    trades_on(Xname,Cname,_),
+    exchange(Xname, Isocode).
+```
+
+
 ### 4 ai)
 
 ```
