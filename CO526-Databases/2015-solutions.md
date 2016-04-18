@@ -153,7 +153,10 @@ GROUP BY name
 -------------------------------------------------------------------------------
 Question 3 a) [Diagram](https://github.com/timothyylim/imperial-exam-solutions/blob/master/CO526-Databases/db2015.pdf).  There is also a version that can be edited in the Databases folder (powerpoint).
 
----
+-------------------------------------------------------------------------------
+Question 3 b) 
+
+-------------------------------------------------------------------------------
 Question 4 a) i)
 
 ```
