@@ -238,7 +238,7 @@ Question 4 a) ii)
 Identify and justify all candidate keys of R
 
 ```
-
+DG+ = ABCH
 ```
 
 ---
