@@ -9,10 +9,26 @@
 ```
 ### 1 c i)
 ```
-Arcadia
-John Lewis
 Shell
 ```
+### 1 c ii)
+```
+SELECT cname 
+FROM public_company 
+EXCEPT 
+SELECT cname
+FROM
+(
+    SELECT cname, hq AS iso_code 
+    FROM company
+    INTERSECT 
+    SELECT cname, based AS iso_code
+    FROM public_company NATURAL JOIN trades_on NATURAL JOIN exchange
+) AS public_companies_traded_at_hq_country
+```
+
+
+
 ### 4 ai)
 
 ```
