@@ -145,3 +145,11 @@ Sc = {
       C   -> D
 }
 ```
+
+### 4 aii)
+
+Identify and justify all candidate keys of R
+
+```
+
+```
