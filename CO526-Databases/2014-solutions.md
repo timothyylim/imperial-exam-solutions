@@ -197,4 +197,4 @@ w4[cCH], w2[cB], w3[cET], w2[cCH], w4[cR]
 
 Must not have written:
 
-w2[cR], w3[cB] since we cannot write data to disk before loggin an UNDO log
+w2[cR], w3[cB] since we cannot write data to disk before logging an UNDO log
