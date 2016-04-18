@@ -86,7 +86,6 @@ Sc = {
 ### 4 aii)
 
 ```
-AGH+ = ABEFDCGH
-
-
+GH+ = ABEFDCGH
+GC gets GH so GC is also a candidate key.
 ```
