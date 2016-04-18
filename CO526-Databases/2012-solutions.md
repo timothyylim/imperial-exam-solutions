@@ -149,3 +149,13 @@ Undo all logs for objects not in D
 | w1[cSf, pop = 509672]		| no action as cSf is in D |
 | w1[cFl, pop = 31 122]		| undo as Cfl is not in D |
 
+
+After recovery:
+
+|code|population|
+|----|---|
+|Aus | 19284997|
+|Fl | 31122|
+|Sf | 5105230|
+|USA|26847239|
+
