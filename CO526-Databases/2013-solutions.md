@@ -65,6 +65,13 @@ links_to_country(Cname,Isocode):-
     exchange(Xname, Isocode).
 ```
 
+###1 e)
+```
+π public_company.cname (public_company)
+-
+(π trades_on.xname σ trades_on.cname = 'BP' (trades_on) -
+π trades_on.xname σ trades_on.cname = public_company.cname (trades_on x public_company))
+```
 
 ### 4 ai)
 
