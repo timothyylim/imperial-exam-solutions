@@ -24,6 +24,11 @@ from 	(select organization,
 	group by organization) join organization 
 ON organization.abbreviation = is_member.organization
 ```
+### 2 dii)
+Just add :
+```
+where eur_member > 0
+```
 
 Not sure, couldn't test it.
 
