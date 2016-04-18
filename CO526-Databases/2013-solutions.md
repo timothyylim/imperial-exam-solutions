@@ -9,7 +9,12 @@
 ```
 ### 1 c i)
 ```
+πcname (public_company) - π cname (π cname, hq ρ iso_code (company) ∩ πcname, based ρ iso_code (public_company ⨝ trades_on ⨝ exchange))
 
+First select the names of all the public companies and subtract all the companies which are listed on a stock exchange in the country they are based in
+
+Answer:
+Shell
 ```
 ### 4 ai)
 
