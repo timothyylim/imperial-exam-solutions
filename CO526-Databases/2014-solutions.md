@@ -36,9 +36,13 @@ S' = {
 2 Simplify LHS
 
 ```
+Since G -> B,
+ABGH -> B => 0
+
+B -> B is redundant
+
 Since G -> A and G -> B,
 
-ABGH -> B => GH -> B
 ABGH -> C => GH -> C
 
 We can also remove B -> B
@@ -47,7 +51,6 @@ We can also remove B -> B
 
 ```
 S'' = {
-  GH    -> B,
   GH    -> C,
   B     -> D,
   B     -> E,
@@ -66,17 +69,17 @@ S'' = {
 ```
 Since B -> E and E -> D, we can remove B -> D
 
+Since F -> B and B -> E and E -> D, we can remove F -> D
+
 The minimal cover is therefore:
 
 Sc = {
-  GH    -> B,
   GH    -> C,
   B     -> E,
   B     -> F,
   C     -> H,
   E     -> D,
   F     -> B,
-  F     -> D,
   G     -> A,
   G     -> B
  } 
@@ -86,6 +89,8 @@ Sc = {
 ### 4 aii)
 
 ```
+G has to be in the candidate key because nothing causes G
+
 GH+ = ABEFDCGH
 GC gets GH so GC is also a candidate key.
 ```
@@ -105,14 +110,12 @@ and CGH are prime.
 The minimal cover:
 
 Sc = {
-  GH    -> B,
   GH    -> C,
   B     -> E,
   B     -> F,
   C     -> H,
   E     -> D,
   F     -> B,
-  F     -> D,
   G     -> A,
   G     -> B
  } 
@@ -127,14 +130,28 @@ R2(E, D)
 
 Similarly
 
-R3(F, B, D)
-
-Similarly
-
-R4(G, A, B)
+R3(G, A, B)
 
 Leaving
 
-R5(GH,B,C,E,F)
+R4(G,H,C)
 
 ```
+
+
+### 4 aiii)
+
+Decompose into BCNF
+
+```
+C -> H violates BCNF because C is not a candidate key
+
+R5(C,H)
+
+Leaving
+
+R6(G,C)
+
+You lose the FD GH->C
+```
+
