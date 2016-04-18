@@ -1,3 +1,5 @@
+
+
 ### 2 c)
 ```
 select distinct continent,
@@ -9,6 +11,21 @@ from (select continent,
 group by continent
 order by total_area asc
 ```
+
+### 2 di)
+```
+select organization, city
+from 	(select organization,
+		COUNT(CASE when continent='Europe' then continent else null end) as eur_member,
+		COUNT(CASE when continent='Africa' then continent else null end) as af_member,
+		COUNT(CASE when continent='Asia' then continent else null end) as asian_member
+	from is_member JOIN encompasses ON is_member.country = encompasses.country
+	where percentage > 50
+	group by organization) join organization 
+ON organization.abbreviation = is_member.organization
+```
+
+Not sure, couldn't test it.
 
 
 ### 4 ai)
