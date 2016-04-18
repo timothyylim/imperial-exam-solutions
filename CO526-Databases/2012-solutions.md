@@ -128,9 +128,24 @@ No FD lost.
 
 ### 4 bi)
 
-Backward scan
+Backward scan:
+
+Undo log for transactions in c and objects in D
+
+Undo all logs for objects not in D
 
 | log  | action    |
 |---|----|
 | ...  | c = {}, D = {}    |
-| w[cUsa ]|       |
+| w3[cUsa, pop = 268 539 881 ]| undo as cUSA is not in D       |
+| w1[cUsa, pop = 268 467 239 ]| undo as cUSA is not in D       |
+| b3				| irrelevant       |
+| c2				| c = {2} |
+| w1[cAus, pop = 19 284 997]  	| undo as cAus is not in D |
+| w2[cSf, pop = 5 105 230]  	| no action, D = {Sf} |
+| w2[cUsa, pop = 266 476 278]  	| no action, D = {Sf, USA} |
+| w2[cAus, pop = 18 260 863]  	| no action, D = {Sf, USA, Aus} |
+| b2 	| irrelevant|
+| w1[cSf, pop = 509672]		| no action as cSf is in D |
+| w1[cFl, pop = 31 122]		| undo as Cfl is not in D |
+
