@@ -11,137 +11,17 @@ S = {
 }
 ```
 
-1 Rewrite RHS to only have one attribute
-
-
-```
-S' = {
-      AB  -> A,
-      AB  -> C,
-      AB  -> D,
-      AB  -> E,
-      ABD -> C,
-      ABD -> E,
-      ABD -> F,
-      GH  -> F,
-      GH  -> E,
-      E   -> F,
-      D   -> B,
-      C   -> A,
-      C   -> B,
-      C   -> C,
-      C   -> D
-}
-```
-
-2 Simplify LHS
-
-```
-Since D -> B, 
-ABD -> C => AD -> C
-ABD -> E => AD -> E
-ABD -> F => AD -> F
-
-S'' = {
-      AB  -> A,
-      AB  -> C,
-      AB  -> D,
-      AB  -> E,
-      AD -> C,
-      AD -> E,
-      AD -> F,
-      GH  -> F,
-      GH  -> E,
-      E   -> F,
-      D   -> B,
-      C   -> A,
-      C   -> B,
-      C   -> C,
-      C   -> D
-}
-```
-
-3 Find minimal cover using transitivity
-
-```
-S''' = {
-      AB  -> A,
-      AB  -> C,
-      AB  -> D,
-      AB  -> E,
-      AD -> C,
-      AD -> E,
-      AD -> F,
-      GH  -> F,
-      GH  -> E,
-      E   -> F,
-      D   -> B,
-      C   -> A,
-      C   -> B,
-      C   -> C,
-      C   -> D
-}
-
-
-Since AB -> C, C -> A
-AB -> A => 0
-
-S'''' = {
-      AB  -> C,
-      AB  -> D,
-      AB  -> E,
-      AD -> C,
-      AD -> E,
-      AD -> F,
-      GH  -> F,
-      GH  -> E,
-      E   -> F,
-      D   -> B,
-      C   -> A,
-      C   -> B,
-      C   -> C,
-      C   -> D
-}
-
-Since AB -> C, C -> D
-AB -> D => 0
-
-S'''' = {
-      AB  -> C,
-      AB  -> E,
-      AD -> C,
-      AD -> E,
-      AD -> F,
-      GH  -> F,
-      GH  -> E,
-      E   -> F,
-      D   -> B,
-      C   -> A,
-      C   -> B,
-      C   -> C,
-      C   -> D
-}
-
-Since AD -> E, E -> F
-AD -> F => 0
-
-Since GH-> E, E -> F
-GH -> F => 0
-
-Can also remove C -> C
 
 Minimal Cover 
 
+```
 Sc = {
       AB  -> C,
       AB  -> E,
-      AD -> C,
-      AD -> E,
       GH  -> E,
       E   -> F,
       D   -> B,
       C   -> A,
-      C   -> B,
       C   -> D
 }
 ```
@@ -151,5 +31,62 @@ Sc = {
 Identify and justify all candidate keys of R
 
 ```
+CGH+ = GHEFADBC
 
+GHAB is also a candidate key as AB -> C
+```
+
+### 4 aiii)
+
+Decompose to 3NF
+
+[non super, non prime]
+
+Non prime: DEF
+Prime: ABCGH
+
+
+```
+Decompose E -> F since E is not super and F is not prime
+
+R1(E,F)
+
+AB -> E since AB is not a superkey and E is not prime 
+
+R2(A,B,E)
+
+GH -> E since GH is not a superkey and E is not prime
+
+R3(G,H,E)
+
+C -> D since C is not a superkey and D is not prime
+
+R4(C,D)
+
+Since we are losing a functional dependency D -> B, we add it back in
+
+R5(D,B)
+
+Leaving
+
+R6(A,B,C,G,H)
+
+```
+
+
+### 4 a iv)
+
+Decompose to BCNF
+
+```
+{
+      AB  -> C,
+      C   -> A,
+}
+
+replace R6 = R6(A,B,C)
+
+R7(A,B,G,H)
+
+No FD lost.
 ```
