@@ -2,8 +2,10 @@
 
 ```
 π iso_code, cname, net_assets (company ⨝ office ⨝ public_company)
-
-
+```
+### 1 b)
+```
+π cname, iso_code (company ⨝ country) - π cname, iso_code σ company.hq = country.iso_code (company ⨝ country)
 ```
 
 ### 4 ai)
