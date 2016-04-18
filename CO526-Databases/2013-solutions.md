@@ -30,7 +30,7 @@ FROM
 ```
 Not sure if correct:
 
-public_companies_not_traded_in_HQ_country(CNAME):-
+public_companies_not_traded_in_HQ_country(Cname):-
     public_company(Cname, _ , _ ),
     ¬public_traded_in_hq_country(Cname).
     
