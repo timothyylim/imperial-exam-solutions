@@ -84,6 +84,3 @@ Sc = {
 ```
 
 ### 4 aii)
-
-Find candidate keys:
-
