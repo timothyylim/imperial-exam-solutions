@@ -48,9 +48,14 @@ public_traded_in_hq_country(Cname):-
 ∪
 π company.cname, exchange.based σ  company.cname = trades_on.cname ∧ trades_on.xname = exchange.xname (company ⨯ trades_on ⨯ exchange) 
 ```
-
-
-
+###1 d ii)
+```
+SELECT cname, hq
+FROM company
+UNION
+SELECT trades_on.cname, exchange.based
+FROM trades_on JOIN exchange ON exchange.xname = trades_on.xname
+```
 ### 4 ai)
 
 ```
