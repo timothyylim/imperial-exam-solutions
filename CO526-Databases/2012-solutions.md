@@ -1,5 +1,5 @@
 ### 2 c)
-
+```
 select distinct continent,
 	SUM(area) as total_area
 from (select continent, 
@@ -8,7 +8,7 @@ from (select continent,
 	on country = code) as fuck
 group by continent
 order by total_area asc
-
+```
 
 
 ### 4 ai)
