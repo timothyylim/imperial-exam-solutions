@@ -9,11 +9,8 @@
 ```
 ### 1 c i)
 ```
-πcname (public_company) - π cname (π cname, hq ρ iso_code (company) ∩ πcname, based ρ iso_code (public_company ⨝ trades_on ⨝ exchange))
-
-First select the names of all the public companies and subtract all the companies which are listed on a stock exchange in the country they are based in
-
-Answer:
+Arcadia
+John Lewis
 Shell
 ```
 ### 4 ai)
@@ -76,7 +73,7 @@ S' = {
 Since A -> E, E -> G,
 A -> G => 0
 
-S'' = {
+Sc = {
       A   -> D,
       A   -> E,
       A   -> H,
@@ -94,4 +91,76 @@ S'' = {
 
 Identify all candidate keys of R
 
+```
+CF+ = ABCDEFGH
+CB gets CF so CB is also a candidate key
+```
+
+### 4 aiii)
+
+Decompose to 3NF
+
+```
+[Not super or not prime]
+
+Candidate keys are: CF, CB
+
+Therefore, ADEGH are not prime since they are not in the candidate key
+
+CBF are prime. 
+
+Minimal cover:
+
+Sc = {
+      A   -> D,
+      A   -> E,
+      A   -> H,
+      B   -> F,
+      CF  -> A,
+      CF  -> B,
+      E   -> G,
+      EH  -> D,
+      GH  -> A
+}
+
+A -> DEF must be decomposed as A is not a superkey and DEF are non prime
+
+R1(A,D,E,F)
+
+E -> G must be decomposed as E is not a superkey and G is non prime
+
+R2(E,G)
+
+EH -> D must be decomposed as EH is not a superkey and D is non prime
+
+R3(E,H,D)
+
+GH -> A must be decomposed as GH is not a superkey and A is non prime
+
+R4(G,H,A)
+
+Leaving 
+
+R5(C,F,B,A)
+
+```
+
+
+### 4 a iv)
+
+Decompose to BCNF
+
+```
+R5(C,F,B,A) violates BCNF since A is not a superkey
+
+Decompose
+
+R6(C,F,A)
+
+Leaving
+
+R7(C,F,B)
+
+None of the FDs are lost.
+```
 
