@@ -211,7 +211,24 @@ S' = {
 Find minimal cover using transitivity
 
 ```
+Since A -> C, C -> H
+A -> H => 0
 
+Since EG -> D, D -> E
+EG -> E => 0
+
+Minimal cover
+Sc = {
+	A -> B,
+	A -> C,
+	C -> H,
+	D -> E,
+	DG -> A,
+	E -> F,
+	EG -> A,
+	EG -> D,
+	F -> E
+}
 ```
 
 ---
