@@ -42,6 +42,14 @@ public_traded_in_hq_country(Cname):-
 
 
 ```
+###1 d i)
+```
+π company.cname, company.hq (company)
+∪
+π company.cname, exchange.based σ  company.cname = trades_on.cname ∧ trades_on.xname = exchange.xname (company ⨯ trades_on ⨯ exchange) 
+```
+
+
 
 ### 4 ai)
 
