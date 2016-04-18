@@ -1,4 +1,4 @@
-### 1 a1)
+### 1 a)
 
 ```
 π iso_code, cname, net_assets (company ⨝ office ⨝ public_company)
