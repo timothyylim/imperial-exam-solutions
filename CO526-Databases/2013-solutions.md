@@ -26,8 +26,22 @@ FROM
     FROM public_company NATURAL JOIN trades_on NATURAL JOIN exchange
 ) AS public_companies_traded_at_hq_country
 ```
+### 1 c iii)
+```
+Not sure if correct:
+
+public_companies_not_traded_in_HQ_country(CNAME):-
+    public_company(Cname, _ , _ ),
+    ¬public_traded_in_hq_country(Cname).
+    
+public_traded_in_hq_country(Cname):-
+    company(Cname,HQ,_),
+    public_company(Cname,_,_),
+    trades_on(Xname,Cname,_),
+    exchange(Xname,HQ).
 
 
+```
 
 ### 4 ai)
 
