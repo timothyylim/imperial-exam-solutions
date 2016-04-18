@@ -325,7 +325,7 @@ R6 (G,A,D)
 
 Can't combine any relations as none share a common key.
 
-We lost EG -> AD
+We lost EG -> AD. It seems you cannot keep this FD. 
 
 ```
 
