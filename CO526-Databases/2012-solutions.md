@@ -1,4 +1,7 @@
-
+### 1 a)
+```
+π country.name, is_member.organization, organization.city σ (country.code = is_member.country ∧ is_member.organization = organization.abbreviation) (country ⨯ is_member ⨯ organization)
+```
 
 ### 2 c)
 ```
