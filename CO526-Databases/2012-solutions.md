@@ -12,7 +12,10 @@ DK
 IS 
 N
 ---------------------
-This query returns all the values in is_member which have all the organizations selected in second part of the query (i.e. organizations where DK is the country - i.e. NATO and NC). So DK (clearly) and IS and N are members of both NATO and NC.
+This query returns all the values in is_member which are members of all the 
+organizations selected in second part of the query (i.e. organizations 
+where DK is the country - i.e. NATO and NC). So DK (clearly) and IS and N 
+are members of both NATO and NC so are returned.
 ```
 
 
