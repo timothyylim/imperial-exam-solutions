@@ -11,6 +11,8 @@
 
 The query gets the countries that have more then 10M inhabitants and not located in Europe with less then 10M inhabitants.
 
+Therefore, the - in the brackets is useless.
+
 |code|
 |----|
 |CZ|
