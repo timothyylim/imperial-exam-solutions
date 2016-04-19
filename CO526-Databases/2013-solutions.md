@@ -85,6 +85,25 @@ Compare all the net assets of the companies to the one with an hq in the same co
 |IE|Ryanair|2713|
 |NL|Shell|142744|
 
+### 2 aii)
+```
+SELECT distinct company.hq AS iso_code,
+        public_company.cname,
+        public_company.net_assets
+FROM company JOIN public_company USING(cname)
+WHERE NOT EXISTS(SELECT *
+				FROM company AS same_country_company JOIN public_company AS same_country_public
+				WHERE same_country_public.net_assets > public_company.assets
+				AND same_country_company.hq = company.hq)
+```
+### 2 b)
+```
+SELECT distinct cname,
+        COUNT(xname) as no_exchanges
+FROM exchange NATURAL JOIN trades_on
+GROUP BY cname
+```
+
 
 
 
