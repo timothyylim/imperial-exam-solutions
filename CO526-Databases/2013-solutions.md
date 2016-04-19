@@ -117,25 +117,62 @@ FROM company
 ON company.hq = company_assets_country.iso_code
 ```
 
-### 2 d)
+### 3 bi)
+
+Find conflicts:
+
 ```
-SELECT xname, 
-	COUNT(CASE WHEN sector ='Retail' THEN cname ELSE NULL END) as no_retail,
-	COUNT(CASE WHEN sector ='Oil' THEN cname ELSE NULL END) as no_oil,
-FROM trades_on NATURAL JOIN company
-WHERE hq = 'GB'
-GROUP BY xname
+w1[cUS], r2[cUS]
+r2[cGB], w1[cGB]
 ```
-### 2 d)
+
+Serialization graph:
+
 ```
-SELECT cname
-FROM office
-EXCEPT 
-SELECT cname
-FROM office NATURAL JOIN country
-WHERE trade_block='EU' 
-	OR trade_block IS NULL
+
+T1 ---> T2
+^	     |
+|--------
 ```
+
+Cyclic, shit.
+
+Ha suffers from inconsistent analysis, T2 reads cGB before T1 updates it.
+
+Recoverability:
+
+H2 commits depending on data from uncommitted H1 and therefore is not recoverable.
+
+
+### 3 bii)
+
+Find all conflicts:
+
+```
+r2[cGB] -> w3[cGB]
+```
+
+Serializable.
+
+Recoverable, ACA and ST.
+
+### 3 biii)
+
+```
+w1[cUS] -> r3[cUS]
+r3[cGB] -> r1[cGB]
+```
+
+Cyclic, therefore not serializable. lost update.
+
+Non recoverable, T3 depends on T1 but commits before it.
+
+
+### 3 biv)
+
+
+
+
 
 ### 4 ai)
 
