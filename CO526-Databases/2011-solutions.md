@@ -43,3 +43,27 @@ w1(aG-FDWC) <--> r2(aG-FDWC)
 r2(aG-FXDC) <--> w3(aG-FXDC)
 w3(aG-CWQS) <--> r1(aG-CWQS)
 ```
+
+Consider the following history:
+
+```
+r1(aG-CWQS),
+w1(aG-CWQS),
+r1(aG-FDWC),
+r2(aG-FDWC),
+r3(aG-FXDC),
+w3(aG-FXDC)
+```
+
+T1 holds ```wl1 [aG-CWQS]```
+T2 holds ```rl2 [aG-FDWC]```
+T3 holds ```wl3 [aG-FXDC]```
+
+Waits for graph:
+
+```
+      T3   <------ rl2[aG-FXDC] -------------- T2 
+      |                                         |
+      |                                         |
+      |---rl3[aG-CWQS] --> T1 ---> wl1[aG-FDWC]--
+```
