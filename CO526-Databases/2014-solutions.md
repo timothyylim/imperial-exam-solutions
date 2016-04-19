@@ -22,7 +22,31 @@ The query gets the countries that have more then 10M inhabitants and not located
 
 ### 1 cii)
 ```
-SELECT 
+SELECT code
+FROM country
+WHERE population > 10,000,000
+EXCEPT
+(
+  SELECT country AS code
+  FROM encompasses
+  WHERE continent = 'Europe'
+  EXCEPT
+  SELECT code
+  FROM country
+  WHERE population > 10,000,000
+)
+```
+
+### 1 cii)
+```
+query(code):-
+  more_than_10(code),
+  ¬(encompasses(code,Europe,_),
+  ¬more_than_10(code)).
+
+more_than_10(code):-
+  country(_,code,_,_,pop),
+  pop > 10000000.
 ```
 
 ### 1 di)
