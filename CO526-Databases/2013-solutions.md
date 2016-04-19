@@ -126,6 +126,17 @@ FROM trades_on NATURAL JOIN company
 WHERE hq = 'GB'
 GROUP BY xname
 ```
+### 2 d)
+```
+SELECT cname
+FROM office
+EXCEPT 
+SELECT cname
+FROM office NATURAL JOIN country
+WHERE trade_block='EU' 
+	OR trade_block IS NULL
+```
+
 ### 4 ai)
 
 ```
