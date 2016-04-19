@@ -179,6 +179,26 @@ r2[cGb] <-> w3[cGb]
 ```
 
 
+Consider the following execution:
+
+```
+r1[cUs],
+w1[cUs],
+r2[cGb],
+r3[cGb],
+r3[cIe]
+```
+
+
+```
+   T3 -- rl3(cUs) --> T1 <--- rl2(cUs) -- T2
+   ^                  |
+   |-----2l1(cGb)-------
+
+```
+
+
+
 
 ### 4 ai)
 
