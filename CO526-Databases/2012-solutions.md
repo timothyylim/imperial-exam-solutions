@@ -32,6 +32,14 @@ EXCEPT
 SELECT city 
 FROM organization
 ```
+### 1 d iii)
+```
+euro_caps(Capitals):-
+	country(_,Code, Capitals, _, _),
+	encompasses(Code,'Europe',Percent),
+	Percent >= 50.00,
+	¬organization(_,Capitals,_)).
+```
 ### 2 c)
 ```
 select distinct continent,
