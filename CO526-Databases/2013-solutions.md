@@ -76,12 +76,17 @@ company_listing(Cname,iso_code):-
 π trades_on.xname σ trades_on.cname = public_company.cname (trades_on x public_company))
 ```
 ### 2 ai)
-```
 Compare all the net assets of the companies to the one with an hq in the same country and take the best.
-|iso_code|cname|net_assets|
-|GB------|BP---|-----48914|
 
-```
+|iso_code|cname|net_assets|
+|--------|-----|----------|
+|GB|BP|48914|
+|US|Apple|70532|
+|IE|Ryanair|2713|
+|NL|Shell|142744|
+
+
+
 
 ### 4 ai)
 
