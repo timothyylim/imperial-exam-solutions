@@ -108,6 +108,14 @@ links_to_country(Cname,Isocode):-
     trades_on(Xname,Cname,_),
     exchange(Xname, Isocode).
 ```
+don't think the previous works
+```
+company_listing(Cname,iso_code):-
+    office(cname,iso_code).
+company_listing(Cname,iso_code):-
+    exchange(xname,iso_code),
+    trades_on(xname,cname,_).
+```
 
 ###1 e)
 ```
