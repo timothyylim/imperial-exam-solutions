@@ -103,8 +103,19 @@ SELECT distinct cname,
 FROM exchange NATURAL JOIN trades_on
 GROUP BY cname
 ```
-
-
+### 2 c)
+```
+SELECT hq as iso_code, 
+	cname, 
+	ROUND((net_assets/total_assets)*100) as pc
+FROM company 
+	NATURAL JOIN public_company 
+	JOIN (SELECT hq as iso_code,
+		SUM(net_assets) as total_assets
+		FROM company NATURAL JOIN public_company
+		GROUP BY hq) AS company_assets_country 
+ON company.hq = company_assets_country.iso_code
+```
 
 
 ### 4 ai)
