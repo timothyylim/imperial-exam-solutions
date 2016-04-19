@@ -56,6 +56,28 @@ more_than_10(code):-
 πorganization,country σtype='member' is_member ÷ πcountry σtype='member' ∧ organization='CERN' is_member
 ```
 
+### 1 dii)
+```
+SELECT DISTINCT organization
+FROM is_member AS x
+WHERE type='member' 
+AND NOT EXISTS
+(
+  SELECT *
+  FROM is_member AS y
+  WHERE type='member'
+  AND organization='CERN'
+  AND NOT EXISTS 
+  (
+    SELECT *
+    FROM is_member AS z
+    WHERE type='member' 
+    AND x.organization = z.organization 
+    AND x.country = y.country
+  )
+)
+```
+
 ### 4 ai)
 
 ```
