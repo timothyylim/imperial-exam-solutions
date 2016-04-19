@@ -2,7 +2,10 @@
 ```
 π country.name, is_member.organization, organization.city σ (country.code = is_member.country ∧ is_member.organization = organization.abbreviation) (country ⨯ is_member ⨯ organization)
 ```
-
+### 1 b)
+```
+πcountry.capital (country) ∪ π located.city (located)
+```
 ### 2 c)
 ```
 select distinct continent,
