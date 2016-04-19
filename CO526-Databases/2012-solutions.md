@@ -90,6 +90,12 @@ Cycle, shit.
 
 This causes a deadlock since T3 is holding ```wl1(Cis)``` but T1 is holding ```rl2(Cfl)```.
 
+Recoverability:
+
+T1 reads T3 transactions before T3 commits. This is a dirty read, bad T1.
+
+However since T1 commits after T3 and T3 writes data but does not depend on T1, the concurrent execution is recoverable, but not ACA or ST.
+
 ### 3 aiii)
 
 
