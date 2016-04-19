@@ -6,7 +6,7 @@
 ```
 πcountry.capital (country) ∪ π located.city (located)
 ```
-### 1 c)
+### 1 c i)
 ```
 DK 
 IS 
