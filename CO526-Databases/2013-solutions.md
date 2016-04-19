@@ -82,7 +82,7 @@ or
 ```
 π cname, iso_code (office)
 ∪
-π cname, based as iso_code (company ⨝ trades_on ⨝ exchange) 
+π cname, based as iso_code (trades_on ⨝ exchange) 
 ```
 ###1 d ii)
 ```
@@ -91,6 +91,14 @@ FROM company
 UNION
 SELECT trades_on.cname, exchange.based
 FROM trades_on JOIN exchange ON exchange.xname = trades_on.xname
+```
+or
+```
+SELECT cname, iso_code
+FROM office
+UNION
+SELECT cname, based AS iso_code
+FROM trades_on NATURAL JOIN exchange
 ```
 ###1 d iii)
 ```
