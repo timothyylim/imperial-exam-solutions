@@ -78,6 +78,8 @@ company_listing(Cname,iso_code):-
 ### 2 ai)
 ```
 Compare all the net assets of the companies to the one with an hq in the same country and take the best.
+|iso_code|cname|net_assets|
+|GB|BP|48914|
 
 ```
 
