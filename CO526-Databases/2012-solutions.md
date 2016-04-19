@@ -22,6 +22,16 @@ are members of both NATO and NC so are returned.
 ```
 π country.capital σ country.code = encompasses.country  ∧ encompasses.continent = 'Europe' ∧  encompasses.percentage >= 50.00 (country ⨯ encompasses) - π city (organization)
 ```
+### 1 d ii)
+```
+SELECT country.capital
+FROM country JOIN encompasses ON country.code = encompasses.country
+WHERE encompasses.continent = 'Europe'
+AND encompasses.percentage >= 50.00
+EXCEPT 
+SELECT city 
+FROM organization
+```
 ### 2 c)
 ```
 select distinct continent,
