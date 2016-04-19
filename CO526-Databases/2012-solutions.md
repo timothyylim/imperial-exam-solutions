@@ -6,6 +6,16 @@
 ```
 πcountry.capital (country) ∪ π located.city (located)
 ```
+### 1 c)
+```
+DK 
+IS 
+N
+---------------------
+This query returns all the values in is_member which have all the organizations selected in second part of the query (i.e. organizations where DK is the country - i.e. NATO and NC). So DK (clearly) and IS and N are members of both NATO and NC.
+```
+
+
 ### 2 c)
 ```
 select distinct continent,
