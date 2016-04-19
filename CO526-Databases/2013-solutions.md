@@ -6,7 +6,7 @@
 
 or ?
 ```
-πbased,cname,net_assets (public_company⨝exchange⨝trades_on)
+π based as iso_code,cname,net_assets (public_company⨝exchange⨝trades_on)
 ```
 ### 1 b)
 ```
@@ -14,7 +14,7 @@ or ?
 ```
 or ?
 ```
-πcname,iso_code office - πcname,iso_code σoffice.iso_code=company.hq (company⨝office)
+π cname,iso_code (office) - π cname,iso_code σ office.iso_code=company.hq (company⨝office)
 ```
 ### 1 c i)
 ```
