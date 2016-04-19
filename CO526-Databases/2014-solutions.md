@@ -1,3 +1,35 @@
+### 1 a)
+```
+πcity,name (located⨝located.country=country.code country)
+```
+
+### 1 b)
+```
+πabbreviation,city,country,established σorganization='NATO'∧type='member' (is_member⨝organization)
+```
+### 1 ci)
+
+The query gets the countries that have more then 10M inhabitants and not located in Europe with less then 10M inhabitants.
+
+|code|
+|----|
+|CZ|
+|R|
+|B|
+|TR|
+|GB|
+|ET|
+
+### 1 cii)
+```
+SELECT 
+```
+
+### 1 di)
+```
+πorganization,country σtype='member' is_member ÷ πcountry σtype='member' ∧ organization='CERN' is_member
+```
+
 ### 4 ai)
 
 ```
