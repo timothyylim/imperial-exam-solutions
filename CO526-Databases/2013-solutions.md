@@ -1,18 +1,8 @@
 ### 1 a)
-
-```
-π iso_code, cname, net_assets (company ⨝ office ⨝ public_company)
-```
-
-or ?
 ```
 π based as iso_code,cname,net_assets (public_company⨝exchange⨝trades_on)
 ```
 ### 1 b)
-```
-π cname, iso_code (company ⨝ country) - π cname, iso_code σ company.hq = country.iso_code (company ⨝ country)
-```
-or ?
 ```
 π cname,iso_code (office) - π cname,iso_code σ office.iso_code=company.hq (company⨝office)
 ```
@@ -36,21 +26,6 @@ FROM
 ) AS public_companies_traded_at_hq_country
 ```
 ### 1 c iii)
-```
-Not sure if correct:
-
-public_companies_not_traded_in_HQ_country(Cname):-
-    public_company(Cname, _ , _ ),
-    ¬public_traded_in_hq_country(Cname).
-    
-public_traded_in_hq_country(Cname):-
-    company(Cname,HQ,_),
-    public_company(Cname,_,_),
-    trades_on(Xname,Cname,_),
-    exchange(Xname,HQ).
-
-
-```
 
 ```
 Maybe that:
@@ -69,30 +44,14 @@ public_traded_in_hq_country(Cname,iso_code):-
     ¬(company(Cname,iso_code),
     ¬public_traded_in_country(Cname,iso_code)).
 
-
-
 ```
 ###1 d i)
-```
-π company.cname, company.hq (company)
-∪
-π company.cname, exchange.based σ  company.cname = trades_on.cname ∧ trades_on.xname = exchange.xname (company ⨯ trades_on ⨯ exchange) 
-```
-or
 ```
 π cname, iso_code (office)
 ∪
 π cname, based as iso_code (trades_on ⨝ exchange) 
 ```
 ###1 d ii)
-```
-SELECT cname, hq
-FROM company
-UNION
-SELECT trades_on.cname, exchange.based
-FROM trades_on JOIN exchange ON exchange.xname = trades_on.xname
-```
-or
 ```
 SELECT cname, iso_code
 FROM office
@@ -101,14 +60,6 @@ SELECT cname, based AS iso_code
 FROM trades_on NATURAL JOIN exchange
 ```
 ###1 d iii)
-```
-links_to_country(Cname,Isocode):-
-    company(Cname,Isocode,_)
-    ;
-    trades_on(Xname,Cname,_),
-    exchange(Xname, Isocode).
-```
-don't think the previous works
 ```
 company_listing(Cname,iso_code):-
     office(cname,iso_code).
