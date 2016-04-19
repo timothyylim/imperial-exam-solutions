@@ -78,6 +78,17 @@ AND NOT EXISTS
 )
 ```
 
+### 4 e)
+
+needs to be improved:
+
+```
+π country.capital, country.code (country)
+∪
+π organization.city, organization.country (organization)
+```
+
+
 ### 4 ai)
 
 ```
