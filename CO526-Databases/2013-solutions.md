@@ -51,6 +51,27 @@ public_traded_in_hq_country(Cname):-
 
 
 ```
+
+```
+Maybe that:
+
+public_companies_not_traded_in_HQ_country(Cname):-
+    public_company(Cname, _ , _ ),
+    ¬public_traded_in_hq_country(Cname).
+    
+public_traded_in_country(Cname,iso_code):-
+    public_company(Cname,_,_),
+    trades_on(Xname,Cname,_),
+    exchange(Xname,iso_code).
+    
+public_traded_in_hq_country(Cname,iso_code):-
+    company(Cname,iso_code),
+    ¬(company(Cname,iso_code),
+    ¬public_traded_in_country(Cname,iso_code)).
+
+
+
+```
 ###1 d i)
 ```
 π company.cname, company.hq (company)
