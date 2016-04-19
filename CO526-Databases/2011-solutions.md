@@ -1,4 +1,25 @@
 ### 1 a)
+```
+π manufacturer (engine_type ⨝ (π etype (engine_type) - π e_type (engine)))
+```
+
+Returns manufacturers who do not produce engines used by the airline.
+
+### 1 b)
+
+Good idea to use union for 'or'.
+
+```
+π manufacturer (aircraft_type) ∪ π manufacturer (engine_type)
+```
+
+for exclusive or:
+
+```
+π manufacturer (aircraft_type) ∪ π manufacturer (engine_type) - (π manufacturer (aircraft_type) ∩ π manufacturer (engine_type))
+```
+
+### 1 ci)
 
 
 
