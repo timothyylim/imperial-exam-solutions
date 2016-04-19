@@ -117,7 +117,15 @@ FROM company
 ON company.hq = company_assets_country.iso_code
 ```
 
-
+### 2 d)
+```
+SELECT xname, 
+	COUNT(CASE WHEN sector ='Retail' THEN cname ELSE NULL END) as no_retail,
+	COUNT(CASE WHEN sector ='Oil' THEN cname ELSE NULL END) as no_oil,
+FROM trades_on NATURAL JOIN company
+WHERE hq = 'GB'
+GROUP BY xname
+```
 ### 4 ai)
 
 ```
