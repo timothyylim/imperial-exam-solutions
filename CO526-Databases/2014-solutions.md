@@ -37,7 +37,7 @@ EXCEPT
 )
 ```
 
-### 1 cii)
+### 1 ciii)
 ```
 query(code):-
   more_than_10(code),
