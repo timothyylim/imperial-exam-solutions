@@ -155,8 +155,11 @@ In a multi-user system, running processes run by other users need to be interrup
 ###3 b.
 
 **1. Fetch the instruction:** The next instruction is fetched from the memory address that is currently stored in the program counter (PC), and stored in the instruction register (IR). At the end of the fetch operation, the PC points to the next instruction that will be read at the next cycle.
+
 **2. Decode the instruction:** During this cycle the encoded instruction present in the IR (instruction register) is interpreted by the decoder.
+
 **3. Read the effective address:** In case of a memory instruction (direct or indirect) the execution phase will be in the next clock pulse. 
+
 **4. Execute  the instruction**: The control unit of the CPU passes the decoded information as a sequence of control signals to the relevant function units of the CPU to perform the actions required by the instruction such as reading values from registers, passing them to the ALU to perform mathematical or logic functions on them, and writing the result back to a register. 
 
 There exists an interrupt descriptor table which contains the address of the instruction to be executed for a specific interrupt.
