@@ -12,6 +12,10 @@ or ?
 ```
 π cname, iso_code (company ⨝ country) - π cname, iso_code σ company.hq = country.iso_code (company ⨝ country)
 ```
+or ?
+```
+πcname,iso_code office - πcname,iso_code σoffice.iso_code=company.hq (company⨝office)
+```
 ### 1 c i)
 ```
 Shell
