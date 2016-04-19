@@ -92,7 +92,9 @@ JZ will check the eflags register to see if zf is equal to 1. If it is then the 
 
 See [page 14](https://github.com/timothyylim/Imperial-College/blob/master/fall/computer-architecture/lecture-slides-comparch-part2/6_Pentium3.pdf)
 
+An attempt at paraphrasing K. Leung's answer:
 
+The instruction will be brought into the instruction register with the code. This is a jump zero instruction. We need to test if register i is 0 or not.  The control unit will check if this register i is 0. If it is zero then the address point of the instruction will be loaded into the program counter. You can also include information about the ALU which does the testing (comparison).
 
 **(iv.)** CALL will always push the EIP so that we can return to where we were before the call using RET. Jump instructions do not save (push) the EIP register and therefore will not return to any location after jumping. Jump also typically has a conditional flag only allowing the program to jump to a different address if the flag contains a specific value (although an unconditional jump does exist). This can be used to create a nested function by jumping "backwards" and then subsequently executing calls in order from there ultimately leading back to the jump instruction. The jump instruction will, if used correctly, eventually be bypassed due to some condition which is also how while and for loops work. For more information on jump instructions and nested loops see [slides 14-21](http://www.commsp.ee.ic.ac.uk/~kkleung/Computer_Systems_2015/6_Pentium3.ppt).
 
@@ -133,7 +135,9 @@ Address | Contents            | Pseudocode
 ...     |                     |
 250H*   | A[n-1]              | holds A[n-1]
 
-*let's call 200H + n-1 = 250H (n=51) -- I'm undecided if I should have written some code at the beginning to find the address by using the value of n (which could be stored at, let's say, 300H).  So we could say R0 = [300H], DEC R0 (to get n-1), R3 = 200H and then INC R3 and DEC R0 while [R0] > 0 or something but then we'd have to use JGT which doesn't technically say you can compare values, just addresses but I think you could use it for values too.  I'm not sure.
+*let's call 200H + n-1 = 250H (n=51).
+
+K. Leung said we can assume that the first and last elements of the array are known so we can say  a[n-1] etc.
 
 A different solution:
 
