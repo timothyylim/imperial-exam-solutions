@@ -115,9 +115,16 @@ T1 and T3 could never deadlock.
 
 ### 3 biv)
 
+Conflict pairs between T1, T2 and T3:
+
 ```
-r1(cCh) <-> 
+r1(cCh) <-> w2(cCh)
+r1(Cis) <-> w3(Cis)
+r1(Cn) <-> w2(Cn)
+r1(cfl) <-> w3(cfl)
 ```
+
+
 
 
 ### 4 ai)
