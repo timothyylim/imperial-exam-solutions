@@ -63,7 +63,7 @@ Waits for graph:
 
 ```
       T3   <------ rl2[aG-FXDC] -------------- T2 
+      |                                         ^
       |                                         |
-      |                                         |
-      |---rl3[aG-CWQS] --> T1 ---> wl1[aG-FDWC]--
+      |---rl3[aG-CWQS] --> T1 ---- wl1[aG-FDWC]--
 ```
