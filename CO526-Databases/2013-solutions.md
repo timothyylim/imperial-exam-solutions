@@ -78,6 +78,12 @@ public_traded_in_hq_country(Cname,iso_code):-
 ∪
 π company.cname, exchange.based σ  company.cname = trades_on.cname ∧ trades_on.xname = exchange.xname (company ⨯ trades_on ⨯ exchange) 
 ```
+or
+```
+π cname, iso_code (office)
+∪
+π cname, based as iso_code (company ⨝ trades_on ⨝ exchange) 
+```
 ###1 d ii)
 ```
 SELECT cname, hq
