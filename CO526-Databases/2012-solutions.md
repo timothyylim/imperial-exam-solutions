@@ -33,6 +33,41 @@ where eur_member > 0
 Not sure, couldn't test it.
 
 
+### 3 bi)
+
+
+To figure out if it is serializable, look for either of the following:
+
+1. Read followed by a Write
+2. Write followed by another Write
+
+Only conflicts found:
+
+```
+w3(Cis), r1(Cis) 
+w3(Cfl), r1(Cfl) 
+```
+
+
+waits for graph:
+
+```
+T3 --> T1
+```
+
+No cycle, nice!
+
+We can see that it is serializable (CSR).
+
+And for recoverability, consider if the commits depend on anything:
+
+The commit ```c1``` depends on ```w3(Cis)``` and ```w3(Cfl)```, (which are not yet committed) and is therefore not recoverable due to dirty read.
+
+
+### 3 bii)
+
+
+
 ### 4 ai)
 
 ```
