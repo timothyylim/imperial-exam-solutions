@@ -40,6 +40,11 @@ euro_caps(Capitals):-
 	Percent >= 50.00,
 	¬organization(_,Capitals,_)).
 ```
+### 1 e)
+```
+π capital (country) - (π capital (country) - π city (organization)) 
+```
+
 ### 2 c)
 ```
 select distinct continent,
