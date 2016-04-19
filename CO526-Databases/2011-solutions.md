@@ -1,3 +1,7 @@
+### 1 a)
+
+
+
 ### 3 bi)
 
 To figure out if it is serializable, look for either of the following:
