@@ -157,7 +157,32 @@ GROUP BY name
 Question 3 a) [Diagram](https://github.com/timothyylim/imperial-exam-solutions/blob/master/CO526-Databases/db2015.pdf).  There is also a version that can be edited in the Databases folder (powerpoint).
 
 -------------------------------------------------------------------------------
-Question 3 b) 
+Question 3 b) i) Let's first see where (if any) conflicts occur:
+
+```
+r4[cKE] -> w1[cKE]
+w1[cKE] -> w4[cKE]
+r4[cFR] -> w1[cFR]
+
+CSR? T4 -> T1 -> T4... cyclic so no, not CSR.
+```
+
+Ha is not serialisable because it contains a lost update (KE). Ha also commits a dirty read but it does so after the other transaction has committed so it is recoverable but neither ACA nor ST.
+
+I'm not 100% sure this is right so let me know if it's wrong.
+
+------------------------------------------------------------------------------
+Question 3 b) ii) Let's first see where (if any) conflicts occur:
+
+```
+w4[cUG] -> r3[UG]
+
+CSR? T4 -> T3... acyclic so yes, CSR.
+```
+
+Hb is serialisable. Since the dirty read in T3 is committed before T4, Hb is not recoverable.
+
+I'm not 100% sure this is right so let me know if it's wrong.
 
 -------------------------------------------------------------------------------
 Question 4 a) i)
