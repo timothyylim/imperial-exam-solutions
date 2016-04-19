@@ -17,8 +17,11 @@ organizations selected in second part of the query (i.e. organizations
 where DK is the country - i.e. NATO and NC). So DK (clearly) and IS and N 
 are members of both NATO and NC so are returned.
 ```
+### 1 d i)
 
-
+```
+π country.capital σ country.code = encompasses.country  ∧ encompasses.continent = 'Europe' ∧  encompasses.percentage >= 50.00 (country ⨯ encompasses) - π city (organization)
+```
 ### 2 c)
 ```
 select distinct continent,
