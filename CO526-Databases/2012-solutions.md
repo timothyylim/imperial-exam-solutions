@@ -115,7 +115,9 @@ T1 and T3 could never deadlock.
 
 ### 3 biv)
 
-
+```
+r1(cCh) <-> 
+```
 
 
 ### 4 ai)
