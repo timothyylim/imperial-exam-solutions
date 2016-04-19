@@ -42,6 +42,8 @@ euro_caps(Capitals):-
 ```
 ### 1 e)
 ```
+R INTERSECT S = R - (R -S) so:
+
 π capital (country) - (π capital (country) - π city (organization)) 
 ```
 
