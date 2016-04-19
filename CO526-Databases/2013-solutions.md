@@ -170,7 +170,13 @@ Non recoverable, T3 depends on T1 but commits before it.
 
 ### 3 biv)
 
+Find all conflicts:
 
+```
+w1[cUs] <-> r2[cUs]
+w1[cGb] <-> w3[cGb]
+r2[cGb] <-> w3[cGb]
+```
 
 
 
