@@ -96,7 +96,25 @@ T1 reads T3 transactions before T3 commits. This is a dirty read, bad T1.
 
 However since T1 commits after T3 and T3 writes data but does not depend on T1, the concurrent execution is recoverable, but not ACA or ST.
 
-### 3 aiii)
+### 3 biii)
+
+Conflict pairs:
+
+```
+w3(Cis) <--> r1(Cis)
+r1(Cfl) <--> w3(Cfl)
+```
+
+It comes down to who acquires the read/write lock for Cis first.
+
+If T3 acquires it first, T1 will be delayed until after T3 commits (and thus releasing all its locks), and T3 would not need to wait for T1 for lock on Cfl.
+
+If T1 acquires it first, then T3 would be delayed until after T1 commits, and T1 would not need to wait for lock on Cfl either.
+
+T1 and T3 could never deadlock.
+
+### 3 biv)
+
 
 
 
