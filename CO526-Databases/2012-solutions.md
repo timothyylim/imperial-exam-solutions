@@ -130,6 +130,34 @@ r1(Cn) <-> w2(Cn)
 r1(cfl) <-> w3(cfl)
 ```
 
+Consider the following execution:
+
+```
+r1(cch),
+r1(cis),
+r2(cn),
+w2(cn),
+w3(csf),
+r2(cs),
+w2(cs),
+r2(cch)
+```
+
+T1 holds ```rl1(cch)```
+
+T2 holds ```wl2(cn)```
+
+T3 holds no relevant locks
+
+waits for graph:
+
+```
+   T2 -- wl2(cch) --> T1 <--- wl3(cis) -- T3
+   ^                  |
+   |-----rl1(cn)-------
+
+```
+
 
 
 
