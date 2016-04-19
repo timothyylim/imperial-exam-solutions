@@ -66,6 +66,32 @@ The commit ```c1``` depends on ```w3(Cis)``` and ```w3(Cfl)```, (which are not y
 
 ### 3 bii)
 
+To figure out if it is serializable, look for either of the following:
+
+1. Read followed by a Write
+2. Write followed by another Write
+
+Conflicts found:
+
+```
+w3(Cis), r1(Cis) 
+r1(Cfl), w3(Cfl) 
+```
+
+Waits for graph:
+
+```
+T3 ---> T1
+^	|
+|--------
+```
+
+Cycle, shit.
+
+This causes a deadlock since T3 is holding ```wl1(Cis)``` but T1 is holding ```rl2(Cfl)```.
+
+### 3 aiii)
+
 
 
 ### 4 ai)
