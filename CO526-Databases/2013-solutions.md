@@ -3,6 +3,11 @@
 ```
 π iso_code, cname, net_assets (company ⨝ office ⨝ public_company)
 ```
+
+or ?
+```
+πbased,cname,net_assets (public_company⨝exchange⨝trades_on)
+```
 ### 1 b)
 ```
 π cname, iso_code (company ⨝ country) - π cname, iso_code σ company.hq = country.iso_code (company ⨝ country)
