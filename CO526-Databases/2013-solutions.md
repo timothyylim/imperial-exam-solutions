@@ -122,8 +122,8 @@ ON company.hq = company_assets_country.iso_code
 Find conflicts:
 
 ```
-w1[cUS], r2[cUS]
-r2[cGB], w1[cGB]
+w1[cUS], r2[cUS] dirty read
+r2[cGB], w1[cGB] inconsistent analysis
 ```
 
 Serialization graph:
@@ -159,8 +159,9 @@ Recoverable, ACA and ST.
 ### 3 biii)
 
 ```
-w1[cUS] -> r3[cUS]
-r3[cGB] -> r1[cGB]
+w1[cUS] -> r3[cUS] dirty read that is commited first therefore not recoverable
+w3[cGB] -> w1[cGB] lost update and no CSR therefore not serializabe
+r3[cGB] -> w1[cGB] redundant, do not include
 ```
 
 Cyclic, therefore not serializable. lost update.
