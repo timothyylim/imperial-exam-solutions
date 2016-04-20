@@ -379,30 +379,35 @@ Steps to recover a database:
 
 - Find set of commited transactions, uncommited transactions and list of undo actions:
 
+
+*Cache consistent checkpoint
+
 ```
 C = {1,2}
-I = {3,1}
-UNDO w1[aKQ, no_aircraft = 55]
+I = {3}
+
+perform UNDOs of non-cmmitted transactions back to CP
+
 UNDO w3[aBA, no_aircraft = 297]
-```
-- Actions to be undone before cp record
 
-```
-cp-C={3}
+perform UNDOs of non-committed transactions in CP
+
+CP = {1,2,3}
+
 UNDO w3[aAF, no_aircraft = 242]
-```
 
-- Actions to be redone
-
-```
-All in C after cp
+perform REDOs of committed transactions after CP
 
 REDO w1[aKQ, no_aircraft = 56]
 REDO w2[aKQ, no_aircraft = 57]
+
 ```
 
-Finally
+Updated table:
+
 ```
-AF = 242
-KQ = 57
+KQ 57
+BA 297
+AF 242
+BE 70
 ```
