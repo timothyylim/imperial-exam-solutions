@@ -159,6 +159,45 @@ Address | Contents            | Pseudocode
 ##Section C
 ###3 a.
 
+There will be four semaphores:
+
+1. the client semaphore that is blocked while waiting for the device driver (initial value = 0)
+2. the device driver has a semaphore which blocks on itself until the interrupt handler returns (initial value = 1)
+3. mutex semaphore that controls access to the driver queue (initial value = 1)
+4. driver process to block on waiting for requests (initial value = 0)
+
+###3 b.
+Pseudocode for the client process (modeled from the producer semaphore) would be:
+```
+while true do:
+        generate a request containing the client sem and the response
+        down(mutex)
+        add request to driver queue
+        up(mutex)
+        up(wakeup)              // tell driver that there is a request
+        down(clientsem)         // clientSem is now 0 and is initially 0 as it needs to block after queuing the request
+```
+
+###3 c.
+Pseudocode for driver process:
+```
+while true do:
+        down(wakeup)                    // wait for a request
+        down(mutex)
+        remove item from driver queue
+        up(mutex)
+        enable interrupts from A to D hardware
+        start A to D device
+        down(devicesem)                 // waits for signal from interrupt handler
+        consume_item (send to register)
+        wait for notification from interrupt handler
+        read data from device registers
+        write data in response address // data is either A to D value or error
+        up(clientsem)
+                                        // The interrupt handler does the up on the devices
+                                        to wake up the driver waiting for A to D to complete
+```
+
 ###4 a.
 
 A translation Look-aside Buffer (TLB) is a memory cache (hardware) that stores the most recently used page numbers and their corresponding frame addresses for faster retrieval. It speeds up the process of using a page table so that we don't have to access the memory twice every time. See slide 26 from Memory Management or [this video](https://www.youtube.com/watch?v=95QpHJX55bM).
