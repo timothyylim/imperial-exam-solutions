@@ -175,7 +175,8 @@ while true do:
         add request to driver queue
         up(mutex)
         up(wakeup)              // tell driver that there is a request
-        down(clientsem)         // clientSem is now 0 and is initially 0 as it needs to block after queuing the request
+        down(clientsem)         // clientSem is now 0 and is initially 0 as it needs
+                                to block after queuing the request
 ```
 
 ###3 c.
