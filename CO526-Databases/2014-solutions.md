@@ -88,6 +88,43 @@ needs to be improved:
 π organization.city, organization.country (organization)
 ```
 
+### 3 bi)
+
+```
+Confclits:          Anomalies:
+w1[TR] -> r2[TR]    dirty read
+r2[GB] -> w1[GB]    ?
+
+CSR Graph: T1 -> T2 -> T1 therefore not CSR => non-serialisable
+```
+
+The results would not be the same if we did Ha vs H1, H2 nor H2, H1. This is evident in the CSR graph hence Ha is non-serialisable. (Inconsistent analysis?) It is also not recoverable because there is a dirty read in T2 which is committed before T1 is committed.
+
+### 3 bii)
+
+```
+Confclits:          Anomalies:
+r2[CZ] -> w3[CZ]    ?
+r2[TR] -> w3[TR]    ?
+
+CSR Graph: T2 -> T3 therefore CSR => serialisable
+```
+
+The results would be the same whether we did Hb or H2, H3 so it is serializable. It is also recoverable (ST) because there are no dirty reads or dirty writes.
+
+### 3 biii)
+
+```
+Confclits:          Anomalies:
+r1[TR] -> w3[TR]    lost update? redundant maybe?
+r3[TR] -> w1[TR]    almost certainly redundant
+w3[TR] -> w1[TR]    dirty write? lost update maybe?
+r3[GB] -> w1[GB]    ?
+
+CSR Graph: T1 -> T3 -> T1 therefore not CSR => non-serialisable
+```
+
+The results of Hb would not be the same if we did H1, H3 or H3, H1 instead so Hb is non-serialisable specifically because of the lost update anomaly (w3[TR] is lost). I'm not sure if this is recoverable.
 
 ### 4 ai)
 
