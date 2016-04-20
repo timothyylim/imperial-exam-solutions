@@ -261,7 +261,7 @@ Since A -> E, E -> G,
 A -> G => 0
 
 Sc = {
-      A   -> D,
+      A   -> D, <--- bad Tim
       A   -> E,
       A   -> H,
       B   -> F,
@@ -299,7 +299,7 @@ CBF are prime.
 Minimal cover:
 
 Sc = {
-      A   -> D,
+      A   -> D, <--- bad Tim
       A   -> E,
       A   -> H,
       B   -> F,
@@ -309,6 +309,8 @@ Sc = {
       EH  -> D,
       GH  -> A
 }
+
+(Has to be updated)
 
 A -> DEF must be decomposed as A is not a superkey and DEF are non prime
 
