@@ -353,3 +353,4 @@ R7(C,F,B)
 None of the FDs are lost.
 ```
 
+### 4 b i)
