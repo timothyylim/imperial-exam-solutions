@@ -354,3 +354,22 @@ None of the FDs are lost.
 ```
 
 ### 4 b i)
+
+We will only consider redoing committed transactions (c1, c3).
+
+so, redo last occurence of every committed account.
+
+w3[pBP, net_assets = 47 000]
+w1[pFORD, net_assets = 9 000]
+w1[pHP, net_assets = 10 000]
+
+
+### 4 b ii)
+
+all w2's not on disk because they weren't committed at the time of c1.
+
+things that must be on the disk: w1's (slide 16 'commit is followed by a flush if no UNDOs are kept')
+
+nothing is in the 'might be' list. da.
+
+
