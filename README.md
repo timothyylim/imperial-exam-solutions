@@ -12,7 +12,7 @@ This is very much a work in progress and any additions and corrections are welco
 
 3. fork the imperial-exam-solutions (this basically means make your own copy of it)
 
-4. on your own for of the repository, make the correction and then make a pull request leaving a comment stating which issue you've fixed
+4. on your own fork of the repository, make the correction and then make a pull request leaving a comment stating which issue you've fixed
 
 ---
 
