@@ -367,18 +367,17 @@ We lost EG -> AD. It seems you cannot keep this FD.
 Question 4 b) i)
 
 
+'Flush all dirty cache objects to disk' - slide 21 in Recovery
+
+```
+w1[aAF, no_aircraft = 245]
+w2[aBA, no_aircraft = 297]
+w3[aAF, no_aircraft = 240]
+```
+
 ---
 
 Question 4 b) ii)
-
-Steps to recover a database:
-
-- Find set of commited transactions, uncommited transactions and list of undo actions
-- Actions to be undone before cp record
-- Actions to be redone after cp record
-
-- Find set of commited transactions, uncommited transactions and list of undo actions:
-
 
 *Cache consistent checkpoint
 
