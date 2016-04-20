@@ -119,7 +119,9 @@ Address| Contents
 80BH   | MULT                 
 80CH   | POP[920H]            
 80DH   | STORE                
-...    | ...
+
+Stack  | Content
+-------|----------
 920H   | A  
 91FH   | X
 91EH   | Y
