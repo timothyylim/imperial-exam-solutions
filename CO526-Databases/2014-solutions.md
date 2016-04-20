@@ -315,7 +315,7 @@ Backward scan for recovery:
 | w2[cB,...]               |  no change as cB as cB exists in D      | 
 | w4[cCH, pop=7208999]     | cCH.pop -> 7208999 |
 | w1[cCH, ...]             | D = {cB, cET, cCH}, no change to cCH as it exists in C already |
-| w1[cR,..]                | No change as c1 is already committed |
+| w1[cR,..]                | D = {cB, cET, cCH, cR}. No change to cR as cR is in D |
 | w4[cR,..]                | No change to cR as cR is in D |
 
 population figures after recovery:
@@ -333,7 +333,7 @@ population figures after recovery:
 
 Must have written:
 
-w1[cR], w1[cH] since for UNDO only logs oe must flush all commited date to disk
+w1[cR], w1[cH] since for UNDO only logs, one must flush all commited data to disk
 
 Might have written:
 
