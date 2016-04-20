@@ -171,11 +171,11 @@ Address | Contents            | Pseudocode
 405H    | ADD R0, [R2]        | B = B + mem[addr]
 406H    | ADD R2, [301H]      | addr = addr + 1
 407H    | SUB R2, [R2]        | B = B-mem[address]
-408H    | ADD R2, [301H]      |
+408H    | ADD R2, [301H]      | addr = addr + 1
 409H    | SUB R1, [302H]      | n = n-2
-40AH    | GO TO 403H          |
-40BH    | STORE R0, [201H]    |
-40CH    | STOP                |
+40AH    | GO TO 403H          | loop
+40BH    | STORE R0, [201H]    | store the value
+40CH    | STOP                | end of program
 
 ###3 a.
 
