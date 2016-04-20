@@ -126,6 +126,22 @@ CSR Graph: T1 -> T3 -> T1 therefore not CSR => non-serialisable
 
 The results of Hb would not be the same if we did H1, H3 or H3, H1 instead so Hb is non-serialisable specifically because of the lost update anomaly (w3[TR] is lost). I'm not sure if this is recoverable.
 
+### 3 biv)
+
+```
+r1[TR], w1[TR], r1[GB], r2[CH], r2[GB], r2[CZ], r3[GB], r3[CH], r3[CZ], deadlock
+
+WFG:
+w1[GB] is waiting on r2[GB]
+r2[TR] is waiting on w1[TR]
+w3[CZ] is waiting on r2[CZ]
+
+T1 <==> T2 <-- T3
+
+```
+
+I think other possible solutions exist but this one should work.
+
 ### 4 ai)
 
 ```
