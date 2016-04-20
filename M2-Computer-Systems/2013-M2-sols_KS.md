@@ -146,6 +146,37 @@ Address | Contents            | Pseudocode
 012H    | STORE R2, [301H]    | Store the result in the address 301H
 013H    | STOP                | hammer time. 
 
+
+Actual solution from the exam grading scheme:
+
+Address | Contents            | Pseudocode
+--------|---------------------|-------
+100H    | A[0]                |
+101H    | A[1]                |
+102H    | A[2]                |
+...     | ...                 | ...
+200H    | n                   |
+201H    | B                   |
+...     | ...                 | ...
+300H    | 0                   |
+301H    | 1                   |
+302H    | 2                   |
+303H    | 100H                |
+...     | ...                 | ...
+400H    | LOAD R0, [300H]     | R0 = 0
+401H    | LOAD R1, [200H]     | R1 = n
+402H    | LOAD R2, [303H]     | R2 = addr(100H)
+403H    | IFZER R1, 40AH      | exit if n = 0
+404H    | IFNEG R1, 40AH      | exit if n < 0
+405H    | ADD R0, [R2]        | B = B + mem[addr]
+406H    | ADD R2, [301H]      | addr = addr + 1
+407H    | SUB R2, [R2]        | B = B-mem[address]
+408H    | ADD R2, [301H]      |
+409H    | SUB R1, [302H]      | n = n-2
+40AH    | GO TO 403H          |
+40BH    | STORE R0, [201H]    |
+40CH    | STOP                |
+
 ###3 a.
 
 The main requirement when dealing with I/O is responsiveness. 
