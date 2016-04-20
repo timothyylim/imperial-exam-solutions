@@ -101,6 +101,37 @@ Address| Contents            | Pseudocode
 
 Protip: draw a stack on a piece of paper while you work through the solution.
 
+Actual answer from the exam grading scheme:
+
+Address| Contents            
+-------|------------
+800H   | LOAD[90FH]          
+801H   | PUSH[91FH]           
+802H   | PUSH[91FH]           
+803H   | SUB                  
+804H   | PUSH[91FH]           
+805H   | PUSH[91FH]           
+806H   | MULT                 
+807H   | PUSH[910H]           
+808H   | PUSH[91DH]           
+809H   | MULT                 
+80AH   | ADD                  
+80BH   | MULT                 
+80CH   | POP[920H]            
+80DH   | STORE                
+
+Address| Stack Contents            
+-------|------------
+920H   | A  
+91FH   | X
+91EH   | Y
+91DH   | Z
+...    | ...
+910H   | 5
+90FH   | 501H (start of memory)
+...    | ...
+500H   | Stack Memory...
+
 ###3 a.
 
 See Scheduling slide 3 for the process state diagram.
