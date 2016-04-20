@@ -121,7 +121,7 @@ r3[TR] -> w1[TR]    almost certainly redundant
 w3[TR] -> w1[TR]    dirty write? lost update maybe?
 r3[GB] -> w1[GB]    ?
 
-CSR Graph: T1 -> T3 -> T1 therefore not CSR => non-serialisable
+CSR Graph: T1 <==> T3 therefore not CSR => non-serialisable
 ```
 
 The results of Hb would not be the same if we did H1, H3 or H3, H1 instead so Hb is non-serialisable specifically because of the lost update anomaly (w3[TR] is lost). I'm not sure if this is recoverable.
