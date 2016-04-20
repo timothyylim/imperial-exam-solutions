@@ -85,9 +85,9 @@ The eip register corresponds to the program counter register in other architectu
 
 **(iv.)** A function call is synchronus while a hardware interrupt is asynchronus.  Also, before calling the interrupt handler, a pentium cpu will push the EFLAGS register and disable further interrupts.  A regular function call does not do this, it will only push EIP.
 
-From K. Leung:
+From the exam grading scheme:
 
-In an interrupt the CPU will check if the interrupt pin goes from low to high after every instruction. If it detects an interrupt then it will find out why there was an interrupt from the interrupt vector (also coming from hardware). So we get the address of the memory location of the first instruction of the routine which we put on the program counter. Before doing this we save the EIP and it is important for the assembly programmer to save other registers. Then we execute that routine and the last statemnet will be a return statement which will return the EIP. The key difference... program call is something that the assembly programmer writes into their program but the interrupt is something external to your current program--it's asynchronus. For sure asynchronus vs synchronus. What is the other one? Hmmm. You don't save the EFLAGS in a regular program call. The interrupt is entirely independent from your program so that's why we have to save this additional information.
+Hardware interrupt is an external triggering event, while procedure call occurs as part of the program execution. Hardware interrupt comes with a specific signal or code that enables the CPU to initiate and execute an appropriate interrupt handling routine (procedure). On the other hand, the specific called procedure is included in the program.
 
 ##2 b.
 
