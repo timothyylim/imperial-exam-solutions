@@ -29,6 +29,15 @@ WHERE NOT EXISTS (SELECT organization
 		  FROM is_member
 		  WHERE compare.country = is_member.country)
 ```
+##1 c iii)
+```
+query(Country) :-
+	is_member(Country, _),
+	is_member(DK, Organization),
+	¬is_member(Country, Organization). 
+		
+
+```
 ### 1 d i)
 
 ```
