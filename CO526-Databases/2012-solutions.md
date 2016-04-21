@@ -17,6 +17,18 @@ organizations selected in second part of the query (i.e. organizations
 where DK is the country - i.e. NATO and NC). So DK (clearly) and IS and N 
 are members of both NATO and NC so are returned.
 ```
+###1 c ii)
+```
+SELECT country
+FROM is_member AS compare 
+WHERE NOT EXISTS (SELECT organization 
+		  FROM is_member 
+		  WHERE country = 'DK'
+		  EXCEPT 
+		  SELECT organization
+		  FROM is_member
+		  WHERE compare.country = is_member.country)
+```
 ### 1 d i)
 
 ```
