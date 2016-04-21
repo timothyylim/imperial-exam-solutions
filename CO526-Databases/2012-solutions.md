@@ -143,9 +143,14 @@ Just add :
 surround the whole statement with a SELECT * (previous_answer here) AS main WHERE european_members > 0
 where eur_member > 0
 ```
+### 2 e)
 
-Not sure, couldn't test it.
-
+SELECT country.name, 
+       capital, 
+       COALESCE(abbreviation, 'No Organization')                                                                       
+FROM country LEFT JOIN organization
+     ON country.capital = organization.city
+ORDER BY country, organization  
 
 ### 3 bi)
 
