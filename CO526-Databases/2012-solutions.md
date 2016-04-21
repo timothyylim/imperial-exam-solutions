@@ -85,6 +85,17 @@ FROM country JOIN is_member ON country.code = is_member.country
              JOIN is_member AS denmark ON is_member.organization = denmark.organization
 WHERE denmark.country = 'DK'   
 ```
+###2 b)
+```
+SELECT abreiviation 
+FROM organization
+WHERE established >= 1959-01-01 IS NOT FALSE
+INTERSECT
+SELECT organization AS abreviation
+FROM is_member NATURAL JOIN encompasses
+WHERE encompasses.continents = 'Europe'
+AND percentage >= 50.00
+```
 ### 2 c)
 ```
 select distinct continent,
