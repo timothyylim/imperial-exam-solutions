@@ -106,6 +106,14 @@ from (select continent,
 	on country = code) as fuck
 group by continent
 order by total_area asc
+
+ALTERNATIVE SOLUTION:
+
+SELECT continent,
+       ROUND (SUM(area*percentage/100), 2) AS continent_area
+FROM encompasses NATURAL JOIN country
+GROUP BY continent
+ORDER BY continent_area
 ```
 
 ### 2 di)
