@@ -65,7 +65,7 @@ R INTERSECT S = R - (R -S) so:
 
 π capital (country) - (π capital (country) - π city (organization)) 
 ```
-###2 a) 
+###2 a) i)
 ```
 names of countries who are in at least one of the same organizations as Denmark
 
@@ -78,7 +78,7 @@ Finland
 Turkey
 United States
 ```
-###2 b)
+###2 a) ii)
 ```
 SELECT DISTINCT country.name
 FROM country JOIN is_member ON country.code = is_member.country                                                               
