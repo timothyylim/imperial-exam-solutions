@@ -35,8 +35,6 @@ query(Country) :-
 	is_member(Country, _),
 	is_member(DK, Organization),
 	¬is_member(Country, Organization). 
-		
-
 ```
 ### 1 d i)
 
