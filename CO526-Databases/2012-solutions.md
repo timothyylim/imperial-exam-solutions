@@ -127,10 +127,20 @@ from 	(select organization,
 	where percentage > 50
 	group by organization) join organization 
 ON organization.abbreviation = is_member.organization
+
+ALTENRATIVE SOLUTION:
+SELECT DISTINCT abbreviation,
+		city, 
+		COUNT (CASE WHEN continent = 'Europe' THEN continent END) AS european_members,                                 COUNT (CASE WHEN continent = 'Asia' THEN continent END) AS asian_members,                                      COUNT (CASE WHEN continent = 'Africa' THEN continent END) AS african_members                                   
+FROM organization LEFT JOIN is_member ON abbreviation = organization 
+	JOIN encompasses ON encompasses.country = is_member.country
+WHERE percentage >= 50.00
+GROUP BY organization, abbreviation  
 ```
 ### 2 dii)
 Just add :
 ```
+surround the whole statement with a SELECT * (previous_answer here) AS main WHERE european_members > 0
 where eur_member > 0
 ```
 
