@@ -73,7 +73,27 @@ CDMA - Code Division Multiplexing. Everyone talking but in different languages.
 
 ### 2  a iii)
 
-Ports. 
+In the transport layer, many packets exist destined for different ports. 
+
+### 2 b i)
+
+An IP address serves two principal functions: host or network interface identification and location addressing.
+
+Media access control address (MAC address), also called physical address, is a unique identifier assigned to network interfaces for communications on the physical network segment. 
+
+### 2 b ii)
+
+1. Class from the IP (B) 
+2. Host occupies 16 bits
+3. Network occupies 14 bits
+
+### 2 b iii)
+
+
+
+### 2 b iv)
+
+
 
 
 
