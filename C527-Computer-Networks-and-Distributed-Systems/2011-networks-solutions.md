@@ -64,4 +64,26 @@ Collision Detection means to listens to the medium whilst sending to see if some
 ### 1 biii)
 
 
+### 2 ai)
+
+### 2 aii)
+
+Classless-Inter-Domain routing is method for allocating IP addresses and IP packets.
+
+It works by splitting the world into 4 zones (Europe, N. America, Central/South America and Future Use (Sorry, Africa)). 
+
+Size according according to need, not just fixed classes (hence, the name Classless). 
+
+Its goal was to slow the growth of routing tables on routers across the Internet, and to help slow the rapid exhaustion of IPv4 addresses.
+
+
+### 2 aiii)
+
+ 
+
+### 2 aiii)
+
+### 2 aiv)
+
+
 
