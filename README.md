@@ -22,5 +22,7 @@ or you could fb message me your github username and i'll add you as a collaborat
 
 Acknowledgements:
 
+```
 ivan - the russian
 slither.io
+```
