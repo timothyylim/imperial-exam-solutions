@@ -14,9 +14,32 @@ Backwards learning is related to the Data Link Layer.
 
 ### 1 aiv)
 
+ARP - Address Resolution Protocol
+
+ARP is a way to ask for IP/data link address mappings for LAN
+
+```
+If host A has no entry for host B,
+
+A will broadcast an ARP address - requesting data link address for B's IP
+
+B recognizes its IP address - returns ARP response with its data link address
+
+B also caches A's data link/ IP address mapping
+```
+
+ARP relates to the network layer.
 
 
-### 1 v)
+### 1 a v)
+
+A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet. e.g. .com
+
+Network Layer.
+
+
+### 1 b)
+
 
 
 
