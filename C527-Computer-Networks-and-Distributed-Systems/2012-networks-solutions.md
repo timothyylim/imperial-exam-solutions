@@ -44,4 +44,19 @@ It allows routers to send control error messages to other routers' hosts.
 
 Network Layer.
 
+### 1 b i)
+
+In data communications, flow control is the process of managing the rate of data transmission between two nodes to prevent a fast sender from overwhelming a slow receiver.
+
+### 1 b ii)
+
+TCP implements flow control with a sliding window size.
+
+This works by using sequence, acknowledgement and window fields of the TCP header. Recipient shoudl not send more than (window sizw - bytes sent).
+
+
+### 1 b iii)
+
+
+
 
