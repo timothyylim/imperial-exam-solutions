@@ -93,6 +93,12 @@ ARP.
 
 ### 2 b iv)
 
+Default Router: 225 should be 247 because it has to be the same address 1.
+
+DNS Server 1: 192 is a private address and can't be made public.
+
+Can't have non consecutive 1's in a netmask.
+
 
 
 
