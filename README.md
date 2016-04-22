@@ -17,3 +17,10 @@ This is very much a work in progress and any additions and corrections are welco
 ---
 
 or you could fb message me your github username and i'll add you as a collaborator :D
+
+---
+
+Acknowledgements:
+
+ivan - the russian
+slither.io
