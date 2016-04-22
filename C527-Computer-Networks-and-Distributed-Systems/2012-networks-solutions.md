@@ -57,6 +57,11 @@ This works by using sequence, acknowledgement and window fields of the TCP heade
 
 ### 1 b iii)
 
+### 1 b iv)
+
+
+
+
 
 
 
