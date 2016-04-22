@@ -106,3 +106,12 @@ Or..
 
 ### 2 b)
 
+|Time| R1 | R2 | R3 | R4 | R5 | R6 | R7 |
+|----|----|----|----|----|----|----|----|
+|R1  | 0  | 4  | 55 | inf| inf| inf| inf|
+|R2  | 4  | 0  | inf| 25 | inf| inf| inf|
+|R3  | 55 | inf| 0  | 4  | 15 | inf| inf| 
+|R4  | inf| 25 | 4  | 0  | 3  | inf| inf|
+|R5  | inf| inf| 15 | 3  | 0  | 73 | inf|
+|R6  | inf| inf| inf| inf| 73 | 0  | 11 |
+|R7  | inf| inf| inf| inf| inf| 11 | 0  |
