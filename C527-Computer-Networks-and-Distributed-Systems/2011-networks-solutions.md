@@ -219,3 +219,7 @@ not fucked to do the rest. good luck.
 #slither.io
 ```
 
+### 2 bii)
+
+
+
