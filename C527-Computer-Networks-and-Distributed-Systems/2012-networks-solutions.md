@@ -59,6 +59,22 @@ This works by using sequence, acknowledgement and window fields of the TCP heade
 
 ### 1 b iv)
 
+### 2 a i)
+
+Sharing a medium.
+
+### 2 a ii)
+
+TDM - Time Division Multiplexing. Divide the channel into fixed time slots and encode signals to be sent at different times.
+
+FDM - Frequency Division Multiplexing. Think of radio AM/FM frequencies.
+
+CDMA - Code Division Multiplexing. Everyone talking but in different languages. 
+
+### 2  a iii)
+
+Ports. 
+
 
 
 
