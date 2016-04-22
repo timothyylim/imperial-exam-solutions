@@ -51,8 +51,17 @@ A top-level domain (TLD) is one of the domains at the highest level in the hiera
 Application Layer.
 
 
-### 1 b)
+### 1 bi)
 
+Carrier Sense Multiple Access is a protocol to share a medium among multiple nodes.
+
+Each node monitors the medium and only transmits when the medium is idle.
+
+One can contrast CSMA with ALOHA, where nodes send data immediately when it is avaliable. 
+
+Collision Detection means to listens to the medium whilst sending to see if somebody else is transmitting at the same time.
+
+### 1 biii)
 
 
 
