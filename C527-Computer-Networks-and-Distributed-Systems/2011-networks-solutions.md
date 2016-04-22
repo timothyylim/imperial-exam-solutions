@@ -88,7 +88,17 @@ C
 subnet space will be from the 13 binary values, so do 2^13 - 2
 
 
+Or..
+
+255-224+1 = 32 = 2^5
+
+2^8 x 2^5 = 2^13
+
+2^13 - 2 = 8190
+
 ### 2 aiii)
+
+
 
 ### 2 aiv)
 
