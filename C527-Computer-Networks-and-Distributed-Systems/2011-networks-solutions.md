@@ -1,5 +1,12 @@
 ### 1 ai)
 
+Broadband networks uses different frequency bands to transmt analogue data by modulating an analogue carrier wave.
+
+Channel can be shared among multiple usrs.
+
+Physical Layer. 
+
+
 ### 1 aii)
 
 A frame that is passed around a ring to allow the host to broadcast dataframes on the medium.
