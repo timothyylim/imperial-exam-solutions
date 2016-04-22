@@ -221,5 +221,7 @@ not fucked to do the rest. good luck.
 
 ### 2 bii)
 
+It will take an infinite time to get to R4 from R2, so R2 will have to reroute through R1 and R3. 
 
+Routing set-up is not ideal because it takes too long for the whole network to reroute this particular route.
 
