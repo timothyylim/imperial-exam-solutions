@@ -2,6 +2,12 @@
 
 ### 1 aii)
 
+A frame that is passed around a ring to allow the host to broadcast dataframes on the medium.
+
+Sender removes frame on return so that it doesn't congest the ring.
+
+Data Link. 
+
 ### 1 aiii)
 
 Transparent Spanning Tree Bridges use Backwards Learning to build a table of hosts and links. 
@@ -35,7 +41,7 @@ ARP relates to the network layer.
 
 A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet. e.g. .com
 
-Network Layer.
+Application Layer.
 
 
 ### 1 b)
