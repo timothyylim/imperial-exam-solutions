@@ -82,7 +82,10 @@ C
 
 ### 2 aiii)
 
+255        .   255         .  224         .  0
+1111 1111      1111 1111      1110 0000      0000 0000
 
+subnet space will be from the 13 binary values, so do 2^13 - 2
 
 
 ### 2 aiii)
