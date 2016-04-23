@@ -49,23 +49,63 @@ http://stackoverflow.com/questions/13330067/rpc-semantics-what-exactly-is-the-pu
 ```
 public class Operator implements iOperator{
 
+    public Operator throws RemoteException();
+    
     public static void main(String [] args){
     
-        public Operator throws RemoteException();
-        
         //initialize security manager if it doesn't exist
         
         try{
-        
-            MotionDetector MD = (MotionDetector).Naming.lookup(URL of motion detector);
+            Operator OP = new Operator();   
+            Naming.rebind(URL of operator, OP);
             
             
-        
         }catch(throw Exception)
     
     
     }
+    
+    public boolean report(int room, int status){
+        
+        if (status == disabled){
+            
+            `return true;
+        }
+    
+    }
+    
+    
 
 
+}
+```
+
+
+```
+public class RoomController{
+
+    public static void main(String[] args){
+    
+    //initialize Security manager if one doesn't exist
+    
+    int room = Integer.parseInt(args[0]);
+    String OPServer = args[1];
+    
+    try{
+    
+        Operator OP = (iOperator)Naming.bind(OPServer);
+        MotionDetecter MD = (MotionDetector)Naming.bind(MDServer);
+        
+        while(true){
+            
+            OP.report(room, MD.detect());
+        
+            thread.sleep(5000);
+        }
+    
+    }catch(throw Exception)
+    
+    }
+    
 }
 ```
