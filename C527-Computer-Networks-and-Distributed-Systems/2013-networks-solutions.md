@@ -41,3 +41,6 @@ At most once:
 An example case where you want to do "at-most-once" would be something like payments (you wouldn't want to accidentally bill someone's credit card twice), where an example case of "at-least-once" would be something like updating a database with a particular value (if you happen to write the same value to the database twice in a row, that really isn't going to have any effect on anything). You almost always want to use "at-least-once" for non-mutating (a.k.a. idempotent) operations; by contrast, most mutating operations (or at least ones that incrementally mutate the state and are thus dependent on the current/prior state when applying the mutation) would need "at-most-once".
 
 http://stackoverflow.com/questions/13330067/rpc-semantics-what-exactly-is-the-purpose
+
+### 3 b)
+
