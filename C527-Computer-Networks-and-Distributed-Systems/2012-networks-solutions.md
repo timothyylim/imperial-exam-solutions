@@ -137,7 +137,7 @@ public class bedMonitor{
   }
   
   try{
-   iNurse NS = (iNurse)Naming.lookup("rmi/remotehost/NurseStation")
+   iNurse NS = (iNurse)Naming.lookup("rmi://remotehost/NurseStation")
    
    while(true){
     int temp = deviceRead("temp");
