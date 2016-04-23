@@ -168,8 +168,10 @@ public class nurseStation implements iNurse{
  }
  
  public void report(int bed, int temp, int pulse)throwsRemoteException{
+ 
   iMobile NM = (iMobile)Naming.lookup(NMServer);
   update(bed,temp,pulse);
+  
   if(temp < minTemp || temp > MaxTemp || pulse < MinTemp || pulse > MaxPulse){
    NM.alarm(bed,temp,pulse);
   }
