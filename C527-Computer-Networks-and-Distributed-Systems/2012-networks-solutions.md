@@ -104,6 +104,8 @@ Can't have non consecutive 1's in a netmask.
 
 A remote object registry is a bootstrap naming service that is used by RMI servers on the same host to bind remote objects to names. Clients on local and remote hosts can then look up remote objects and make remote method invocations.
 
+RMI Registry acts a broker between RMI servers and the clients. The server "registers" its services in the registry - hence a RMI Registry can act as a "directory" for many servers/services. The client does not need to know the location of individual servers, and does a lookup on the RMI Registry for the service it needs. The registry, being a naming directory returns the appropriate handle to the client to invoke methods on.
+
 ### 4 aii)
 
  The job of a security manager is to prevent any nasty surprises from remotely loaded classes. Therefore, you only need to install a security manager for RMI if the peer is using the codebase facility to supply classes to you dynamically.
