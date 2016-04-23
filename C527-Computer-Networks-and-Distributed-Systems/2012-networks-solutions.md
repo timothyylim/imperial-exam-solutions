@@ -124,6 +124,9 @@ In a distributed system, just as in the local system, it is desirable to automat
 ### 4 b)
 
 ```
+import iNurse
+import java.rmi
+
 public class bedMonitor{
 
  public static void main(String [] args){
