@@ -121,8 +121,37 @@ In a distributed system, just as in the local system, it is desirable to automat
 
 ### 4 b)
 
+```
+public class bedMonitor{
 
+ public static void main(String [] args){
+  int Bed = Interger.parseInt(args[0]);
+  
+  if(System.getSecurityManager() == null){
+   System.SetSecurityManager(new SecurityManager());
+  }
+  
+  try{
+   iNurse NS = (iNurse)Naming.lookup("rmi//remotejpst//NurseStation")
+   
+   while(true){
+    int temp = deviceRead("temp");
+    int pulse = deviceRead("pulse");
+    
+    NS.report(bed,temp,pulse);
+    thread.sleep(6000);
+    
+   }catch(Remote Exception e){System.out.println(e);}
+ }
 
+}
+```
+
+### 4 aii)
+
+```
+
+```
 
 
 
