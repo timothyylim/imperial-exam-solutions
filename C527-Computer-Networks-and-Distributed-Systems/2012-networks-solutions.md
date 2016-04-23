@@ -130,6 +130,9 @@ import java.rmi
 public class bedMonitor{
 
  public static void main(String [] args){
+
+ public bedMonitor() throws RemoteException{};
+ 
   int Bed = Interger.parseInt(args[0]);
   
   if(System.getSecurityManager() == null){
