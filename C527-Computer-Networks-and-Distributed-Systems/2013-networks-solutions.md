@@ -44,3 +44,28 @@ http://stackoverflow.com/questions/13330067/rpc-semantics-what-exactly-is-the-pu
 
 ### 3 b)
 
+### 3 c)
+
+```
+public class Operator implements iOperator{
+
+    public static void main(String [] args){
+    
+        public Operator throws RemoteException();
+        
+        //initialize security manager if it doesn't exist
+        
+        try{
+        
+            MotionDetector MD = (MotionDetector).Naming.lookup(URL of motion detector);
+            
+            
+        
+        }catch(throw Exception)
+    
+    
+    }
+
+
+}
+```
