@@ -132,7 +132,7 @@ public class bedMonitor{
   }
   
   try{
-   iNurse NS = (iNurse)Naming.lookup("rmi//remotejpst//NurseStation")
+   iNurse NS = (iNurse)Naming.lookup("rmi//remotehost//NurseStation")
    
    while(true){
     int temp = deviceRead("temp");
@@ -150,7 +150,27 @@ public class bedMonitor{
 ### 4 aii)
 
 ```
+public class nurseStation implements iNurse{
 
+ public nurseStation() throws RemoteException{}
+ 
+ public static void main(String [] args){
+  
+  if System.getSecurityManager() == null {
+   System.setSecurityManager(new RMISecurityManager());
+  }
+  
+  try{
+   nurseStation NS = new NurseStation();
+   Naming.rebind(Serverurl, NS);
+  }catch(Exception e){ System.out.println(e);}
+  
+ }
+ 
+ 
+
+
+}
 ```
 
 
