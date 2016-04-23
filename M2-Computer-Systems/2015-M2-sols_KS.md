@@ -203,6 +203,12 @@ while true do:
 
 A translation Look-aside Buffer (TLB) is a memory cache (hardware) that stores the most recently used page numbers and their corresponding frame addresses for faster retrieval. It speeds up the process of using a page table so that we don't have to access the memory twice every time. See slide 26 from Memory Management or [this video](https://www.youtube.com/watch?v=95QpHJX55bM).
 
+###3 d.
+
+###3 e i.
+
+###3 e ii.
+
 ###4 b.
 
 Memory Access Time = 200 ns (m)
