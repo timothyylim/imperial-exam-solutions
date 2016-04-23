@@ -100,7 +100,26 @@ DNS Server 1: 192 is a private address and can't be made public.
 Can't have non consecutive 1's in a netmask.
 
 
+### 4 ai)
 
+A remote object registry is a bootstrap naming service that is used by RMI servers on the same host to bind remote objects to names. Clients on local and remote hosts can then look up remote objects and make remote method invocations.
+
+### 4 aii)
+
+ The job of a security manager is to prevent any nasty surprises from remotely loaded classes. Therefore, you only need to install a security manager for RMI if the peer is using the codebase facility to supply classes to you dynamically.
+
+The checks a security manager does (just imagine him as some fat security guard) is the access to
+- communications
+- files
+- control of the virtual machine
+
+ In RMI applications, if no security manager is set, stubs and classes can only be loaded from local classpath, so yes, you can survive without a security manager. Living without the security manager is either unecessarily risky or completely fine depending where you are loading your stubs from. 
+
+### 4 aiii)
+
+In a distributed system, just as in the local system, it is desirable to automatically delete those remote objects that are no longer referenced by any client. This frees the programmer from needing to keep track of the remote objects' clients so that it can terminate appropriately.
+
+### 4 b)
 
 
 
