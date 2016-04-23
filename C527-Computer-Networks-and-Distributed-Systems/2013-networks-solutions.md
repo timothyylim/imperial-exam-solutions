@@ -94,7 +94,7 @@ public class RoomController{
     try{
     
         Operator OP = (iOperator)Naming.bind(OPServer);
-        MotionDetecter MD = (MotionDetector)Naming.bind(MDServer);
+        MotionDetecter MD = (MotionDetector)Naming.bind(MDServer);     //should this be OPServer?
         
         while(true){
             
