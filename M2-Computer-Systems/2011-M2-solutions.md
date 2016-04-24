@@ -60,12 +60,35 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
     - 0.011   *2^4
     -----------
       0.10111 *2^4 = 1.0111 * 2^3 (normalised form) = 1011.1 = Decimal 11.5
+      
+      Decimal answer (including the Sign bit) is then -11.5
+  
   The Tiny Precision format is 
     (1) (100 0011) (0111 0000)
           power 3
+  HEX: C 3 7 0
+  ```
+  For multiplication we first evaluate the sign bits by adding them together => 1 + 0 = 1
+  Negative number multiplied by a positive number will stay negative
+  ```
+      1.00011 * 2^4
+    * 1.1     * 2^2
+    ---------------
+      1.00011
+      0.100011
+    ---------------
+      1.101001  * 2^(4+2)
+  Multiplication of Significands is then 1.101001 * 2^6 (normalised form) = 110 1001 = Decimal 105
+  Decimal answer (including the Sign bit) is then -105
+  The Tiny Precision format is:
+    (1) (100 0110) (1010 0100)
+          power 6
+  HEX: C 6 A 4
   
+  -17.5 * 6 = 105
   
-  
+  ```
+
 ## 2 
 ### b) 
   
