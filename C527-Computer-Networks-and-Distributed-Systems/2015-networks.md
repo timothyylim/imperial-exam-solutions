@@ -68,6 +68,8 @@ c.
 
 The domain system is not really needed for the world wide web per se, since users could simply type in the IP address of the server they wish to visit. It does, however, make the navigation of the world wide web significantly easier since humans are better at remembering names as opposed to strings of digits.
 
+By abstracting *over* the location of a server, names can be pointed to different IP addresses without the knowledge of the end-user. If a server goes down for maintenance, for instance, a name can be pointed to an alternative server.
+
 The difference in the time takent to process queries to a domain may be the result of caching done by a server.
 
 http://dyn.com/blog/dns-why-its-important-how-it-works/
