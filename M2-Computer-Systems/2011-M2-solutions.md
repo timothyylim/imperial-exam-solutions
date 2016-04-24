@@ -12,13 +12,17 @@
     21 bits required to address every word
     
 ### aiii) 
-  Assuming there is a typo in the exam question and the table should actually look like:
+  I don't really understand where are 2 numbers there in this table...
   
 ```
-    100h  101h  102h  103h
+    100h  101h  101h  101h
     03h   f7h   80h   01h
+
+Big Endian means the most significant bit first
+
+Little Endian means the least significant bit first
 ```
-  
+
   
   
 ## 2 
