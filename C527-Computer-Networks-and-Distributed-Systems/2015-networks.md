@@ -227,9 +227,20 @@ Colouris 124
 
 ---
 
-c.
+c. - MA (tell me if this seems wrong).
 
-didn't really go through this in the lecture slides...
+Assumption : Source name and address included in every message.
+
+Alice -> Jailor: A, B, Kab(M), Kaj{ A, H{Kab{m}, Ta}
+Jailor -> Bob: J, Kbn{A, Ta, Tj}, Kab{m}, Kaj{ A, Ta, Tj, H(Kab{m})}
+
+Incase of dispute Bob sends the following to the Jailor
+Bob to Jailor: B, Kbj { A, Ta, Kab{m}}, Kaj{A, Ta, Tj, H(Kab{m})}
+
+Poof of receipt
+Bob to Jailor : Kbj { A, B, H(Kab{m}), Tb, Tj}
+
+Jailor to Alice : B, Kbj {A, B, H(Kab{m}), Tb, Tj}
 
 
 # 4
