@@ -12,7 +12,9 @@
     21 bits required to address every word
     
 ### aiii) 
-  
+  Assuming there is a typo in the exam question and the table should actually look like:
+    100h  101h  102h  103h
+    03h   f7h   80h   01h
   
   
   
