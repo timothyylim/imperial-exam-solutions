@@ -22,7 +22,20 @@ Big Endian means the most significant bit first
 
 Little Endian means the least significant bit first
 ```
+### bi)
+Tiny Precision has 7 bits for the exponent => can express 2^7 (128) powers. Exponent for IEEE is held in Excess-127 format.
+Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 corresponds to 64, 100 0000 corresponds to power 1.
 
+```
+  4180h       = 0100 0001 1000 0000
+  sign        = 0
+  exponent    = 100 0001 = (129 - 127) = 2
+  significand = 1000 0000 = 2^8
+  
+  Decimal value = 2^8 * 2^2 = 2^10 = 1024
+```
+
+  
   
   
 ## 2 
