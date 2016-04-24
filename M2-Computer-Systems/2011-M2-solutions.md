@@ -94,6 +94,7 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
 2 fields that specify the unconditional jump instruction are OPCODE of the jump instruction (e.g. JMP) and ADDRESS of the instruction to jump to. When CPU executes the jump instruction it sets the eip to the ADDRESS mentioned in the instruction, then it goes to that memory address to fetch the new instruction, loads it into Instruction Decoder, decodes the instruction and proceeds as normal. If jump is conditional, then the condition is first checked is ALU, if condition is true, then amend eip to ADDRESS from the jump instruction and do all the usual steps.
 
 ### aii) 
+
 1) Register Operands
 2) Immediate (Constant) Operands
 3) Memory Operands
@@ -152,17 +153,21 @@ When a program performs a funtion call it pushes any values to be passed to the 
   
   ```
 ### b) 
+
   Synchronous send blocks other processes, which are waiting to send/receive similar messages, until the initial process completes the send (send here is the synchronous operation performed by the process/thread). Asynchronous send merely initiates the "send" function call without synchronising with other threads to make sure that the message is saved/delivered as necessary. Kernel is actively involved in the synchronous send/receieve as it blocks all other threads/processes, which are trying to send/receive at the same time. Immediately after this, kernel wakes up all these processes notifying that a message has been sent. The appropriate thread then reads that message.
   
 ### c)
+
   The kernel is the one, who performs the actual scheduling of a task/process. The kernel is essentially the code in the OS, hence, the answer is yes. Kernel is responsible for initialisation, interruption, scheduling and termination of a task.
 ### d)
+
   1) System tasks are performed in kernel space and are essential to the running operating system. Therefore, a user should not be able to tamper with the system tasks. Otherwise, the risk of a crashing system raises significantly.
   2) System tasks perform operations with the kernel-reserved memory and are running much more efficiently if they are not required to switch from user space to kernel space (send regular information requests). Distinction is useful to increase efficiency of the system processes.
   3) System tasks are per system, while there can be many users per system. If many users initiate system tasks at the same time, it will most likely have negative performance on the running system.
   
   In general users should be separated from manipulating the system for their own safety, safety of the system and increased efficiency of the system.
 ### ei)
+
   We did not really cover that... my best guess:
   1) read the inode address from the soft link
   2) access that address and read the address of the first inode where the file is stored
@@ -171,6 +176,7 @@ When a program performs a funtion call it pushes any values to be passed to the 
   Total : 3 reads.
   
 ### eii)
+
   The hard link is just another name for the same file. Hard link does not point to the file header, but to the file itself. So hard link is just another name for the same file. If the initial file is deleted, the hard link still works fine and it actually becomes the main header of the file.
   
   Soft link points to the file header and if the file is deleted, it's header is deleted and => soft link will not work anymore as there is nothing for it to point to.
@@ -180,14 +186,17 @@ When a program performs a funtion call it pushes any values to be passed to the 
 
 ## 2
 ### a)
+
   DMA - Direct Memory Access. DMA is a specialised controller, which enables devices to access main memory bypassing CPU. Thus, devices can read/write to main memory without requesting CPU time, which enables for CPU to be occupied with a computationally intensive task, while a device is writing something to a memory at the same time - this enhances the overall system performance. DMA has registers, which can be read/written to by CPU and DMA can also buffer up (temporarily save) the data before writing it to the main memory. Software will pass the method (cycle-stealing or burst), the action to be performed and the action to be peformed after DMA controller completes its task (this is a very rough guess).
   
 ### b) 
+
   In synchronous systems processes wait for receipt of each others messages. The main idea of asynchronous system is that the system initiates I/O and does not wait until it completes and returns to its other tasks. In synchronous systems, methods have critical sections, which cannot be performed simultaneously by 2 or more methods, thus there exist some limitations to the process interleaving - not all permutations are possible.
   
   Buffering is required in asynchronous systems to store messages (methods) which were invoked by processes and are waiting to be recognised by other processes. Otherwise if a process starts a method and it cannot yet be run, then it is just lost and never executed. Such methods are stored in the buffer.
   
 ### c) 
+
   Sem isEmpty = 1 - can take values 0 or 1
   sem mutex = 1 - mutual exclusion
   sem isfull = 0 - can take values from 0 to M (number of portions)
@@ -213,6 +222,7 @@ When a program performs a funtion call it pushes any values to be passed to the 
   ```
   
   ### d) 
+  
     Atomic actions - performed in one go by the CPU, there can be no other processes interleaving with atomic actions (possibly only interrupts).
     
     The rest I don't know and i don't think we covered it...
