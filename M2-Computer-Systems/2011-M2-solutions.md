@@ -135,8 +135,9 @@ When a program performs a funtion call it pushes any values to be passed to the 
 
 ## 3
 ### a)
+
   Synchronous message passing means that there is only one thread at a time perfoming either writing or reading. Synchronization is achieved through implementation of semaphores and monitors. In case of message pipes, synchronisation is done by kernel.
-    ```
+  ```
   sender:
   first obtain the lock on the message queue space (if no space currently in the queue - wait)
   get lock on mutex access to the message queue
@@ -150,8 +151,8 @@ When a program performs a funtion call it pushes any values to be passed to the 
     read (and remove) a last written message from the queue
   release mutex access lock
   notifyAll that there the queue is free and there is free space available
-  
   ```
+  
 ### b) 
 
   Synchronous send blocks other processes, which are waiting to send/receive similar messages, until the initial process completes the send (send here is the synchronous operation performed by the process/thread). Asynchronous send merely initiates the "send" function call without synchronising with other threads to make sure that the message is saved/delivered as necessary. Kernel is actively involved in the synchronous send/receieve as it blocks all other threads/processes, which are trying to send/receive at the same time. Immediately after this, kernel wakes up all these processes notifying that a message has been sent. The appropriate thread then reads that message.
