@@ -222,8 +222,8 @@ When a program performs a funtion call it pushes any values to be passed to the 
   end
   ```
   
-  ### d) 
+### d) 
   
-    Atomic actions - performed in one go by the CPU, there can be no other processes interleaving with atomic actions (possibly only interrupts).
+  Atomic actions - performed in one go by the CPU, there can be no other processes interleaving with atomic actions (possibly only interrupts).
     
-    The rest I don't know and i don't think we covered it...
+  The rest I don't know and i don't think we covered it...
