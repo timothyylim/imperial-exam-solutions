@@ -237,7 +237,7 @@ Jailor -> Bob: J, Kbn{A, Ta, Tj}, Kab{m}, Kaj{ A, Ta, Tj, H(Kab{m})}
 Incase of dispute Bob sends the following to the Jailor
 Bob to Jailor: B, Kbj { A, Ta, Kab{m}}, Kaj{A, Ta, Tj, H(Kab{m})}
 
-Poof of receipt
+Proof of receipt
 Bob to Jailor : Kbj { A, B, H(Kab{m}), Tb, Tj}
 
 Jailor to Alice : B, Kbj {A, B, H(Kab{m}), Tb, Tj}
