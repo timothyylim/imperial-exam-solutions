@@ -162,3 +162,17 @@ When a program performs a funtion call it pushes any values to be passed to the 
   3) System tasks are per system, while there can be many users per system. If many users initiate system tasks at the same time, it will most likely have negative performance on the running system.
   
   In general users should be separated from manipulating the system for their own safety, safety of the system and increased efficiency of the system.
+### ei)
+  We did not really cover that... my best guess:
+  1) read the inode address from the soft link
+  2) access that address and read the address of the first inode where the file is stored
+  3) access the inode and read the first byte of the file (might be an address of another inode or a data block)
+  
+  Total : 3 reads.
+  
+### eii)
+  The hard link is just another name for the same file. Hard link does not point to the file header, but to the file itself. So hard link is just another name for the same file. If the initial file is deleted, the hard link still works fine and it actually becomes the main header of the file.
+  
+  Soft link points to the file header and if the file is deleted, it's header is deleted and => soft link will not work anymore as there is nothing for it to point to.
+  
+  Hard link points to the same inode as the file header, Soft links points to the inode, where file header is stored.
