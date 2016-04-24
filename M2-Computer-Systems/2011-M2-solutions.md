@@ -130,3 +130,35 @@ When a program performs a funtion call it pushes any values to be passed to the 
     087H      STORE R1, [000H]
     088H      STOP
     
+# Section B
+
+## 3
+### a)
+  Synchronous message passing means that there is only one thread at a time perfoming either writing or reading. Synchronization is achieved through implementation of semaphores and monitors. In case of message pipes, synchronisation is done by kernel.
+    ```
+  sender:
+  first obtain the lock on the message queue space (if no space currently in the queue - wait)
+  get lock on mutex access to the message queue
+    write message to the queue next available space
+  release mutex access to the queue
+  notifyAll that there is a new message in the queue
+  
+  receiver:
+  get lock on reading an existing item from the message queue
+  get mutex access lock to the message queue
+    read (and remove) a last written message from the queue
+  release mutex access lock
+  notifyAll that there the queue is free and there is free space available
+  
+  ```
+### b) 
+  Synchronous send blocks other processes, which are waiting to send/receive similar messages, until the initial process completes the send (send here is the synchronous operation performed by the process/thread). Asynchronous send merely initiates the "send" function call without synchronising with other threads to make sure that the message is saved/delivered as necessary. Kernel is actively involved in the synchronous send/receieve as it blocks all other threads/processes, which are trying to send/receive at the same time. Immediately after this, kernel wakes up all these processes notifying that a message has been sent. The appropriate thread then reads that message.
+  
+### c)
+  The kernel is the one, who performs the actual scheduling of a task/process. The kernel is essentially the code in the OS, hence, the answer is yes. Kernel is responsible for initialisation, interruption, scheduling and termination of a task.
+### d)
+  1) System tasks are performed in kernel space and are essential to the running operating system. Therefore, a user should not be able to tamper with the system tasks. Otherwise, the risk of a crashing system raises significantly.
+  2) System tasks perform operations with the kernel-reserved memory and are running much more efficiently if they are not required to switch from user space to kernel space (send regular information requests). Distinction is useful to increase efficiency of the system processes.
+  3) System tasks are per system, while there can be many users per system. If many users initiate system tasks at the same time, it will most likely have negative performance on the running system.
+  
+  In general users should be separated from manipulating the system for their own safety, safety of the system and increased efficiency of the system.
