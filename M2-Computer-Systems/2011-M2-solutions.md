@@ -176,3 +176,43 @@ When a program performs a funtion call it pushes any values to be passed to the 
   Soft link points to the file header and if the file is deleted, it's header is deleted and => soft link will not work anymore as there is nothing for it to point to.
   
   Hard link points to the same inode as the file header, Soft links points to the inode, where file header is stored.
+
+
+## 2
+### a)
+  DMA - Direct Memory Access. DMA is a specialised controller, which enables devices to access main memory bypassing CPU. Thus, devices can read/write to main memory without requesting CPU time, which enables for CPU to be occupied with a computationally intensive task, while a device is writing something to a memory at the same time - this enhances the overall system performance. DMA has registers, which can be read/written to by CPU and DMA can also buffer up (temporarily save) the data before writing it to the main memory. Software will pass the method (cycle-stealing or burst), the action to be performed and the action to be peformed after DMA controller completes its task (this is a very rough guess).
+  
+### b) 
+  In synchronous systems processes wait for receipt of each others messages. The main idea of asynchronous system is that the system initiates I/O and does not wait until it completes and returns to its other tasks. In synchronous systems, methods have critical sections, which cannot be performed simultaneously by 2 or more methods, thus there exist some limitations to the process interleaving - not all permutations are possible.
+  
+  Buffering is required in asynchronous systems to store messages (methods) which were invoked by processes and are waiting to be recognised by other processes. Otherwise if a process starts a method and it cannot yet be run, then it is just lost and never executed. Such methods are stored in the buffer.
+  
+### c) 
+  Sem isEmpty = 1 - can take values 0 or 1
+  sem mutex = 1 - mutual exclusion
+  sem isfull = 0 - can take values from 0 to M (number of portions)
+  ```
+  Cook:
+  while true:
+    down (isEmpty)
+      down(mutex)
+        putServingsInPot(M)
+      up(mutex)
+    up(isFull = M) //pot has M portions now
+  end
+  
+  Student:
+  while true:
+    down (isFull) //there is still food left
+      down(mutex)
+        getServingFromPot();
+      up(mutex)
+    if pot is empty
+      up(isEmpty)
+  end
+  ```
+  
+  ### d) 
+    Atomic actions - performed in one go by the CPU, there can be no other processes interleaving with atomic actions (possibly only interrupts).
+    
+    The rest I don't know and i don't think we covered it...
