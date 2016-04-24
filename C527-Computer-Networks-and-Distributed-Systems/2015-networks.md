@@ -158,7 +158,11 @@ Read more: Difference Between CSMA CA and CSMA CD | Difference Between | CSMA CA
 
 c.
 
-no idea
+HTTP 1.0 will require 3 separate TCP connections (one for each picture and one for the text). Each connection must be set up using a three-way handshake (3 x 3) and then must send one packet over it (+3). So for HTTP 1.0 the answer is 12.
+
+HTTP 1.1 sets up only 1 TCP connection and then transfers all the page elements accross it: 1 x 3 for a three-way handshake and +3 for sending each page element. So for HTTP 1.1 the answer is 6.
+
+(I think)
 
 ---
 
