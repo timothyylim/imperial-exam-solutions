@@ -86,10 +86,26 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
   HEX: C 6 A 4
   
   -17.5 * 6 = 105
-  
   ```
-
 ## 2 
+
+### ai) 
+
+2 fields that specify the unconditional jump instruction are OPCODE of the jump instruction (e.g. JMP) and ADDRESS of the instruction to jump to. When CPU executes the jump instruction it sets the eip to the ADDRESS mentioned in the instruction, then it goes to that memory address to fetch the new instruction, loads it into Instruction Decoder, decodes the instruction and proceeds as normal. If jump is conditional, then the condition is first checked is ALU, if condition is true, then amend eip to ADDRESS from the jump instruction and do all the usual steps.
+
+### aii) 
+1) Register Operands
+2) Immediate (Constant) Operands
+3) Memory Operands
+
+Register Operands allow the fastest access time as the values are stored immediately in the CPU and there is no need to go fetch the values anywhere else. Constants are the second fastest and their values are stored in cashe. Memory operands are the slowest as CPU needs first to read them from their memory addresses and then fetch them back into CPU through internal bus, which delays processing speed significantly. All of the operands allow maximum range of data representation as the user can basically store anything they want in any of the operands. If I had to choose, I would say Memory allows the maximum range as if e.g. CPU registers are 16 bits, and you can only store 16bit value, in quadword memory you can store 64 bit values.
+
+### aiii) 
+
+Stack memory access is LIFO - last in first out. Once a value is pushed onto stack, it becomes the first one to be popped until another value is pushed onto the stack.
+
+When a program performs a funtion call it pushes any values to be passed to the function, the current call's ebp and the return address (address of the instruction after the function call) onto the stack. When the function returns, the program pops the return address into eip and resets the esp to the initial ebp, so it continues from where it left off.
+
 ### b) 
   
   pseudocode:
