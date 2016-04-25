@@ -184,6 +184,18 @@ CSR? T4 -> T3... acyclic so yes, CSR.
 Hb is serialisable. Since the dirty read in T3 is committed before T4, Hb is not recoverable.
 
 I'm not 100% sure this is right so let me know if it's wrong.
+------------------------------------------------------------------------------
+Question 3 b) iii) Let's first see where (if any) conflicts occur:
+
+```
+w1[cKE] -> r2[cKE]
+
+r2[cFR] -> w1[cFR]
+
+CSR? T1 -> T2 -> T1... cyclic so no, not CSR.
+```
+
+Not recoverable because T2 commits before T2 for cFR.
 
 -------------------------------------------------------------------------------
 Question 4 a) i)
