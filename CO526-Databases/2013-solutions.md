@@ -117,6 +117,27 @@ FROM company
 ON company.hq = company_assets_country.iso_code
 ```
 
+### 2 d)
+```
+select acode, aname
+from airline natural join
+(
+	select acode
+	from serves join 
+	(
+		select pcode
+		from airport join 
+		(
+			select iso_code,cname
+			from city
+			where is_capital='t'
+		) as capital 
+		on airport.cname = capital.cname
+	) as capital_airport 
+	on pcode2=pcode
+) as serving
+```
+
 ### 3 bi)
 
 Find conflicts:
