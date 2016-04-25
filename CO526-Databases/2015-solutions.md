@@ -51,7 +51,6 @@ EXCEPT (
 	      AND airport_a.iso_code = airport_b.iso_code)
 ```
 
-Note: perhaps JOIN is not suitable as the RA statement specifies a cross product, not a JOIN.
 
 -------------------------------------------------------------------------------
 Question 1 c) iii)
