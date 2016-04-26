@@ -4,6 +4,8 @@ Past exam solutions and tutorials for Msc. Computing at Imperial College.
 
 This is very much a work in progress and any additions and corrections are welcome. 
 
+[Link to Past Papers](https://exams.doc.ic.ac.uk/)
+
 ### how to make corrections and/or contributions
 
 1. make a github account (duh)
