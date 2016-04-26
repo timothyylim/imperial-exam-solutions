@@ -77,6 +77,24 @@ AND NOT EXISTS
   )
 )
 ```
+easier to understand :
+```
+SELECT DISTINCT organization
+FROM is_member AS x
+WHERE type='member' 
+AND NOT EXISTS
+(
+  SELECT country
+  FROM is_member
+  WHERE type='member'
+  AND organization='CERN'
+  EXCEPT 
+  SELECT country
+  FROM is_member AS z
+  WHERE type='member' 
+  AND x.organization = z.organization 
+)
+```
 
 ### 1 e)
 
