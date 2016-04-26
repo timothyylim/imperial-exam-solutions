@@ -16,7 +16,6 @@ Question 1 c) i)
 
 This query could also be posed as: "which airlines only fly internationally?"
 
-Alternative answer: I think it asks for airlines that don't fly locally (so they could fly both locally and internationally and I don't think they would appear).
 ```
 acode
 -----
