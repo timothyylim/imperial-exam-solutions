@@ -83,9 +83,8 @@ AND NOT EXISTS
 needs to be improved:
 
 ```
-π country.capital, country.code (country)
-∪
-π organization.city, organization.country (organization)
+(π country.capital, country.code (country) ∪ π organization.city, organization.country (organization)
+- (π country.capital, country.code (country) ∩ π organization.city, organization.country (organization)
 ```
 
 ### 3 bi)
