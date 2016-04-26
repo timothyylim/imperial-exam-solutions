@@ -81,10 +81,10 @@ AND NOT EXISTS
 ### 1 e)
 
 needs to be improved:
+update: no, this is correct. the union operator is set based in relational algebra (tested on relax to make sure)
 
 ```
-(π country.capital, country.code (country) ∪ π organization.city, organization.country (organization)
-- (π country.capital, country.code (country) ∩ π organization.city, organization.country (organization)
+π country.capital, country.code (country) ∪ π organization.city, organization.country (organization)
 ```
 
 ### 3 bi)
