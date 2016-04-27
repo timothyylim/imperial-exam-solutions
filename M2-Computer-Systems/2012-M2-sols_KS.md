@@ -43,7 +43,39 @@ Integer #2 = 0180 (hex) = 0000 0001 1000 0000 (binary) = 384 (decimal)
 
 ###1 b.
 
+**(i.)** The exponent will be in excess-63 format.
 
+```
+4180H = 0100 0001 1000 0000 (Tiny Precision)
+Sign: 0 (+)
+Exponent: 100 0001 --> 65 - 63 = 2
+Significand: 1000 0000
+
+= +1.1 x 2^2 = 110 --> 6 :)
+```
+**(ii.)** 
+
+```
+-17.5 = ?
+17.5 --> 10001.1 = 1.00011 x 2^4
+Sign: 1 (-)
+Exponent: 4+63 = 67 --> 100 0011
+Significand: 0001 1000
+-17.5 = 1100 0011 0001 1000 (Tiny Precision)
+Hex:    C    3    1    8
+```
+
+**(iii.) SUM:**
+
+```
+
+```
+
+**PRODUCT:**
+
+```
+
+```
 
 ##Section B
 ###2 a.
