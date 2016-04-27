@@ -37,10 +37,15 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
 ```
 ### bii)
   -17.5 conversion:
+ 
   negative => sign bit is 1
+  
   17 = 2^4 + 2^0 = 0001 0001
+
   0.5 = 2^(-1) = 0.1
+  
   17.5 = 1 0001.1
+
   17.5 normalised form = 1.00011 * 2^4, hence exponent is 4, in excess-63 4 = 100 0011
   Following the same method as for IEEE format we lose the first bit of 17.5 and store everything what's left after the coma => 
   ```
