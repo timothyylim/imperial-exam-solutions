@@ -29,7 +29,7 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
 ```
   4180h       = 0100 0001 1000 0000
   sign        = 0
-  exponent    = 100 0001 = (129 - 127) = 2
+  exponent    = 100 0001 = (65 - 63) = 2
   significand = 1000 0000 = 2^8
   
   adding back the avoided bit -> our number is 1.1 * 2^2
@@ -220,7 +220,7 @@ When a program performs a funtion call it pushes any values to be passed to the 
     if pot is empty
       up(isEmpty)
   end
-  ```
+  ```
   
 ### d) 
   
