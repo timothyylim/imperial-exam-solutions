@@ -9,3 +9,5 @@ Two's Complement
 
 Excess-64
   - 64 is the offset (excess-64), say -45 is the number we want so we'll do the binary of 19.
+
+CPU utilization = 1 - p^n
