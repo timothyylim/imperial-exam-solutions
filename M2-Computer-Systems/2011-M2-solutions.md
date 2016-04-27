@@ -25,14 +25,21 @@
 ```
   A+B = (A' * B')' = (A NAND A) NAND (B NAND B)
   ```
-### b) 
+### bi) 
   ```
   32-bit / 8-bit = 4 chips per module (256K * 32-bit)
   16Megabytes = 4M * 4 bytes = 4M * 32-bit 
   4M / 256K = 16 modules
+  ```
+### bii)
+
+```
   total chips = 16 * 4 = 64 chips
   total modules = 16
   ```
+  
+### biii)
+
   16 modules => need 4 bits to represent module
   Low-order interleaving = last 4 bits in memory address represent module (from 0 to 15)
   003CB4 - last for bits are 0100 => module 4 contains the addressed memory
