@@ -115,12 +115,14 @@ When a program performs a funtion call it pushes any values to be passed to the 
 ### b) 
   
   pseudocode:
+  ```
     A=0
     B given
     for i = 0 to C
       A = A+B
-  
+  ```
   assembly:
+  ```
     000H      A
     001H      B
     002H      C
@@ -135,7 +137,8 @@ When a program performs a funtion call it pushes any values to be passed to the 
     086H      GOTO    082H
     087H      STORE R1, [000H]
     088H      STOP
-    
+  ```
+  
 # Section B
 
 ## 3
