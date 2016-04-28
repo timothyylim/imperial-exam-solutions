@@ -72,6 +72,7 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
     (1) (100 0011) (0111 0000)
           power 3
   HEX: C 3 7 0
+  AA: I agree except I think exponent is 63 + 3 = 66 = 1000 010 and hence HEX: C 2 7 0
   ```
   For multiplication we first evaluate the sign bits by adding them together => 1 + 0 = 1
   Negative number multiplied by a positive number will stay negative
@@ -89,6 +90,7 @@ Analogically as for IEEE (here Excess-63) 000 0000 corresponds to -63, 111 1111 
     (1) (100 0110) (1010 0100)
           power 6
   HEX: C 6 A 4
+  AA: I agree except I think exponent is 63 + 6 = 69 = 1001 001 and hence HEX: C 5 A 4
   
   -17.5 * 6 = 105
   ```
