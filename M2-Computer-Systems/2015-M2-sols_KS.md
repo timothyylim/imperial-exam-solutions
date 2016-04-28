@@ -243,8 +243,8 @@ Maximimum Physical Memory Size: 16 MB = 2^4 \* 2^20 = 2^24 bits
 
 **(iii.)** The actual physical address translation for the virtual addresses:
 
-* 13086: 13086 must be on page 1 which lies in frame 8 with an offset of 13086 % 4096 = 798. So, 13086 maps to physical address 8 \* 4096 + 798 = **33566.**
-* 21200: 21200 must be on page 2 which lies in frame 4 with an offset of 21200 % 4096 = 720. So, 21200 maps to physical address 4 \* 4096 + 720 = **17104.**
+* 13086: 13086 must be on page 3 which lies in frame 6 with an offset of 13086 % 4096 = 798. So, 13086 maps to physical address 6 \* 4096 + 798 = **25374.**
+* 21200: 21200 must be on page 5 which lies in frame 205.....? with an offset of 21200 % 4096 = 720. So, 21200 maps to physical address 205 \* 4096 + 720 = **840400.**
 
 How many bits are required for each page table entry?  There can be at most 2^24 / 2^12 = 2^12 frames in main memory, so a page table entry will require 12 bits for a frame number, plus protection and reference bits, etc.
 
