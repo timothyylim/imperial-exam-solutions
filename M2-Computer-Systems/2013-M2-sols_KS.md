@@ -170,7 +170,7 @@ Address | Contents            | Pseudocode
 404H    | IFNEG R1, 40AH      | exit if n < 0
 405H    | ADD R0, [R2]        | B = B + mem[addr]
 406H    | ADD R2, [301H]      | addr = addr + 1
-407H    | SUB R2, [R2]        | B = B-mem[address]
+407H    | SUB R0, [R2]        | B = B-mem[address]
 408H    | ADD R2, [301H]      | addr = addr + 1
 409H    | SUB R1, [302H]      | n = n-2
 40AH    | GO TO 403H          | loop
