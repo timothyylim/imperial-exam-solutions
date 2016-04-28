@@ -22,9 +22,13 @@ or you could fb message me your github username and i'll add you as a collaborat
 
 ---
 
-Acknowledgements:
+Acknowledgements
+
+Although I set up this repository, much of the work has been done by others in the course. Here are a few of them:
 
 ```
-ivan - the russian
-slither.io
+Katie Shea (shadykdc)
+Jack Bridger (jackbridger)
+Ivan Avanessov (IvanAvanessov)
+Robin Marle (crossman36)
 ```
