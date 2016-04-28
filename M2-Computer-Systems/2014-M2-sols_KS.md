@@ -107,10 +107,10 @@ Address| Contents
 -------|------------
 800H   | LOAD[90FH]          
 801H   | PUSH[91FH]           
-802H   | PUSH[91FH]           
+802H   | PUSH[91EH]           
 803H   | SUB                  
 804H   | PUSH[91FH]           
-805H   | PUSH[91FH]           
+805H   | PUSH[91EH]           
 806H   | MULT                 
 807H   | PUSH[910H]           
 808H   | PUSH[91DH]           
