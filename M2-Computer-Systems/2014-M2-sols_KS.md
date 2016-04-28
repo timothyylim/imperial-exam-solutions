@@ -153,16 +153,11 @@ Read more about fixed priority pre-emptive scheduling on [wikipedia](https://en.
 
 ###3 c.
 
-The send, receive, and reply operations may be synchronous or asynchronous. Synchronous message passing occurs between objects that are running at the same time. With asynchronous message passing it is possible for the receiving object to be busy or not running when the requesting object sends the message.
+Synchronous *send* and *receive* operations will attempt to send/receive to another process. If there is not another process performing a corresponding receive/send then the process will **block**. The process calling the synchronous operation will be taken from the running queue and added to the wait queue until another process is ready to receive/send.
 
-Synchronous message passing is what typical object-oriented programming languages such as Java and Smalltalk use. Asynchronous message passing requires additional capabilities for storing and retransmitting data for systems that may not run concurrently.
+Asynchronous *send* and *receive* operations will attempt to send/receive to another process but if there is not another process performing a corresponding receive/send it will not block but will return a value to indicate that the operation was unsuccessful.
 
-The buffer required in asynchronous communication can cause problems when it is full. A decision has to be made whether to block the sender or whether to discard future messages. If the sender is blocked, it may lead to an unexpected deadlock. If messages are dropped, then communication is no longer reliable.
-
-If you don't specify a time limit then this may result in a buffer overflow.
-
-Read more about message passing on [wikipedia](https://en.wikipedia.org/wiki/Message_passing).
-
+It is important that a time limit is set on these synchronous operations because if there is not another process waiting, the process calling the operation will block indefinitely. 
 
 ###3 d.
 
