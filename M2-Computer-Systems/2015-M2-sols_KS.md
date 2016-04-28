@@ -114,26 +114,31 @@ The following program will take an array A[] and reverse it. E.g. A = [1, 2, 3] 
 
 Register | Use
 ---|----
-R0 | we don't need this actually
-R1 | value of A at lower index
+R0 | value of A at lower index
+R1 | value of A at higher index
 R2 | lower address of A
 R3 | higher address of A
 
 Address | Contents            | Pseudocode
 --------|---------------------|-------
-081H    | LOAD R2, 200H       | Load value of memory address 200H into R2
-082H    | LOAD R3, 250H       | Load value of memory address 250H into R3
-**083H**| **STORE R1, [R2]**  | **R1 = value of A at the lower memory address (temp)**
-084H    | STORE R2, [R3]      | Value of R2 replaced with value of R3
-085H    | STORE R3, [R1]      | 
-086H    | INC R2              | point to the next lowest value
-087H    | DEC R3              | point to the next highest value
-**088H**| **JGT R2, R3, 083H**| **loop if R2 has passed R3**
-089H    | STOP                | end the program
+081H    | LOAD R2, 1000H      | Load value 200H into R2
+082H    | LOAD R3, 1050H      | Load value 250H into R3
+**083H**| **LOAD R0, [R2]**   | **R0 = value of A at the lower memory address**
+084H    | LOAD R1, [R3]       | R1 = value of A at the higher memory address
+085H    | STORE R0, [R3]      | Put R0 where R1 was
+086H    | STORE R1, [R2]      | Put R1 where R0 was
+087H    | INC R2              | point to the next lowest value
+088H    | DEC R3              | point to the next highest value
+**089H**| **JGT R2, R3, 083H**| **loop if R2 has passed R3**
+08AH    | STOP                | end the program
 ...     |                     |
 200H    | A[0]                | holds A[0]
 ...     |                     |
 250H*   | A[n-1]              | holds A[n-1]
+...     |                     | 
+1000H   | 200H                | Where value 200H is stored (address of A[0])
+...     |                     |
+1050H   | 250H                | Where value 250H is stored (address of A[n-1])
 
 *let's call 200H + n-1 = 250H (n=51).
 
