@@ -237,7 +237,7 @@ Page Size: 4096 Bytes = 4KB = 2^2 \* 2^10 = 2^12 bits
 
 Maximimum Physical Memory Size: 16 MB = 2^4 \* 2^20 = 2^24 bits
 
-**(i.)** A virtual address has **24 bits.**
+**(i.)** A virtual address has **26 bits** because the address space is 64 MB (2^26 bits requires 26 bits to form an addres).
 
 **(ii.)** The maximum number of entries in a page table is 2^26 / 2^12 = 2^14 = **16384 entries.**
 
