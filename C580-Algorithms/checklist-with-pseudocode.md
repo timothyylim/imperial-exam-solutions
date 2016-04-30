@@ -120,14 +120,13 @@ Performance is O(NLog2N)
 
 ### Data Structures
 
+- Set
+- Binary Search Tree
 - Hashtable
 - Queue
 - Array
 - Stack
 - Red Black Tree
-- Set
-- Binary Heap
-- Binary Search Tree
 
 ### String Matching 
 
