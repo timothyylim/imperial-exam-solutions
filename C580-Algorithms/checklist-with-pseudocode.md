@@ -202,6 +202,10 @@ O(NlogN)?
 
 ### String Matching 
 
+- Naive
+
+
+
 - KMP
 - BM 
 
