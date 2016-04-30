@@ -138,7 +138,7 @@ DFS (graph g, source vertex s)
 
 - Kruskal's
 
-*Greedily eat up an MST*
+*sort then add the smallest edge each time*
 
 ```
 
@@ -146,15 +146,34 @@ DFS (graph g, source vertex s)
 
 - Prims
 
-*Greedily eat up an MST, again*
+*always add edges to the same component*
 
 ```
+Prims (input: connected weighted graph G, vertex r)
 
+  T = ({r},0)
+  Add all edges (r,v) in G to queue Q prioritised by min weight
+  
+  while T has fewer than |V|-1 edges:
+    Remove next edge (x,y) from Q
+    if y is not in T
+      add y to T
+      add (x,y) to T
+      add all edges (y,v) in G to Q
+  
+  return T
 ```
-
+```
+O(Elog2V)
+```
 
 - Bellman-Ford
+
+
+
 - Dijkstras
+
+
 
 ### Data Structures
 
