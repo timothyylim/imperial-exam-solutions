@@ -209,4 +209,12 @@ O(NlogN)?
 http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/
 
 - BM 
+- 
+
+### Dynamic Programming
+
+- Rod Cutting
+
+https://www.youtube.com/watch?v=ElFrskby_7M
+
 
