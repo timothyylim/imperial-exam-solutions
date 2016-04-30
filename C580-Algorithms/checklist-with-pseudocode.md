@@ -71,7 +71,7 @@ Merge (input: Sequence A, Sequence B):
 ```
 
 ```
-
+Some crazy shit gets you T(N) = O(N(log2 N))
 ```
 
 - Quick
