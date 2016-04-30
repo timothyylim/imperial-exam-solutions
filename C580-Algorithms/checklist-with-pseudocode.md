@@ -39,7 +39,17 @@ for each element a[i] in [a2...aN]:
   return
 ```
 
+```
+Best case is an already sorted list: O(N)
+Worst case is a reversed sorted list: O(N^2)
+General Time Complexity: O(N^2)
+```
+
 - Merge
+
+*divide and conquer*
+
+
 - Quick
 - Count
 - Radix
