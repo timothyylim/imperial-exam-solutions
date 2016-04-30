@@ -79,6 +79,22 @@ Some crazy shit gets you T(N) = O(N(log2 N))
 - Radix
 - Heap sort
 
+```
+Heap: each node has to be less or equal to its parent
+
+add (key k, data d):
+  insert new node n = (k,d) at end of the heap
+  while k > key of n's parent:
+    swap n with parent
+
+remove:
+  store top node (n0)
+  replace top node with end node n = (k,d)
+  while k < key of any child of n:
+    swap with child of n that has the highest key
+  return n0
+```
+
 ### Graphs
 
 - BFS
