@@ -112,7 +112,30 @@ Performance is O(NLog2N)
 ### Graphs
 
 - BFS
+
+```
+BFS (graph g, source vertex s)
+
+  Create Queue q = [s]
+  while q is not empty:
+    remove vertex u from q
+    for each v that g has an edge {u,v}:
+      if v has not been visited:
+        mark v as visited
+        add v to q
+```
+
 - DFS
+
+```
+DFS (graph g, source vertex s)
+  
+  mark s as visited
+  for each vertex that g has an edge {s,v}
+    if v has not been visited
+      DFS(g,v)
+```
+
 - Kruskal's
 - Prims
 - Bellman-Ford
