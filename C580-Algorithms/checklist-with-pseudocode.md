@@ -122,11 +122,25 @@ Performance is O(NLog2N)
 
 - Set
 - Binary Search Tree
-- Hashtable
+
+```
+All keys in the left subtree are less or equal to root key and all keys in right subtree are greater or equal to root key.
+```
+
+```
+O(NlogN)?
+```
+
+- Red Black Tree
+
+
+
 - Queue
 - Array
 - Stack
-- Red Black Tree
+
+- Hashtable
+
 
 ### String Matching 
 
