@@ -4,6 +4,8 @@ should be able to recall the pseudocode and run time analysis for the following:
 
 - Binary Search
 
+*split it in half each time*
+
 ```
 binary search (input List: L, value k):
 
@@ -22,6 +24,8 @@ Repeat
 ### Sorting
 
 - Insert
+
+*check behind you and insert as far back as you need to*
 
 ```
 insert sort (input: Sequence A = [a1...aN]):
