@@ -169,9 +169,10 @@ O(Elog2V)
 
 - Bellman-Ford
 
-
+*Distance vector routing from networks uses Bellman-Ford*
 
 - Dijkstras
+
 
 
 
