@@ -9,12 +9,12 @@ should be able to recall the pseudocode and run time analysis for the following:
 ```
 binary search (input List: L, value k):
 
-Repeat
-  select element near middle of L
-  if e == k, return True
-  if k > e search elements after e
-  else search elements before e
-  return False
+  Repeat
+    select element near middle of L
+    if e == k, return True
+    if k > e search elements after e
+    else search elements before e
+    return False
 ```
 
 
@@ -30,13 +30,13 @@ Repeat
 ```
 insert sort (input: Sequence A = [a1...aN]):
 
-for each element a[i] in [a2...aN]:
-  j = i
-  while j > 1 and a[j] < a[j-1]:
-    swap a[j] and a[j-1]
-    j --
-    
-  return
+  for each element a[i] in [a2...aN]:
+    j = i
+    while j > 1 and a[j] < a[j-1]:
+      swap a[j] and a[j-1]
+      j --
+      
+    return
 ```
 
 ```
@@ -52,12 +52,26 @@ General Time Complexity: O(N^2)
 ```
 Merge Sort (input: Sequence A = [a1...aN] where N >= 1):
 
-if A has 1 element:
-  return
+  if A has 1 element:
+    return
+    
+  a = Merge Sort (a1...a[N/2]) // split the first half
+  b = Merge Sort (a[N/2]...aN) // split the second half
+  return Merge(a,b)            // merge them back together
+
+Merge (input: Sequence A, Sequence B):
+
+  Loop through A and B to form a new Sequence C as follows:
   
-a = Merge Sort (a1...a[N/2]) // split the first half
-b = Merge Sort (a[N/2]...aN) // split the second half
-return Merge(a,b)            // merge them back together
+  p is smallest element of A not yet used
+  q is smallest element of B not yet used
+  the next element of C is the smaller of p and q
+  
+  return C
+```
+
+```
+
 ```
 
 - Quick
