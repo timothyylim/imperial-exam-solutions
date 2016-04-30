@@ -137,6 +137,13 @@ DFS (graph g, source vertex s)
 ```
 
 - Kruskal's
+
+*Greedily eat up a MST*
+
+```
+
+```
+
 - Prims
 - Bellman-Ford
 - Dijkstras
