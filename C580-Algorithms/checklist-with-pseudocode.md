@@ -93,8 +93,22 @@ remove:
   while k < key of any child of n:
     swap with child of n that has the highest key
   return n0
+
+Both methods take O(log2N) time.
 ```
 
+```
+HeapSort (input: List L)
+
+  Create empty Heap H
+  Remove each element of L and put it in H
+  Remove each element of H and put it in L
+  return L
+```
+
+```
+Performance is O(NLog2N)
+```
 ### Graphs
 
 - BFS
