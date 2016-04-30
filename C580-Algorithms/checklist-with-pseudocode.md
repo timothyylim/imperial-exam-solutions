@@ -22,6 +22,19 @@ Repeat
 ### Sorting
 
 - Insert
+
+```
+insert sort (input: Sequence A = [a1...aN]):
+
+for each element a[i] in [a2...aN]:
+  j = i
+  while j > 1 and a[j] < a[j-1]:
+    swap a[j] and a[j-1]
+    j --
+    
+  return
+```
+
 - Merge
 - Quick
 - Count
