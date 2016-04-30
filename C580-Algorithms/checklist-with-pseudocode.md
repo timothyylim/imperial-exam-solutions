@@ -49,6 +49,16 @@ General Time Complexity: O(N^2)
 
 *divide and conquer*
 
+```
+Merge Sort (input: Sequence A = [a1...aN] where N >= 1):
+
+if A has 1 element:
+  return
+  
+a = Merge Sort (a1...a[N/2]) // split the first half
+b = Merge Sort (a[N/2]...aN) // split the second half
+return Merge(a,b)            // merge them back together
+```
 
 - Quick
 - Count
