@@ -17,7 +17,7 @@
 
 ```
 ∀ D, C ( d(D) ^ c(C) ^ sign(D,C) --> ∃M(m(M) ^ app(D,M,C)) v
-∀ D, C ( d(D) ^ c(C) ^ sign(D,C) --> ∃A(a(A) ^ worksFor(A,D) ^ delegates(D,A,C))
+∀ D, C ( d(D) ^ c(C) ^ sign(D,C) --> ∃A, ∀C(a(A) ^ worksFor(A,D) ^ delegates(D,A,C))
 ```
 
 ### 4 b)
