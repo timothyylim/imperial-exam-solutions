@@ -18,7 +18,8 @@ like an 'if else' statement
 ### 2 aiii)
 
 ```
-∀ D ∃ C, Value (dir(D,C) ^ reg(C) ^ insolvent(C) --> disq(D) ^ share(C,Value) ^ Value = 0)
+∀ D {[∃ C (dir(D,C) ^ reg(C) ^ insolvent(C)] --> 
+            disq(D) ^ [∀ C (reg(C) ^ dir(D,C) --> ∀ V (share(C,V) ^ V = 0)]}
 ```
 
 
