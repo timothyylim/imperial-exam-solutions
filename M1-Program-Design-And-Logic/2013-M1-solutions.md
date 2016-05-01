@@ -6,6 +6,15 @@
 
 ### 2 aii)
 
+like an 'if else' statement
+
+```
+∀ ID,C,D,S [reqReg(ID, C, D, S) ^ (reg(C) v disq(D) v ∃Value (share(C, Value) ^ Value < 500)) --> reject(ID)] ^
+
+∀ ID,C,D,S [¬(reqReg(ID, C, D, S) ^ (reg(C) v disq(D) v ∃Value (share(C, Value) ^ Value < 500))) --> acceptID]
+```
+
+
 ### 2 aiii)
 
 ### 2 aiv)
