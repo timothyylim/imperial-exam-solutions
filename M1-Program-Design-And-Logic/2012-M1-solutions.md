@@ -10,13 +10,14 @@
 ```
 ∀ C [c(C) ^ ¬sc(C) --> ∃M1, M2 (m(M1) ^ m(M2) ^ sign(C,M1) ^ sign(C,M2) ^ ¬(M1=M2) 
                        ^ ¬∃X(sign(C,X) ^ ¬(X=M1) ^ ¬(X=M2))] ^
-∀ C [c(C) ^ sc(C) --> ∃D(sign(C,D) ^ d(D)]
+∀ C [c(C) ^ sc(C) --> ∃D(sign(C,D) ^ d(D) ^ ¬∃X(sign(C,X) ^ ¬(X=D)]
 ```
 
 ### 2 biii)
 
 ```
-
+∀ D ( d(D) ^ ∃C(c(C) --> ∃M(m(M) ^ app(D,M,C)) v
+∀ D ( d(D) ^ ∃C(c(C) --> ∃A(a(A) ^ worksFor(A,D) ^ delegates(D,A,C) ^ ¬∃X(delegates(D,X,C) ^ ¬(X=A))
 ```
 
 ### 4 b)
