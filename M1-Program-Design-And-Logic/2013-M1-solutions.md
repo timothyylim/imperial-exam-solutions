@@ -17,6 +17,11 @@ like an 'if else' statement
 
 ### 2 aiii)
 
+```
+∀ D ∃ C, Value (dir(D,C) ^ reg(C) ^ insolvent(C) --> disq(D) ^ share(C,Value) ^ Value = 0)
+```
+
+
 ### 2 aiv)
 
 
