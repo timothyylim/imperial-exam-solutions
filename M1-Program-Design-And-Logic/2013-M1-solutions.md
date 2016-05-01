@@ -9,7 +9,8 @@
 like an 'if else' statement
 
 ```
-∀ ID,C,D,S [reqReg(ID, C, D, S) --> {(reg(C) v disq(D) v S < 5000) --> reject(ID)} ^ {¬(reg(C) v disq(D) v S < 5000) --> accept(ID)}]
+∀ ID,C,D,S [reqReg(ID, C, D, S) --> {(reg(C) v disq(D) v S < 5000) --> reject(ID)} 
+    ^ {¬(reg(C) v disq(D) v S < 5000) --> accept(ID)}]
 
 ```
 
