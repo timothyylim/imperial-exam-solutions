@@ -24,6 +24,18 @@ like an 'if else' statement
 
 ### 2 aiv)
 
+```
+For all Directors, Companies and Periods (if a director is a director of C and not disqualified and
+                                          there exist two different failures to do the accounts
+                                          then warn the director)
+```
+
+```
+∀ Dir, C, P (dir(Dir,C) ^ ¬disq(D) ^ 
+            ∃ D1,D2(acc_due(C,P,D1) ^ ¬acc_done(C,P,D1) ^ acc_due(C,P,D2) ^ ¬acc_done(C,P,D2) ^ ¬(D1 = D2)) 
+            -->
+            warn(D,C))
+```
 
 
 ### 3 b)
