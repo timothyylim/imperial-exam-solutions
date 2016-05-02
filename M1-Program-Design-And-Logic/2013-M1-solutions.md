@@ -146,7 +146,7 @@ bool Customer::service(Bike* bike, Shop* sh){
     else 
         cost = 40;
     account -= cost;
-    sh->service(Bike);
+    sh->service(bike);
 }
 
 ```
