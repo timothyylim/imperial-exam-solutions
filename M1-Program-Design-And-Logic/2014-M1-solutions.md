@@ -243,17 +243,12 @@ int main(){
 
   Driver LH = new Driver("Lewis Hamilton", 67);
 
-  Car NR = new Car("NR-14", new Chassis(582), new Engine(5, "Turbo...", 91, 250));
+  Car NR = new Car("NR-14", 582, new TurboCharge2000(5, 91, 250));
   
   Car TF = new Car("TFD-2", new Chassis(411), new Engine(4, "Super...", 87, 175));
   
   cout << NR.calc_time(LH, 1000, 642);
-  
-  cout << TF.calc_time(LH, 1500, 642);
-  
-  cout << NR.calc_time(LH, 1000, 550);
-  
-  cout << TF.calc_time(LH, 1500, 550);
+
   
 }
 
