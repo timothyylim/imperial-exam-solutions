@@ -56,7 +56,8 @@ class Shop{
     
     public:
     bool sell(Bike*);
-    double service(Bike*);
+    void service(Bike*);
+    void past_services(Bike*);
     Shop();
 }
 
