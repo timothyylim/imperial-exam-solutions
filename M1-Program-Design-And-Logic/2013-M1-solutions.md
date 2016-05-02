@@ -86,7 +86,7 @@ int main(){
     lance->deposit(2000);
     Bike* b1 = new Bike("TK15895", "Trek", 475);
     Bike* b2 = new Bike("SS82300", "specialised", 1600);
-    Shop* sh = new Show();
+    Shop* sh = new Shop();
     lance->buy(b1,sh);
     lance->buy(b2,sh);
     lance->service(b1,sh);
@@ -111,8 +111,8 @@ void Shop::service(Bike*){
     list.set(Bike, ++(*c));
 }
 
-int* Shop::past_service(Bike*){
-    return myTable.get(Bike);
+int* Shop::past_service(Bike* b){
+    return myTable.get(b);
 }
 
 Bike::Bike(string a, string b, double c):frame(a),make(b),price(c){}
