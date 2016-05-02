@@ -164,3 +164,14 @@ bool Customer::service(Bike* bike, Shop* sh){
 }
 
 ```
+
+### 4b)
+
+
+### 4c)
+
+
+### 4d)
+
+
+
