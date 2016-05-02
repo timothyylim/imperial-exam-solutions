@@ -167,11 +167,76 @@ bool Customer::service(Bike* bike, Shop* sh){
 
 ### 4b)
 
+```
+class Competitor{
+
+    private:
+        String name;
+        int age;
+    
+    public:
+        Competitor(String, int);
+        compete(Event *, int);
+        compute();
+}
+
+class Event{
+
+    protected:
+        double a,b,c;
+    
+    public:
+        Event(double,double,double);
+        virtual double score(double) = 0;
+}
+
+class Run{
+
+    public:
+        Run(double,double,double);
+        virual double score(double);
+}
+
+
+class Jump{
+
+    public:
+        Jump(double,double,double);
+        virual double score(double);
+}
+
+class Throw{
+
+    public:
+        Throw(double,double,double);
+        virual double score(double);
+}
+
+
+```
 
 ### 4c)
 
+```
+int main(){
+
+    Event* 100m = new Run(9.23, 26.7, 1.835);
+    Event* high = new Jump(1.85, 75, 1.348);
+    Event* shot = new Throw(56.02,1.5,1.835);
+    
+    Competitor JE = new Competitor("Jessica Ennis", 28);
+    
+    JE -> compete(100m,12.54);
+    JE -> compete(high,186);
+    JE -> compete(shot,14.28);
+    
+    cout >> JE -> compute();
+}
+```
 
 ### 4d)
 
 
+```
 
+```
