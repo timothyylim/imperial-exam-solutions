@@ -19,7 +19,71 @@
 ∀ D, C ( d(D) ^ c(C) ^ sign(D,C) --> ∃M(m(M) ^ app(D,M,C)) v
 ∀ D, C ( d(D) ^ c(C) ^ sign(D,C) --> ∃A, ∀C(a(A) ^ worksFor(A,D) ^ delegates(D,A,C) ^ sign(D,C))
 ```
+### 3 a)
 
+```
+class Animal {
+  string name;
+  int x1, y1, x2, y2;
+  public:
+  string get_name();
+  bool in_area(int, int);
+  Animal (string, int, int, int, int);
+}
+
+class Tag{
+  int id;
+  int battery;
+  int x1, y1;
+  public:
+  void transmit(Animal *, int, int, int);
+}
+```
+### 3 b)
+
+```
+int main(){
+  Table <Tag*, Animal*> myTable;
+  Animal* lassie = new Animal("Lassie", 0, 0, 5, 5);
+  Tag* 111 = new Tag(111);
+  myTable[111] = lassie;
+  
+  Animal* garfield = new Animal("Garfield", 3, 4, 7, 8);
+  Tag* 222 = new Tag(222);
+  myTable[222] = garfield;
+  
+  111->transmit(myTable[111], 3, 3, 15);
+  222->transmit(myTable[222], 8, 8, 50);
+}
+```
+### 3 c)
+```
+Animal::Animal(string a, int _x1, int _y1, int _x2, int _y2)
+          :name(a),x1(_x1),y1(_y1),x2(_x2),y2(_y2){}
+          
+string Animal::get_name(){
+  return name;
+}
+
+bool Animal::in_area(int x, int y){
+  if(x<x1 || x>x2 || y<y1 || y>y2) //assumed that x1,x2,y1,y2 are given in ascending order
+      return false;
+  return true;
+}
+
+Tag::Tag(int a):id(a){
+  battery = 100;
+}
+
+void Tag::transmit(Animal* a, int x, int y, int b){
+  battery = b;
+  if(!a->in_area(x, y))
+    cout<<"Animal "<<a->get_name()<<" is outside the area";
+  if(battery < 20)
+    cout<<"Battery is low";
+}
+
+```
 ### 4 b)
 ```
 class Battery{
