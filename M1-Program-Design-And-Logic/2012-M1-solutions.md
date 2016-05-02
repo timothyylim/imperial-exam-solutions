@@ -46,14 +46,14 @@ int main(){
   Table <Tag*, Animal*> myTable;
   Animal* lassie = new Animal("Lassie", 0, 0, 5, 5);
   Tag* 111 = new Tag(111);
-  myTable[111] = lassie;
+  myTable.set(111, lassie);
   
   Animal* garfield = new Animal("Garfield", 3, 4, 7, 8);
   Tag* 222 = new Tag(222);
-  myTable[222] = garfield;
+  myTable.set(222, garfield);
   
-  111->transmit(myTable[111], 3, 3, 15);
-  222->transmit(myTable[222], 8, 8, 50);
+  111->transmit(myTable.get(111), 3, 3, 15);
+  222->transmit(myTable.get(222), 8, 8, 50);
 }
 ```
 ### 3 c)
