@@ -41,8 +41,17 @@ For all Directors, Companies and Periods (if a director is a director of C and n
             -->
             warn(D,C))
 ```
-
-
+Alternative
+```
+∀D,∀C [ (
+         reg(C) ^ dir(D,C) ^ ¬disq(C) ^
+         ∃D1,∃D2 [  
+                  ∃P,∃D (acc_due(C,P,D) ^ acc_filed(C,P,D1) ^ (D1>D)) ^   
+                  ∃P,∃D (acc_due(C,P,D) ^ acc_filed(C,P,D2) ^ (D2>D)) ^ ¬(D1=D2)
+                ]
+        )
+        --> ward(D,C) ]
+```
 ### 3 a)
 
 ```
