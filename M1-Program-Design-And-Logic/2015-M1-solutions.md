@@ -191,9 +191,8 @@ more accurate ?
 ### 2 b
 (i)
 ```
-∀S1,S2, C1, C2 (onNet(S1), onNet(S2), cost(S1,S2,C1), cost(S2,S1C2) → C1=C2)
+∀S1, S2, C (cost(S1, S2, C) ↔ cost(S2, S1, C)).
 ```
-And maybe mention you could include S1=/=S2.
 
 (ii)
 ```
