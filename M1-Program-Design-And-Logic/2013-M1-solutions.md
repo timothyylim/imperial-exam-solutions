@@ -3,6 +3,10 @@
 ```
 ∀ D,C [reg(C) ^ dir(D,C) ^ ¬∃D2( reg(C) ^ dir(D2,C) ^ ¬(D2=D1)]
 ```
+Alternative
+```
+∀C [reg(C) --> ∃D[dir(D,C) ^ ¬∃B(dir(B,C) ^ ¬∃B(dir(B,C) ^ ¬(B=D))]]
+```
 
 ### 2 aii)
 
