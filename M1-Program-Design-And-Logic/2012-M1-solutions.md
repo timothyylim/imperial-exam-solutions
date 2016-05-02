@@ -84,6 +84,77 @@ void Tag::transmit(Animal* a, int x, int y, int b){
 }
 
 ```
+### Question3 Alternative
+```
+class Tag {
+  private: 
+    int number; string name; System *system;
+  public:
+    Tag(int, string, System&);
+    void transmit(int, int, int);
+};
+class Area {
+  private:
+    int x_low, y_low, x_high, y_high;
+  public: 
+    Area(int, int, int, int);
+};
+class System {
+  private: 
+    Table<Tag,Area> tag_areas;
+  public:
+    System(Table<Tag,Area>);
+    void receive(Readign& r, Tag& t);
+};
+class Reading {
+  private:
+    int x_position, y_position, battery;
+  public:
+    Reading(int, int ,int);
+};
+
+//============================================
+
+Table tag_areas();
+System *system = new System(tag_areas);
+
+Area* l_area = new Area(0,0,5,5);
+Tag* lassie = new Tag(111, "Lassie", system);
+
+system -> tag_areas.set(lassie, l_area);
+
+lassie.transmit(3,3,15);
+
+//============================================
+
+Area::Area (int xl, int yl, int xh, int yh) {
+  x_low = xl; x_high = xh; y_low = yl, y_high = yh;
+}
+Tag::Tag(int _number, int _name, System &s) {
+  number = _number; name = _name; system = s;
+}
+System::System(Table _tag_table) {
+  tag_table = _tag_table;
+}
+Reading::Reading(int x, int y, int _battery) {
+  x_position = x; y_position = y; battery = _battery;
+}
+
+void Tag::Transmit(int x_pos, int y_pos, int battery) {
+  Reading * reading = new Reading(x_pos, y_pos, battery);
+  system->receive(reading, this);
+}
+
+void System::receive (Reading &r, Tag& t) {
+  Area * area_to_check = tag_areas.get(t);
+  if (r->x_pos < t->x_low || r->x_pos > t->x_high .... )
+    cout << t->name << " out of area";
+  if (r->battery < 20)
+    cout << t->name << "'s battery is low";
+}
+```
+
+
 ### 4 b)
 ```
 class Battery{
