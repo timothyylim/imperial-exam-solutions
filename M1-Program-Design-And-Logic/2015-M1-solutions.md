@@ -192,6 +192,10 @@ more accurate ?
 ```
 ∀V(validTravelDoc(V) → (dayticket(V) v seasonTicket(V) v ( freedomPass(V) ∧∃P(posses(P,V) ∧ over65(P) )
 ```
+might be more like this since the pass does not have to be possessed by such person to be valid. or does it? and also I'd think the implication is the other way around.
+```
+∀V,P ((dayticket(V) v seasonTicket(V) v ( freedomPass(V) ∧ over65(P) )) → validTravelDoc(V, P) )
+```
 
 ### 2 b
 (i)
