@@ -202,6 +202,10 @@ might be more like this since the pass does not have to be possessed by such per
 ```
 ∀S1, S2, C (cost(S1, S2, C) ↔ cost(S2, S1, C)).
 ```
+may be more like:
+```
+∀S1, S2, C (onNet(S1) ^ onNet(S2) ^ cost(S1, S2, C) ^ cost(S2, S1, C)).
+```
 
 (ii)
 ```
