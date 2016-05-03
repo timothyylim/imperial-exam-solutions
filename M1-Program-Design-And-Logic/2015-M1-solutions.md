@@ -165,7 +165,12 @@ not accurate ? is the following better ? (look at the 3rd line)
 ^ ∀ S[onNet(S) -> ∃X(tubeline(X) ^ servedBy(S,X))]
 ^ ∃ S,X ∀ Y [onNet(S) ^ tubeline(X) ^ servedBy(S,X) ^ tubeline(Y) ^ ¬servedBy(S,Y)]
 ```
-
+another alternative -- not sure about the 2nd solution above
+```
+∃ X, Y [tubeline(X) ^ tubeline(Y) ^ ¬(X = Y) ^ ¬∃Z{tubeline(Z) ^ ¬(X = Z v Y = Z)}]
+^ ∀ S[onNet(S) -> ∃X(tubeline(X) ^ servedBy(S,X))]
+^ ∃ S,X [onNet(S) ^ tubeline(X) ^ servedBy(S,X) ^ {∀ Y [tubeline(Y) ^ servedBy(S,Y)] -> (Y = X) }]
+```
 
 (ii)
 ```
@@ -187,11 +192,19 @@ more accurate ?
 ```
 ∀V(validTravelDoc(V) → (dayticket(V) v seasonTicket(V) v ( freedomPass(V) ∧∃P(posses(P,V) ∧ over65(P) )
 ```
+might be more like this since the pass does not have to be possessed by such person to be valid. or does it? and also I'd think the implication is the other way around.
+```
+∀V,P ((dayticket(V) v seasonTicket(V) v ( freedomPass(V) ∧ over65(P) )) → validTravelDoc(V, P) )
+```
 
 ### 2 b
 (i)
 ```
 ∀S1, S2, C (cost(S1, S2, C) ↔ cost(S2, S1, C)).
+```
+may be more like:
+```
+∀S1, S2, C1, C2 (onNet(S1) ^ onNet(S2) ^ cost(S1, S2, C1) ^ cost(S2, S1, C2) ^ (C1 = C2)).
 ```
 
 (ii)
