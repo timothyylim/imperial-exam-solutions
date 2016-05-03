@@ -204,7 +204,7 @@ might be more like this since the pass does not have to be possessed by such per
 ```
 may be more like:
 ```
-∀S1, S2, C (onNet(S1) ^ onNet(S2) ^ cost(S1, S2, C) ^ cost(S2, S1, C)).
+∀S1, S2, C1, C2 (onNet(S1) ^ onNet(S2) ^ cost(S1, S2, C1) ^ cost(S2, S1, C2) ^ (C1 = C2)).
 ```
 
 (ii)
