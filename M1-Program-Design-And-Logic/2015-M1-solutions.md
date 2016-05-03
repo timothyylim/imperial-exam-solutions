@@ -165,7 +165,12 @@ not accurate ? is the following better ? (look at the 3rd line)
 ^ ∀ S[onNet(S) -> ∃X(tubeline(X) ^ servedBy(S,X))]
 ^ ∃ S,X ∀ Y [onNet(S) ^ tubeline(X) ^ servedBy(S,X) ^ tubeline(Y) ^ ¬servedBy(S,Y)]
 ```
-
+another alternative -- not sure about the 2nd solution above
+```
+∃ X, Y [tubeline(X) ^ tubeline(Y) ^ ¬(X = Y) ^ ¬∃Z{tubeline(Z) ^ ¬(X = Z v Y = Z)}]
+^ ∀ S[onNet(S) -> ∃X(tubeline(X) ^ servedBy(S,X))]
+^ ∃ S,X [onNet(S) ^ tubeline(X) ^ servedBy(S,X) ^ {∀ Y [tubeline(Y) ^ servedBy(S,Y)] -> (Y = X) }]
+```
 
 (ii)
 ```
