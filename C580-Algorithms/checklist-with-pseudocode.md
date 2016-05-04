@@ -171,7 +171,8 @@ DFS (graph g, source vertex s)
 *sort then add the smallest edge each time*
 
 ```
-
+The set of edges is iterated over in weight order
+If the next edge connects two distinct components, it is added
 ```
 
 - Prims
