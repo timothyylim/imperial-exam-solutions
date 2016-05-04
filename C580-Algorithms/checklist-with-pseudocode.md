@@ -82,27 +82,30 @@ Some crazy shit gets you T(N) = O(N(log2 N))
 4. Make one big list: the 'smallers' list, the pivot points, and the 'biggers' list.
 
 ```
-Quicksort(A as array, low as int, high as int){
-    if (low < high){
-        pivot_location = Partition(A,low,high)
-        Quicksort(A,low, pivot_location)
-        Quicksort(A, pivot_location + 1, high)
-    }
-}
-Partition(A as array, low as int, high as int){
-     pivot = A[low]
-     leftwall = low
+Quicksort (Input: sequence A = (a1...aN))
 
-     for i = low + 1 to high{
-         if (A[i] < pivot) then{
-             leftwall = leftwall + 1
-             swap(A[i], A[leftwall])
-         }
-     }
-     swap(A[low],A[leftwall])
+  if A has more than 1 element:
+    p = Partition A
+    Quicksort(a1...aP-1)
+    Quicksort(aP+1...aN)
+    return
+  
+  return
 
-    return (leftwall)
-}
+Partition (Given sequence A = (a1...aN))
+
+  select pivot element p from A
+  swap p and aN
+  storeIndex = 1
+  
+  for each a in (a1...aN-1)
+    if a < p:
+      swap a and storeIndex
+      storeIndex ++
+  
+  swap aN and storeIndex
+  
+  return storeIndex
 ```
 
 [smug harvard guy explaining it](https://www.youtube.com/watch?v=aQiWF4E8flQ)
