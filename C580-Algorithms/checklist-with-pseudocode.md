@@ -175,6 +175,9 @@ The set of edges is iterated over in weight order
 If the next edge connects two distinct components, it is added
 ```
 
+```
+O(E log2 V^2)
+```
 - Prims
 
 *always add edges to the same component*
@@ -195,15 +198,22 @@ Prims (input: connected weighted graph G, vertex r)
   return T
 ```
 ```
-O(Elog2V)
+O(E log2 V^2)
 ```
 
 - Bellman-Ford
 
 *Distance vector routing from networks uses Bellman-Ford*
 
+```
+O(EV)
+```
+
 - Dijkstras
 
+```
+O(E log2 V^2)
+```
 
 
 
