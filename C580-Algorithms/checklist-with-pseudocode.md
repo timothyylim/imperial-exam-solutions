@@ -108,7 +108,7 @@ Partition (Given sequence A = (a1...aN))
 - Count
 - Radix
 - Heap sort
-- 
+
 ```
 Heap: each node has to be less or equal to its parent
 
