@@ -105,7 +105,7 @@ Partition(A as array, low as int, high as int){
 }
 ```
 
-[bloody harvard](https://www.youtube.com/watch?v=aQiWF4E8flQ)
+[bloody harvard video](https://www.youtube.com/watch?v=aQiWF4E8flQ)
 
 - Count
 - Radix
