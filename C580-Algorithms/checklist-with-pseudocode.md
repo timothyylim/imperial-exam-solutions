@@ -98,7 +98,7 @@ Partition (Given sequence A = (a1...aN))
       swap a and storeIndex
       storeIndex ++
   
-  swap aN and storeIndex
+  swap a[N] and a[storeIndex]
   
   return storeIndex
 ```
