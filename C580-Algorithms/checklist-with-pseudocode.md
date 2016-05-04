@@ -23,7 +23,7 @@ binary search (input List: L, value k):
 
 ### Sorting
 
-- Insert
+- Insert Sort
 
 *check behind you and insert as far back as you need to*
 
@@ -45,7 +45,7 @@ Worst case is a reversed sorted list: O(N^2)
 General Time Complexity: O(N^2)
 ```
 
-- Merge
+- Merge Sort
 
 *divide and conquer*
 
@@ -74,17 +74,41 @@ Merge (input: Sequence A, Sequence B):
 Some crazy shit gets you T(N) = O(N(log2 N))
 ```
 
-- Quick
+- Quick Sort
 
 1. Pick a "pivot point". Picking a good pivot point can greatly affect the running time.
 2. Break the list into two lists: those elements less than the pivot element, and those elements greater than the pivot element.
 3. Recursively sort each of the smaller lists.
 4. Make one big list: the 'smallers' list, the pivot points, and the 'biggers' list.
 
+```
+Quicksort(A as array, low as int, high as int){
+    if (low < high){
+        pivot_location = Partition(A,low,high)
+        Quicksort(A,low, pivot_location)
+        Quicksort(A, pivot_location + 1, high)
+    }
+}
+Partition(A as array, low as int, high as int){
+     pivot = A[low]
+     leftwall = low
+
+     for i = low + 1 to high{
+         if (A[i] < pivot) then{
+             leftwall = leftwall + 1
+             swap(A[i], A[leftwall])
+         }
+     }
+     swap(A[low],A[leftwall])
+
+    return (leftwall)
+}
+```
+
 - Count
 - Radix
 - Heap sort
-
+- 
 ```
 Heap: each node has to be less or equal to its parent
 
