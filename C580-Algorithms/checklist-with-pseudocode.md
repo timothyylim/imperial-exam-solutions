@@ -5,7 +5,9 @@ should be able to recall the pseudocode and run time analysis for the following:
 ### misc.
 
 - Binary Search
+- 
 -Only works when list is sorted
+
 -*split it in half each time and focus only the appropriate half and continue until found value or down to single item list without finding it*
 
 ```
