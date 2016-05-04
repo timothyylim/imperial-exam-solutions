@@ -5,7 +5,7 @@ should be able to recall the pseudocode and run time analysis for the following:
 ### misc.
 
 - Binary Search
-- 
+
 -Only works when list is sorted
 
 -*split it in half each time and focus only the appropriate half and continue until found value or down to single item list without finding it*
@@ -28,6 +28,8 @@ Used when some operations take significantly longer often due to reaching a tipp
 ### Sorting
 
 - Insert Sort
+
+Start two sections of the list, sorted and unsorted. Initially the sorted section contains only one value and hence is sorted. Then progressively insert values from the unsorted into the sorted list. These inserted values swap with values in the sorted list until they reach their appropriate position in the sorted list. This insertion will result in the sorted list being one value larger and the unsorted list one value smaller. This continues until there are no values left in the unsorted section and thus the list is fully sorted.
 
 *check behind you and insert as far back as you need to*
 
