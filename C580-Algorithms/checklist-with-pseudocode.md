@@ -22,6 +22,7 @@ binary search (input List: L, value k):
 ```
 
 - Amortized analysis
+
 Used when some operations take significantly longer often due to reaching a tipping point, for example inserting a new element to an array that is full will require array size to be increased whereas if not full then would only need to add the value. Amortized analysis allows us to 'smooth' out this lumpiness by 'overcharging' some simple operations to 'pay' for other more complex operations and reach an average complexity. 
 
 ### Sorting
