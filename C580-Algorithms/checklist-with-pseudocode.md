@@ -76,11 +76,6 @@ Some crazy shit gets you T(N) = O(N(log2 N))
 
 - Quick Sort
 
-1. Pick a "pivot point". Picking a good pivot point can greatly affect the running time.
-2. Break the list into two lists: those elements less than the pivot element, and those elements greater than the pivot element.
-3. Recursively sort each of the smaller lists.
-4. Make one big list: the 'smallers' list, the pivot points, and the 'biggers' list.
-
 ```
 Quicksort (Input: sequence A = (a1...aN))
 
