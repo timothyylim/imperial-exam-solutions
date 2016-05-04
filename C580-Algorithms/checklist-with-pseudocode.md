@@ -1,10 +1,12 @@
+cheatsheet: http://bigocheatsheet.com/
+
 should be able to recall the pseudocode and run time analysis for the following:
 
 ### misc.
 
 - Binary Search
-
-*split it in half each time*
+Only works when list is sorted
+*split it in half each time and focus only the appropriate half and continue until found value or down to single item list without finding it*
 
 ```
 binary search (input List: L, value k):
@@ -17,9 +19,8 @@ binary search (input List: L, value k):
     return False
 ```
 
-
-
 - Amortized analysis
+Used when some operations take significantly longer often due to reaching a tipping point, for example inserting a new element to an array that is full will require array size to be increased whereas if not full then would only need to add the value. Amortized analysis allows us to 'smooth' out this lumpiness by 'overcharging' some simple operations to 'pay' for other more complex operations and reach an average complexity. 
 
 ### Sorting
 
