@@ -27,7 +27,6 @@ Acknowledgements
 Although I set up this repository, much of the work has been done by others in the course. Here are a few of them:
 
 ```
-Katie Shea (shadykdc)
 Jack Bridger (jackbridger)
 Ivan Avanessov (IvanAvanessov)
 Robin Marle (crossman36)
